@@ -140,7 +140,7 @@ const Sidebar = ({ showMobilemenu }) => {
                       <span
                         className={`nav-link flex items-center hover:opacity-70 w-full font-semibold text-sm py-[6px] pl-7 rounded-lg relative ${
                           location === navi.href
-                            ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-white after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
+                            ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
                         }`}
                       >

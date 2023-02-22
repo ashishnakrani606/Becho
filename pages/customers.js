@@ -20,7 +20,8 @@ import Link from "next/link";
 import PageHeader from "../src/components/ui/PageHeader";
 import Alert from "../src/components/ui/Alert";
 import UnsavedChanges from "../src/components/ui/UnsavedChanges";
-
+import Dots from "../src/assets/images/icon/Union.svg";
+import Dropdown from "../src/components/ui/Dropdown";
 import InputContent from "../src/components/ui/InputContent";
 import OptionValue from "../src/components/products/OptionValue";
 import VarientDropdown from "../src/components/ui/SelectOption";
@@ -82,9 +83,14 @@ const customers = () => {
             </Card>
           ) : (
             <>
-              <div className="bg-primary-light rounded-lg p-2 mb-2 flex items-center justify-between">
+              <div className="bg-primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5 mt-5">
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
+                    {/* <Image
+                      src={Addicon}
+                      alt=""
+                      className="dark:invert mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    /> */}
                     <Image
                       src={FunnelSimple}
                       alt=""
@@ -95,22 +101,31 @@ const customers = () => {
                       alt=""
                       className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
                     />
-                    <Image
-                      src={Threedots}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    <Dropdown
+                      className="flex items-center justify-center"
+                      button={
+                        <Image
+                          src={Dots}
+                          alt=""
+                          className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                        />
+                      }
+                      dropdownitem={[
+                        { title: "Download", link: "/" },
+                        { title: "Download", link: "/" },
+                      ]}
                     />
                   </div>
                   <div className="flex items-center">
-                    <span className="bg-black/20 w-[1px] h-5 mr-4"></span>
+                    <span className="bg-white/20 w-[1px] h-5 mr-4"></span>
                     <span className="mr-4 text-xs">1 Selected</span>
-                    <Button color={"grey"} name={"Archive Selected"} />
+                    <Button color={"grey"} name={"Delete Selected"} className={"dark:bg-white/5 dark:text-white"} />
                   </div>
                 </div>
                 <div className="relative">
                   <input
                     placeholder="Search"
-                    className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 p-[3px] pr-3 focus-visible:outline-none"
+                    className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/5 p-[3px] pr-3 focus-visible:outline-none"
                   />
                   <Image
                     src={Searchicon}
@@ -214,7 +229,7 @@ const customers = () => {
       ) : (
         <>
           <UnsavedChanges>
-            <Button color={"white"} name={"Discard"} className={"mr-5 dark:border-blacklight dark:text-black"} />
+            <Button color={"white"} name={"Discard"} outline={'true'} className={"mr-5 dark:border-blacklight dark:text-black"} />
             <Button color={"green"} name={"Delete Selected"} />
           </UnsavedChanges>
           <PageHeader
@@ -285,52 +300,76 @@ const customers = () => {
                 <div className="grid sm:grid-cols-2 sm:gap-6">
                   <label
                     for="product-type-1"
-                    className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3 dark:border-secondary-purpleb dark:bg-black/40 relative ${
-                      !radiioBtn ? "border-black" : "border-black/10"
-                    }`}
+                    className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3  dark:bg-black/40 relative ${!radiioBtn ? "border-black dark:border-secondary-purpleb"  : "border-black/10"
+                      }`}
                   >
                     {!radiioBtn ? (
-                      <Image src={CheckCircle} alt="" className="absolute right-3 top-3 dark:invert" />
+                      <svg width="26" height="26" className="absolute right-3 top-3" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.19089 12.777C8.00482 12.5992 7.75736 12.5 7.5 12.5C7.49979 12.5 7.47732 12.5003 7.47732 12.5003C7.21217 12.5063 6.96027 12.6174 6.77704 12.8091C6.59923 12.9952 6.5 13.2426 6.5 13.5L6.50026 13.5227C6.50627 13.7878 6.61737 14.0397 6.80911 14.223L10.4716 17.723C10.8579 18.0921 11.4662 18.0924 11.8528 17.7236L19.19 10.7238C19.3819 10.5407 19.4935 10.2887 19.4997 10.0235C19.5001 10.0075 19.5001 9.9915 19.4997 9.97548C19.4936 9.72695 19.3952 9.48961 19.2236 9.30973C19.0348 9.11192 18.7734 9 18.5 9L18.4718 9.0004C18.2245 9.00738 17.9887 9.10573 17.8097 9.27645L11.1631 15.6174L8.19089 12.777Z"
+                        fill="black"
+                        className="dark:fill-secondary-purpleb"
+                        fill-opacity="0.8"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 0C13 0 15.6442 0 18.0605 1.02201C18.0605 1.02201 20.3936 2.00884 22.1924 3.80761C22.1924 3.80761 23.9912 5.60638 24.978 7.93951C24.978 7.93951 26 10.3558 26 13C26 13 26 15.6442 24.978 18.0605C24.978 18.0605 23.9912 20.3936 22.1924 22.1924C22.1924 22.1924 20.3936 23.9912 18.0605 24.978C18.0605 24.978 15.6442 26 13 26C13 26 10.3558 26 7.93951 24.978C7.93951 24.978 5.60638 23.9912 3.80761 22.1924C3.80761 22.1924 2.00884 20.3936 1.02202 18.0605C1.02202 18.0605 0 15.6442 0 13C0 13 0 10.3558 1.02202 7.93951C1.02202 7.93951 2.00885 5.60638 3.80761 3.80761C3.80761 3.80761 5.60638 2.00884 7.93951 1.02201C7.93951 1.02201 10.3558 0 13 0ZM13 2C13 2 10.7614 2 8.71861 2.86402C8.71861 2.86402 6.74476 3.69889 5.22183 5.22182C5.22183 5.22182 3.6989 6.74476 2.86402 8.71861C2.86402 8.71861 2 10.7614 2 13C2 13 2 15.2386 2.86402 17.2814C2.86402 17.2814 3.69889 19.2552 5.22183 20.7782C5.22183 20.7782 6.74476 22.3011 8.71861 23.136C8.71861 23.136 10.7614 24 13 24C13 24 15.2386 24 17.2814 23.136C17.2814 23.136 19.2552 22.3011 20.7782 20.7782C20.7782 20.7782 22.3011 19.2552 23.136 17.2814C23.136 17.2814 24 15.2386 24 13C24 13 24 10.7614 23.136 8.71861C23.136 8.71861 22.3011 6.74476 20.7782 5.22183C20.7782 5.22183 19.2552 3.69889 17.2814 2.86402C17.2814 2.86402 15.2386 2 13 2Z"
+                        fill="black"
+                        className="dark:fill-secondary-purpleb"
+                        fill-opacity="0.8"
+                      />
+                    </svg>
                     ) : (
                       <Image src={RadioCircle} alt="" className="absolute right-3 top-3 dark:invert" />
                     )}
                     <h3
-                      className={`mb-1 font-semibold dark:text-white/80 ${
-                        !radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
-                      }`}
+                      className={`mb-1 font-semibold dark:text-white/80 ${!radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        }`}
                     >
                       Email subscription
                     </h3>
                     <p
-                      className={` ${
-                        !radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
-                      }`}
+                      className={` ${!radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        }`}
                     >
                       Customer agreed to receive marketing emails.
                     </p>
                   </label>
                   <label
                     for="product-type-2"
-                    className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3 dark:bg-black/40 dark:border-white/10 relative ${
-                      radiioBtn ? "border-black" : "border-black/10"
-                    }`}
+                    className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3 dark:bg-black/40  dark:border-white/10 relative ${radiioBtn ? "border-black dark:border-secondary-purpleb" : "border-black/10"
+                      }`}
                   >
                     {radiioBtn ? (
-                      <Image src={CheckCircle} alt="" className="absolute right-3 top-3 dark:invert" />
+                      <svg width="26" height="26" className="absolute right-3 top-3" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M8.19089 12.777C8.00482 12.5992 7.75736 12.5 7.5 12.5C7.49979 12.5 7.47732 12.5003 7.47732 12.5003C7.21217 12.5063 6.96027 12.6174 6.77704 12.8091C6.59923 12.9952 6.5 13.2426 6.5 13.5L6.50026 13.5227C6.50627 13.7878 6.61737 14.0397 6.80911 14.223L10.4716 17.723C10.8579 18.0921 11.4662 18.0924 11.8528 17.7236L19.19 10.7238C19.3819 10.5407 19.4935 10.2887 19.4997 10.0235C19.5001 10.0075 19.5001 9.9915 19.4997 9.97548C19.4936 9.72695 19.3952 9.48961 19.2236 9.30973C19.0348 9.11192 18.7734 9 18.5 9L18.4718 9.0004C18.2245 9.00738 17.9887 9.10573 17.8097 9.27645L11.1631 15.6174L8.19089 12.777Z"
+                        fill="black"
+                        className="dark:fill-secondary-purpleb"
+                        fill-opacity="0.8"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M13 0C13 0 15.6442 0 18.0605 1.02201C18.0605 1.02201 20.3936 2.00884 22.1924 3.80761C22.1924 3.80761 23.9912 5.60638 24.978 7.93951C24.978 7.93951 26 10.3558 26 13C26 13 26 15.6442 24.978 18.0605C24.978 18.0605 23.9912 20.3936 22.1924 22.1924C22.1924 22.1924 20.3936 23.9912 18.0605 24.978C18.0605 24.978 15.6442 26 13 26C13 26 10.3558 26 7.93951 24.978C7.93951 24.978 5.60638 23.9912 3.80761 22.1924C3.80761 22.1924 2.00884 20.3936 1.02202 18.0605C1.02202 18.0605 0 15.6442 0 13C0 13 0 10.3558 1.02202 7.93951C1.02202 7.93951 2.00885 5.60638 3.80761 3.80761C3.80761 3.80761 5.60638 2.00884 7.93951 1.02201C7.93951 1.02201 10.3558 0 13 0ZM13 2C13 2 10.7614 2 8.71861 2.86402C8.71861 2.86402 6.74476 3.69889 5.22183 5.22182C5.22183 5.22182 3.6989 6.74476 2.86402 8.71861C2.86402 8.71861 2 10.7614 2 13C2 13 2 15.2386 2.86402 17.2814C2.86402 17.2814 3.69889 19.2552 5.22183 20.7782C5.22183 20.7782 6.74476 22.3011 8.71861 23.136C8.71861 23.136 10.7614 24 13 24C13 24 15.2386 24 17.2814 23.136C17.2814 23.136 19.2552 22.3011 20.7782 20.7782C20.7782 20.7782 22.3011 19.2552 23.136 17.2814C23.136 17.2814 24 15.2386 24 13C24 13 24 10.7614 23.136 8.71861C23.136 8.71861 22.3011 6.74476 20.7782 5.22183C20.7782 5.22183 19.2552 3.69889 17.2814 2.86402C17.2814 2.86402 15.2386 2 13 2Z"
+                        fill="black"
+                        className="dark:fill-secondary-purpleb"
+                        fill-opacity="0.8"
+                      />
+                    </svg>
                     ) : (
                       <Image src={RadioCircle} alt="" className="absolute right-3 top-3 dark:invert" />
                     )}
                     <h3
-                      className={`mb-1 font-semibold dark:text-white/80 ${
-                        radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
-                      }`}
+                      className={`mb-1 font-semibold dark:text-white/80 ${radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        }`}
                     >
                       SMS subscription
                     </h3>
                     <p
-                      className={` ${
-                        radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
-                      }`}
+                      className={` ${radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        }`}
                     >
                       Customer agreed to receive SMS marketing text messages.
                     </p>
@@ -475,11 +514,11 @@ const customers = () => {
                 </div>
                 <div className="flex justify-between py-[11px] px-4 bg-white mb-3 border-b border-black/5 dark:bg-black/40 dark:border-white/10">
                   <p className="text-blacklight text-xs	leading-[18px] dark:text-white">#CM9805</p>
-                  <p className="text-[#219653] text-xs	leading-[18px]">View details</p>
+                  <p className="text-primary-green text-xs leading-[18px]">View details</p>
                 </div>
                 <div className="flex justify-between py-[11px] px-4 bg-white mb-3 border-b border-black/5 dark:bg-black/40 dark:border-white/10">
                   <p className="text-blacklight text-xs	leading-[18px] dark:text-white">#CM9805</p>
-                  <p className="text-[#219653] text-xs	leading-[18px]">View details</p>
+                  <p className="text-primary-green text-xs  leading-[18px]">View details</p>
                 </div>
                 <div>
                   <Button name={"Create order"} color={"purple"} className="text-sm" size="large" />

@@ -1,4 +1,4 @@
-import Image from "next/image";
+  import Image from "next/image";
 import Calender from "../../assets/images/icon/CalendarBlank.svg";
 import User from "../../assets/images/icon/userimg.svg";
 import User1 from "../../assets/images/icon/user1.svg";

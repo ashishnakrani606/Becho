@@ -23,7 +23,7 @@ const TableData = [
     orderstatusdata: "status",
     union: Dots,
     dot: "dot-active pl-3 before:dark:bg-white",
-    orderstatusdata: "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    orderstatusdata: "bg-secondary-red/70 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ const TableData = [
     union: Dots,
     orderstatusdata: "pending",
     paymentdata: "bg-amber-200 dark:!text-black",
-    orderstatusdata: "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    orderstatusdata: "bg-secondary-red/70 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ const TableData = [
     tablesec: "text-color",
     union: Dots,
     paymentdata: "bg-amber-200 dark:!text-black",
-    orderstatusdata: "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    orderstatusdata: "bg-secondary-red/70 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ export default function DashboardTablebox() {
     <>
       {TableData.map((navi, index) => (
         <tr
-          className={`border-b border-black/5  hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:border-white/5 dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
+          className={`border-b border-black/5  hover:bg-primary-light hover:border-primary-light dark:border-white/5 dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
         >
           <td className="pl-0 py-2 pr-[10px]">{navi.orderid}</td>

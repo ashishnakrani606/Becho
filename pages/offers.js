@@ -38,26 +38,36 @@ const offers = () => {
         <>
           <div className="flex justify-between items-center text mb-5 flex-wrap gap-5">
             <Pagetitle title={"Offers & Discounts"} />
-            {selectPlanOpen ? <Button color={"green"} name={"Create discount"} className="font-semibold" /> : ""}
+            {selectPlanOpen ? (
+              <Button
+                color={"green"}
+                name={"Create discount"}
+                className="font-semibold"
+              />
+            ) : (
+              ""
+            )}
           </div>
           {!selectPlanOpen ? (
             <div className={"md:mt-16 mt-5"}>
               <Card
                 cardImage={offersCards}
                 title={"Create Offers & Discounts"}
-                discription={"Generate discount codes and set up automatic discounts for checkout."}
+                discription={
+                  "Generate discount codes and set up automatic discounts for checkout."
+                }
               >
                 <Button
                   color={"yellow"}
                   name={"Create discount"}
-                  className="font-semibold"
+                  className="font-semibold text-blacklight"
                   onClick={SelectPlanHandler}
                 />
               </Card>
             </div>
           ) : (
             <>
-              <div className="primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5">
+              <div className="bg-primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5">
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
                     <Image
@@ -77,23 +87,29 @@ const offers = () => {
                     />
                   </div>
                   <div className="flex items-center">
-                    <span className="bg-black/20 w-[1px] h-5 mr-4"></span>
+                    <span className="bg-black/20 w-[1px] h-5 mr-4 dark:bg-white/20"></span>
                     <span className="mr-4 text-xs">1 Selected</span>
-                    <Button color={"grey"} name={"Archive Selected"} />
+                    <Button
+                      color={"lightgrey"}
+                      name={"Delete Selected"}
+                      className={"dark:bg-white/5 dark:!text-white bg-black/5"}
+                    />
                   </div>
                 </div>
-                <div className="relative">
-                  <input
-                    placeholder="Search"
-                    className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 p-[3px] pr-3 focus-visible:outline-none"
-                  />
-                  <Image
-                    src={Searchicon}
-                    alt=""
-                    className="absolute top-1/2 -translate-y-[50%] left-[7px] dark:invert mr-6"
-                  />
+                <div className="flex items-center">
+                  <div className="relative mr-3 md:mr-5">
+                    <input
+                      placeholder="Search"
+                      className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 p-[3px] pr-3 focus-visible:outline-none"
+                    />
+                    <Image
+                      src={Searchicon}
+                      alt=""
+                      className="absolute top-1/2 -translate-y-[50%] left-[7px] dark:invert mr-6"
+                    />
+                  </div>
+                  <button type="button">View Archived</button>
                 </div>
-                <button type="button">View Archived</button>
               </div>
               <div className="min-h-[440px]">
                 <div className="overflow-x-auto">
@@ -101,7 +117,11 @@ const offers = () => {
                     <thead>
                       <tr className="text-black/40 dark:text-white/40 border-b text-xs">
                         <th className="font-normal pl-0 py-3 before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border ">
-                          <Image src={selectStroke} alt="" className="mx-[5px] dark:invert" />
+                          <Image
+                            src={selectStroke}
+                            alt=""
+                            className="mx-[5px] dark:invert"
+                          />
                         </th>
                         <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Title
@@ -115,7 +135,7 @@ const offers = () => {
                         <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Method
                         </th>
-                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
+                        <th className="font-normal p-3 pr-[10px] text-start relative h-full heading-border">
                           Used
                         </th>
                       </tr>
@@ -133,7 +153,11 @@ const offers = () => {
                       href={"#0"}
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
-                      <Image src={ArrowLineLeft} alt="" className="dark:invert" />
+                      <Image
+                        src={ArrowLineLeft}
+                        alt=""
+                        className="dark:invert"
+                      />
                     </Link>
                   </li>
                   <li className="mr-2">
@@ -181,7 +205,11 @@ const offers = () => {
                       href={"#0"}
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
-                      <Image src={ArrowLineLeft} alt="" className="dark:invert rotate-180" />
+                      <Image
+                        src={ArrowLineLeft}
+                        alt=""
+                        className="dark:invert rotate-180"
+                      />
                     </Link>
                   </li>
                 </ul>
@@ -192,41 +220,58 @@ const offers = () => {
       ) : (
         <>
           <UnsavedChanges>
-            <Button color={"white"} name={"Discard"} className={"md:mr-5 mr-1"} />
+            <Button
+              color={"white"}
+              name={"Discard"}
+              outline={"true"}
+              className={"md:mr-5 mr-4 dark:border-blacklight  dark:text-blacklight"}
+            />
             <Button color={"green"} name={"Save Changes"} />
           </UnsavedChanges>
           <PageHeader
             arrow={true}
-            className={"mb-5 sm:flex-nowrap flex-wrap gap-5"}
+            className={"mb-5 flex-wrap gap-5"}
             orderid={"EKHKSS3S266H"}
             orderidcopy={"Copy of EKHKSS3S266H"}
             Badgesdata={[{ color: "green", name: "Active" }]}
           >
-            <Button color={"black20"} name={"Duplicate"} className={"mr-3"} />
-            <Link href={"#0"} className="py-[5px] px-2 sm:mr-2 text-xs text-black/40 dark:text-white/40">
+            <Link href={'#0'} className={"hover:bg-black/20 hover:dark:bg-white/20 text-black/40 dark:text-white/40 text-xs rounded-lg sm:px-2 py-[5px] hover:text-black/80"} >Duplicate</Link>
+            <Link
+              href={"#0"}
+              className="hover:bg-black/20 hover:dark:bg-white/20 text-black/40 dark:text-white/40 text-xs rounded-lg sm:px-2 py-[5px] hover:text-black/80"
+            >
               Deactivate
             </Link>
-            <Link href={"#0"} className="py-[5px] px-2 smmr-2 text-xs dark:text-white/40 text-secondary-red">
+            <Link
+              href={"#0"}
+              className="py-[5px] sm:px-2 sm:mr-2 whitespace-nowrap text-xs text-secondary-red"
+            >
               Delete Discount
             </Link>
           </PageHeader>
+          <div className="mb-7">
           <Alert
-            color={"red"}
-            className={"mb-7"}
+            color={"red"}           
             title={"There is 1 error with this offer:"}
             description={"Start date can’t be blank"}
           />
+          </div>
+          <div className="mb-7">
           <Alert
-            color={"green"}
-            className={"mb-7"}
-            title={"Copy of EKHKSS3S266H was created successfully. What’s next?"}
+            color={"green"}           
+            title={
+              "Copy of EKHKSS3S266H was created successfully. What’s next?"
+            }
             description={
               "Promote your discount code via email or social media by sharing a unique link. Customers will receive the discount when they use this link during checkout."
             }
           />
+          </div>
           <div className="flex justify-between  flex-wrap">
-            <div className="w-full md:max-w-[63%] max-w-[100%] primary-light dark:bg-white/5 rounded-2xl lg:py-4 lg:px-6 sm:px-5 px-3">
-              <h2 className="text-blacklight font-semibold text-lg leading-5 pb-4">Amount off on order</h2>
+            <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl py-4 lg:px-6 sm:px-5 px-3">
+              <h2 className="text-blacklight font-semibold text-lg leading-5 pb-4 dark:text-white">
+                Amount off on order
+              </h2>
               <div>
                 <InputContent title={"Type"}>
                   <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
@@ -235,16 +280,16 @@ const offers = () => {
                   </div>
                 </InputContent>
                 <InputContent title={"Discount Code"}>
-                  <input type="text" name="" value="EKHKSS3S266H" />
+                  <input type="text" name="" value="EKHKSS3S266H" className="bg-transparent"/>
                 </InputContent>
-                <InputContent title={"Type"}>
+                <InputContent title={"Value Type"}>
                   <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
                     <CheckBox name={"percentage"}>Percentage</CheckBox>
                     <CheckBox name={"fixed"}>Fixed amount</CheckBox>
                   </div>
                 </InputContent>
                 <InputContent title={"Percentage %"}>
-                  <input type="text" name="" value="40" />
+                  <input type="text" name="" value="40" className="bg-transparent" />
                 </InputContent>
                 <InputContent>
                   <VarientDropdown
@@ -282,21 +327,28 @@ const offers = () => {
                 <InputContent title={"End date (optional)"}>
                   <DAtePicker placeholder={"Pick a date"}></DAtePicker>
                 </InputContent>
-                <div className="border-y border-black border-opacity-10 py-[18px] flex justify-end items-center">
-                  <Button color="lightgrey" size="large" name={"Discard"} className={"text-sm"}></Button>
+                <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
+                  <Button
+                    color="lightgrey"
+                    size="large"
+                    name={"Discard"}
+                    className={"text-sm px-4"}
+                  ></Button>
                   <Button
                     color="blacklight"
                     size="large"
-                    className={"ml-4 text-sm font-semibold"}
+                    className={"ml-4 text-sm font-semibold mr-7"}
                     name={"Save Changes"}
                   ></Button>
                 </div>
               </div>
             </div>
             <div className="w-full md:max-w-[35%] max-w-[100%] mt-4 md:mt-0">
-              <div className="primary-light dark:bg-white/5 rounded-2xl pt-4 pb-5 lg:px-6 sm:px-5  px-3">
+              <div className="bg-primary-light dark:bg-white/5 rounded-2xl pt-4 pb-5 lg:px-6 sm:px-5  px-3">
                 <h3 className="text-lg font-semibold">Summary</h3>
-                <h4 className="text-2xl text-[#1c1c1c] font-semibold ">EKH KSS3S266H</h4>
+                <h4 className="text-2xl text- font-semibold ">
+                  EKH KSS3S266H
+                </h4>
                 <div>
                   <ul className="mt-1 text-xs leading-[18px]">
                     type and method
@@ -305,12 +357,22 @@ const offers = () => {
                   </ul>
                   <ul className="text-xs leading-[18px]">
                     details
-                    <li className="list-disc ml-[26px]">40% off entire order</li>
-                    <li className="list-disc ml-[26px]">No minimum purchase requirement</li>
+                    <li className="list-disc ml-[26px]">
+                      40% off entire order
+                    </li>
+                    <li className="list-disc ml-[26px]">
+                      No minimum purchase requirement
+                    </li>
                     <li className="list-disc ml-[26px]">All customers</li>
-                    <li className="list-disc ml-[26px]">Limit of 5 uses, one per customer</li>
-                    <li className="list-disc ml-[26px]">Can’t combine with other discounts</li>
-                    <li className="list-disc ml-[26px]">Active from today until Feb 17</li>
+                    <li className="list-disc ml-[26px]">
+                      Limit of 5 uses, one per customer
+                    </li>
+                    <li className="list-disc ml-[26px]">
+                      Can’t combine with other discounts
+                    </li>
+                    <li className="list-disc ml-[26px]">
+                      Active from today until Feb 17
+                    </li>
                   </ul>
                   <ul className="font-semibold mt-5 leading-[18px] text-xs">
                     Performance

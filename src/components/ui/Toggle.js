@@ -16,7 +16,7 @@ const Toggle = ({turnOff, turnOn}) => {
         checked={enabled}
         onChange={setEnabled}
         className={classNames(
-          enabled ? "bg-blacklight dark:bg-white/10" : "bg-black/40 dark:bg-white/40",
+          enabled ? "bg-blacklight dark:bg-secondary-purpleb" : "bg-black/20 dark:bg-white/20",
           "relative inline-flex h-4 w-7 mr-1 my-1 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-0 "
         )}
       >
@@ -24,8 +24,8 @@ const Toggle = ({turnOff, turnOn}) => {
         <span
           aria-hidden="true"
           className={classNames(
-            enabled ? "translate-x-3" : "translate-x-0",
-            "pointer-events-none inline-block h-3 w-3 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"
+            enabled ? "translate-x-3 dark:bg-blacklight" : "translate-x-0 dark:bg-white",
+            "pointer-events-none inline-block h-3 w-3 transform rounded-full bg-white  shadow ring-0 transition duration-200 ease-in-out"
           )}
         />
       </Switch>

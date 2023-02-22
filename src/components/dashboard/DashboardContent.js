@@ -25,7 +25,7 @@ const DashboardContent = () => {
                 <div className="gap-[6px]  xl:pt-6 pt-2">
                   <h2 className="text-sm font-semibold">Becho.io Learn</h2>
                   <p className="text-xs font-normal pt-1">Learn how to set up your business online step by step.</p>
-                  <Button color="yellow" name="Start now" className="sm:mt-7 mt-5 text-[#1c1c1c]" />
+                  <Button color="yellow" name="Start now" className="sm:mt-7 mt-5 text-blacklight" />
                 </div>
               </div>
             </div>

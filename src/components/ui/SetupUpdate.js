@@ -6,7 +6,7 @@ const Alert = ({ title, description, color, className, children }) => {
   return (
     <>
       <div
-        className={`rounded-lg border bg-[#eef3f8] py-5 px-4 flex justify-between items-center ${className} ${
+        className={`rounded-lg border bg-[#eef3f8] dark:bg-blacklight py-5 px-4 flex gap-2 justify-between items-center ${className} ${
           color == "red" ? "border-[#FF4747]" : ""
         }`}
       >
@@ -14,7 +14,7 @@ const Alert = ({ title, description, color, className, children }) => {
           {color == "red" ? <Image src={MailIcon} alt="" className="mt-[5px]" /> : ""}
           <div className="ml-2">
             <h4 className="text-xs font-semibold leading-[18px] text-[#FF4747] pt-1">{title}</h4>
-            <p className="text-xs leading-[18px] text-black/40">{description}</p>
+            <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">{description}</p>
           </div>
         </div>
         <div>{children}</div>        

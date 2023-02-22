@@ -53,7 +53,7 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
             <Image src={Menuicon} alt="" className="w-7 dark:invert" />
           </Button>
           <div isOpen={isOpen} className={`dashbord-img ${isOpen ? "md:block" : "md:block hidden"}`}>
-            <div className="flex md:static absolute md:shadow-none shadow-md dark:shadow-black bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
+            <div className="flex md:static absolute md:shadow-none shadow-layer-shadow dark:shadow-black bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
               <Button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
               </Button>

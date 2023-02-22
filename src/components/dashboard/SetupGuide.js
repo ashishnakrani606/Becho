@@ -39,7 +39,7 @@ const SetupGuide = ({setOpenDashboard}) => {
           iconOpacity={`${openkey == 'first_product' || openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100 dark:invert' : 'opacity-100 '}`} 
           isActive={openkey}
         >
-          <div className={'flex mt-4 pl-2'}>
+          <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
           <Image src={AddBrandAssets} alt="" className='dark:invert'/>
             <div className='mt-[19px] pl-6'>
               <h3 className='font-semibold mb-[6px]'>Add brand assets</h3>
@@ -60,7 +60,7 @@ const SetupGuide = ({setOpenDashboard}) => {
           iconOpacity={`${openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100 dark:invert' : 'opacity-10 dark:opacity-100  dark:invert'}`} 
           isActive={openkey}
         >
-          <div className={'flex mt-4 pl-2'}>
+          <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
             <Image src={firstProduct} alt="" className='dark:invert'/>
             <div className='mt-[19px] pl-6'>
               <h3 className='font-semibold mb-[6px]'>Add your first product</h3>
@@ -81,7 +81,7 @@ const SetupGuide = ({setOpenDashboard}) => {
           iconOpacity={'opacity-10 dark:opacity-100 dark:invert'} 
           isActive={openkey}
         >
-          <div className={'flex mt-4 pl-2'}>
+          <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
             <Image src={customDomain} alt="" className='dark:invert'/>
             <div className='mt-[19px] pl-6'>
               <h3 className='font-semibold mb-[6px]'>Add a custom domain</h3>

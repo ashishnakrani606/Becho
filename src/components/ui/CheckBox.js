@@ -10,7 +10,7 @@ const CheckBox = ({children, name}) => {
           type="checkbox"
           value="value1"
         />  
-        <label for={name} className="relative cursor-pointer text-[#1c1c1c] text-sm flex sm:items-center">
+        <label for={name} className="relative cursor-pointer text-sm flex sm:items-center">
           {children}
         </label>
       </div>

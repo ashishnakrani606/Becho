@@ -132,6 +132,12 @@ input:focus-visible {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
+.dark .styled-checkbox + label:before {  
+  border: 1px solid rgb(255 255 255 / 0.2);  
+}
+.dark .styled-checkbox:checked + label:before {
+  background: #C6C7F8;
+}
 .styled-checkbox:checked + label:before {
   background: #000;
 }
@@ -145,12 +151,14 @@ input:focus-visible {
   height: 2px;
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
     4px -6px 0 white, 4px -8px 0 white;
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
+  transform: rotate(45deg);  
 }
+.dark .styled-checkbox:checked + label:after {
+  background: black; 
+  box-shadow: 2px 0 0 black, 4px 0 0 black, 4px -2px 0 black, 4px -4px 0 black,
+  4px -6px 0 black, 4px -8px 0 black;
+}
+
 /********** checkbox css end ************/
 
 

@@ -55,7 +55,7 @@ const ArchiveSelectTable = ({ opentableHandler }) => {
             <Image
               src={navi.customersimg}
               alt=""
-              className="dark:invert inline-block mr-2"
+              className="inline-block mr-2"
             />
             {navi.customername}
           </td>

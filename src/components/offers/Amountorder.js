@@ -34,7 +34,7 @@ const Amountorder = ({opentableHandler}) => {
     <>
       {TableData.map((navi, index) => (
         <tr
-          className={`border-b border-black/5 dark:border-white/5 hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
+          className={`border-b border-black/5 dark:border-white/5 dark:hover:bg-white/5  hover:bg-primary-light hover:border-primary-light  group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
           onClick={opentableHandler}
         >
@@ -53,11 +53,11 @@ const Amountorder = ({opentableHandler}) => {
           </td>
           <td className="px-3 pr-0 py-2">
             <h3 className={`relative pl-[11px] ${
-                navi.status == 'Active' ? 'text-[#219653]' : "" || 
+                navi.status == 'Active' ? 'text-primary-green' : "" || 
                 navi.status == 'Draft' ? 'text-black/40 dark:text-white/40' : ""
               } `}>
               <span className={`absolute left-0 top-[50%] -translate-y-[50%] rounded-xl w-[6px] h-[6px] ${
-                navi.status == 'Active' ? 'bg-[#BAEDBD]' : "" || 
+                navi.status == 'Active' ? 'bg-secondary-greenb' : "" || 
                 navi.status == 'Draft' ? 'bg-black/40 dark:bg-white/40' : ""
               } `}
               ></span>
@@ -66,7 +66,7 @@ const Amountorder = ({opentableHandler}) => {
           </td>
           <td className="px-3 pr-[10px] py-2">{navi.type}</td>
           <td className="px-4 py-2">
-            <h3 className={`${ navi.lowstock == "lowstock" ? "text-[#FF4747]" : ""} `}>
+            <h3 className={`${ navi.lowstock == "lowstock" ? "text-secondary-red" : ""} `}>
               {navi.inventory}
             </h3>
           </td>
