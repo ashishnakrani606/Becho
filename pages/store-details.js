@@ -20,7 +20,7 @@ import Badges from "../src/components/ui/Badges";
 import Alert from "../src/components/ui/Alert";
 import SetupUpdate from "../src/components/ui/SetupUpdate";
 import UnsavedChanges from "../src/components/ui/UnsavedChanges";
-import Add from "../../src/assets/images/icon/addb.svg";
+import Add from "../src/assets/images/icon/addb.svg";
 
 const Sessions = [
   { id: 1, location: "USA(5)", device: "Chrome - Windows", IP: "236.125.56.78", clock: { clock }, time: "2 mins ago" },
