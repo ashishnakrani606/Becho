@@ -166,6 +166,51 @@ input:focus-visible {
 .react-tabs__tab-list {
   margin: 0 0 24px;
   padding: 0;
+} 
+.tabs-main {
+  display: inline-block;
+  padding: 4px 8px;
+  cursor: pointer;
+  margin-right: 4px;
+  transition: 0.3s;
+  color: rgba(0, 0, 0, 0.4);
+}
+.tabs-main.selected {
+  font-weight: 600;
+  position: relative;
+  color: #1C1C1C;
+}
+.dark .tabs-main.selected {
+  color: #fff;
+}
+.dark .tabs-main.selected::after {
+  background-color:#C6C7F8;
+}
+.dark .tabs-main {
+  color: rgba(255, 255, 255, 0.4);
+}
+.tabs-main.selected::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: 2px;
+  background-color: #1C1C1C;
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.tabs-main.selected::after {
+  opacity: 1;
+} 
+.tabs-main:focus {
+  outline: none;
+}  
+/* react-tabs */
+.react-tabs__tab-list {
+  margin: 0 0 24px;
+  padding: 0;
 }
 .dark .react-tabs__tab--selected::after {  
   background-color: #C6C7F8;  
@@ -256,7 +301,7 @@ input[type="file"] {
   color: #1c1c1c!important;
 }
 /********** multiselect end ************/ 
-h4:empty , a:empty  ,img:empty {
+h4:empty , a:empty  {
   margin: 0;
   font-size: 0;
   padding: 0;

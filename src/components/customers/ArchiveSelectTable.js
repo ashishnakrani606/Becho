@@ -1,12 +1,5 @@
 import Image from "next/image";
-import Calender from "../../assets/images/icon/CalendarBlank.svg";
-import User from "../../assets/images/icon/userimg.svg";
-import User1 from "../../assets/images/icon/user1.svg";
-import User2 from "../../assets/images/icon/user2.svg";
-import User3 from "../../assets/images/icon/user3.svg";
-import User4 from "../../assets/images/icon/user4.svg";
 import Dots from "../../assets/images/icon/Union.svg";
-import Subtract from "../../assets/images/icon/Subtract.svg";
 import customer1 from "../../assets/images/users/customersimg-1.png";
 import customer2 from "../../assets/images/users/customersimg-2.png";
 import CheckBox from "../ui/CheckBox";
@@ -36,18 +29,17 @@ const TableData = [
 
 ];
 
-const ArchiveSelectTable = ({ opentableHandler }) => {
+const ArchiveSelectTable = ({}) => {
   return (
     <>
       {TableData.map((navi, index) => (
         <tr
           className={`border-b border-black/5 dark:border-white/5 hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
-          // onClick={opentableHandler}
         >
           <td className="pl-[5px] py-2">
-            <div className="opacity-0 group-hover:opacity-100">
-              <CheckBox name={navi.name}></CheckBox>
+            <div className="">
+              <CheckBox name={navi.name} />
             </div>
           </td>
           <td className="px-3 py-2">
@@ -80,17 +72,12 @@ const ArchiveSelectTable = ({ opentableHandler }) => {
             <Dropdown           
               className="right-0 left-[unset]"
               button={
-                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
-              }
-              // dropdownitem={[
-              //   { title: "View details", link: "customers/name" },
-              //   opentableHandler={opentableHandler}
-              // ]}
+              }             
               dropdownitem={[
-                { title: "View details", link: "customers/name" },
-                opentableHandler={opentableHandler}
+                { title: "View details", link: "customers/details" },
               ]}
             />
           </td>

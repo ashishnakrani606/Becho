@@ -33,63 +33,61 @@ const SetupGuide = ({setOpenDashboard}) => {
         <div className="flex items-center text-blacklight dark:text-white justify-between mb-4">
           <h3 className="font-semibold">Setup Guide</h3>
         </div> 
-        <SetupGuideBox  
-          title={'Add brand assets'} 
+        <SetupGuideBox
+          title={'Add brand assets'}
           openKey={'brand_assets'}
-          iconOpacity={`${openkey == 'first_product' || openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100 dark:invert' : 'opacity-100 '}`} 
-          isActive={openkey}
-        >
+          iconOpacity={`${openkey == 'first_product' || openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100 ' : 'opacity-10 dark:opacity-100  dark:invert'}`} 
+          isActive={openkey}  
+          className={""}>
           <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
-          <Image src={AddBrandAssets} alt="" className='dark:invert'/>
+          <Image src={AddBrandAssets} alt=""/>
             <div className='mt-[19px] pl-6'>
-              <h3 className='font-semibold mb-[6px]'>Add brand assets</h3>
-              <p className='text-xs'>
+              <h3 className='font-semibold mb-[6px] text-black'>Add brand assets</h3>
+              <p className='text-xs text-black'>
                 Boost your brand with a logo and other assets. 
                 <Link href={"#0"} className={'text-[#2F80ED]'}> Learn more about branding.</Link>
               </p>
               <div className='mt-3 flex' >
-                <Button color="yellow" name={'Add brand assets'} className="font-semibold text-[#1c1c1c]" onClick={brandassetsHandler} /> 
+                <Button color="yellow" name={'Add brand assets'} secondary={"true"} className="font-semibold text-blacklight" onClick={brandassetsHandler} /> 
               </div>
-              <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-100 dark:invert`} src={Subtract} alt="" />
+              <Image className={`absolute right-4 bottom-3 opacity-10 dark:invert dark:opacity-100`} src={Subtract} alt="" />
             </div>  
           </div>
         </SetupGuideBox> 
         <SetupGuideBox  
           title={'Add your first product'} 
           openKey={'first_product'}
-          iconOpacity={`${openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100 dark:invert' : 'opacity-10 dark:opacity-100  dark:invert'}`} 
-          isActive={openkey}
-        >
+          iconOpacity={`${openkey == 'custom_domain' ? 'opacity-100 dark:opacity-100' : 'opacity-10 dark:opacity-100  dark:invert'}`} 
+          isActive={openkey}>
           <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
-            <Image src={firstProduct} alt="" className='dark:invert'/>
+            <Image src={firstProduct} alt="" className=''/>
             <div className='mt-[19px] pl-6'>
-              <h3 className='font-semibold mb-[6px]'>Add your first product</h3>
-              <p className='text-xs'>
+              <h3 className='font-semibold mb-[6px] text-blacklight'>Add your first product</h3>
+              <p className='text-xs text-blacklight'>
                 Create product descriptions, add images, and set prices for items to be sold. Learn about products.
               </p>
               <div className='mt-3 flex '>
-                <Button color="yellow" name={"Add product"} className="font-semibold text-[#1c1c1c]" onClick={firstProductHandler} />
-                <Button color="grey" name={'Import'} className="font-semibold ml-5 text-[#1c1c1c]" />
+                <Button color="yellow" name={"Add product"} secondary={"true"} className="font-semibold" onClick={firstProductHandler} />
+                <Button color="grey" name={'Import'} secondary={"true"} className="font-semibold ml-5" />
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-100 dark:invert`} src={Subtract} alt="" />
             </div>  
           </div>
         </SetupGuideBox> 
-        <SetupGuideBox    
+        <SetupGuideBox 
           title={'Add a custom domain'} 
           openKey={'custom_domain'}
           iconOpacity={'opacity-10 dark:opacity-100 dark:invert'} 
-          isActive={openkey}
-        >
+          isActive={openkey}>
           <div className={'flex mt-4 pl-2 sm:flex-row flex-col'}>
-            <Image src={customDomain} alt="" className='dark:invert'/>
+            <Image src={customDomain} alt="" className=''/>
             <div className='mt-[19px] pl-6'>
-              <h3 className='font-semibold mb-[6px]'>Add a custom domain</h3>
-              <p className='text-xs'>
+              <h3 className='font-semibold mb-[6px] text-blacklight'>Add a custom domain</h3>
+              <p className='text-xs text-blacklight'>
                 Use custom domain to make it easier for customers to find your store. Learn about domains.
               </p>
               <div className='mt-3 flex '>
-                <Button color="yellow" name={"Add domain"} className="font-semibold text-[#1c1c1c]" onClick={AddDomainHandler} /> 
+                <Button color="yellow" name={"Add domain"} secondary={"true"} className="font-semibold text-blacklight" onClick={AddDomainHandler} /> 
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-100 dark:invert`} src={Subtract} alt="" />
             </div>  

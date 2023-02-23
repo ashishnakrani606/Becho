@@ -18,6 +18,7 @@ const TableData = [
     inventory: "Code",
     vendor: "0",
     Selected: 'true',
+    name:"active"
   },
   {
     id: 2,
@@ -26,23 +27,22 @@ const TableData = [
     type: "40% off entire order • One use per customer ",
     inventory: "Automatic",
     vendor: "0",
+    name:"draft"
   },
 ];
 
-const Amountorder = ({opentableHandler}) => {
+const Amountorder = ({}) => {
   return (
     <>
       {TableData.map((navi, index) => (
         <tr
           className={`border-b border-black/5 dark:border-white/5 dark:hover:bg-white/5  hover:bg-primary-light hover:border-primary-light  group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
-          key={index}
-          // onClick={opentableHandler}
+          key={index}         
         >
           <td className="pl-[5px] py-2">
-          <div className="opacity-0 group-hover:opacity-100">
-            <CheckBox name={navi.name}></CheckBox>
+          <div className="">
+            <CheckBox name={navi.name}/>
            </div>
-            
           </td>
           <td className="px-3 py-2">
             {navi.product}
@@ -71,12 +71,12 @@ const Amountorder = ({opentableHandler}) => {
             <Dropdown
               className="right-0 left-[unset]"
               button={
-                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
               dropdownitem={[
-                { title: "View details" }
+                { title: "View details", link:"./offers/detail" }
               ]}
             />
           </td>

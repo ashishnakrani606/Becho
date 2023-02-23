@@ -130,7 +130,7 @@ const ProductSelectTable = ({ opentableHandler }) => {
           key={index}
           >
           <td className="pl-[5px] py-2">
-           <div className="opacity-0 group-hover:opacity-100">
+           <div className="">
             <CheckBox name={navi.name}></CheckBox>
            </div>
           </td>
@@ -166,7 +166,7 @@ const ProductSelectTable = ({ opentableHandler }) => {
             <Dropdown
               className="right-0 left-[unset]"
               button={
-                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }

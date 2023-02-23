@@ -28,8 +28,9 @@ import { useState } from "react";
 // import Button from "../src/components/ui/Button";
 
 const products = () => {
-  const [selectProductOpen, setSelectProductOpen] = useState(false);
-  const SelectProductHandler = () => {
+  const [selectProductOpen, setSelectProductOpen] = useState(false);  
+  const [active, setActive] = useState(false);
+    const SelectProductHandler = () => {
     setSelectProductOpen(true);
   };
 
@@ -75,11 +76,12 @@ const products = () => {
             >
               <Button
                 color={"yellow"}
+                secondary={"true"}
                 name={"Add product"}
                 className="font-semibold mr-5"
                 onClick={SelectProductHandler}
               />
-              <Button color={"grey"} name={"Import"} className="font-semibold" />
+              <Button color={"grey"} secondary={"true"}  name={"Import"} className="font-semibold" />
             </Card>
           ) : (
             <>
@@ -105,7 +107,7 @@ const products = () => {
                   <div className="flex items-center">
                     <span className="bg-black/20 w-[1px] h-5 mr-4"></span>
                     <span className="mr-4 text-xs">1 Selected</span>
-                    <Button color={"grey"} name={"Archive Selected"} />
+                    <Button color={"lightgrey"} secondary={"true"} name={"Archive Selected"} className={"text-sm"} />
                   </div>
                 </div>
                 <div className="relative">
@@ -123,12 +125,12 @@ const products = () => {
                   </button>
                 </div>
               </div>
-              <div className="overflow-auto">
+              <div className="overflow-auto min-h-[488px]">
                 <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table"> 
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">
-                      <th className="font-normal pl-0 py-3 before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border ">
-                        <Image src={selectStroke} alt="" className="mx-[5px] dark:invert" />
+                      <th className="font-normal pl-0 py-3 dark:before:bg-white before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border ">
+                        <Image src={selectStroke} alt="" className="mx-[5px] w-[18px] dark:invert" />
                       </th>
                       <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                         Product
@@ -152,39 +154,37 @@ const products = () => {
                   </tbody>
                 </table>
               </div>
-              <div className="flex justify-end mt-10">
+              <div className="flex justify-end mt-5">
                 <ul className="flex">
-                  <li className="mr-2">
+                  <li className="mr-2"> 
                     <Link
                        href={"#0"}
-                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"                    
+                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
                       <Image src={ArrowLineLeft} alt="" className="dark:invert" />
                     </Link>
                   </li>
                   <li className="mr-2">
                     <Link
-                      href={"#0"}
-                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
-                    >
+                      href={"#0"} onClick={setActive}
+                      className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${!active ? "bg-black/5 dark:bg-white/5" :  ""}`}>
                       1
                     </Link>
                   </li>
                   <li className="mr-2">
-                    <Link
-                      href={"#0"}
+                  <Link
+                      href={"#0"} 
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
                       2
                     </Link>
                   </li>
                   <li className="mr-2">
-                    <Link
-                      href={"#0"}
-                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
-                    >
-                      3
-                    </Link>
+                  <Link
+                      href={"#0"} 
+                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center">
+                     3
+                  </Link>
                   </li>
                   <li className="mr-2">
                     <Link
@@ -220,6 +220,7 @@ const products = () => {
           <UnsavedChanges>
             <Button
               color={"white"}
+              secondary={"true"}
               name={"Discard"}
               outline={"true"}
               className={"mr-5 dark:border-blacklight dark:text-blacklight"}
@@ -256,7 +257,6 @@ const products = () => {
           </PageHeader>
           <Alert
             color={"red"}
-            className={"mb-5"}
             title={"There is 1 error with this product:"}
             description={"Option name can’t be blank"}
           />
@@ -443,7 +443,7 @@ const products = () => {
                 <OptionValue title={"Style 3"} />
                 <Link
                   href={"#0"}
-                  className="max-w-[252px] w-full px-5 py-4 mt-3 text-black/20 border border-black/10 rounded-lg bg-white bg-transparent dark:text-white/20 dark:border-white/10"
+                  className="sm:max-w-[252px] w-full px-5 py-4 mt-3 text-black/20 border border-black/10 rounded-lg bg-white bg-transparent dark:text-white/20 dark:border-white/10"
                 >
                   Add another value
                 </Link>

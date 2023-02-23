@@ -3,6 +3,7 @@ import WarningRed from "../../assets/images/icon/Warning-red.svg";
 import WarningGreen from "../../assets/images/icon/Warning-green.svg";
 import Image from "next/image";
 import AttentionRed from "./../../assets/images/icon/attentionred.svg"
+import ShieldCheck from "./../../assets/images/icon/ShieldCheck.svg"
 
 const Alert = ({title, description, color, className, deatil}) => {
   return (
@@ -12,6 +13,7 @@ const Alert = ({title, description, color, className, deatil}) => {
             color == 'reddark' ? "border-secondary-red"  : ""  ||
             color == 'green' ? "border-[#27AE60]"  : ""  }`}
         >
+            {color == 'gray' ? (<Image src={ShieldCheck} alt="" className="mt-[5px]" />) : ""}
             {color == 'red' ? (<Image src={WarningRed} alt="" className="mt-[5px]" />) : ""}
             {color == 'reddark' ? (<Image src={AttentionRed} alt="" className="mt-[5px]" />) : ""}
             {color == 'green' ? (<Image src={WarningGreen} alt="" className="mt-[3px]" />) : ""}

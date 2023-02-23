@@ -19,13 +19,13 @@ const DashboardContent = () => {
         <div class="lg:grid grid-rows-2 grid-cols-4 grid-flow-col lg:gap-x-7 gap-x-3 gap-y-8 mt-5">
           <Dashboardbox />
           <div class="row-span-2 col-span-2 lg:mt-0 mt-7">
-            <div className="lg:p-7 lg:pl-6 lg:pr-4 p-4 bg-primary-light dark:bg-white/5 font-semibold rounded-2xl lg:h-full lg:flex">
+            <div className="lg:p-7 lg:pl-6 lg:pr-4 p-4 bg-primary-light dark:bg-white/80 font-semibold rounded-2xl lg:h-full lg:flex">
               <div className="flex pt-3 gap-8">
-                <Image src={Brand} alt="" className="sm:w-auto w-40 h-full dark:invert"/>
+                <Image src={Brand} alt="" className="sm:w-auto w-40 h-full"/>
                 <div className="gap-[6px]  xl:pt-6 pt-2">
-                  <h2 className="text-sm font-semibold">Becho.io Learn</h2>
-                  <p className="text-xs font-normal pt-1">Learn how to set up your business online step by step.</p>
-                  <Button color="yellow" name="Start now" className="sm:mt-7 mt-5 text-blacklight" />
+                  <h2 className="text-sm font-semibold text-blacklight">Becho.io Learn</h2>
+                  <p className="text-xs font-normal pt-1 text-blacklight">Learn how to set up your business online step by step.</p>
+                  <Button color="yellow" secondary={"true"} name="Start now" className="sm:mt-7 mt-5 text-blacklight" />
                 </div>
               </div>
             </div>

@@ -36,6 +36,7 @@ const customers = () => {
   };
 
   const [opentablepage, setopentablepage] = useState(false);
+  const [active , setActive] = useState (false)
 
   const opentableHandler = () => {
     setopentablepage(true);
@@ -51,18 +52,18 @@ const customers = () => {
     <>
       {!opentablepage ? (
         <>
-          <div className="flex items-center justify-between mb-4">
-            <Pagetitle title={"Customers"} />
+          <div className="flex-wrap flex items-center justify-between mb-4 gap-3">
+            <Pagetitle title={"Customers"}/>
             {selectCustomersOpen ? (
-              <div>
-                <button className="py-[5px] px-2 mr-2 text-xs" type="button">
+              <div >
+                <button className="py-[5px] px-2 sm:pl-2 pl-0 mr-2 text-xs" type="button">
                   Export
                 </button>
                 <button className="py-[5px] px-2 mr-2 text-xs" type="button">
                   Import
                 </button>
                 <Button color={"green"} name={"Add customers"} />
-              </div>
+              </div>  
             ) : (
               ""
             )}
@@ -75,11 +76,12 @@ const customers = () => {
             >
               <Button
                 color={"yellow"}
+                secondary={"true"}
                 name={"Add customer"}
                 className="font-semibold mr-5"
                 onClick={SelectCustomersHandler}
               />
-              <Button color={"grey"} name={"Import"} className="font-semibold" />
+              <Button color={"grey"} secondary={"true"} name={"Import"} className="font-semibold" />
             </Card>
           ) : (
             <>
@@ -120,12 +122,12 @@ const customers = () => {
                   />
                 </div>
               </div>
-              <div className="min-h-[440px]">
+              <div className="min-h-[440px] overflow-x-auto">
                 <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table">
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">
                       <th className="font-normal pl-0 py-3 before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border ">
-                        <Image src={selectStroke} alt="" className="mx-[5px] dark:invert" />
+                        <Image src={selectStroke} alt="" className="mx-[5px] w-[18px] dark:invert" />
                       </th>
                       <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                         Customer name
@@ -153,7 +155,7 @@ const customers = () => {
                 <ul className="flex">
                   <li className="mr-2">
                     <Link
-                      href={"#0"}
+                      href={"#0"} 
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
                       <Image src={ArrowLineLeft} alt="" className="dark:invert" />
@@ -161,8 +163,8 @@ const customers = () => {
                   </li>
                   <li className="mr-2">
                     <Link
-                      href={"#0"}
-                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
+                      href={"#0"} onClick={setActive}
+                      className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${!active ? "bg-black/5 dark:bg-white/5" :  ""}`}
                     >
                       1
                     </Link>
@@ -515,7 +517,7 @@ const customers = () => {
                   This customer hasn’t placed any orders.
                 </p>
                 <div>
-                  <Button name={"Create order"} color={"purple"} className="font-normal text-sm " size="large" />
+                  <Button name={"Create order"} color={"purple"} className="font-normal text-sm" size="large" />
                 </div>
               </div>
               <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 dark:bg-white/5">

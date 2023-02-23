@@ -183,22 +183,21 @@ const TableData = [
   },
 ];
 
-const SelectPlanTable = ({opentableHandler}) => { 
+const SelectPlanTable = ({}) => { 
   return (
     <>
       {TableData.map((navi, index) => (
-        <tr 
-        // onClick={opentableHandler}
+        <tr        
           className={`border-b border-black/5 dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
         >
-          <td className="pl-0 py-2 flex"> 
-          <div className="opacity-0 group-hover:opacity-100 pl-[5px]">
-            <CheckBox name={navi.name}></CheckBox>
+          <td className="pl-0 py-2 flex items-center"> 
+          <div className="pl-[5px]">
+            <CheckBox name={navi.name} />
            </div>
             {navi.orderid}
             </td>
-          <td className="px-3 py-2">
+          <td className="px-3 py-2 whitespace-nowrap">
             <Image
               src={navi.icon}
               alt=""
@@ -206,15 +205,15 @@ const SelectPlanTable = ({opentableHandler}) => {
             />
             {navi.date}
           </td>
-          <td className="px-3 py-2 gap-2">{navi.username}</td>
-          <td className="px-3 pr-0 py-2">
+          <td className="px-3 py-2 gap-2 whitespace-nowrap">{navi.username}</td>
+          <td className="px-3 pr-0 py-2 whitespace-nowrap">
             <h3
               className={`rounded-2xl leading-normal relative text-black/80 dark:text-white/80 inline-block px-[6px] ${navi.dot} ${navi.paymentdata}`}
             >
               {navi.payment}
             </h3>
           </td>
-          <td className="px-4 py-2">
+          <td className="px-4 py-2 whitespace-nowrap">
             <h3
               className={`text-black-80 relative inline-block text-black/80 dark:white/80 dark:text-white ${navi.dots} ${navi.orderstatusdata}`}
             >
@@ -222,17 +221,17 @@ const SelectPlanTable = ({opentableHandler}) => {
             </h3>
           </td>
           <td className="px-3 pr-[10px] py-2">{navi.items}</td>
-          <td className="px-3 py-2 max-w-[210px]">{navi.deliverymethod}</td>
+          <td className="px-3 py-2 max-w-[210px] whitespace-nowrap">{navi.deliverymethod}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
               button={
-                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
               dropdownitem={[
-                { title: "View details" }
+                { title: "View details", link:"/orders/details"}
               ]}
             />
           </td>

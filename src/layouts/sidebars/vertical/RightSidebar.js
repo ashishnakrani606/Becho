@@ -72,7 +72,7 @@ const RightSidebar = ({ showMobilesidebar }) => {
               </Link>
             </div>
           ))}       
-          <Button color="lightgrey" name="Load More" className="mt-7"/>          
+          <Button color="lightgrey" name="Load More" secondary={"true"} className="mt-7"/>          
         </div>
       </div>
     </div>

@@ -30,14 +30,14 @@ function Button(props) {
           : "" || props.color == "blacklight"
           ? "text-white bg-blacklight dark:bg-secondary-purpleb dark:text-blacklight"
           : "" || props.color == "purple"
-          ? "bg-[#95A4FC] text-white"
+          ? "bg-[#95A4FC] text-white dark:text-blacklight"
           : ""
       } 
 
         ${props.outline == "true" ? `border !bg-transparent` : ""}
         ${
           props.outline == "true" && props.color == "red"
-            ? "border-secondary-red text-secondary-red"
+            ? "border-secondary-red !text-secondary-red"
             : "" || (props.outline == "true" && props.color == "grey")
             ? "border-black/10 text-blacklight dark:!border-white/10 dark:!text-white"
             : "" || (props.outline == "true" && props.color == "blacklight")

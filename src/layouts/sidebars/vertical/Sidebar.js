@@ -54,52 +54,52 @@ const navigation = [
 const StoreSettings = [
   {
     title: "Store Details",
-    href: "/store-details",
+    href: "/store-settings/store-details",
     icon: StoreDetails,
   },
   {
     title: "Permissions",
-    href: "/permissions",
+    href: "/store-settings/permissions",
     icon: Permissions,
   },
   {
     title: "Checkout",
-    href: "/checkout",
+    href: "/store-settings/checkout",
     icon: Checkout,
   },
   {
     title: "Payment Gateways",
-    href: "/Payment-gatewaysrs",
+    href: "/store-settings/payment-gatewaysrs",
     icon: rupee,
   },
   {
-    title: "Ship elivery",
-    href: "/shipping-delivery",
+    title: "Shipping & Delivery",
+    href: "/store-settings/shipping-delivery",
     icon: shipping,
   },
   {
     title: "Taxes",
-    href: "/taxes",
+    href: "/store-settings/taxes",
     icon: Percentage,
   },
   {
     title: "Brand Assets",
-    href: "/brand-assets",
+    href: "/store-settings/brand-assets",
     icon: Brandassets,
   },
   {
     title: "Email Settings",
-    href: "/email-settings",
+    href: "/store-settings/email-settings",
     icon: Email,
   },
   {
     title: "SEO Settings",
-    href: "/seo-settings",
+    href: "/store-settings/seo-settings",
     icon: SEO,
   },
   {
     title: "Policies",
-    href: "/policies",
+    href: "/store-settings/policies",
     icon: Policies,
   },
 ];
@@ -176,9 +176,13 @@ const Sidebar = ({ showMobilemenu }) => {
           </div>
           <div className="mt-7">
             <div className="list-none flex-col flex">
-              <Link href={Bechopro}>
+              <Link href={'/becho-pro'}>
                 <span
-                  className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1`}
+                className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
+                  location === '/becho-pro'
+                    ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-white after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
+                    : ""
+                }`}
                 >
                   <Image src={Bechopro} alt="" className="dark:invert" />
                   <span className="ml-1 d-inline-block font-normal">Becho(Pro)</span>

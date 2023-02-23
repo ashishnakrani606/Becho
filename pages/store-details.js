@@ -19,6 +19,7 @@ import slack from "../src/assets/images/icon/slack.svg";
 import Badges from "../src/components/ui/Badges";
 import Alert from "../src/components/ui/Alert";
 import SetupUpdate from "../src/components/ui/SetupUpdate";
+import UnsavedChanges from "../src/components/ui/UnsavedChanges";
 
 const Sessions = [
   { id: 1, location: "USA(5)", device: "Chrome - Windows", IP: "236.125.56.78", clock: { clock }, time: "2 mins ago" },
@@ -55,7 +56,6 @@ const Sessions = [
     time: "40 mins ago",
   },
 ];
-
 const Information = [
   {
     id: 1,
@@ -127,7 +127,6 @@ const StoreDetaildata = [
     data: "contact@mystore.com"
   },  
 ];
-
 const Taxesdata = [
   {
     id: 1,
@@ -155,7 +154,224 @@ const Taxesdata = [
     border:"border-none"
   },
 ];
-
+const Emailorder = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Order confirmation",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Threedot,
+    title: "Order edited",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 3,
+    icon: Add,
+    title: "Order invoice",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 4,
+    icon: Add,
+    title: "Order cancelled",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 4,
+    icon: Add,
+    title: "Order refund",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 5,
+    icon: Threedot,
+    title: "Draft order invoice",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 6,
+    icon: Threedot,
+    title: "Abandoned POS checkout",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 7,
+    icon: Add,
+    title: "POS exchange receipt",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 8,
+    icon: Threedot,
+    title: "Payment error",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 9,
+    icon: Threedot,
+    title: "Pending payment error",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 10,
+    icon: Add,
+    title: "Pending payment success",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 11,
+    icon: Add,
+    title: "Payment reminder",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+];
+const Emailshipping = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Fulfillment request",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Add,
+    title: "Shipping confirmation",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 3,
+    icon: Add,
+    title: "Shipping update",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 4,
+    icon: Threedot,
+    title: "Out for delivery",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 5,
+    icon: Threedot,
+    title: "Delivered",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 6,
+    icon: Threedot,
+    title: "Payment error",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+];
+const Localdelivery = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Local order out for delivery",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Add,
+    title: "Local order delivered",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 3,
+    icon: Add,
+    title: "Local order missed delivery",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+];
+const Localpickup = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Ready for pickup",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Add,
+    title: "Picked up",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+];
+const Emailcustomer = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Customer account invite",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Add,
+    title: "Customer account welcome",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 3,
+    icon: Add,
+    title: "Customer account password reset",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 4,
+    icon: Threedot,
+    title: "B2B access email",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 5,
+    icon: Threedot,
+    title: "Contact customer",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+];
+const Emailmarketing = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Customer marketing confirmation",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+];
+const Emailreturns = [
+  {
+    id: 1,
+    icon: Add,
+    title: "Return label/tracking for a return",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 2,
+    icon: Add,
+    title: "Return label for an order",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 3,
+    icon: Add,
+    title: "Return request confirmation",
+    discription: "Sent automatically to the customer after they place their order.",
+  },
+  {
+    id: 4,
+    icon: Threedot,
+    title: "Return request approved",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+  {
+    id: 5,
+    icon: Threedot,
+    title: "Return request declined",
+    discription: "Sent to the customer after their order is edited (if you select this option).",
+  },
+];
 const StoreDetails = () => {
   const [learnMore, setLearnMore] = useState(false);
   const text = "Payment methods that are available with one of Becho's approved payment providers. ";
@@ -366,6 +582,7 @@ const StoreDetails = () => {
                   color="lightgrey"
                   size="large"
                   name={"Discard"}
+                  secondary={"true"}
                   className={"leading-[18px] text-xs !px-2 !py-[5px]"}
                 ></Button>
                 <Button
@@ -566,7 +783,7 @@ const StoreDetails = () => {
               <div className="flex justify-end items-center gap-2">
                 <Button
                   color="lightgrey"
-                  size="large"
+                  size="large"                  
                   name={"Discard"}
                   className={"leading-[18px] text-xs !px-2 !py-[5px]"}
                 ></Button>
@@ -596,7 +813,7 @@ const StoreDetails = () => {
           </div>
           <div className="p-4 bg-primary-light dark:bg-white/5 mt-6 rounded-2xl">
             <div className="flex justify-between gap-4 flex-wrap">
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center py-3 px-2">
                 <h3 className="text-sm font-semibold">Taxes for different countries</h3>
                 <Badges name="Inactive" color="grey" />
               </div>
@@ -612,7 +829,97 @@ const StoreDetails = () => {
           <h2>Brand Assets</h2>
         </TabPanel>
         <TabPanel>
-          <h2>Email Settings</h2>
+          {/* /********** Email Settings start************/}
+          <div className="mx-[5px]">
+            <UnsavedChanges className="pr-[18px]" >
+              <Button color={"green"} name={"Save "} className={"mr-5"} />
+              <Button color={"white"} name={"Discard"} outline={'true'} className={"dark:border-blacklight dark:text-black"} />
+            </UnsavedChanges>
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Orders</h3>
+            {Eorder.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm text-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Shipping</h3>
+            {Eshipping.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Local delivery</h3>
+            {Ldelivery.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Local pickup</h3>
+            {Lpickup.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            {Ecustomer.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Email marketing</h3>
+            {Emarketing.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
+            <h3 className="text-lg font-semibold text-blacklight dark:text-white">Returns</h3>
+            {Ereturns.map((item) => (
+              <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+                <div>
+                  <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
+                  <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
+                </div>
+                <Image src={item.icon} className="mr-[18px] dark:invert" />
+              </div>
+            ))}
+          </div>
+          {/* /********** Email Settings end************/}
         </TabPanel>
       </Tabs>
     </>

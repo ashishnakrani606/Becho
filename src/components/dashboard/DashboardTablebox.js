@@ -121,7 +121,7 @@ export default function DashboardTablebox() {
             <Dropdown
               className="right-0 left-[unset]"
               button={
-                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }

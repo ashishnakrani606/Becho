@@ -7,7 +7,7 @@ const SellerCommunity = () => {
   return (
     <>
        {/**********Seller Community sec Start************/}
-       <div class="flex md:flex-row flex-col mt-[42px] gap-5 md:mb-16 mb-10">
+       <div class="flex md:flex-row md:items-center flex-col mt-[42px] gap-5 md:mb-16 mb-10">
         <div class="max-w-[612px] w-full">
           <div className="relative">
             <Image src={Block} alt="" className="min-h-[250px]" />
