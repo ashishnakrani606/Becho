@@ -20,7 +20,7 @@ import Badges from "../../src/components/ui/Badges";
 import Alert from "../../src/components/ui/Alert";
 import SetupUpdate from "../../src/components/ui/SetupUpdate";
 import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import Add from "../../src/assets/images/icon/Addb.svg";
+import Add from "../../src/assets/images/icon/addb.svg";
 import Threedot from "../../src/assets/images/icon/threedot.svg";
 
 const StoreDetaildata = [
