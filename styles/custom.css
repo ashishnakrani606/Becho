@@ -150,7 +150,7 @@ input:focus-visible {
   width: 2px;
   height: 2px;
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
-    4px -6px 0 white, 4px -8px 0 white;
+  4px -6px 0 white, 4px -8px 0 white;
   transform: rotate(45deg);  
 }
 .dark .styled-checkbox:checked + label:after {
@@ -236,7 +236,7 @@ input[type="file"] {
   top: 40px!important;
 }
 .dark .optionListContainer{
-  background-color: rgb(0 0 0 / 0.4); 
+  background-color: #000000; 
 }
 .multiselectitem .search-wrapper {
   border: none!important;
@@ -256,3 +256,8 @@ input[type="file"] {
   color: #1c1c1c!important;
 }
 /********** multiselect end ************/ 
+h4:empty , a:empty  ,img:empty {
+  margin: 0;
+  font-size: 0;
+  padding: 0;
+}

@@ -115,19 +115,10 @@ const orders = () => {
                         alt=""
                         className="dark:invert mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-1"
                       />
-                      <Dropdown
-                        className="flex items-center justify-center"
-                        button={
-                          <Image
-                            src={Dots}
-                            alt=""
-                            className="dark:invert cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-1"
-                          />
-                        }
-                        dropdownitem={[
-                          { title: "Download", link: "/" },
-                          { title: "Download", link: "/" },
-                        ]}
+                      <Image
+                        src={Dots}
+                        alt=""
+                        className="dark:invert cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-2"
                       />
                     </div>
                     <div className="flex items-center">
@@ -139,7 +130,7 @@ const orders = () => {
                   <div className="relative">
                     <input
                       placeholder="Search"
-                      className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 p-[3px] pr-3 focus-visible:outline-none"
+                      className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/5 p-[3px] pr-3 focus-visible:outline-none"
                     />
                     <Image
                       src={Searchicon}
@@ -153,12 +144,8 @@ const orders = () => {
                     <thead>
                       <tr class="text-black/40 dark:text-white/40 border-b text-xs">
                         <th class="font-normal pl-0 px-3 py-[11px] pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border flex">
-                          <Image
-                            src={selectStroke}
-                            alt=""
-                            className="mr-[5px] dark:invert"
-                          />
-                          Order ID
+                          <Image src={selectStroke} alt="" className="mr-[5px] dark:invert" />
+                         <p>Order ID</p> 
                         </th>
                         <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Date
@@ -192,11 +179,7 @@ const orders = () => {
                         href={"#0"}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
-                        <Image
-                          src={ArrowLineLeft}
-                          alt=""
-                          className="dark:invert"
-                        />
+                        <Image src={ArrowLineLeft} alt="" className="dark:invert" />
                       </Link>
                     </li>
                     <li className="mr-2">
@@ -244,11 +227,7 @@ const orders = () => {
                         href={"#0"}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
-                        <Image
-                          src={ArrowLineLeft}
-                          alt=""
-                          className="dark:invert rotate-180"
-                        />
+                        <Image src={ArrowLineLeft} alt="" className="dark:invert rotate-180" />
                       </Link>
                     </li>
                   </ul>
@@ -281,13 +260,7 @@ const orders = () => {
               button={
                 <div className="flex gap-2 items-center justify-end">
                   More actions
-                  <svg
-                    width="10"
-                    height="6"
-                    viewBox="0 0 10 6"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+                  <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"
@@ -314,23 +287,16 @@ const orders = () => {
             <Button color={"primarygreen"} name={"Save Changes"} />
           </UnsavedChanges>
           <div className="my-7">
-          <Alert
-            color={"green"}            
-            title={"Items fulfilled."}
-            description={"20 items have been fulfilled."}
-          />            
+            <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."} />
           </div>
           <Alert
-            color={"green"}          
+            color={"green"}
             title={"Payment collected."}
             description={"Successfully marked payment as received."}
           />
           <div className="flex justify-between md:flex-row flex-col items-start xl:mt-9 mt-6 gap-y-8">
             <div className="bg-primary-light dark:bg-white/5 md:px-6 md:py-4 p-3 rounded-2xl w-full md:max-w-[52%]">
-              <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pb-4">
-                {" "}
-                Unfulfilled(4)
-              </h2>
+              <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pb-4"> Unfulfilled(4)</h2>
               <div className="bg-white dark:bg-black/40">
                 <div className="overflow-x-auto">
                   <table className="w-[640px] sm:w-full">
@@ -341,10 +307,7 @@ const orders = () => {
                           key={index}
                         >
                           <td className="py-[11px] pl-4 pr-2 max-w-[4%] w-full">
-                            <Image
-                              src={item.productimg}
-                              className="w-full min-w-[24px]"
-                            />
+                            <Image src={item.productimg} className="w-full min-w-[24px]" />
                           </td>
                           <td className="py-[11px] max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                             {item.product}
@@ -369,16 +332,10 @@ const orders = () => {
                     name={"Hold fulfillment"}
                     className="mr-5 text-sm text-blacklight border-black/10 border dark:border-white/10 dark:text-white dark:border-white/2"
                   />
-                  <Button
-                    color={"green"}
-                    name={"Fulfill items"}
-                    className="text-sm whitespace-nowrap"
-                  />
+                  <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap" />
                 </div>
               </div>
-              <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">
-                Pending
-              </h2>
+              <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
               <div className="bg-white dark:bg-black/40">
                 <div className="overflow-x-auto">
                   <table className="w-[640px] sm:w-full mb-3.5">
@@ -395,9 +352,7 @@ const orders = () => {
                         </td>
                       </tr>
                       <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                        <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">
-                          Tax
-                        </td>
+                        <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">Tax</td>
                         <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
                           <Link className="flex whitespace-nowrap" href={"/"}>
                             Show tax details
@@ -409,38 +364,25 @@ const orders = () => {
                         </td>
                       </tr>
                       <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                        <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5 pl-4">
-                          Total
-                        </td>
+                        <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5 pl-4">Total</td>
                         <td className="max-w-[33.33%] w-full py-2.5	px-4"></td>
-                        <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5	pr-4 text-right">
-                          ₹1,203.49
-                        </td>
+                        <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5	pr-4 text-right">₹1,203.49</td>
                       </tr>
                     </tbody>
-                  </table>  
+                  </table>
                 </div>
               </div>
               <div className="bg-white dark:bg-black/40">
                 <table className="w-full">
                   <tbody className="w-full">
                     <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                      <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">
-                        Paid by customer
-                      </td>
-                      <td className="w-full max-w-[50%] pr-4 py-[11px] text-xs leading-[18px] text-right">
-                        ₹0.00
-                      </td>
+                      <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">Paid by customer</td>
+                      <td className="w-full max-w-[50%] pr-4 py-[11px] text-xs leading-[18px] text-right">₹0.00</td>
                     </tr>
                     <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                      <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">
-                        No payment due date
-                      </td>
+                      <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">No payment due date</td>
                       <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
-                        <Link
-                          className="flex justify-end text-[#27AE60]"
-                          href={"/"}
-                        >
+                        <Link className="flex justify-end text-[#27AE60]" href={"/"}>
                           Add due date
                           <Image src={Due} className="ml-[5px]" />
                         </Link>
@@ -450,31 +392,18 @@ const orders = () => {
                       <td className="w-full max-w-[50%] pl-4 py-2.5 text-sm font-semibold">
                         Balance (owed by customer)
                       </td>
-                      <td className="w-full max-w-[50%] pr-4 py-2.5 text-sm font-semibold text-right">
-                        ₹1,203.49
-                      </td>
+                      <td className="w-full max-w-[50%] pr-4 py-2.5 text-sm font-semibold text-right">₹1,203.49</td>
                     </tr>
                   </tbody>
                 </table>
                 <div className="py-4 flex justify-end border-b items-center border-black/10 dark:border-white/10 px-2 sm:flex-nowrap flex-wrap gap-3">
-                  <Button
-                    outline={"true"}
-                    color={"blacklight"}
-                    name={"Send invoice"}
-                    className="mr-4 text-sm "
-                  />
+                  <Button outline={"true"} color={"blacklight"} name={"Send invoice"} className="mr-4 text-sm " />
                   <Dropdown
                     className="right-0 left-[unset]"
                     button={
                       <div className="flex gap-2 items-center justify-end py-2 lg:pl-4 lg:pr-5 px-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-[#27AE60]">
                         Collect payment
-                        <svg
-                          width="10"
-                          height="6"
-                          viewBox="0 0 10 6"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path
                             fill-rule="evenodd"
                             clip-rule="evenodd"
@@ -492,10 +421,7 @@ const orders = () => {
                   />
                 </div>
               </div>
-              <InputContent
-                title={"Add tags"}
-                className={"mt-4 w-full max-w-[400px] cursor-pointer"}
-              >
+              <InputContent title={"Add tags"} className={"mt-4 w-full max-w-[400px] cursor-pointer"}>
                 <MultiselectDropdown
                   options={[
                     {
@@ -531,10 +457,7 @@ const orders = () => {
             </div>
             <div className="bg-primary-light dark:bg-white/5 py-5 pl-4 sm:pr-6 p-3 rounded-2xl w-full md:max-w-[46%]">
               <div className="bg-primary-purple/50 dark:bg-black/40 flex items-start p-4 rounded-lg">
-                <Image
-                  src={NoteCustomer}
-                  className="mr-1 font-normal text-sm dark:invert"
-                />
+                <Image src={NoteCustomer} className="mr-1 font-normal text-sm dark:invert" />
                 <div>
                   <h4 className="flex">Note from customer</h4>
                   <p className="text-sm leading-[18px] text-black/40 dark:text-white/40">
@@ -544,14 +467,8 @@ const orders = () => {
               </div>
               <div>
                 <div className="flex justify-between my-[15px] items-center gap-2">
-                  <h3 className="text-blacklight dark:text-white font-semibold text-sm">
-                    Customer Details
-                  </h3>
-                  <Button
-                    color={"blacklight"}
-                    name={"Remove Customer"}
-                    className="!py-2 px-[12px] "
-                  />
+                  <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
+                  <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] " />
                 </div>
                 <div>
                   <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
@@ -568,12 +485,7 @@ const orders = () => {
                     </p>
                     <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
                       No phone provided{" "}
-                      <Button
-                        outline={"true"}
-                        color={"blacklight"}
-                        name={"Add phone"}
-                        className="ml-2 "
-                      />
+                      <Button outline={"true"} color={"blacklight"} name={"Add phone"} className="ml-2 " />
                     </p>
                   </div>
                   <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
@@ -597,18 +509,13 @@ const orders = () => {
                     <div className="text-blacklight dark:text-white text-xs leading-[18px] font-normal lg:max-w-[45%] w-full flex items-center ">
                       <p>
                         Baalkrishan Lal Sani<br></br>
-                        Exploit Cross-Platform Mindshare 52, Ekbal Society,
-                        ShwetaPur Pilani 459501 Pilani Rajasthan India
+                        Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan
+                        India
                         <Link className="block" href="tel:123-456-7890">
                           +91 80735 89105
                         </Link>
                       </p>
-                      <Button
-                        color={"blacklight"}
-                        outline={"true"}
-                        name={"Edit"}
-                        className="md:ml-2"
-                      />
+                      <Button color={"blacklight"} outline={"true"} name={"Edit"} className="md:ml-2" />
                     </div>
                   </div>
                 </div>

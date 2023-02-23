@@ -31,7 +31,6 @@ const offers = () => {
   const opentableHandler = () => {
     setopentablepage(true);
   };
-
   return (
     <>
       {!opentablepage ? (
@@ -100,7 +99,7 @@ const offers = () => {
                   <div className="relative mr-3 md:mr-5">
                     <input
                       placeholder="Search"
-                      className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/80 p-[3px] pr-3 focus-visible:outline-none"
+                      className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/5 p-[3px] pr-3 focus-visible:outline-none"
                     />
                     <Image
                       src={Searchicon}
@@ -111,8 +110,7 @@ const offers = () => {
                   <button type="button">View Archived</button>
                 </div>
               </div>
-              <div className="min-h-[440px]">
-                <div className="overflow-x-auto">
+                <div className="min-h-[440px] overflow-x-auto">
                   <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table">
                     <thead>
                       <tr className="text-black/40 dark:text-white/40 border-b text-xs">
@@ -145,7 +143,6 @@ const offers = () => {
                     </tbody>
                   </table>
                 </div>
-              </div>
               <div className="flex justify-end mt-10">
                 <ul className="flex">
                   <li className="mr-2">
@@ -163,8 +160,7 @@ const offers = () => {
                   <li className="mr-2">
                     <Link
                       href={"#0"}
-                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
-                    >
+                      className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center">
                       1
                     </Link>
                   </li>

@@ -8,7 +8,7 @@ import User4 from "../../assets/images/icon/user4.svg";
 import Dots from "../../assets/images/icon/Union.svg";
 import Subtract from "../../assets/images/icon/Subtract.svg";
 import Dropdown from "../ui/Dropdown";
-
+import CheckBox from "../ui/CheckBox";
 const TableData = [
   {
     id: 1,
@@ -26,6 +26,7 @@ const TableData = [
     dot: "dot-active pl-3 before:dark:bg-white",
     orderstatusdata:
       "bg-[#f2994ab3] ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+      name:"Cash"
   },
   {
     id: 2,
@@ -41,6 +42,7 @@ const TableData = [
     orderstatus: "Fulfilled",
     dot: "dot-active pl-3 before:dark:bg-white",
     dots: "dot-active pl-3 before:dark:bg-white",
+    name:"Paid"
   },
   {
     id: 3,
@@ -58,6 +60,8 @@ const TableData = [
     paymentdata: "bg-amber-200 dark:!text-black",
     orderstatusdata:
       "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"Payment"
+
   },
   {
     id: 4,
@@ -74,7 +78,7 @@ const TableData = [
     paymentdata: "bg-amber-200 dark:!text-black",
     orderstatusdata:
       "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
-  },
+  name:"paymentpending"},
   {
     id: 5,
     orderid: "#CM9804",
@@ -90,6 +94,7 @@ const TableData = [
     dot: "dot-active pl-3 before:dark:bg-white",
     dots: "dot-active pl-3 before:dark:bg-white",
     Selected: 'true',
+  name:"paidcash"
   },
   {
     id: 6,
@@ -107,7 +112,7 @@ const TableData = [
     dot: "dot-active pl-3 before:dark:bg-white",
     orderstatusdata:
       "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
-  },
+  name:"deleviry"},
   {
     id: 7,
     orderid: "#CM9807",
@@ -122,6 +127,7 @@ const TableData = [
     orderstatus: "Fulfilled",
     dot: "dot-active pl-3 before:dark:bg-white",
     dots: "dot-active pl-3 before:dark:bg-white",
+    name:"kohil"
   },
   {
     id: 8,
@@ -139,6 +145,7 @@ const TableData = [
     paymentdata: "bg-amber-200 dark:!text-black",
     orderstatusdata:
       "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+      name:"modi"
   },
   {
     id: 9,
@@ -155,6 +162,7 @@ const TableData = [
     paymentdata: "bg-amber-200 dark:!text-black",
     orderstatusdata:
       "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+      name:"nagar"
   },
   {
     id: 10,
@@ -171,25 +179,23 @@ const TableData = [
     dot: "dot-active pl-3 before:dark:bg-white",
     dots: "dot-active pl-3 before:dark:bg-white",
     Selected: 'true',
+    name:"divan"
   },
 ];
 
-
-const SelectPlanTable = ({opentableHandler}) => {
- 
+const SelectPlanTable = ({opentableHandler}) => { 
   return (
     <>
       {TableData.map((navi, index) => (
-        <tr onClick={opentableHandler}
+        <tr 
+        // onClick={opentableHandler}
           className={`border-b border-black/5 dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
         >
-          <td className="pl-0 py-2 pr-[10px] flex"> 
-            <Image
-              src={Subtract}
-              alt=""
-              className={`dark:invert inline-block mx-[5px] ${navi.Selected == "true" ? 'opacity-100' : 'opacity-0'}`}
-            />
+          <td className="pl-0 py-2 flex"> 
+          <div className="opacity-0 group-hover:opacity-100 pl-[5px]">
+            <CheckBox name={navi.name}></CheckBox>
+           </div>
             {navi.orderid}
             </td>
           <td className="px-3 py-2">
@@ -226,8 +232,7 @@ const SelectPlanTable = ({opentableHandler}) => {
                 </div>
               }
               dropdownitem={[
-                { title: "Download", link: "/" },
-                { title: "Download", link: "/" },
+                { title: "View details" }
               ]}
             />
           </td>

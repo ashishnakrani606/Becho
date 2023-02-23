@@ -32,7 +32,7 @@
 }
 .dark .heading-border{
   &::before{ 
-  background: linear-gradient(173deg, rgb(84 79 79) 0%, rgb(141 134 134) 35%, rgb(161 147 147) 100%);
+  background: rgba(0,  0, 0,0.1);
 }
 }
 //******* Dashboard css End*******/

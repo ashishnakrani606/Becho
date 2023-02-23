@@ -34,7 +34,7 @@ const FullLayout = ({ children }) => {
 
             {/********Middle Content**********/}
             <div className="overflow-y-auto h-[calc(100vh-80px)] custom-scrollbar">
-              <div className="container">
+              <div className="max-w-[1000px] mx-auto md:px-8 px-4">
                 <div className="pt-7">{children}</div>
               </div>
             </div>

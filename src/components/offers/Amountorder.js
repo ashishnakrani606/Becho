@@ -7,8 +7,8 @@ import User3 from "../../assets/images/icon/user3.svg";
 import User4 from "../../assets/images/icon/user4.svg";
 import Dots from "../../assets/images/icon/Union.svg";
 import Subtract from "../../assets/images/icon/Subtract.svg"; 
-import brownThrowPillows from "../../assets/images/users/brown-throw-pillows.png"; 
-
+import CheckBox from "../ui/CheckBox";
+import Dropdown from "../ui/Dropdown";
 const TableData = [
   {
     id: 1,
@@ -36,19 +36,15 @@ const Amountorder = ({opentableHandler}) => {
         <tr
           className={`border-b border-black/5 dark:border-white/5 dark:hover:bg-white/5  hover:bg-primary-light hover:border-primary-light  group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
-          onClick={opentableHandler}
+          // onClick={opentableHandler}
         >
-          <td className="pl-0 py-2">
-            <Image
-              src={Subtract}
-              alt=""
-              className={`dark:invert inline-block mx-[5px] ${
-                navi.Selected == "true" ? "opacity-100" : "opacity-0"
-              }`}
-            />
+          <td className="pl-[5px] py-2">
+          <div className="opacity-0 group-hover:opacity-100">
+            <CheckBox name={navi.name}></CheckBox>
+           </div>
+            
           </td>
           <td className="px-3 py-2">
-      
             {navi.product}
           </td>
           <td className="px-3 pr-0 py-2">
@@ -71,6 +67,19 @@ const Amountorder = ({opentableHandler}) => {
             </h3>
           </td>
           <td className="px-3 pr-[10px] py-2">{navi.vendor}</td>
+          <td className="opacity-0 group-hover:opacity-100 pr-4">
+            <Dropdown
+              className="right-0 left-[unset]"
+              button={
+                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                  <Image src={Dots} alt="" className="dark:invert" />
+                </div>
+              }
+              dropdownitem={[
+                { title: "View details" }
+              ]}
+            />
+          </td>
         </tr>
       ))}
     </>

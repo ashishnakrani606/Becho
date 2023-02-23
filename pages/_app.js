@@ -13,7 +13,6 @@ function App({ Component }) {
         <meta name="description" content="becho" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <ThemeProvider enableSystem={true} attribute="class">
         <FullLayout>
           <Component />

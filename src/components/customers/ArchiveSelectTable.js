@@ -9,8 +9,8 @@ import Dots from "../../assets/images/icon/Union.svg";
 import Subtract from "../../assets/images/icon/Subtract.svg";
 import customer1 from "../../assets/images/users/customersimg-1.png";
 import customer2 from "../../assets/images/users/customersimg-2.png";
-
-
+import CheckBox from "../ui/CheckBox";
+import Dropdown from "../ui/Dropdown";
 const TableData = [
   {
     id: 1,
@@ -20,6 +20,7 @@ const TableData = [
     orders: "0 orders ",
     location: "Pilani RJ, India",
     amount: "₹ 0.00",
+    name:"pilani"
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ const TableData = [
     location: "Chandigarh CH, India",
     amount: "₹ 2000.00",
     Selected: 'true',
+    name:"chandigarh"
   },
 
 ];
@@ -41,15 +43,12 @@ const ArchiveSelectTable = ({ opentableHandler }) => {
         <tr
           className={`border-b border-black/5 dark:border-white/5 hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
           key={index}
-          onClick={opentableHandler}
+          // onClick={opentableHandler}
         >
-          <td className="pl-0 py-2">
-            <Image
-              src={Subtract}
-              alt=""
-              className={`dark:invert inline-block mx-[5px] ${navi.Selected == "true" ? "opacity-100" : "opacity-0"
-                }`}
-            />
+          <td className="pl-[5px] py-2">
+            <div className="opacity-0 group-hover:opacity-100">
+              <CheckBox name={navi.name}></CheckBox>
+            </div>
           </td>
           <td className="px-3 py-2">
             <Image
@@ -77,6 +76,24 @@ const ArchiveSelectTable = ({ opentableHandler }) => {
             </h3>
           </td>
           <td className="px-3 pr-[10px] py-2">{navi.amount}</td>
+          <td className="opacity-0 group-hover:opacity-100 pr-4">
+            <Dropdown           
+              className="right-0 left-[unset]"
+              button={
+                <div className="flex gap-2 px-2 pt-1 items-center justify-end">
+                  <Image src={Dots} alt="" className="dark:invert" />
+                </div>
+              }
+              // dropdownitem={[
+              //   { title: "View details", link: "customers/name" },
+              //   opentableHandler={opentableHandler}
+              // ]}
+              dropdownitem={[
+                { title: "View details", link: "customers/name" },
+                opentableHandler={opentableHandler}
+              ]}
+            />
+          </td>
         </tr>
       ))}
     </>

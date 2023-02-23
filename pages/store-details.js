@@ -277,7 +277,7 @@ const StoreDetails = () => {
               title={"We need your attention!"}
               description={"Confirm that you have access to contact@mystore.com in"}
               deatil={"sender email settings."}
-              className={"font-normal text-sm mt-2"}
+              className={"font-normal text-sm mt-1"}
             />
           </div>
         </TabPanel>
@@ -435,13 +435,13 @@ const StoreDetails = () => {
         {/* /********** payment-gateway start ************/}
         <TabPanel>
           <div className="w-full bg-primary-light rounded-2xl md:p-6 p-4 dark:bg-white/5">
-            <h4 className="text-lg font-semibold mb-4">Supported payment methods</h4>
+            <h4 className="text-sm font-semibold mb-4">Supported payment methods</h4>
             <div className="bg-[#E5ECF6]/50 flex items-start pt-4 px-4 pb-[34px] rounded-lg	dark:bg-white/5">
               <Image src={shield} className="mr-1 dark:invert" />
               <div>
-                <p className="text-sm leading-[18px] text-black/40 dark:text-white/40">
+                <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
                   {learnMore ? text : `${text.substring(0, 250)}`}
-                  <button className="btn text-[#95A4FC]" onClick={() => setLearnMore(!learnMore)}>
+                  <button className="btn text-secondary-purplea" onClick={() => setLearnMore(!learnMore)}>
                     {learnMore ? "Learn less " : "Learn more"}
                   </button>
                 </p>
@@ -452,7 +452,7 @@ const StoreDetails = () => {
                 <Image src={google} className="mr-4" />
                 <div>
                   <p className="font-semibold text-sm	text-blacklight dark:text-white">Google Pay</p>
-                  <p className="text-xs	leading-[18px] text-[#FF4747] dark:text-white/40">Click here to setup.</p>
+                  <p className="text-xs	leading-[18px] text-secondary-red dark:text-white/40">Click here to setup.</p>
                 </div>
               </div>
               <Toggle turnOff turnOn className={"dark:!bg-secondary-purpleb"} />
@@ -462,7 +462,7 @@ const StoreDetails = () => {
                 <Image src={github} className="mr-4" />
                 <div>
                   <p className="font-semibold text-sm	text-blacklight dark:text-white">PayTM</p>
-                  <p className="text-xs	leading-[18px] text-[#27AE60] dark:text-white/40">Activated successfully.</p>
+                  <p className="text-xs	leading-[18px] text-primary-greenb dark:text-white/40">Activated successfully.</p>
                 </div>
               </div>
               <Toggle></Toggle>
@@ -479,7 +479,7 @@ const StoreDetails = () => {
             </div>
           </div>
           <div className="w-full bg-primary-light rounded-2xl mt-[18px] md:p-6 p-4 max-w-[568px] dark:bg-white/5">
-            <h4 className="text-lg font-semibold mb-4">Set up Cash on Delivery (COD)</h4>
+            <h4 className="text-sm font-semibold mb-4">Set up Cash on Delivery (COD)</h4>
             <div className="py-4 px-5 bg-white border border-black/10 rounded-lg mb-4 dark:bg-white/5">
               <p className="text-xs leading-[18px] text-black/40 mb-1 dark:text-white/40">Additional notes</p>
               <p className="text-sm text-black/40 dark:text-white/40">
@@ -495,7 +495,7 @@ const StoreDetails = () => {
             <Button
               name={"Activate Cash on Delivery (COD)"}
               color="primarygreen"
-              className="font-normal text-sm text-black/80%"
+              className="text-xs"
               size="large"
             />
           </div>
@@ -506,8 +506,8 @@ const StoreDetails = () => {
         <TabPanel>
           <div className="flex justify-between flex-wrap gap-y-5">
             <div className="w-full md:max-w-[49%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl p-6">
-              <h2 className="font-semibold text-sm leading-5 md:pb-8 pb-5">General shipping rates</h2>
-              <p className="text-xs text-black/40 dark:text-white/40">
+              <h2 className="font-semibold text-sm leading-5 md:pb-[34px] pb-5">General shipping rates</h2>
+              <p className="text-xs text-black/40 dark:text-white/40 leading-[18px]">
                 Manage rates for domestic & international orders for all products.
               </p>
               <div>
@@ -524,7 +524,7 @@ const StoreDetails = () => {
             </div>
             <div className="w-full md:max-w-[49%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl p-6">
               <h2 className="font-semibold text-sm leading-5 md:pb-8 pb-5">Custom shipping rates</h2>
-              <p className="text-xs text-black/40 dark:text-white/40">
+              <p className="text-xs text-black/40 dark:text-white/40 leading-[18px]">
                 Add custom rates or destination restrictions for groups of products.
               </p>
               <div>
@@ -548,7 +548,7 @@ const StoreDetails = () => {
               </div>
               <Button color={"lightgrey"} name={"Manage"} />
             </div>
-            <p className="text-sm leading-[18px] text-black/40 dark:text-white/40 mt-5">
+            <p className="text-xs leading-[18px] text-black/40 dark:text-white/40 mt-5">
               {learnMore ? [para] : `${para.substring(0, 220)}`}
               <button className="btn text-primary-green" onClick={() => setLearnMore(!learnMore)}>
                 {learnMore ? " Learn less " : " Learn more"}
