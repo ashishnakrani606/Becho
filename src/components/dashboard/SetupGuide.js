@@ -48,7 +48,7 @@ const SetupGuide = ({setOpenDashboard}) => {
                 <Link href={"#0"} className={'text-[#2F80ED]'}> Learn more about branding.</Link>
               </p>
               <div className='mt-3 flex' >
-                <Button color="yellow" name={'Add brand assets'} secondary={"true"} className="font-semibold text-blacklight" onClick={brandassetsHandler} /> 
+                <Button color="yellow" name={'Add brand assets'} className="font-semibold text-blacklight" onClick={brandassetsHandler} /> 
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:invert dark:opacity-100`} src={Subtract} alt="" />
             </div>  
@@ -67,8 +67,8 @@ const SetupGuide = ({setOpenDashboard}) => {
                 Create product descriptions, add images, and set prices for items to be sold. Learn about products.
               </p>
               <div className='mt-3 flex '>
-                <Button color="yellow" name={"Add product"} secondary={"true"} className="font-semibold" onClick={firstProductHandler} />
-                <Button color="grey" name={'Import'} secondary={"true"} className="font-semibold ml-5" />
+                <Button color="yellow" name={"Add product"} className="font-semibold" onClick={firstProductHandler} />
+                <Button color="grey" name={'Import'} className="font-semibold ml-5" />
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-100 dark:invert`} src={Subtract} alt="" />
             </div>  

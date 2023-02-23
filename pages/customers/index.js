@@ -4,26 +4,20 @@ import ArchiveSelectTable from "../../src/components/customers/ArchiveSelectTabl
 import Button from "../../src/components/ui/Button";
 import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
 import Pagetitle from "../../src/components/ui/Pagetitle";
-import Addicon from "../../src/assets/images/icon/Add.svg";
 import CustomersCard from "../../src/assets/images/icon/customers-main.svg";
 import Card from "../../src/components/ui/Card";
 import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
 import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
 import Searchicon from "../../src/assets/images/icon/searchico.svg";
 import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import Threedots from "../../src/assets/images/icon/Dots-three-outline.svg";
-import CheckCircle from "../../src/assets/images/icon/CheckCircle.svg";
 import RadioCircle from "../../src/assets/images/icon/radio-circle.svg";  
 import CustomerPhoto from "../../src/assets/images/users/customer-photo.png";
 import Camera from "../../src/assets/images/icon/camera.svg";
 import Link from "next/link";
 import PageHeader from "../../src/components/ui/PageHeader";
-import Alert from "../../src/components/ui/Alert";
 import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
 import Dots from "../../src/assets/images/icon/Union.svg";
-import Dropdown from "../../src/components/ui/Dropdown";
 import InputContent from "../../src/components/ui/InputContent";
-import OptionValue from "../../src/components/products/OptionValue";
 import VarientDropdown from "../../src/components/ui/SelectOption";
 import Toggle from "../../src/components/ui/Toggle";
 import { useState } from "react";
@@ -76,12 +70,12 @@ const customers = () => {
             >
               <Button
                 color={"yellow"}
-                secondary={"true"}
                 name={"Add customer"}
-                className="font-semibold mr-5"
+                secondary={"true"}
+                className="font-semibold dark:!text-blacklight mr-5"
                 onClick={SelectCustomersHandler}
               />
-              <Button color={"grey"} secondary={"true"} name={"Import"} className="font-semibold" />
+              <Button color={"grey"} secondary={"true"} name={"Import"} className="font-semibold dark:!text-blacklight" />
             </Card>
           ) : (
             <>
@@ -107,7 +101,7 @@ const customers = () => {
                   <div className="flex items-center">
                     <span className="bg-black/20 dark:bg-white/20 w-[1px] h-5 mr-4"></span>
                     <span className="mr-4 text-xs">1 Selected</span>
-                    <Button color={"grey"} name={"Delete Selected"} className={"dark:bg-white/5 dark:text-white"} />
+                    <Button color={"grey"} name={"Delete Selected"} secondary={"true"} className={"dark:bg-white/5 dark:text-white"} />
                   </div>
                 </div>
                 <div className="relative">
@@ -518,7 +512,7 @@ const customers = () => {
                 </p>
                 <div>
                   <Button name={"Create order"} color={"purple"} className="font-normal text-sm" size="large" />
-                </div>
+                </div>z
               </div>
               <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 dark:bg-white/5">
                 <h3 className="text-lg font-semibold mb-[10px]">Last placed orders</h3>
@@ -535,7 +529,7 @@ const customers = () => {
                   <p className="text-primary-green text-xs  leading-[18px]">View details</p>
                 </div>
                 <div>
-                  <Button name={"Create order"} color={"purple"} className="text-sm" size="large" />
+                  <Button name={"Create order"} color={"purple"}  className="text-sm"  size="large" />
                 </div>
               </div>
             </div>
@@ -545,5 +539,4 @@ const customers = () => {
     </>
   );
 };
-
 export default customers;

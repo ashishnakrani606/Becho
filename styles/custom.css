@@ -145,13 +145,13 @@ input:focus-visible {
   content: "";
   position: absolute;
   left: 4px;
-  top: 8px;
+  top: 50%;
   background: white;
   width: 2px;
   height: 2px;
   box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
   4px -6px 0 white, 4px -8px 0 white;
-  transform: rotate(45deg);  
+  transform: translateY(-50%) rotate(45deg); 
 }
 .dark .styled-checkbox:checked + label:after {
   background: black; 
@@ -213,11 +213,14 @@ input:focus-visible {
   padding: 0;
 }
 .dark .react-tabs__tab--selected::after {  
-  background-color: #C6C7F8;  
+  background-color: #fff;  
 }
-
-.dark .react-tabs__tab--selected{
-  color: #C6C7F8;
+ 
+.dark .react-tabs__tab.react-tabs__tab--selected{
+  color: #fff;
+}
+.dark .react-tabs__tab {
+  color: rgba(255, 255, 255, 0.4);
 }
 .react-tabs__tab {
   display: inline-block;

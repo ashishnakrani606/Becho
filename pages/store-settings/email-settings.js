@@ -6,7 +6,6 @@ import Add from "../../src/assets/images/icon/addb.svg";
 import Threedot from "../../src/assets/images/icon/threedot.svg";
 import Image from "next/image";
 
-
 const Emailorder = [
   {
     id: 1,
@@ -236,7 +235,7 @@ const EmailSettings = () => {
           <div className="mx-[5px]">
             <UnsavedChanges className="pr-[18px]" >
               <Button color={"white"} name={"Discard"} outline={'true'} className={"mr-5 dark:!border-blacklight dark:!text-blacklight"} />             
-              <Button color={"green"} name={"Save "} />
+              <Button color={"primarygreen"} name={"Save "} />
             </UnsavedChanges>
           </div>
           <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">

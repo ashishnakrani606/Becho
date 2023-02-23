@@ -41,7 +41,7 @@ const offers = () => {
               <Button
                 color={"green"}
                 name={"Create discount"}
-                className="font-semibold"
+                className="font-semibold text-blacklight"
               />
             ) : (
               ""
@@ -57,10 +57,9 @@ const offers = () => {
                 }
               >
                 <Button
-                  color={"yellow"}
-                  secondary={"true"}
+                  color={"yellow"}                 
                   name={"Create discount"}
-                  className="font-semibold text-blacklight"
+                  className="font-semibold dark:text-blacklight !text-blacklight"
                   onClick={SelectPlanHandler}
                 />
               </Card>
@@ -222,6 +221,7 @@ const offers = () => {
               color={"white"}              
               name={"Discard"}
               outline={"true"}
+              secondary={"true"}
               className={"md:mr-5 mr-4 dark:border-blacklight  dark:text-blacklight"}
             />
             <Button color={"green"} name={"Save Changes"} />
@@ -320,10 +320,10 @@ const offers = () => {
                   />
                 </InputContent>
                 <InputContent title={"Start date"}>
-                  <DAtePicker placeholder={"Pick a date"}></DAtePicker>
+                  <DAtePicker placeholder={"Pick a date"} />
                 </InputContent>
                 <InputContent title={"End date (optional)"}>
-                  <DAtePicker placeholder={"Pick a date"}></DAtePicker>
+                  <DAtePicker placeholder={"Pick a date"} />
                 </InputContent>
                 <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
                   <Button

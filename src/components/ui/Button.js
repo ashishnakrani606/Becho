@@ -5,12 +5,12 @@ function Button(props) {
     <>
       <button
         className={`${props.className} transition-all duration-500 text-xs px-2 py-[6px] rounded-lg  
-        ${props.secondary == "true" ? "text-blacklight" : "text-white"}
+        ${props.secondary == "true" ? "text-blacklight dark:text-white" : "text-white"}
       ${
         props.color == "yellow"
-          ? "bg-secondary-yellow text-blacklight"
+          ? "bg-secondary-yellow !text-blacklight"
           : "" || props.color == "grey"
-          ? "bg-primary-purple text-blacklight"
+          ? "bg-primary-purple !text-blacklight"
           : "" || props.color == "blue"
           ? "text-blacklight bg-primary-blue "
           : "" || props.color == "red"
@@ -30,7 +30,7 @@ function Button(props) {
           : "" || props.color == "blacklight"
           ? "text-white bg-blacklight dark:bg-secondary-purpleb dark:text-blacklight"
           : "" || props.color == "purple"
-          ? "bg-[#95A4FC] text-white dark:text-blacklight"
+          ? "bg-[#95A4FC] text-white dark:!text-blacklight"
           : ""
       } 
 

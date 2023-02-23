@@ -3,53 +3,87 @@ import Image from 'next/image';
 import Link from "next/link";
 import Bechologo from "../src/assets/images/icon/becho-black-logo.svg";
 import Bechopro from "../src/assets/images/icon/becho-pro.svg";
+import Upi from "../src/assets/images/icon/upi-icon.svg";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Dropdown from "../src/components/ui/Dropdown";
-import clock from "../src/assets/images/icon/clock.svg";
-import shield from "../src/assets/images/icon/shield-check.svg";
-import google from "../src/assets/images/icon/google.svg";
-import github from "../src/assets/images/icon/github.svg";
-import Toggle from "../src/components/ui/Toggle.js";
-import slack from "../src/assets/images/icon/slack.svg";
 import Button from "../src/components/ui/Button";
+import CheckBox  from "../src/components/ui/CheckBox";
 
-
-const Sessions = [
-  { id: 1, location: "USA(5)", device: "Chrome - Windows", IP: "236.125.56.78", clock: { clock }, time: "2 mins ago" },
+const BillingHistory = [
+  { id: 1, 
+    date: "Nov 01, 2022", 
+    description: "Invoice for Ocrober 2022", 
+    amount: "₹123.79", 
+    invoice: "PDF" 
+  },
   {
     id: 2,
-    location: "United Kingdom(10)",
-    device: "Safari - Mac OS",
-    IP: "236.125.56.69",
-    clock: { shield },
-    time: "10 mins ago",
+    date: "Oct 08, 2022",
+    description: "Invoice for September 2022",
+    amount: "₹123.79", 
+    invoice: "PDF",
   },
   {
     id: 3,
-    location: "Norway(-)",
-    device: "Safari - Mac OS",
-    IP: "236.125.56.69",
-    clock: { google },
-    time: "10 mins ago",
+    date: "Aug 24, 2022",
+    description: "5% Commission",
+    amount: "₹123.79", 
+    invoice: "PDF",
   },
   {
     id: 4,
-    location: "Japan(112)",
-    device: "iOS - iPhone Pro",
-    IP: "236.125.56.54",
-    clock: { github },
-    time: "30 mins ago",
+    date: "Aug 01, 2022",
+    description: "Invoice for July 2022",
+    amount: "₹123.79", 
+    invoice: "PDF",
   },
   {
     id: 5,
-    location: "Italy(5)",
-    device: "Samsung Noted 5- Android",
-    IP: "236.100.56.50",
-    clock: { slack },
-    time: "40 mins ago",
+    date: "Jul 01, 2022",
+    description: "Invoice for June 2022",
+    amount: "₹123.79",
+    invoice: "PDF",
   },
 ];
 
+const Information = [
+  {
+    id: 1,
+    name: "full name",
+    title: "Successful payments",
+    discription: "Receive a notification for every successful payment.",
+  },
+  {
+    id: 2,
+    name: "full name2",
+    title: "Paid orders",
+    discription: "Receive a notification each time you collect a fee from sales.",
+  },
+  {
+    id: 3,
+    name: "full name3",
+    title: "Unpaid orders",
+    discription: "Receive a notification if a payment is disputed by a customer and for dispute purposes.",
+  },
+  {
+    id: 4,
+    name: "full name4",
+    title: "Refund requests",
+    discription: "Receive a notification if a payment is stated as risk by the Finance Department.", 
+  },
+  {
+    id: 5,
+    name: "full name5",
+    title: "Invoice Payments",
+    discription: "Receive a notification if a customer sends an incorrect amount to pay their invoice.", 
+  },
+  {
+    id: 6,
+    name: "full name6",
+    title: "Order delivery status",
+    discription: "Receive notifications for consistently failing webhook API endpoints.",
+    border:"border-none"
+  },
+];
 
 const bechopro = () => {
   return (
@@ -94,53 +128,63 @@ const bechopro = () => {
                   Next billing date: 03/03/2023
                 </p>
               </div>
-              <Button name={"Change billing cycle"}  className="mr-3 mt-2 leading-[18px]" size={"medium"} outline={"true"} secondary={"true"} color={"grey"} />
+              <Button name={"Change billing cycle"}  className="leading-[18px] !px-[11px] !py-1" size={"smaill"} outline={"true"} secondary={"true"} color={"grey"} />
             </div>
-            <div className="flex justify-between items-center py-4 flex-wrap gap-4 sm:flex-nowrap dark:border-b-white/10">
+            <div className="flex justify-between items-center pt-4 flex-wrap gap-4 sm:flex-nowrap dark:border-b-white/10">
               <div>
                 <p className="font-semibold text-sm	text-blacklight dark:text-white">Payment method</p>
-                <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">
-                  heena7786@oksbi
+                <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40 flex items-center">
+                <Image src={Upi} alt="" className='mr-[2px]'/>heena7786@oksbi
                 </p>
               </div>
-              <Button name={"Add staff"} color="yellow" className="font-normal text-xs !text-black/80 px-[14px]" />
+              <Button name={"Change payment method"}  className="leading-[18px] px-[11px] !py-1" size={"smaill"} outline={"true"} secondary={"true"} color={"grey"} />
             </div>
           </div>
-          <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4">
-            <div className="flex justify-between mb-2">
-              <h4 className="text-lg font-semibold">Login Sessions</h4>
+          <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4 mb-6">
+            <div className="flex justify-between mb-[15px]">
+              <h4 className="text-sm font-semibold">Billing History</h4>
+              <div>
+                <Link href={"#0"} className="text-blacklight dark:text-white py-1 px-2 font-semibold">
+                  Month
+                </Link>
+                <Link href={"#0"} className="text-black/40 dark:text-white/40 ml-1 py-1 px-2">
+                  Year
+                </Link>
+                <Link href={"#0"} className="text-black/40 dark:text-white/40 ml-1 py-1 px-2">
+                  All Time
+                </Link>
+              </div>
             </div>
             <div className="overflow-x-auto">
               <table className="sm:w-full w-[640px]">
                 <tbody className="w-full">
                   <tr className="w-full border-b pb-4 mb-4 border-b-black/20 dark:border-b-white/20">
                     <th className="text-black/40 text-xs font-normal leading-[18px] py-[11px] pr-4 max-w-[19%] w-full text-left dark:text-white/40">
-                      Location
+                      Date
                     </th>
                     <th className="text-black/40 text-xs font-normal leading-[18px] py-[11px] pr-4 max-w-[27%] w-full text-left dark:text-white/40">
-                      Device
+                      Description
                     </th>
                     <th className="text-black/40 text-xs font-normal leading-[18px] py-[11px] pr-4 max-w-[22%] w-full text-left dark:text-white/40">
-                      IP Address
+                      Amounts
                     </th>
                     <th className="text-black/40 text-xs font-normal leading-[18px] py-[11px] pr-4 max-w-[22%] w-full text-left dark:text-white/40">
-                      Time
+                      All Time  
                     </th>
                   </tr>
-                  {Sessions.map((item) => (
+                  {BillingHistory.map((item) => (
                     <tr>
                       <td className="text-xs leading-[18px] text-blacklight text-left py-[11px] pr-4 dark:text-white">
-                        {item.location}
+                        {item.date}
                       </td>
                       <td className="text-xs leading-[18px] text-blacklight text-left py-[11px] pr-4 dark:text-white">
-                        {item.device}
+                        {item.description}
                       </td>
                       <td className="text-xs leading-[18px] text-blacklight text-left py-[11px] pr-4 dark:text-white">
-                        {item.IP}
+                        {item.amount}
                       </td>
-                      <td className="text-xs leading-[18px] text-blacklight text-left flex py-[11px] pr-4 dark:text-white">
-                        <Image src={clock} className="mr-1 dark:invert" />
-                        <p>{item.time}</p>
+                      <td className="text-xs leading-[18px] text-secondary-purplea text-left flex py-[11px] pr-4 dark:text-white">
+                        <p>{item.invoice}</p>
                       </td>
                     </tr>
                   ))}
@@ -148,6 +192,70 @@ const bechopro = () => {
               </table>
             </div>
           </div>
+          <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4 mb-6">
+            <h4 className="text-sm font-semibold mb-4">Billing Address</h4>
+            <div className='bg-primary-purple/50 dark:bg-black/40 rounded-2xl p-4'>
+              <div className="flex justify-between">
+                <h4 className='dark:text-white text-blacklight font-semibold'>Heena Vinayak’s Address</h4>
+                <Button
+                    color="lightgrey"
+                    size="large"
+                    name={"Edit"}
+                    secondary={"true"}
+                    className={"leading-[18px] text-xs !px-2 !py-[5px]"}
+                  ></Button>
+              </div>
+              <p className='w-full max-w-[236px] text-black/40 dark:text-white/40'>Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India </p>
+            </div>
+            <div className='bg-primary-purple/50 dark:bg-black/40 rounded-2xl p-4 mt-4'>
+              <div className="flex justify-between">
+                <h4 className='dark:text-white text-blacklight font-semibold'>Company - ABC Services Private Limited</h4>
+                <Button
+                    color="lightgrey"
+                    size="large"
+                    name={"Edit"}
+                    secondary={"true"}
+                    className={"leading-[18px] text-xs !px-2 !py-[5px]"}
+                  ></Button>
+              </div>
+              <p className='w-full max-w-[236px] text-black/40 dark:text-white/40'>Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India </p>
+            </div>
+            <p className='w-full text-black/40 dark:text-white/40 mt-4'>Tax Location : India - 18% GST</p>
+          </div>
+          <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 md:pb-2 p-4 mb-6">
+              <div className="flex justify-between items-center flex-wrap gap-5">
+                <h2 className="font-semibold text-sm leading-5">Email Preferences</h2>
+                <div className="flex justify-end items-center gap-2">
+                  <Button
+                    color="lightgrey"
+                    size="large"
+                    name={"Discard"}
+                    secondary={"true"}
+                    className={"leading-[18px] text-xs !px-2 !py-[5px]"}
+                  ></Button>
+                  <Button
+                    color="blacklight"
+                    size="large"
+                    className={"text-xs !px-2 !py-[5px] leading-[18px]"}
+                    name={"Save Changes"}
+                  ></Button>
+                </div>
+              </div>
+              <div>
+                <>
+                  {Information.map((item) => (
+                    <div className={`flex items-center md:items-center gap-3 sm:px-5 py-4 border-b border-black/10 dark:border-white/10 ${item.border}`}>
+                      <CheckBox name={item.name}></CheckBox >
+                      <div>
+                        <p className="text-sm font-semibold">{item.title}</p>
+                        <span className="text-xs text-black/40 dark:text-white/40 ">{item.discription}</span>
+                      </div>
+                    </div>
+                  ))}
+                </>
+              </div> 
+          </div>
+          
         </div>
         </TabPanel>
         <TabPanel>
@@ -155,8 +263,8 @@ const bechopro = () => {
         </TabPanel>
         <TabPanel>
           <h2>Any content 3</h2>
-        </TabPanel>
-      </Tabs>
+        </TabPanel> 
+        </Tabs>
 
       </div>  
     </>

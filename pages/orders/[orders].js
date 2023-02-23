@@ -159,13 +159,14 @@ const orders = () => {
                 </tbody>
               </table>
             </div>
-            <div className="flex justify-end w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
+            <div className="flex items-center justify-end gap-4 w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
               <Button
                 color={"blackoutline"}
+                secondary={"true"}
                 name={"Hold fulfillment"}
-                className="mr-5 text-sm text-blacklight border-black/10 border dark:border-white/10 dark:text-white dark:border-white/2"
+                className="text-sm text-blacklight border-black/10 border dark:border-white/10 leading-[18px]"
               />
-              <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap" />
+              <Button color={"primarygreen"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-[18px]"  />
             </div>
           </div>
           <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
@@ -227,8 +228,8 @@ const orders = () => {
                 </tr>
               </tbody>
             </table>
-            <div className="py-4 flex justify-end border-b items-center border-black/10 dark:border-white/10 px-2 sm:flex-nowrap flex-wrap gap-3">
-              <Button outline={"true"} color={"blacklight"} secondary={'true'} name={"Send invoice"} className="mr-4 text-sm " />
+            <div className="py-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 px-2 sm:flex-nowrap flex-wrap">
+              <Button outline={"true"}  secondary={'true'} color={"grey"} name={"Send invoice"} className="text-sm leading-[18px]" size={"medium"}/>
               <Dropdown
                 className="right-0 left-[unset]"
                 button={
@@ -286,7 +287,7 @@ const orders = () => {
           </InputContent>
           <div className="max-w-[400px] w-full mt-4"></div>
         </div>
-        <div className="bg-primary-light dark:bg-white/5 py-5 pl-4 sm:pr-6 p-3 rounded-2xl w-full md:max-w-[46%]">
+        <div className="bg-primary-light dark:bg-white/5 py-5 px-4 rounded-2xl w-full md:max-w-[46%]">
           <div className="bg-primary-purple/50 dark:bg-black/40 flex items-start p-4 rounded-lg">
             <Image src={NoteCustomer} className="mr-1 font-normal text-sm dark:invert" />
             <div>
@@ -316,7 +317,7 @@ const orders = () => {
                 </p>
                 <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
                   No phone provided{" "}
-                  <Button outline={"true"} color={"blacklight"} name={"Add phone"} className="ml-2 " />
+                  <Button outline={"true"} name={"Add phone"} className="ml-2 leading-[18px]" size={"medium"} secondary={"true"} />
                 </p>
               </div>
               <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
@@ -325,7 +326,7 @@ const orders = () => {
                 </p>
                 <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
                   No email provided{" "}
-                  <Button outline={"true"} color={"blacklight"} name={"Add email"} className="ml-2 text-blacklight" />
+                  <Button outline={"true"} name={"Add email"} className="ml-2 leading-[18px]" secondary={"true"} size={"medium"}/>
                 </p>
               </div>
               <div className="flex w-full flex-wrap sm:flex-nowrap">
@@ -340,7 +341,7 @@ const orders = () => {
                       +91 80735 89105
                     </Link>
                   </p>
-                  <Button color={"blacklight"} outline={"true"} name={"Edit"} className="md:ml-2" />
+                  <Button secondary={"true"} size={"medium"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]"  />
                 </div>
               </div>
             </div>

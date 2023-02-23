@@ -27,10 +27,9 @@ const ShippingDelivery = () => {
                   <span className="text-xs text-black/40 dark:text-white/40">All products</span>
                   <Button
                     color="teal"
-                    size="large"
-                    secondary={"true"}
+                    size="large"                    
                     name={"Manage"}
-                    className={"!px-2 !py-[5px] leading-[18px]"}
+                    className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
                   ></Button>
                 </div>
               </div>
@@ -45,10 +44,9 @@ const ShippingDelivery = () => {
                   <span className="text-xs text-black/40 dark:text-white/40">Jun 10, 2022</span>
                   <Button
                     color="teal"
-                    size="large"
-                    secondary={"true"}
+                    size="large"                   
                     name={"Manage"}
-                    className={"!px-2 !py-[5px] leading-[18px]"}
+                    className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
                   ></Button>
                 </div>
               </div>

@@ -136,7 +136,7 @@ const orders = () => {
                     />
                   </div>
                 </div>
-                <div className="overflow-x-auto min-h-[463px]">
+                <div className="overflow-x-auto min-h-[470px]">
                   <table class="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
                     <thead>
                       <tr class="text-black/40 dark:text-white/40 border-b text-xs">
@@ -325,10 +325,11 @@ const orders = () => {
                 <div className="flex justify-end w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
                   <Button
                     color={"blackoutline"}
+
                     name={"Hold fulfillment"}
                     className="mr-5 text-sm text-blacklight border-black/10 border dark:border-white/10 dark:text-white dark:border-white/2"
                   />
-                  <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap" />
+                  <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-[18px]"/>
                 </div>
               </div>
               <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>

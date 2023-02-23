@@ -119,7 +119,7 @@ const products = () => {
               <input type="number" name="" value="44" className="w-full bg-transparent" />
             </InputContent>
             <InputContent title={"Track quantity"} className="text-black/40 dark:text-white/40">
-              <Toggle turnOff={"NO"} turnOn={"Yes"} />
+              <Toggle turnOff={"No"} turnOn={"Yes"} />
             </InputContent>
           </div>
           <div className="product-type-radio grid">

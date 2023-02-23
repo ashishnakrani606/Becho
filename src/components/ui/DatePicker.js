@@ -20,7 +20,7 @@ const DAtePicker = () => {
         <Image
           src={Dateicon}
           alt=""
-          className={`mr-1 ${icon ? "opacity-100 inline-block" : " opacity-20 dark:invert inline-block"}`}
+          className={`mr-1 dark:invert opacity-20 ${icon ? "opacity-20 inline-block" : " opacity-20 dark:invert inline-block"}`}
         />
         <div className="relative">
           {!icon ? (
@@ -33,7 +33,7 @@ const DAtePicker = () => {
           <DatePicker
             selected={startDate}
             onChange={ChangeHandler}
-            className={`${icon ? "opacity-100" : " opacity-0"}`}
+            className={`bg-transparent ${icon ? "opacity-100" : " opacity-0"}`}
           />
           {/* <Image src={Selecticon} className="dark:invert absolute top-0 right-0"/> */}
         </div>
