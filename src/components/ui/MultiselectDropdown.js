@@ -1,8 +1,8 @@
 import React from "react";
 import Multiselect from "multiselect-react-dropdown";
-import CloseIcon from "../../assets/images/icon/closebtn.svg";
+import CloseIcon from "@/assets/images/icon/closebtn.svg";
 import Image from "next/image";
-import selecticonarrow from "../../assets/images/icon/selecticon.svg";
+import selecticonarrow from "@/assets/images/icon/selecticon.svg";
 
 const MultiselectDropdown = ({ options, title, selectedValues, image }) => {
   return (
@@ -24,6 +24,7 @@ const MultiselectDropdown = ({ options, title, selectedValues, image }) => {
           options={options}
           image={image}
           selectedValues={selectedValues}
+          placeholder={""}
         />
         <Image
           src={selecticonarrow}

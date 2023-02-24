@@ -1,9 +1,9 @@
 import React from 'react'
-import WarningRed from "../../assets/images/icon/Warning-red.svg";
-import WarningGreen from "../../assets/images/icon/Warning-green.svg";
+import WarningRed from "@/assets/images/icon/Warning-red.svg";
+import WarningGreen from "@/assets/images/icon/Warning-green.svg";
 import Image from "next/image";
-import AttentionRed from "./../../assets/images/icon/attentionred.svg"
-import ShieldCheck from "./../../assets/images/icon/ShieldCheck.svg"
+import AttentionRed from "@/assets/images/icon/attentionred.svg"
+import ShieldCheck from "@/assets/images/icon/ShieldCheck.svg"
 
 const Alert = ({title, description, color, className, deatil}) => {
   return (

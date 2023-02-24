@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import TabList from '../../src/components/store-settings/tab-list' 
-import shield from "../../src/assets/images/icon/shield-check.svg";
-import google from "../../src/assets/images/icon/google.svg";
-import github from "../../src/assets/images/icon/github.svg";
-import Toggle from "../../src/components/ui/Toggle.js";
-import slack from "../../src/assets/images/icon/slack.svg";
+import TabList from '@/components/store-settings/tab-list' 
+import shield from "@/assets/images/icon/shield-check.svg";
+import google from "@/assets/images/icon/google.svg";
+import github from "@/assets/images/icon/github.svg";
+import Toggle from "@/components/ui/Toggle.js";
+import slack from "@/assets/images/icon/slack.svg";
 import Image from "next/image";
-import Button from "../../src/components/ui/Button";
+import Button from "@/components/ui/Button";
+import Layout from "@/layouts/layout";
 
 const PaymentGatewaysrs = () => {
   const [learnMore, setLearnMore] = useState(false);
   const text = "Payment methods that are available with one of Becho's approved payment providers. ";  
   return (
-    <>
+    <Layout container>
       <TabList/>
       {/* /********** payment-gateway start ************/}
       <div>
@@ -77,13 +78,12 @@ const PaymentGatewaysrs = () => {
             <Button
               name={"Activate Cash on Delivery (COD)"}
               color="primarygreen"
-              className="text-xs !py-[6px]"
-              size="large"
+              className="text-xs !py-[5px]"
             />
           </div>
         </div>
         {/* /********** payment-gateway end ************/}
-    </>
+    </Layout>
   )
 }
 

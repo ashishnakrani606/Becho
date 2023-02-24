@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import Dateicon from "../../assets/images/icon/CalendarGrey.svg";
+import Dateicon from "@/assets/images/icon/CalendarGrey.svg";
 import Image from "next/image";
-import Selecticon from "./../../assets/images/icon/selecticon.svg";
+import Selecticon from "@/assets/images/icon/selecticon.svg";
 import "react-datepicker/dist/react-datepicker.css";
 
 const DAtePicker = () => {

@@ -1,25 +1,62 @@
 import React from "react";
-import TabList from "../../src/components/store-settings/tab-list";
-import Fulllogo from "../../src/assets/images/img/full-logo.png";
-import Squarelogo from "../../src/assets/images/img/square-logo.png";
-import CoverImage from "../../src/assets/images/img/cover-image.png";
+import TabList from "@/components/store-settings/tab-list";
+import Fulllogo from "@/assets/images/img/full-logo.png";
+import Squarelogo from "@/assets/images/img/square-logo.png";
+import CoverImage from "@/assets/images/img/cover-image.png";
 import Image from "next/image";
-import Button from "../../src/components/ui/Button";
+import Button from "@/components/ui/Button";
+import Layout from "@/layouts/layout";
+const Social = [
+  {
+    socialName: "Facebook",
+    socialText: "pilani",
+  },
+  {
+    socialName: "Twitter",
+    socialText: "Text",
+  },
+  {
+    socialName: "Instagram",
+    socialText: "pilani",
+  },
+  {
+    socialName: "Youtube",
+    socialText: "pilani",
+  },
+  {
+    socialName: "TikTok",
+    socialText: "pilani",
+  },
+  {
+    socialName: "Snapchat",
+    socialText: "pilani",
+  },
+  {
+    socialName: "Koo",
+    socialText: "pilani",
+  },
+  {
+    socialName: "Pinterest",
+    socialText: "pilani",
+  },
+];
 
 const BrandAssets = () => {
   return (
-    <div>
+    <Layout container>
       <TabList />
       <div>
-        <div className="pb-2 border-b border-black/20 dark:border-white/20 max-w-[571px]">
-          <h3 className="text-blacklight dark:text-white text-lg font-semibold">Logos & cover image</h3>
+        <div className="pb-2.5 border-b border-black/20 dark:border-white/20 max-w-[571px]">
+          <h3 className="text-blacklight dark:text-white text-lg font-semibold">
+            Logos & cover image
+          </h3>
           <div>
             <Image src={Fulllogo} className="pt-2.5 pb-[11px] dark:invert" />
             <p className="text-black/80 dark:text-white/80 text-xs leading-[18px]">
               Full Logo:
               <span className="text-black/40 dark:text-white/40">
-                {" "}
-                Allowed file types: png, jpg, jpeg. Recommended width: 512 pixels minimum
+                Allowed file types: png, jpg, jpeg. Recommended width: 512
+                pixels minimum
               </span>
             </p>
           </div>
@@ -28,16 +65,18 @@ const BrandAssets = () => {
             <p className="text-black/80 dark:text-white/80 text-xs	leading-[18px] pl-2">
               Square Logo:
               <span className="text-black/40 dark:text-white/40">
-                {" "}
-                Allowed file types: png, jpg, jpeg. Recommended: 512x512 pixels minimum
+                Allowed file types: png, jpg, jpeg. Recommended: 512x512 pixels
+                minimum
               </span>
             </p>
           </div>
           <div>
             <Image src={CoverImage} className="pt-2.5 p-0.5	" />
             <p className="text-black/80 dark:text-white/80 text-xs	leading-[18px]">
-              Cover Image::
-              <span className="text-black/40 dark:text-white/40"> Allowed file types: png, jpg, jpeg. Ratio: 16:9</span>
+              Cover Image:
+              <span className="text-black/40 dark:text-white/40">
+                Allowed file types: png, jpg, jpeg. Ratio: 16:9
+              </span>
             </p>
           </div>
         </div>
@@ -52,56 +91,46 @@ const BrandAssets = () => {
         </div>
         <div className="pt-2.5 pb-8">
           <h3 className="text-lg font-semibold mb-2.5">Other details</h3>
-          <div className="py-4 px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Slogan</p>
+          <div className="p-3 sm:py-4  sm:px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
+            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">
+              Slogan
+            </p>
             <p className="text-blacklight dark:text-white text-sm	">
               Brand statement or tagline often used along with your logo
             </p>
           </div>
           <div className="py-4 px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</p>
+            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">
+              Short description
+            </p>
             <p className="text-blacklight dark:text-white text-sm	">
-              Organize your thoughts with an outline. Here’s the outlining strategy I use. I promise it works like a
-              charm. Not only will it make writing your blog post easier, it’ll help you make your message.
+              Organize your thoughts with an outline. Here’s the outlining
+              strategy I use. I promise it works like a charm. Not only will it
+              make writing your blog post easier, it’ll help you make your
+              message.
             </p>
           </div>
           <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-[15px] gap-y-2.5 ">
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Facebook</p>
-              <p className="text-blacklight text-sm dark:text-white">Pilani</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Twitter</p>
-              <p className="text-blacklight text-sm	dark:text-white">Text</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Instagram</p>
-              <p className="text-blacklight text-sm	dark:text-white">Pilani</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Youtube</p>
-              <p className="text-blacklight text-sm	dark:text-white">Text</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">TikTok</p>
-              <p className="text-blacklight text-sm	dark:text-white">Pilani</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Snapchat</p>
-              <p className="text-blacklight text-sm	dark:text-white">Text</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Koo</p>
-              <p className="text-blacklight text-sm	dark:text-white">Pilani</p>
-            </div>
-            <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-              <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">Pinterest</p>
-              <p className="text-blacklight text-sm	dark:text-white">Text</p>
-            </div>
+            {Social.map((items) => (
+              <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
+                <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">
+                  {items.socialName}
+                </p>
+                <p className="text-blacklight text-sm dark:text-white">
+                  {items.socialText}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
         <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
-          <Button color="lightgrey" size="large" secondary="true" name={"Discard"} className={"text-sm !px-4"}></Button>
+          <Button
+            color="lightgrey"
+            size="large"
+            secondary="true"
+            name={"Discard"}
+            className={"text-sm !px-4"}
+          ></Button>
           <Button
             color="blacklight"
             size="large"
@@ -110,7 +139,7 @@ const BrandAssets = () => {
           ></Button>
         </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

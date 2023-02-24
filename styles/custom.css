@@ -5,7 +5,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-}
+} 
 
 .container{
   max-width: 1708px;
@@ -213,11 +213,10 @@ input:focus-visible {
   padding: 0;
 }
 .dark .react-tabs__tab--selected::after {  
-  background-color: #fff;  
+  background-color: #C6C7F8;  
 }
- 
 .dark .react-tabs__tab.react-tabs__tab--selected{
-  color: #fff;
+  color: #C6C7F8;
 }
 .dark .react-tabs__tab {
   color: rgba(255, 255, 255, 0.4);

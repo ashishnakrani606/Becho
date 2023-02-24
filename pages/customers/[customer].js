@@ -1,15 +1,15 @@
 import Image from "next/image";
-import React from "react";
-import Button from "../../src/components/ui/Button";
-import RadioCircle from "../../src/assets/images/icon/radio-circle.svg";
-import CustomerPhoto from "../../src/assets/images/users/customer-photo.png";
-import Camera from "../../src/assets/images/icon/camera.svg";
-import PageHeader from "../../src/components/ui/PageHeader";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import InputContent from "../../src/components/ui/InputContent";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import { useState } from "react";
-import MultiselectDropdown from "../../src/components/ui/MultiselectDropdown";
+import React, { useState } from "react";
+import Button from "@/components/ui/Button";
+import RadioCircle from "@/assets/images/icon/radio-circle.svg";
+import CustomerPhoto from "@/assets/images/users/customer-photo.png";
+import Camera from "@/assets/images/icon/camera.svg";
+import PageHeader from "@/components/ui/PageHeader";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import InputContent from "@/components/ui/InputContent";
+import VarientDropdown from "@/components/ui/SelectOption";
+import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
+import Layout from "@/layouts/layout";
 
 const customers = () => {
   const [radiioBtn, setRadiioBtn] = useState(false);
@@ -19,15 +19,16 @@ const customers = () => {
   };
 
   return (
-    <>
+    <Layout container>
       <UnsavedChanges>
         <Button
           color={"white"}
           name={"Discard"}
+          size={"small"}
           outline={"true"}
-          className={"mr-5 dark:border-blacklight dark:text-black"}
+          className={"!text-xs mr-5 dark:border-blacklight dark:text-black"}
         />
-        <Button color={"green"} name={"Delete Selected"} />
+        <Button color={"green"} name={"Save"} className={"!text-xs"}/>
       </UnsavedChanges>
       <PageHeader
         className={"mb-5 sm:flex-nowrap flex-wrap gap-5"}
@@ -299,7 +300,6 @@ const customers = () => {
                 <input className="font-semibold " type="file" />
               </label>
             </div>
-            <div>
               <div className="relative group max-w-[120px] w-full">
                 <Image src={CustomerPhoto} alt="" className="rounded-lg cursor-pointer" />
                 <Image
@@ -310,7 +310,6 @@ const customers = () => {
               </div>
               <p className="my-[10px] text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg.</p>
             </div>
-          </div>
           <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 mb-8 dark:bg-white/5">
             <h3 className="text-lg font-semibold">Last placed orders</h3>
             <p className="text-lg font-semibold text-black/40 py-[13px] dark:text-white/40">
@@ -340,7 +339,7 @@ const customers = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

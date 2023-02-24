@@ -1,27 +1,27 @@
-import Image from "next/image";
-import React from "react";
-import ArchiveSelectTable from "../../src/components/customers/ArchiveSelectTable";
-import Button from "../../src/components/ui/Button";
-import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
-import Pagetitle from "../../src/components/ui/Pagetitle";
-import CustomersCard from "../../src/assets/images/icon/customers-main.svg";
-import Card from "../../src/components/ui/Card";
-import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
-import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
-import Searchicon from "../../src/assets/images/icon/searchico.svg";
-import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import RadioCircle from "../../src/assets/images/icon/radio-circle.svg";  
-import CustomerPhoto from "../../src/assets/images/users/customer-photo.png";
-import Camera from "../../src/assets/images/icon/camera.svg";
+import React, { useState } from "react";
 import Link from "next/link";
-import PageHeader from "../../src/components/ui/PageHeader";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import Dots from "../../src/assets/images/icon/Union.svg";
-import InputContent from "../../src/components/ui/InputContent";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import Toggle from "../../src/components/ui/Toggle";
-import { useState } from "react";
-import MultiselectDropdown from "../../src/components/ui/MultiselectDropdown";
+import Image from "next/image";
+import ArchiveSelectTable from "@/components/customers/ArchiveSelectTable";
+import Button from "@/components/ui/Button";
+import selectStroke from "@/assets/images/icon/select-stroke.svg";
+import Pagetitle from "@/components/ui/Pagetitle";
+import CustomersCard from "@/assets/images/icon/customers-main.svg";
+import Card from "@/components/ui/Card";
+import FunnelSimple from "@/assets/images/icon/FunnelSimple.svg";
+import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
+import Searchicon from "@/assets/images/icon/searchico.svg";
+import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
+import RadioCircle from "@/assets/images/icon/radio-circle.svg";
+import CustomerPhoto from "@/assets/images/users/customer-photo.png";
+import Camera from "@/assets/images/icon/camera.svg";
+import PageHeader from "@/components/ui/PageHeader";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import Dots from "@/assets/images/icon/Union.svg";
+import InputContent from "@/components/ui/InputContent";
+import VarientDropdown from "@/components/ui/SelectOption";
+import Toggle from "@/components/ui/Toggle";
+import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
+import Layout from "@/layouts/layout";
 
 const customers = () => {
   const [selectCustomersOpen, setSelectCustomersOpen] = useState(false);
@@ -30,7 +30,7 @@ const customers = () => {
   };
 
   const [opentablepage, setopentablepage] = useState(false);
-  const [active , setActive] = useState (false)
+  const [active, setActive] = useState(false);
 
   const opentableHandler = () => {
     setopentablepage(true);
@@ -43,21 +43,24 @@ const customers = () => {
   };
 
   return (
-    <>
+    <Layout>
       {!opentablepage ? (
         <>
           <div className="flex-wrap flex items-center justify-between mb-4 gap-3">
-            <Pagetitle title={"Customers"}/>
+            <Pagetitle title={"Customers"} />
             {selectCustomersOpen ? (
-              <div >
-                <button className="py-[5px] px-2 sm:pl-2 pl-0 mr-2 text-xs" type="button">
+              <div>
+                <button
+                  className="py-[5px] px-2 sm:pl-2 pl-0 mr-2 text-xs"
+                  type="button"
+                >
                   Export
                 </button>
                 <button className="py-[5px] px-2 mr-2 text-xs" type="button">
                   Import
                 </button>
                 <Button color={"green"} name={"Add customers"} />
-              </div>  
+              </div>
             ) : (
               ""
             )}
@@ -66,16 +69,25 @@ const customers = () => {
             <Card
               cardImage={CustomersCard}
               title={"Your customers will show here"}
-              discription={"Manage all customers at one place. You can import old customers or add new ones."}
+              discription={
+                "Manage all customers at one place. You can import old customers or add new ones."
+              }
             >
               <Button
                 color={"yellow"}
+                size={"small"}
                 name={"Add customer"}
                 secondary={"true"}
-                className="font-semibold dark:!text-blacklight mr-5"
+                className="!text-xs font-semibold dark:!text-blacklight mr-5"
                 onClick={SelectCustomersHandler}
               />
-              <Button color={"grey"} secondary={"true"} name={"Import"} className="font-semibold dark:!text-blacklight" />
+              <Button
+                color={"grey"}
+                secondary={"true"}
+                size={"small"}
+                name={"Import"}
+                className="font-semibold dark:!text-blacklight text-xs"
+              />
             </Card>
           ) : (
             <>
@@ -101,7 +113,12 @@ const customers = () => {
                   <div className="flex items-center">
                     <span className="bg-black/20 dark:bg-white/20 w-[1px] h-5 mr-4"></span>
                     <span className="mr-4 text-xs">1 Selected</span>
-                    <Button color={"grey"} name={"Delete Selected"} secondary={"true"} className={"dark:bg-white/5 dark:text-white"} />
+                    <Button
+                      color={"grey"}
+                      name={"Delete Selected"}
+                      secondary={"true"}
+                      className={"dark:bg-white/5 dark:!text-white"}
+                    />
                   </div>
                 </div>
                 <div className="relative">
@@ -121,7 +138,11 @@ const customers = () => {
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">
                       <th className="font-normal pl-0 py-3 before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border ">
-                        <Image src={selectStroke} alt="" className="mx-[5px] w-[18px] dark:invert" />
+                        <Image
+                          src={selectStroke}
+                          alt=""
+                          className="mx-[5px] w-[18px] dark:invert"
+                        />
                       </th>
                       <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                         Customer name
@@ -149,16 +170,23 @@ const customers = () => {
                 <ul className="flex">
                   <li className="mr-2">
                     <Link
-                      href={"#0"} 
+                      href={"#0"}
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
-                      <Image src={ArrowLineLeft} alt="" className="dark:invert" />
+                      <Image
+                        src={ArrowLineLeft}
+                        alt=""
+                        className="dark:invert"
+                      />
                     </Link>
                   </li>
                   <li className="mr-2">
                     <Link
-                      href={"#0"} onClick={setActive}
-                      className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${!active ? "bg-black/5 dark:bg-white/5" :  ""}`}
+                      href={"#0"}
+                      onClick={setActive}
+                      className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${
+                        !active ? "bg-black/5 dark:bg-white/5" : ""
+                      }`}
                     >
                       1
                     </Link>
@@ -200,7 +228,11 @@ const customers = () => {
                       href={"#0"}
                       className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                     >
-                      <Image src={ArrowLineLeft} alt="" className="dark:invert rotate-180" />
+                      <Image
+                        src={ArrowLineLeft}
+                        alt=""
+                        className="dark:invert rotate-180"
+                      />
                     </Link>
                   </li>
                 </ul>
@@ -227,14 +259,30 @@ const customers = () => {
           <div className="flex flex-wrap justify-between gap-y-5 mb-4">
             <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-11 p-5 sm:px-5 px-3">
               <div className="grid sm:grid-cols-2 sm:gap-6 ">
-                <InputContent ontent title={"First name"} className="dark:bg-black/40">
-                  <input type="text" name="" value="Baalkrishan" className="w-full dark:bg-transparent" />
+                <InputContent
+                  ontent
+                  title={"First name"}
+                  className="dark:bg-black/40"
+                >
+                  <input
+                    type="text"
+                    name=""
+                    value="Baalkrishan"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
                 <InputContent title={"Last name"} className="dark:bg-black/40">
-                  <input type="text" name="" value="Lal Sani" className="w-full dark:bg-transparent" />
+                  <input
+                    type="text"
+                    name=""
+                    value="Lal Sani"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
               </div>
-              <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40"}>
+              <InputContent
+                className={"!py-[10px] dark:bg-black/40 dark:text-white/40"}
+              >
                 <VarientDropdown
                   selectitem={[
                     { id: 1, name: "Select Language..." },
@@ -254,7 +302,10 @@ const customers = () => {
                 />
               </InputContent>
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <InputContent title={"Country code"} className={"dark:bg-black/40 dark:text-white/40"}>
+                <InputContent
+                  title={"Country code"}
+                  className={"dark:bg-black/40 dark:text-white/40"}
+                >
                   <VarientDropdown
                     selectitem={[
                       { id: 1, name: "+91" },
@@ -263,8 +314,16 @@ const customers = () => {
                     className="dark:text-white/40"
                   />
                 </InputContent>
-                <InputContent title={"Phone number"} className="dark:bg-black/40">
-                  <input type="number" name="" value="8073589105" className="w-full dark:bg-transparent" />
+                <InputContent
+                  title={"Phone number"}
+                  className="dark:bg-black/40"
+                >
+                  <input
+                    type="number"
+                    name=""
+                    value="8073589105"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
               </div>
               <div className="product-type-radio grid">
@@ -288,7 +347,9 @@ const customers = () => {
                   <label
                     for="product-type-1"
                     className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3  dark:bg-black/40 relative ${
-                      !radiioBtn ? "border-black dark:border-secondary-purpleb" : "border-black/10"
+                      !radiioBtn
+                        ? "border-black dark:border-secondary-purpleb"
+                        : "border-black/10"
                     }`}
                   >
                     {!radiioBtn ? (
@@ -316,18 +377,26 @@ const customers = () => {
                         />
                       </svg>
                     ) : (
-                      <Image src={RadioCircle} alt="" className="absolute right-3 top-3 dark:invert" />
+                      <Image
+                        src={RadioCircle}
+                        alt=""
+                        className="absolute right-3 top-3 dark:invert"
+                      />
                     )}
                     <h3
                       className={`mb-1 font-semibold dark:text-white/80 ${
-                        !radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        !radiioBtn
+                          ? "text-black/80 dark:text-white/80"
+                          : "text-black/40 dark:text-white/40"
                       }`}
                     >
                       Email subscription
                     </h3>
                     <p
                       className={` ${
-                        !radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        !radiioBtn
+                          ? "text-black/80 dark:text-white/80"
+                          : "text-black/40 dark:text-white/40"
                       }`}
                     >
                       Customer agreed to receive marketing emails.
@@ -336,7 +405,9 @@ const customers = () => {
                   <label
                     for="product-type-2"
                     className={`cursor-pointer bg-white border border-black/10 rounded-lg py-6 px-5 mb-3 dark:bg-black/40  dark:border-white/10 relative ${
-                      radiioBtn ? "border-black dark:border-secondary-purpleb" : "border-black/10"
+                      radiioBtn
+                        ? "border-black dark:border-secondary-purpleb"
+                        : "border-black/10"
                     }`}
                   >
                     {radiioBtn ? (
@@ -364,18 +435,26 @@ const customers = () => {
                         />
                       </svg>
                     ) : (
-                      <Image src={RadioCircle} alt="" className="absolute right-3 top-3 dark:invert" />
+                      <Image
+                        src={RadioCircle}
+                        alt=""
+                        className="absolute right-3 top-3 dark:invert"
+                      />
                     )}
                     <h3
                       className={`mb-1 font-semibold dark:text-white/80 ${
-                        radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        radiioBtn
+                          ? "text-black/80 dark:text-white/80"
+                          : "text-black/40 dark:text-white/40"
                       }`}
                     >
                       SMS subscription
                     </h3>
                     <p
                       className={` ${
-                        radiioBtn ? "text-black/80 dark:text-white/80" : "text-black/40 dark:text-white/40"
+                        radiioBtn
+                          ? "text-black/80 dark:text-white/80"
+                          : "text-black/40 dark:text-white/40"
                       }`}
                     >
                       Customer agreed to receive SMS marketing text messages.
@@ -384,7 +463,9 @@ const customers = () => {
                 </div>
               </div>
               <h3 className="text-lg font-semibold pb-4">Address</h3>
-              <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40 "}>
+              <InputContent
+                className={"!py-[10px] dark:bg-black/40 dark:text-white/40 "}
+              >
                 <VarientDropdown
                   selectitem={[
                     { id: 1, name: "Select Language..." },
@@ -396,14 +477,29 @@ const customers = () => {
               </InputContent>
               <div className="grid sm:grid-cols-2 sm:gap-6">
                 <InputContent title={"First name"} className="dark:bg-black/40">
-                  <input type="text" name="" value="Baalkrishan" className="w-full dark:bg-transparent" />
+                  <input
+                    type="text"
+                    name=""
+                    value="Baalkrishan"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
                 <InputContent title={"Last name"} className="dark:bg-black/40">
-                  <input type="text" name="" value="Lal Sani" className="w-full dark:bg-transparent" />
+                  <input
+                    type="text"
+                    name=""
+                    value="Lal Sani"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
               </div>
               <InputContent title={"Company"} className="dark:bg-black/40">
-                <input type="text" name="" value="Company name" className="w-full dark:bg-transparent" />
+                <input
+                  type="text"
+                  name=""
+                  value="Company name"
+                  className="w-full dark:bg-transparent"
+                />
               </InputContent>
               <InputContent title={"Address"} className="dark:bg-black/40">
                 <input
@@ -413,14 +509,30 @@ const customers = () => {
                   className="w-full dark:bg-transparent"
                 />
               </InputContent>
-              <InputContent title={"Apartment etc."} className="dark:bg-black/40">
-                <input type="text" name="" value="Apartment, suite, etc" className="w-full dark:bg-transparent" />
+              <InputContent
+                title={"Apartment etc."}
+                className="dark:bg-black/40"
+              >
+                <input
+                  type="text"
+                  name=""
+                  value="Apartment, suite, etc"
+                  className="w-full dark:bg-transparent"
+                />
               </InputContent>
               <div className="grid sm:grid-cols-2 sm:gap-6">
                 <InputContent title={"City"} className="dark:bg-black/40">
-                  <input type="text" name="" value="Pilani" className="w-full dark:bg-transparent" />
+                  <input
+                    type="text"
+                    name=""
+                    value="Pilani"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
-                <InputContent title={"State"} className="dark:bg-black/40 dark:text-white/40">
+                <InputContent
+                  title={"State"}
+                  className="dark:bg-black/40 dark:text-white/40"
+                >
                   <VarientDropdown
                     selectitem={[
                       { id: 1, name: "Rajasthan" },
@@ -430,24 +542,45 @@ const customers = () => {
                 </InputContent>
               </div>
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <InputContent title={"Country code"} className="dark:bg-black/40 ">
-                  <VarientDropdown 
-                    selectitem={[ 
-                      { id: 1, name: "+91",},
+                <InputContent
+                  title={"Country code"}
+                  className="dark:bg-black/40 "
+                >
+                  <VarientDropdown
+                    selectitem={[
+                      { id: 1, name: "+91" },
                       { id: 2, name: "Select2" },
                     ]}
                   />
                 </InputContent>
-                <InputContent title={"Phone number"} className="dark:bg-black/40">
-                  <input type="number" name="" value="8073589105" className="w-full dark:bg-transparent" />
+                <InputContent
+                  title={"Phone number"}
+                  className="dark:bg-black/40"
+                >
+                  <input
+                    type="number"
+                    name=""
+                    value="8073589105"
+                    className="w-full dark:bg-transparent"
+                  />
                 </InputContent>
               </div>
 
-              <p className="mb-[6px] text-black/40 dark:text-white/40">Other options</p>
+              <p className="mb-[6px] text-black/40 dark:text-white/40">
+                Other options
+              </p>
               <InputContent title={"Notes"} className="dark:bg-black/40">
-                <input type="text" name="" value="Text" className="w-full dark:bg-transparent" />
+                <input
+                  type="text"
+                  name=""
+                  value="Text"
+                  className="w-full dark:bg-transparent"
+                />
               </InputContent>
-              <InputContent title={"Add tags"} className={"mt-3 w-full cursor-pointer"}>
+              <InputContent
+                title={"Add tags"}
+                className={"mt-3 w-full cursor-pointer"}
+              >
                 <MultiselectDropdown
                   options={[
                     {
@@ -480,7 +613,12 @@ const customers = () => {
                 />
               </InputContent>
               <div className="flex justify-end sm:py-9 py-5 pt-7 flex-wrap gap-4">
-                <Button name={"Save"} className="font-normal text-sm text-white " color="green" size="large" />
+                <Button
+                  name={"Save"}
+                  className="font-normal text-sm text-white "
+                  color="green"
+                  size="large"
+                />
               </div>
             </div>
             <div className="w-full md:max-w-[35%] ">
@@ -495,14 +633,20 @@ const customers = () => {
                 </div>
                 <div>
                   <div className="relative group max-w-[120px] w-full">
-                    <Image src={CustomerPhoto} alt="" className="rounded-lg cursor-pointer" />
+                    <Image
+                      src={CustomerPhoto}
+                      alt=""
+                      className="rounded-lg cursor-pointer"
+                    />
                     <Image
                       src={Camera}
                       alt=""
                       className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] opacity-0 group-hover:opacity-100 transition-all duration-300"
                     />
                   </div>
-                  <p className="my-[10px] text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg.</p>
+                  <p className="my-[10px] text-black/40 dark:text-white/40">
+                    Allowed file types: png, jpg, jpeg.
+                  </p>
                 </div>
               </div>
               <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 mb-8 dark:bg-white/5">
@@ -511,32 +655,57 @@ const customers = () => {
                   This customer hasn’t placed any orders.
                 </p>
                 <div>
-                  <Button name={"Create order"} color={"purple"} className="font-normal text-sm" size="large" />
-                </div>z
+                  <Button
+                    name={"Create order"}
+                    color={"purple"}
+                    className="font-normal text-sm"
+                    size="large"
+                  />
+                </div>
+                z
               </div>
               <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 dark:bg-white/5">
-                <h3 className="text-lg font-semibold mb-[10px]">Last placed orders</h3>
+                <h3 className="text-lg font-semibold mb-[10px]">
+                  Last placed orders
+                </h3>
                 <div className="flex justify-between bg-white py-[10px] px-4 mb-3 border-b border-black/5 dark:bg-black/40 dark:border-white/10">
-                  <h2 className="text-sm text-blacklight font-semibold border-black/5 dark:text-white">Total orders</h2>
-                  <h2 className="text-sm text-blacklight font-semibold dark:text-white">2</h2>
+                  <h2 className="text-sm text-blacklight font-semibold border-black/5 dark:text-white">
+                    Total orders
+                  </h2>
+                  <h2 className="text-sm text-blacklight font-semibold dark:text-white">
+                    2
+                  </h2>
                 </div>
                 <div className="flex justify-between py-[11px] px-4 bg-white mb-3 border-b border-black/5 dark:bg-black/40 dark:border-white/10">
-                  <p className="text-blacklight text-xs	leading-[18px] dark:text-white">#CM9805</p>
-                  <p className="text-primary-green text-xs leading-[18px]">View details</p>
+                  <p className="text-blacklight text-xs	leading-[18px] dark:text-white">
+                    #CM9805
+                  </p>
+                  <p className="text-primary-green text-xs leading-[18px]">
+                    View details
+                  </p>
                 </div>
                 <div className="flex justify-between py-[11px] px-4 bg-white mb-3 border-b border-black/5 dark:bg-black/40 dark:border-white/10">
-                  <p className="text-blacklight text-xs	leading-[18px] dark:text-white">#CM9805</p>
-                  <p className="text-primary-green text-xs  leading-[18px]">View details</p>
+                  <p className="text-blacklight text-xs	leading-[18px] dark:text-white">
+                    #CM9805
+                  </p>
+                  <p className="text-primary-green text-xs  leading-[18px]">
+                    View details
+                  </p>
                 </div>
                 <div>
-                  <Button name={"Create order"} color={"purple"}  className="text-sm"  size="large" />
+                  <Button
+                    name={"Create order"}
+                    color={"purple"}
+                    className="text-sm"
+                    size="large"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </>
       )}
-    </>
+    </Layout>
   );
 };
 export default customers;

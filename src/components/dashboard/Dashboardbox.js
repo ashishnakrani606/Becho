@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Arrow from "../../assets/images/icon/arrowblack.svg";
-import Arrowdown from "../../assets/images/icon/downblackarrow.svg";
+import Arrow from "@/assets/images/icon/arrowblack.svg";
+import Arrowdown from "@/assets/images/icon/downblackarrow.svg";
 
 const ProductData = [
   {
@@ -39,19 +39,19 @@ export default function Dashboardbox() {
     <>
       <div className="lg:col-span-2 lg:row-span-2">
         <div className="grid grid-cols-2 sm:gap-x-7 gap-2 md:gap-y-8 gap-y-5 h-full">
-          {ProductData.map((navi, index) => (
+          {ProductData.map((dashboardData, index) => (
             <div
               key={index}
-              className={`xl:p-6 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-[#1c1c1c] xl:max-w-[202px] w-full ${navi.bgcolor}`}
+              className={`xl:p-6 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgcolor}`}
             >
-              <h3 className="md:text-sm text-xs font-semibold">{navi.title}</h3>
+              <h3 className="md:text-sm text-xs font-semibold">{dashboardData.title}</h3>
               <div
-                className={`flex pt-3 items-center 2xl:gap-[26px] xl:gap-2 sm:gap-3 gap-1 justify-between lg:justify-start ${navi.boxcontain}`}
+                className={`flex pt-3 items-center 2xl:gap-[26px] xl:gap-2 sm:gap-3 gap-1 justify-between lg:justify-start ${dashboardData.boxcontain}`}
               >
-                <span className={`md:text-2xl sm:text-lg text-sm ${navi.counttext}`}>{navi.count}</span>
+                <span className={`md:text-2xl sm:text-lg text-sm ${dashboardData.counttext}`}>{dashboardData.count}</span>
                 <div className="flex gap-[6px]">
-                  <p className="sm:text-xs text-[10px] font-normal">{navi.growth}</p>
-                  <Image src={navi.img} alt="" />
+                  <p className="sm:text-xs text-[10px] font-normal">{dashboardData.growth}</p>
+                  <Image src={dashboardData.img} alt="" />
                 </div>
               </div>
             </div>

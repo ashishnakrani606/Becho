@@ -1,33 +1,214 @@
-import React from "react";
-import { useState } from "react";
-import Card from "../../src/components/ui/Card";
-import PageHeader from "../../src/components/ui/PageHeader";
-import ordersCard from "../../src/assets/images/img/orders-card.svg";
-import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
-import Addicon from "../../src/assets/images/icon/Add.svg";
-import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
-import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
-import Searchicon from "../../src/assets/images/icon/searchico.svg";
-import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import Button from "../../src/components/ui/Button";
-import Pagetitle from "../../src/components/ui/Pagetitle";
-import SelectPlanTable from "../../src/components/orders/SelectPlanTable";
-import Dots from "../../src/assets/images/icon/Union.svg";
+import React,{ useState } from "react";
+import Card from "@/components/ui/Card";
+import PageHeader from "@/components/ui/PageHeader";
+import ordersCard from "@/assets/images/img/orders-card.svg";
+import Addicon from "@/assets/images/icon/Add.svg";
+import FunnelSimple from "@/assets/images/icon/FunnelSimple.svg";
+import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
+import Searchicon from "@/assets/images/icon/searchico.svg";
+import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
+import Button from "@/components/ui/Button";
+import Pagetitle from "@/components/ui/Pagetitle";
+import SelectPlanTable from "@/components/orders/SelectPlanTable";
+import Dots from "@/assets/images/icon/Union.svg";
 import Image from "next/image";
-import Dropdown from "../../src/components/ui/Dropdown";
+import Dropdown from "@/components/ui/Dropdown";
 import Link from "next/link";
-import Alert from "../../src/components/ui/Alert";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import pillows from "../../src/assets/images/users/brown-throw-pillows.png";
-import TexDetail from "../../src/assets/images/icon/tax-detail.svg";
-import Due from "../../src/assets/images/icon/Add-payment-due.svg";
-import NoteCustomer from "../../src/assets/images/icon/warning-circle.svg";
-import MultiselectDropdown from "../../src/components/ui/MultiselectDropdown";
-import InputContent from "../../src/components/ui/InputContent";
+import Alert from "@/components/ui/Alert";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import pillows from "@/assets/images/users/brown-throw-pillows.png";
+import Infoico from "@/assets/images/icon/info-icon.svg";
+import Due from "@/assets/images/icon/Add-payment-due.svg";
+import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
+import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
+import InputContent from "@/components/ui/InputContent";
+import Layout from "@/layouts/layout";
+import CheckBox from "@/components/ui/CheckBox";
+import User from "@/assets/images/icon/userimg.svg";
+import Calender from "@/assets/images/icon/CalendarBlank.svg";
+import User1 from "@/assets/images/icon/user1.svg";
+import User2 from "@/assets/images/icon/user2.svg";
+import User3 from "@/assets/images/icon/user3.svg";
+import User4 from "@/assets/images/icon/user4.svg";
+
+
+const tableData = [
+  {
+    id: 1,
+    orderId: "#CM9808",
+    userName: "Krishna H",
+    payment: "Paid",
+    deliveryMethod: "Cash on Delivery",
+    date: "Today, 2:34 pm",
+    img: User,
+    icon: Calender,
+    items: "3 items",
+    orderStatus: "On hold",
+    orderStatusData: "status",
+    union: Dots,
+    dot: "dot-active pl-3 before:dark:bg-white",
+    orderStatusData:
+      "bg-[#f2994ab3] ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"Cash"
+  },
+  {
+    id: 2,
+    orderId: "#CM9807",
+    userName: "Sahil Kohli",
+    payment: "Paid",
+    deliveryMethod: "UPI",
+    date: "Today, 1:50 pm",
+    img: User1,
+    items: "5 items",
+    icon: Calender,
+    union: Dots,
+    orderStatus: "Fulfilled",
+    dots: "dot-active pl-3 before:dark:bg-white",
+    name:"Paid"
+  },
+  {
+    id: 3,
+    orderId: "#CM9806",
+    userName: "Asmita Modi",
+    payment: "Payment pending",
+    date: "Today, 12:34 pm",
+    img: User2,
+    items: "10 items",
+    icon: Calender,
+    orderStatus: "Unfulfilled",
+    tablesec: "text-color",
+    union: Dots,
+    orderStatusdata: "pending",
+    orderStatus: "Unfulfilled",
+    paymentdata: "bg-amber-200 dark:!text-black",
+    orderStatusData:
+      "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"Payment"
+
+  },
+  {
+    id: 4,
+    orderId: "#CM9805",
+    userName: "Ajay Nagar",
+    payment: "Payment pending",
+    date: "Today, 10:14 am",
+    img: User3,
+    items: "5 items",
+    icon: Calender,
+    orderStatus: "Unfulfilled",
+    tablesec: "text-color",
+    union: Dots,
+    paymentdata: "bg-amber-200 dark:!text-black",
+    orderStatusData:
+      "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"paymentpending"},
+  {
+    id: 5,
+    orderId: "#CM9804",
+    userName: "Vijaya Divan",
+    payment: "Paid",
+    deliveryMethod: "UPI",
+    date: "Yesterday",
+    img: User4,
+    items: "11 items",
+    icon: Calender,
+    orderStatus: "Fulfilled",
+    union: Dots,
+    dot: "dot-active pl-3 before:dark:bg-white",
+    dots: "dot-active pl-3 before:dark:bg-white",
+    name:"paidcash"
+  },
+  {
+    id: 6,
+    orderId: "#CM9808",
+    userName: "Krishna H",
+    payment: "Paid",
+    deliveryMethod: "Cash on Delivery",
+    date: "Today, 2:34 pm",
+    img: User,
+    icon: Calender,
+    items: "3 items",
+    orderStatus: "Unfulfilled",
+    orderStatusData: "status",
+    union: Dots,
+    dot: "dot-active pl-3 before:dark:bg-white",
+    orderStatusData:
+    "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"deleviry"},
+    {
+      id: 7,
+    orderId: "#CM9807",
+    userName: "Sahil Kohli",
+    payment: "Paid",
+    deliveryMethod: "UPI",
+    date: "Today, 1:50 pm",
+    img: User1,
+    items: "5 items",
+    icon: Calender,
+    union: Dots,
+    orderStatus: "Fulfilled",
+    dot: "dot-active pl-3 before:dark:bg-white",
+    dots: "dot-active pl-3 before:dark:bg-white",
+    name:"kohil"
+  },
+  {
+    id: 8,
+    orderId: "#CM9806",
+    userName: "Asmita Modi",
+    payment: "Payment pending",
+    date: "Today, 12:34 pm",
+    img: User2,
+    items: "10 items",
+    icon: Calender,
+    orderStatus: "Unfulfilled",
+    tablesec: "text-color",
+    union: Dots,
+    orderStatus: "Unfulfilled",
+    orderStatusData: "pending",
+    paymentdata: "bg-amber-200 dark:!text-black",
+    orderStatusData:
+    "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+    name:"modi"
+  },
+  {
+    id: 9,
+    orderId: "#CM9805",
+    userName: "Ajay Nagar",
+    payment: "Payment pending",
+    date: "Today, 10:14 am",
+    img: User3,
+    items: "5 items",
+    icon: Calender,
+    orderStatus: "Unfulfilled",
+    tablesec: "text-color",
+    union: Dots,
+    paymentdata: "bg-amber-200 dark:!text-black",
+    orderStatusData:
+      "bg-red-400 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
+      name:"nagar"
+  },
+  {
+    id: 10,
+    orderId: "#CM9804",
+    userName: "Vijaya Divan",
+    payment: "Paid",
+    deliveryMethod: "UPI",
+    date: "Yesterday",
+    img: User4,
+    items: "11 items",
+    icon: Calender,
+    orderStatus: "Fulfilled",
+    union: Dots,
+    dot: "dot-active pl-3 before:dark:bg-white",
+    name:"divan"
+  },
+];
 
 const orders = () => {
   const [selectPlanOpen, setSelectPlanOpen] = useState(false);
   const [active, setActive] = useState(false);
+  const [selected, setSelected] = useState([]);
+  const [selectAll, setSelectAll] = useState([]);
   const SelectPlanHandler = () => {
     setSelectPlanOpen(true);
   };
@@ -35,6 +216,28 @@ const orders = () => {
   const opentableHandler = () => {
     setopentablepage(true);
   };
+
+  const selectOrderItem = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setSelected([...selected, parseInt(value)])
+    } else {
+      setSelected(selected.filter((e) => e != parseInt(value)))
+    }
+  }
+    
+  const selectAllCheckboxes = (e) => {
+    let tempSelectAll = [];
+
+    if (e.target.checked) {
+      tableData.forEach((el, index) => {
+        tempSelectAll.push(index);
+      })
+    }
+
+    setSelected(tempSelectAll)
+  }
+
   const Fulfilled = [
     {
       id: 1,
@@ -71,7 +274,7 @@ const orders = () => {
   ];
 
   return (
-    <>
+    <Layout>
       {!opentablepage ? (
         <>
           <Pagetitle title={"orders"} />
@@ -88,7 +291,8 @@ const orders = () => {
                 <Button
                   color={"lightgreen"}
                   name={"Select plan"}
-                  className="font-semibold "
+                  size={"small"}
+                  className="font-semibold !text-xs"
                   onClick={SelectPlanHandler}
                 />
               </Card>
@@ -120,8 +324,8 @@ const orders = () => {
                     </div>
                     <div className="flex items-center">
                       <span className="bg-black/20 w-[1px] h-5 mr-4 dark:bg-white/20"></span>
-                      <span className="mr-4 text-xs">2 Selected</span>
-                      <Button color={"lightgrey"} secondary={"true"} name={"Delete"} className={"text-sm"}/>
+                      <span className="mr-4 text-xs">{selected.length} Selected</span>
+                      <Button color={"lightgrey"} secondary={"true"} name={"Delete"} className={"text-sm"} />
                     </div>
                   </div>
                   <div className="relative">
@@ -141,8 +345,10 @@ const orders = () => {
                     <thead>
                       <tr class="text-black/40 dark:text-white/40 border-b text-xs">
                         <th class="whitespace-nowrap font-normal pl-[5px] px-3 py-[11px] pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border flex">
-                          <Image src={selectStroke} alt="" className="mr-[10px] w-[18px] dark:invert" />
-                         <p>Order ID</p> 
+                          <CheckBox 
+                            name={'select all'}
+                            onChange={selectAllCheckboxes} />
+                          <p>Order ID</p>
                         </th>
                         <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Date
@@ -165,7 +371,13 @@ const orders = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <SelectPlanTable opentableHandler={opentableHandler} />
+                      <SelectPlanTable 
+                        selectAll={selectAll}
+                        handleChange={selectOrderItem}
+                        opentableHandler={opentableHandler} 
+                        tableData={tableData}
+                        selected={selected}
+                      />
                     </tbody>
                   </table>
                 </div>
@@ -173,15 +385,19 @@ const orders = () => {
                   <ul className="flex">
                     <li className="mr-2">
                       <Link
-                        href={"#0"} 
-                        className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center">
+                        href={"#0"}
+                        className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
+                      >
                         <Image src={ArrowLineLeft} alt="" className="dark:invert" />
                       </Link>
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"} onClick={setActive}
-                        className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${!active ? "bg-black/5 dark:bg-white/5" : ""}`}
+                        href={"#0"}
+                        onClick={setActive}
+                        className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${
+                          !active ? "bg-black/5 dark:bg-white/5" : ""
+                        }`}
                       >
                         1
                       </Link>
@@ -325,11 +541,10 @@ const orders = () => {
                 <div className="flex justify-end w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
                   <Button
                     color={"blackoutline"}
-
                     name={"Hold fulfillment"}
                     className="mr-5 text-sm text-blacklight border-black/10 border dark:border-white/10 dark:text-white dark:border-white/2"
                   />
-                  <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-[18px]"/>
+                  <Button color={"green"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-[18px]" />
                 </div>
               </div>
               <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
@@ -353,7 +568,7 @@ const orders = () => {
                         <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
                           <Link className="flex whitespace-nowrap" href={"/"}>
                             Show tax details
-                            <Image src={TexDetail} className="ml-[5px]" />
+                            <Image src={Infoico} className="ml-[5px]" />
                           </Link>
                         </td>
                         <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
@@ -394,7 +609,13 @@ const orders = () => {
                   </tbody>
                 </table>
                 <div className="py-4 flex justify-end border-b items-center border-black/10 dark:border-white/10 px-2 sm:flex-nowrap flex-wrap gap-3">
-                  <Button outline={"true"} color={"blacklight"} secondary={'true'} name={"Send invoice"} className="mr-4 text-sm" />
+                  <Button
+                    outline={"true"}
+                    color={"blacklight"}
+                    secondary={"true"}
+                    name={"Send invoice"}
+                    className="mr-4 text-sm"
+                  />
                   <Dropdown
                     className="right-0 left-[unset]"
                     button={
@@ -418,7 +639,8 @@ const orders = () => {
                   />
                 </div>
               </div>
-              <InputContent title={"Add tags"} className={"mt-4 w-full max-w-[400px] cursor-pointer"}>
+              <InputContent
+               title={"Add tags"} className={"mt-4 w-full max-w-[400px] cursor-pointer"}>
                 <MultiselectDropdown
                   options={[
                     {
@@ -521,7 +743,7 @@ const orders = () => {
           </div>
         </>
       )}
-    </>
+    </Layout>
   );
 };
 

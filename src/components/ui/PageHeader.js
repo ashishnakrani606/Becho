@@ -1,9 +1,9 @@
 import React from "react";
-import ArrowLeft from "../../assets/images/icon/ArrowLeft.svg";
+import ArrowLeft from "@/assets/images/icon/ArrowLeft.svg";
 import Image from "next/image";
 import Badges from "./Badges";
 import Link from "next/link";
-import ArrowLineLeft from "../../assets/images/icon/ArrowLineLeft.svg";
+import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 const PageHeader = ({ children, orderid, className, Badgesdata, arrow, orderidcopy}) => {
   return (
     <>

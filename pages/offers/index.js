@@ -1,25 +1,25 @@
-import React from "react";
-import { useState } from "react";
+import React,{ useState } from "react";
 import Image from "next/image";
-import Pagetitle from "../../src/components/ui/Pagetitle";
-import Card from "../../src/components/ui/Card";
-import offersCards from "../../src/assets/images/img/offers-card.svg";
-import Button from "../../src/components/ui/Button";
-import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
-import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
-import Searchicon from "../../src/assets/images/icon/searchico.svg";
-import Threedots from "../../src/assets/images/icon/Dots-three-outline.svg";
-import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
-import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import PageHeader from "../../src/components/ui/PageHeader";
-import Amountorder from "../../src/components/offers/Amountorder";
-import Alert from "../../src/components/ui/Alert";
+import Pagetitle from "@/components/ui/Pagetitle";
+import Card from "@/components/ui/Card";
+import offersCards from "@/assets/images/img/offers-card.svg";
+import Button from "@/components/ui/Button";
+import FunnelSimple from "@/assets/images/icon/FunnelSimple.svg";
+import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
+import Searchicon from "@/assets/images/icon/searchico.svg";
+import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
+import selectStroke from "@/assets/images/icon/select-stroke.svg";
+import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
+import PageHeader from "@/components/ui/PageHeader";
+import Amountorder from "@/components/offers/Amountorder";
+import Alert from "@/components/ui/Alert";
 import Link from "next/link";
-import InputContent from "../../src/components/ui/InputContent";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import CheckBox from "../../src/components/ui/CheckBox";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import DAtePicker from "../../src/components/ui/DatePicker";
+import InputContent from "@/components/ui/InputContent";
+import VarientDropdown from "@/components/ui/SelectOption";
+import CheckBox from "@/components/ui/CheckBox";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import DAtePicker from "@/components/ui/DatePicker";
+import Layout from "@/layouts/layout";
 
 const offers = () => {
   const [selectPlanOpen, setSelectPlanOpen] = useState(false);
@@ -32,7 +32,7 @@ const offers = () => {
     setopentablepage(true);
   };
   return (
-    <>
+    <Layout>
       {!opentablepage ? (
         <>
           <div className="flex justify-between items-center text mb-5 flex-wrap gap-5">
@@ -40,7 +40,7 @@ const offers = () => {
             {selectPlanOpen ? (
               <Button
                 color={"green"}
-                name={"Create discount"}
+                name={"Create discount"}                
                 className="font-semibold text-blacklight"
               />
             ) : (
@@ -59,7 +59,8 @@ const offers = () => {
                 <Button
                   color={"yellow"}                 
                   name={"Create discount"}
-                  className="font-semibold dark:text-blacklight !text-blacklight"
+                  size={"small"}
+                  className="!text-xs font-semibold dark:text-blacklight !text-blacklight"
                   onClick={SelectPlanHandler}
                 />
               </Card>
@@ -383,7 +384,7 @@ const offers = () => {
           </div>
         </>
       )}
-    </>
+    </Layout>
   );
 };
 

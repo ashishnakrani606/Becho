@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import Image from "next/image";
-import Selecticon from "./../../assets/images/icon/selecticon.svg"
+import Selecticon from "@/assets/images/icon/selecticon.svg"
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')

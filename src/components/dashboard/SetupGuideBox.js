@@ -1,7 +1,7 @@
 import {useEffect } from 'react';
 import Image from 'next/image';
 import React from 'react'
-import Subtract from "../../assets/images/icon/Subtract.svg";
+import Subtract from "@/assets/images/icon/Subtract.svg";
 
 const SetupGuideBox = ({children, openKey, isActive, title, iconOpacity , className}) => {
 
@@ -10,7 +10,7 @@ const SetupGuideBox = ({children, openKey, isActive, title, iconOpacity , classN
   })
   
   return (
-    <div className={`${className} mb-[23px] rounded-2xl bg-primary-light dark:bg-white/80 px-4 py-3 relative` }>
+    <div className={`${className} mb-[23px] rounded-2xl bg-primary-light dark:bg-white px-4 py-3 relative` }>
         <div className={`flex justify-between items-center cursor-pointer ${openKey == isActive ? "h-0 hidden" : "h-auto"}`}>
             <h3 className="pl-[38px] font-semibold py-[10px] text-blacklight">{title}</h3>
             <Image className={iconOpacity}  src={Subtract} alt="" />

@@ -1,19 +1,18 @@
 import Image from "next/image";
-import React from "react";
-import Button from "../../src/components/ui/Button";
-import RadioCircle from "../../src/assets/images/icon/radio-circle.svg";
-import MediaWall from "../../src/assets/images/img/media-wall.png";
-import Camera from "../../src/assets/images/icon/camera.svg";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
+import React, { useState } from "react";
+import Button from "@/components/ui/Button";
+import RadioCircle from "@/assets/images/icon/radio-circle.svg";
+import MediaWall from "@/assets/images/img/media-wall.png";
+import Camera from "@/assets/images/icon/camera.svg";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import Link from "next/link";
-import PageHeader from "../../src/components/ui/PageHeader";
-import Alert from "../../src/components/ui/Alert";
-import InputContent from "../../src/components/ui/InputContent";
-import OptionValue from "../../src/components/products/OptionValue";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import Toggle from "../../src/components/ui/Toggle";
-import { useState } from "react";
-// import Button from "../src/components/ui/Button";
+import PageHeader from "@/components/ui/PageHeader";
+import Alert from "@/components/ui/Alert";
+import InputContent from "@/components/ui/InputContent";
+import OptionValue from "@/components/products/OptionValue";
+import VarientDropdown from "@/components/ui/SelectOption";
+import Toggle from "@/components/ui/Toggle";
+import Layout from "@/layouts/layout";
 
 const products = () => {
   const [selectProductOpen, setSelectProductOpen] = useState(false);
@@ -33,15 +32,16 @@ const products = () => {
   };
 
   return (
-    <>
+    <Layout container>
       <UnsavedChanges>
         <Button
           color={"white"}
-          name={"Discard"}
+          name={"Discard"} 
+          size={"small"}         
           outline={"true"}
-          className={"mr-5 dark:border-blacklight dark:text-blacklight"}
+          className={"!text-xs mr-5 dark:!border-blacklight dark:!text-blacklight"}
         />
-        <Button color={"primarygreen"} name={"Save"} />
+        <Button color={"primarygreen"} name={"Save"} className={"!text-xs"}/>
       </UnsavedChanges>
       <PageHeader
         arrow={true}
@@ -91,7 +91,7 @@ const products = () => {
           <InputContent title={"Description"}>
             <textarea
               rows="5"
-              className="w-full dark:bg-transparent"
+              className="w-full dark:bg-transparent resize-none"
               value={"Antique wooden chest of drawers"}
             ></textarea>
           </InputContent>
@@ -269,7 +269,7 @@ const products = () => {
             <OptionValue title={"Style 3"} />
             <Link
               href={"#0"}
-              className="max-w-[252px] w-full px-5 py-4 mt-3 text-black/20 border border-black/10 rounded-lg bg-white dark:bg-black/40 bg-transparent dark:text-white dark:border-white/10"
+              className="max-w-[252px] w-full px-5 py-4 mt-3 text-black/20 border border-black/10 rounded-lg bg-white dark:bg-black/40 bg-transparent dark:text-white/20 dark:border-white/10"
             >
               Add another value
             </Link>
@@ -339,7 +339,7 @@ const products = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

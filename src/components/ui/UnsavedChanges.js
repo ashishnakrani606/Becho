@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import Warning from "../../assets/images/icon/Warning.svg";
+import Warning from "@/assets/images/icon/Warning.svg";
 
 const UnsavedChanges = ({children,className}) => {
   return (

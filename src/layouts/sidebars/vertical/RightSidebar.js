@@ -1,13 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import Orderreceive from "../../../assets/images/icon/order-receive.svg";
-import Customerico from "../../../assets/images/icon/customer.svg";
-import Cancleicon from "../../../assets/images/icon/cancleicon.svg";
-import Milistone from "../../../assets/images/icon/milistoneicon.svg";
-import Update from "../../../assets/images/icon/updatewifi.svg";
-import Closebtn from "../../../assets/images/icon/closeicon.svg";
-import Button from "../../../components/ui/Button";
+import Orderreceive from "@/assets/images/icon/order-receive.svg";
+import Customerico from "@/assets/images/icon/customer.svg";
+import Cancleicon from "@/assets/images/icon/cancleicon.svg";
+import Milistone from "@/assets/images/icon/milistoneicon.svg";
+import Update from "@/assets/images/icon/updatewifi.svg";
+import Closebtn from "@/assets/images/icon/closeicon.svg";
+import Button from "@/components/ui/Button";
 
 const navigation = [
   {

@@ -1,25 +1,27 @@
 import React from 'react'
 import Image from "next/image";
-import Block from "../../../src/assets/images/img/Block.png";
 import Link from "next/link";
+import Block from "@/assets/images/img/Block.png";
+import Layout from "@/layouts/layout"
 
 const SellerCommunity = () => {
   return (
     <>
        {/**********Seller Community sec Start************/}
-       <div class="flex md:flex-row md:items-center flex-col mt-[42px] gap-5 md:mb-16 mb-10">
+       <Layout container>
+       <div class="flex md:flex-row md:items-center flex-col mt-8 sm:mt-[42px] gap-5 md:mb-16 mb-10 ">
         <div class="max-w-[612px] w-full">
           <div className="relative">
-            <Image src={Block} alt="" className="min-h-[250px]" />
-            <div className=" absolute top-7 left-8">
+            <Image src={Block} alt="" className="sm:min-h-[250px] rounded-2xl w-full object-cover" />
+            <div className=" absolute sm:top-7 sm:left-8 top-[10px] left-5">
               <p className=" text-xs font-semibold text-[#fff]">BECHO.IO SELLER COMMUNITY</p>
             </div>
-            <div className=" absolute bottom-8 text-[#fff]  left-8">
-              <h2 className="md:text-2xl text-lg max-w-[450px] w-full font-semibold leading-tight">
+            <div className=" absolute sm:bottom-8 text-[#fff] left-5  bottom-[18px] sm:left-8">
+              <h2 className="md:text-2xl sm:text-lg text-sm sm:max-w-[450px] max-w-[250px] w-full font-semibold leading-tight">
                 Empowering Indian Entrepreneurs: Join the Becho Community
               </h2>
-              <div className="mt-5">
-                <Link href="#0" className="text-sm font-normal text-[#fff] py-[6px] px-2 rounded-lg bg-[#f0f8ff50]">
+              <div className="sm:mt-5 mt-2">
+                <Link href="#0" className="sm:text-sm text-xs  font-normal text-[#fff] py-[5px] sm:py-[6px] px-2 rounded-lg bg-[#f0f8ff50]">
                   Start the journey
                 </Link>
               </div>
@@ -43,6 +45,7 @@ const SellerCommunity = () => {
           </div>
         </div>
       </div>
+       </Layout>
       {/**********Seller Community sec End************/}
     </>
   )

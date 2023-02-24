@@ -1,8 +1,9 @@
 import React from 'react'
-import TabList from '../../src/components/store-settings/tab-list' 
-import Button from "../../src/components/ui/Button";
-import CheckBox  from "../../src/components/ui/CheckBox";
-import SetupUpdate from "../../src/components/ui/SetupUpdate";
+import TabList from '@/components/store-settings/tab-list' 
+import Button from "@/components/ui/Button";
+import CheckBox  from "@/components/ui/CheckBox";
+import SetupUpdate from "@/components/ui/SetupUpdate";
+import Layout from '@/layouts/layout';
 
 const Information = [
   {
@@ -35,9 +36,8 @@ const Information = [
 
 const checkout = () => {
   return (
-    <>
+    <Layout container>
       <TabList/>
-
       {/* /********** checkout start ************/}
       <div>
           <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl lg:p-6 lg:pb-8 py-6 sm:px-5 px-3">
@@ -46,14 +46,14 @@ const checkout = () => {
               <div className="flex justify-end items-center gap-2">
                 <Button
                   color="lightgrey"
-                  size="large"
+                  size="small"
                   name={"Discard"}
                   secondary={"true"}
                   className={"leading-[18px] text-xs !px-2 !py-[5px]"}
                 ></Button>
                 <Button
                   color="blacklight"
-                  size="large"
+                  size="small"
                   className={"text-xs !px-2 !py-[5px] leading-[18px]"}
                   name={"Save Changes"}
                 ></Button>
@@ -86,14 +86,14 @@ const checkout = () => {
               <div className="flex justify-end items-center gap-2">
                 <Button
                   color="lightgrey"
-                  size="large"
+                  size="small"
                   name={"Discard"}
                   secondary={"true"}
                   className={"leading-[18px] text-xs !px-2 !py-[5px]"}
                 ></Button>
                 <Button
                   color="blacklight"
-                  size="large"
+                  size="small"
                   className={"text-xs !px-2 !py-[5px] leading-[18px]"}
                   name={"Save Changes"}
                 ></Button>
@@ -115,7 +115,7 @@ const checkout = () => {
           </div>
         </div>
         {/* /********** checkout end************/}
-    </>
+    </Layout>
   )
 }
 

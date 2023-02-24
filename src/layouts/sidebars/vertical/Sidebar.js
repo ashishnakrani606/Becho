@@ -1,26 +1,26 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Avatar from "../../../assets/images/users/avatar.png";
-import dashboard from "../../../assets/images/icon/dashboard.svg";
-import orders from "../../../assets/images/icon/orders.svg";
-import products from "../../../assets/images/icon/products.svg";
-import offers from "../../../assets/images/icon/offers.svg";
-import customers from "../../../assets/images/icon/customers.svg";
-import StoreDetails from "../../../assets/images/icon/store-details.svg";
-import Permissions from "../../../assets/images/icon/permissions.svg";
-import Checkout from "../../../assets/images/icon/checkout.svg";
-import rupee from "../../../assets/images/icon/rupee.svg";
-import shipping from "../../../assets/images/icon/shipping.svg";
-import Percentage from "../../../assets/images/icon/percentage.svg";
-import Brandassets from "../../../assets/images/icon/brand-assets.svg";
-import Email from "../../../assets/images/icon/Email.svg";
-import SEO from "../../../assets/images/icon/SEO.svg";
-import Policies from "../../../assets/images/icon/Policies.svg";
-import Bechopro from "../../../assets/images/icon/Bechopro.svg";
-import Logobecho from "../../../assets/images/icon/Logobecho.svg";
-import Closebtn from "../../../assets/images/icon/closeicon.svg";
-import Dropdown from "../../../components/ui/Dropdown";
+import Avatar from "@/assets/images/users/avatar.png";
+import dashboard from "@/assets/images/icon/dashboard.svg";
+import orders from "@/assets/images/icon/orders.svg";
+import products from "@/assets/images/icon/products.svg";
+import offers from "@/assets/images/icon/offers.svg";
+import customers from "@/assets/images/icon/customers.svg";
+import StoreDetails from "@/assets/images/icon/store-details.svg";
+import Permissions from "@/assets/images/icon/permissions.svg";
+import Checkout from "@/assets/images/icon/checkout.svg";
+import rupee from "@/assets/images/icon/rupee.svg";
+import shipping from "@/assets/images/icon/shipping.svg";
+import Percentage from "@/assets/images/icon/percentage.svg";
+import Brandassets from "@/assets/images/icon/brand-assets.svg";
+import Email from "@/assets/images/icon/Email.svg";
+import SEO from "@/assets/images/icon/SEO.svg";
+import Policies from "@/assets/images/icon/Policies.svg";
+import Bechopro from "@/assets/images/icon/Bechopro.svg";
+import Logobecho from "@/assets/images/icon/Logobecho.svg";
+import Closebtn from "@/assets/images/icon/closeicon.svg";
+import Dropdown from "@/components/ui/Dropdown";
 import { title } from "process";
 
 const navigation = [
@@ -161,7 +161,7 @@ const Sidebar = ({ showMobilemenu }) => {
                       <span
                         className={`nav-link flex gap-1 hover:opacity-70 items-center w-full font-semibold text-sm py-[6px] pl-6 rounded-lg relative ${
                           location === navi.href
-                            ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-white after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
+                            ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
                         }`}
                       >
@@ -180,7 +180,7 @@ const Sidebar = ({ showMobilemenu }) => {
                 <span
                 className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
                   location === '/becho-pro'
-                    ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-white after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
+                    ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                     : ""
                 }`}
                 >
@@ -191,7 +191,7 @@ const Sidebar = ({ showMobilemenu }) => {
             </div>
           </div>
         </div>
-        <Link href="#0" className="bottom-0 left-0 px-3 flex justify-center  w-full">
+        <Link href="/" className="bottom-0 left-0 px-3 flex justify-center  w-full">
           <Image src={Logobecho} alt="" className="dark:invert mb-6" />
         </Link>
       </div>

@@ -1,31 +1,30 @@
+import React ,{ useState } from "react";
 import Image from "next/image";
-import React from "react";
-import ProductSelectTable from "../../src/components/products/ProductSelectTable";
-import Button from "../../src/components/ui/Button";
-import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
-import Pagetitle from "../../src/components/ui/Pagetitle";
-import Addicon from "../../src/assets/images/icon/Add.svg";
-import ProductCard from "../../src/assets/images/icon/product-main.svg";
-import Card from "../../src/components/ui/Card";
-import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
-import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
-import Searchicon from "../../src/assets/images/icon/searchico.svg";
-import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import Threedots from "../../src/assets/images/icon/Dots-three-outline.svg";
-import CheckCircle from "../../src/assets/images/icon/CheckCircle.svg";
-import RadioCircle from "../../src/assets/images/icon/radio-circle.svg";
-import MediaWall from "../../src/assets/images/img/media-wall.png";
-import Camera from "../../src/assets/images/icon/camera.svg";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
+import ProductSelectTable from "@/components/products/ProductSelectTable";
+import Button from "@/components/ui/Button";
+import selectStroke from "@/assets/images/icon/select-stroke.svg";
+import Pagetitle from "@/components/ui/Pagetitle";
+import Addicon from "@/assets/images/icon/Add.svg";
+import ProductCard from "@/assets/images/icon/product-main.svg";
+import Card from "@/components/ui/Card";
+import FunnelSimple from "@/assets/images/icon/FunnelSimple.svg";
+import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
+import Searchicon from "@/assets/images/icon/searchico.svg";
+import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
+import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
+import CheckCircle from "@/assets/images/icon/CheckCircle.svg";
+import RadioCircle from "@/assets/images/icon/radio-circle.svg";
+import MediaWall from "@/assets/images/img/media-wall.png";
+import Camera from "@/assets/images/icon/camera.svg";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import Link from "next/link";
-import PageHeader from "../../src/components/ui/PageHeader";
-import Alert from "../../src/components/ui/Alert";
-import InputContent from "../../src/components/ui/InputContent";
-import OptionValue from "../../src/components/products/OptionValue";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import Toggle from "../../src/components/ui/Toggle";
-import { useState } from "react";
-// import Button from "../src/components/ui/Button";
+import PageHeader from "@/components/ui/PageHeader";
+import Alert from "@/components/ui/Alert";
+import InputContent from "@/components/ui/InputContent";
+import OptionValue from "@/components/products/OptionValue";
+import VarientDropdown from "@/components/ui/SelectOption";
+import Toggle from "@/components/ui/Toggle";
+import Layout from "@/layouts/layout";
 
 const products = () => {
   const [selectProductOpen, setSelectProductOpen] = useState(false);  
@@ -46,7 +45,8 @@ const products = () => {
   };
 
   return (
-    <>
+    
+    <Layout>
       {!opentablepage ? (
         <>
           <div className="flex items-center justify-between">
@@ -59,7 +59,7 @@ const products = () => {
                 <button className="py-[5px] px-2 mr-2 text-xs" type="button">
                   Import
                 </button>
-                <Button color={"green"} name={"Add product"} />
+                <Button color={"green"} name={"Add product"}/>
               </div>
             ) : (
               ""
@@ -77,11 +77,12 @@ const products = () => {
               <Button
                 color={"yellow"}
                 secondary={"true"}
-                name={"Add product"}
-                className="font-semibold mr-5"
+                size={"small"}
+                name={"Add product"}                
+                className="font-semibold mr-5 !text-xs"
                 onClick={SelectProductHandler}
               />
-              <Button color={"grey"} secondary={"true"}  name={"Import"} className="font-semibold" />
+              <Button color={"grey"} secondary={"true"}  size={"small"} name={"Import"} className="font-semibold !text-xs" />
             </Card>
           ) : (
             <>
@@ -125,7 +126,7 @@ const products = () => {
                   </button>
                 </div>
               </div>
-              <div className="overflow-auto min-h-[488px]">
+              <div className="overflow-auto min-h-[493px]">
                 <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table"> 
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">
@@ -221,9 +222,10 @@ const products = () => {
             <Button
               color={"white"}
               secondary={"true"}
+              size={"small"}
               name={"Discard"}
               outline={"true"}
-              className={"mr-5 dark:border-blacklight dark:text-blacklight"}
+              className={"!text-xs mr-5 dark:border-blacklight dark:text-blacklight"}
             />
             <Button color={"primarygreen"} name={"Save"} />
           </UnsavedChanges>
@@ -521,7 +523,7 @@ const products = () => {
           </div>
         </>
       )}
-    </>
+    </Layout>
   );
 };
 

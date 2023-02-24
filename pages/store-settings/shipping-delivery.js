@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import TabList from '../../src/components/store-settings/tab-list' 
-import Button from "../../src/components/ui/Button";
-import Badges  from "../../src/components/ui/Badges";
+import TabList from '@/components/store-settings/tab-list' 
+import Button from "@/components/ui/Button";
+import Badges  from "@/components/ui/Badges";
+import Layout from "@/layouts/layout";
 
 const ShippingDelivery = () => {
 
@@ -12,7 +13,7 @@ const ShippingDelivery = () => {
 
 
   return (
-    <>
+    <Layout container>
       <TabList/>
       {/*********  Shipping & Delivery start***********/}
       <div>
@@ -22,35 +23,28 @@ const ShippingDelivery = () => {
               <p className="text-xs text-black/40 dark:text-white/40 leading-[18px]">
                 Manage rates for domestic & international orders for all products.
               </p>
-              <div>
                 <div className="md:pt-16 pt-7 gap-5 flex justify-between items-center">
                   <span className="text-xs text-black/40 dark:text-white/40">All products</span>
                   <Button
-                    color="teal"
-                    size="large"                    
+                    color="teal"                  
                     name={"Manage"}
                     className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
                   ></Button>
                 </div>
-              </div>
             </div>
             <div className="w-full md:max-w-[49%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl p-6">
               <h2 className="font-semibold text-sm leading-5 md:pb-8 pb-5">Custom shipping rates</h2>
               <p className="text-xs text-black/40 dark:text-white/40 leading-[18px]">
                 Add custom rates or destination restrictions for groups of products.
               </p>
-              <div>
                 <div className="md:pt-16 pt-7 gap-5 flex justify-between items-center">
                   <span className="text-xs text-black/40 dark:text-white/40">Jun 10, 2022</span>
                   <Button
-                    color="teal"
-                    size="large"                   
+                    color="teal"               
                     name={"Manage"}
-                    className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
-                  ></Button>
+                    className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}></Button>
                 </div>
               </div>
-            </div>
           </div>
           <div className="p-4 bg-primary-light dark:bg-white/5 mt-6 rounded-2xl">
             <div className="flex justify-between gap-4 flex-wrap">
@@ -67,9 +61,9 @@ const ShippingDelivery = () => {
               </button>
             </p>
           </div>
-        </div>
+      </div>
         {/*********  Shipping & Delivery end ***********/}
-    </>
+    </Layout>
   )
 }
 

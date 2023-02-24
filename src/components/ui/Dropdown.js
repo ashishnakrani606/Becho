@@ -13,7 +13,6 @@ export default function SidebarDropdown (props,opentableHandler) {
         <div>
           <Menu.Button className={`${props.className}`}>{props.button}</Menu.Button>
         </div>
-
         <Transition
           as={Fragment}
           enter="transition ease-out duration-300"

@@ -1,30 +1,32 @@
-import React from "react";
-import { useState } from "react";
-import Button from "../../src/components/ui/Button";
-import PageHeader from "../../src/components/ui/PageHeader";
-import Alert from "../../src/components/ui/Alert";
+import React, { useState} from "react";
+import Button from "@/components/ui/Button";
+import PageHeader from "@/components/ui/PageHeader";
+import Alert from "@/components/ui/Alert";
 import Link from "next/link";
-import InputContent from "../../src/components/ui/InputContent";
-import VarientDropdown from "../../src/components/ui/SelectOption";
-import CheckBox from "../../src/components/ui/CheckBox";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import DAtePicker from "../../src/components/ui/DatePicker";
+import InputContent from "@/components/ui/InputContent";
+import VarientDropdown from "@/components/ui/SelectOption";
+import CheckBox from "@/components/ui/CheckBox";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import DAtePicker from "@/components/ui/DatePicker";
+import Layout from "@/layouts/layout";
 
 const offers = () => {
   return (
-    <>
+    <Layout container>
       <UnsavedChanges>
         <Button
           color={"white"}
           name={"Discard"}
+          size={"small"}
           outline={"true"}
-          className={"md:mr-5 mr-4 dark:border-blacklight  dark:text-blacklight"}
+          className={"!text-xs md:mr-5 mr-4 dark:border-blacklight  dark:text-blacklight"}
         />
-        <Button color={"green"} name={"Save Changes"} />
+        <Button color={"green"} size={"medium"} name={"Save Changes"} />
       </UnsavedChanges>
       <PageHeader
         arrow={true}
-        className={"mb-5 flex-wrap gap-5"}
+        size={"small"}
+        className={"!text-xs mb-5 flex-wrap gap-5"}
         orderid={"EKHKSS3S266H"}
         orderidcopy={"Copy of EKHKSS3S266H"}
         Badgesdata={[{ color: "green", name: "Active" }]}
@@ -155,7 +157,7 @@ const offers = () => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

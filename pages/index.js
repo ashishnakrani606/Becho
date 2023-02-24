@@ -1,13 +1,13 @@
 import Head from "next/head";
-import DashboardContent from "./../src/components/dashboard/DashboardContent";
-import SetupGuide from "./../src/components/dashboard/SetupGuide";
-import SellerCommunity from "./../src/components/dashboard/SellerCommunity";
-import Footer from "./../src/components/dashboard/footer";
+import DashboardContent from "@/components/dashboard/DashboardContent";
+import SetupGuide from "@/components/dashboard/SetupGuide";
+import SellerCommunity from "@/components/dashboard/SellerCommunity"; 
 import { useState } from "react";
-import PopupStyle from "../src/components/ui/PopupStyle";
-import Star from "./../src/assets/images/icon/Star.svg";
+import PopupStyle from "@/components/ui/PopupStyle";
+import Star from "@/assets/images/icon/Star.svg";
+import Layout from "@/layouts/layout";
 
-export default function Home() {
+export default function Dashboard() {
 
   const [openDashboard, setOpenDashboard] = useState(false);
   return (
@@ -25,11 +25,10 @@ export default function Home() {
         description={'Learn how to set up your business online step by step and sell effectively.'}
       /> */}
 
-      {openDashboard ? <DashboardContent/> : <SetupGuide setOpenDashboard={setOpenDashboard}/>}
-
-      <SellerCommunity/>
-
-      <Footer />
+      <Layout container>
+        {openDashboard ? <DashboardContent/> : <SetupGuide setOpenDashboard={setOpenDashboard}/>}
+        <SellerCommunity/>  
+      </Layout>
     </>
   );
 }

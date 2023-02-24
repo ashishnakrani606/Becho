@@ -1,27 +1,28 @@
 import React, { useState } from "react";
-import TabList from '../../src/components/store-settings/tab-list'
-import CheckBox from "../../src/components/ui/CheckBox";
+import TabList from '@/components/store-settings/tab-list'
+import CheckBox from "@/components/ui/CheckBox";
 import Image from "next/image";
-import InputContent from "../../src/components/ui/InputContent";
-import LinkIcon from "../../src/assets/images/icon/Link.svg";
-import EnvelopeSimple from "../../src/assets/images/icon/envelopeSimple.svg";
-import Phone from "../../src/assets/images/icon/phone.svg";
-import Bechopro from "../../src/assets/images/icon/Bechogreen.svg";
-import Info from "../../src/assets/images/icon/info.svg";
-import Button from "../../src/components/ui/Button";
+import InputContent from "@/components/ui/InputContent";
+import LinkIcon from "@/assets/images/icon/Link.svg";
+import EnvelopeSimple from "@/assets/images/icon/envelopeSimple.svg";
+import Phone from "@/assets/images/icon/phone.svg";
+import Bechopro from "@/assets/images/icon/Bechogreen.svg";
+import Info from "@/assets/images/icon/info.svg";
+import Button from "@/components/ui/Button";
 import Link from "next/link";
-import clock from "../../src/assets/images/icon/clock.svg";
-import shield from "../../src/assets/images/icon/shield-check.svg";
-import google from "../../src/assets/images/icon/google.svg";
-import github from "../../src/assets/images/icon/github.svg";
-import Toggle from "../../src/components/ui/Toggle.js";
-import slack from "../../src/assets/images/icon/slack.svg";
-import Badges from "../../src/components/ui/Badges";
-import Alert from "../../src/components/ui/Alert";
-import SetupUpdate from "../../src/components/ui/SetupUpdate";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import Add from "../../src/assets/images/icon/addb.svg";
-import Threedot from "../../src/assets/images/icon/threedot.svg";
+import clock from "@/assets/images/icon/clock.svg";
+import shield from "@/assets/images/icon/shield-check.svg";
+import google from "@/assets/images/icon/google.svg";
+import github from "@/assets/images/icon/github.svg";
+import Toggle from "@/components/ui/Toggle.js";
+import slack from "@/assets/images/icon/slack.svg";
+import Badges from "@/components/ui/Badges";
+import Alert from "@/components/ui/Alert";
+import SetupUpdate from "@/components/ui/SetupUpdate";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import Add from "@/assets/images/icon/Addb.svg";
+import Threedot from "@/assets/images/icon/threedot.svg";
+import Layout from "@/layouts/layout";
 
 const StoreDetaildata = [
   {
@@ -70,24 +71,20 @@ const StoreDetaildata = [
 
 
 const StoreDetails = () => {
-  const [learnMore, setLearnMore] = useState(false);
-  const text = "Payment methods that are available with one of Becho's approved payment providers. ";
-  const para =
-    "Inform your customers of expected delivery dates by specifying a processing time of 2 business days or less. This processing period will be added with the shipping transit time to give a complete delivery estimate. ";
   return (
-    <>    
+    <Layout container>    
       <TabList/>
      {/************* store details start *************/}
      <div className={"mt-5"}>
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4">
           <div className="mb-1 flex items-center justify-between">
             <h4 className="text-lg font-semibold">Becho Store</h4>
-            <Image src={Bechopro}></Image>
+            <Image src={Bechopro} />
           </div>
           <div className="flex items-center gap-x-4 mb-4 sm:flex-nowrap flex-wrap ">
             <div className="sm:pt-0 pt-3">
               <Link href={"#0"} className="ml-1 flex items-center gap-1 text-black/40 text-xs dark:text-white/40">
-                <Image src={LinkIcon} className={"dark:invert"}></Image>
+                <Image src={LinkIcon} className={"dark:invert"} />
                 mystore.becho.io
               </Link>
             </div>
@@ -96,7 +93,7 @@ const StoreDetails = () => {
                 href="tel:to+91 8276 454 935"
                 className="ml-1 flex items-center gap-1 text-black/40 text-xs dark:text-white/40"
               >
-                <Image src={Phone} className={"dark:invert"}></Image>
+                <Image src={Phone} className={"dark:invert"} />
                 +91 8276 454 935
               </Link>
             </div>
@@ -105,7 +102,7 @@ const StoreDetails = () => {
                 href="mailto:hello@mystore.com"
                 className="ml-1 flex items-center gap-1  text-black/40 text-xs dark:text-white/40"
               >
-                <Image src={EnvelopeSimple} className={"dark:invert"}></Image>
+                <Image src={EnvelopeSimple} className={"dark:invert"} />
                 hello@mystore.com
               </Link>
             </div>
@@ -152,7 +149,7 @@ const StoreDetails = () => {
                   </p>
                   <p className="text-blacklight dark:text-white text-sm">
                     {item.data} 
-                    <Badges color={"green"} name={item.verified} className={"ml-2"}></Badges>
+                    <Badges color={"green"} name={item.verified} className={"ml-2"} />
                   </p>
                 </div>
               </div>
@@ -168,7 +165,7 @@ const StoreDetails = () => {
         </div>
       </div>
       {/************* store details end ***********/}
-    </>
+    </Layout>
   );
 };
 

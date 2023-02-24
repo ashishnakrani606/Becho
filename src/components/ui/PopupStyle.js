@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "./Button";
-import XCircle from "../../assets/images/icon/XCircle.svg";
+import XCircle from "@/assets/images/icon/XCircle.svg";
 import Link from "next/link";
 
 const PopupStyle = ({ className, icon, title, description, color }) => {

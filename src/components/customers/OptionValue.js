@@ -1,8 +1,6 @@
 import React from 'react';
 import Image from "next/image";
-import Delete from "../../assets/images/icon/deletebtn.svg"
-import Link from 'next/link';
-
+import Delete from "@/assets/images/icon/deletebtn.svg"
 
 const OptionValue = ({title}) => {
   const [open, setOpen] = React.useState();

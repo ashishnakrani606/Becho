@@ -1,18 +1,12 @@
 import { Fragment, useState } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
-const days = [
-  { id: 1, name: "30 Days" },
-  { id: 2, name: "60 Days" },
-  { id: 3, name: "20 Days" },
-  { id: 4, name: "10 Days" },
-];
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Dashboard() {
-  const [selected, setSelected] = useState(days[0]);
+export default function Dashboard(props) {
+  const [selected, setSelected] = useState(props.options[0]);
   return (
     <Listbox value={selected} onChange={setSelected}>
       {({ open }) => (
@@ -41,7 +35,7 @@ export default function Dashboard() {
               leaveTo="opacity-0"
             >
               <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-full overflow-auto rounded-md bg-white dark:bg-black py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
-                {days.map((item) => (
+                {props.options.map((item) => (
                   <Listbox.Option
                     key={item.id}
                     className={({ active }) =>

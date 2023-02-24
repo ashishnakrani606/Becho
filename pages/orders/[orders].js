@@ -1,80 +1,57 @@
-import React from "react";
-import { useState } from "react";
-import Card from "../../src/components/ui/Card";
-import PageHeader from "../../src/components/ui/PageHeader";
-import ordersCard from "../../src/assets/images/img/orders-card.svg";
-import selectStroke from "../../src/assets/images/icon/select-stroke.svg";
-import Addicon from "../../src/assets/images/icon/Add.svg";
-import FunnelSimple from "../../src/assets/images/icon/FunnelSimple.svg";
-import ArrowsDownUp from "../../src/assets/images/icon/ArrowsDownUp.svg";
-import Searchicon from "../../src/assets/images/icon/searchico.svg";
-import ArrowLineLeft from "../../src/assets/images/icon/ArrowLineLeft.svg";
-import Button from "../../src/components/ui/Button";
-import Pagetitle from "../../src/components/ui/Pagetitle";
-import SelectPlanTable from "../../src/components/orders/SelectPlanTable";
-import Dots from "../../src/assets/images/icon/Union.svg";
+import React, { useState } from "react";
 import Image from "next/image";
-import Dropdown from "../../src/components/ui/Dropdown";
 import Link from "next/link";
-import Alert from "../../src/components/ui/Alert";
-import UnsavedChanges from "../../src/components/ui/UnsavedChanges";
-import pillows from "../../src/assets/images/users/brown-throw-pillows.png";
-import TexDetail from "../../src/assets/images/icon/tax-detail.svg";
-import Due from "../../src/assets/images/icon/Add-payment-due.svg";
-import NoteCustomer from "../../src/assets/images/icon/warning-circle.svg";
-import MultiselectDropdown from "../../src/components/ui/MultiselectDropdown";
-import InputContent from "../../src/components/ui/InputContent";
+import PageHeader from "@/components/ui/PageHeader";
+import Button from "@/components/ui/Button";
+import Dropdown from "@/components/ui/Dropdown";
+import Alert from "@/components/ui/Alert";
+import UnsavedChanges from "@/components/ui/UnsavedChanges";
+import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
+import InputContent from "@/components/ui/InputContent";
+import pillows from "@/assets/images/users/brown-throw-pillows.png";
+import infoicon from "@/assets/images/icon/info-icon.svg";
+import Due from "@/assets/images/icon/Add-payment-due.svg";
+import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
+import Layout from "@/layouts/layout"; 
 
-const orders = () => {
-  // const [selectPlanOpen, setSelectPlanOpen] = useState(false);
-
-  // const SelectPlanHandler = () => {
-  //   setSelectPlanOpen(true);
-  // };
-
-  // const [opentablepage, setopentablepage] = useState(true);
-
-  // const opentableHandler = () => {
-  //   setopentablepage(true);
-  // };
-
+const orders = () => {  
   const Fulfilled = [
     {
-      id: 1,
-      productimg: pillows,
+      id: 1,  
+      productImg: pillows,
       product: "Brown Throw Pillows",
-      productitem: "5",
+      productItem: "5",
       price: "₹19.99 × 5",
-      totleprice: "₹99.95",
+      totlePrice: "₹99.95",
     },
     {
       id: 2,
-      productimg: pillows,
+      productImg: pillows,
       product: "Brown Throw Pillows",
-      productitem: "5",
+      productItem: "5",
       price: "₹19.99 × 5",
-      totleprice: "₹99.95",
+      totlePrice: "₹99.95",
     },
     {
       id: 3,
-      productimg: pillows,
+      productImg: pillows,
       product: "Brown Throw Pillows",
-      productitem: "5",
+      productItem: "5",
       price: "₹19.99 × 5",
-      totleprice: "₹99.95",
+      totlePrice: "₹99.95",
     },
     {
       id: 4,
-      productimg: pillows,
+      productImg: pillows,
       product: "Brown Throw Pillows",
-      productitem: "5",
+      productItem: "5",
       price: "₹19.99 × 5",
-      totleprice: "₹99.95",
+      totlePrice: "₹99.95",
     },
   ];
 
   return (
-    <>
+    <Layout container>
       <PageHeader
         arrow={true}
         className={"mb-[28px] gap-y-3"}
@@ -118,6 +95,7 @@ const orders = () => {
         <Button
           color={"white"}
           outline={"true"}
+          size={"small"}
           name={"Discard"}
           className={"mr-5 dark:!border-blacklight dark:!text-blacklight"}
         />
@@ -140,19 +118,19 @@ const orders = () => {
                       key={index}
                     >
                       <td className="py-[11px] pl-4 pr-2 max-w-[4%] w-full">
-                        <Image src={item.productimg} className="w-full min-w-[24px]" />
+                        <Image src={item.productImg} className="w-full min-w-[24px]" />
                       </td>
                       <td className="py-[11px] max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                         {item.product}
                       </td>
                       <td className="py-[11px] px-4 max-w-[9%] w-full text-xs leading-[18px] font-normal">
-                        {item.productitem}
+                        {item.productItem}
                       </td>
                       <td className="py-[11px] pr-4 max-w-[13%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                         {item.price}
                       </td>
                       <td className="py-[11px] px-4 max-w-[7%] w-full text-xs leading-[18px] font-normal">
-                        {item.totleprice}
+                        {item.totlePrice}
                       </td>
                     </tr>
                   ))}
@@ -160,13 +138,14 @@ const orders = () => {
               </table>
             </div>
             <div className="flex items-center justify-end gap-4 w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
-              <Button
-                color={"blackoutline"}
-                secondary={"true"}
+              <Button                
+                secondary={'true'}              
                 name={"Hold fulfillment"}
-                className="text-sm text-blacklight border-black/10 border dark:border-white/10 leading-[18px]"
+                outline={"true"}
+                color={"grey"}
+                className="text-sm leading-[18px]" size={"medium"}
               />
-              <Button color={"primarygreen"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-[18px]"  />
+              <Button color={"primarygreen"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-5"  size={"medium"}/>
             </div>
           </div>
           <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
@@ -190,7 +169,7 @@ const orders = () => {
                     <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
                       <Link className="flex whitespace-nowrap" href={"/"}>
                         Show tax details
-                        <Image src={TexDetail} className="ml-[5px]" />
+                        <Image src={infoicon} className="ml-[5px]" />
                       </Link>
                     </td>
                     <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
@@ -300,7 +279,7 @@ const orders = () => {
           <div>
             <div className="flex justify-between my-[15px] items-center gap-2">
               <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
-              <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] " />
+              <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] leading-[18px]" />
             </div>
             <div>
               <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
@@ -316,9 +295,15 @@ const orders = () => {
                   Phone
                 </p>
                 <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
-                  No phone provided{" "}
-                  <Button outline={"true"} name={"Add phone"} className="ml-2 leading-[18px]" size={"medium"} secondary={"true"} />
-                </p>
+                  No phone provided{""}                 
+                  <Button                
+                    secondary={'true'}              
+                    name={"Add phone"}
+                    outline={"true"}
+                    color={"grey"}
+                    className="text-sm leading-[18px]" size={"medium"}
+                  />
+                </p>    
               </div>
               <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
                 <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
@@ -326,7 +311,7 @@ const orders = () => {
                 </p>
                 <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
                   No email provided{" "}
-                  <Button outline={"true"} name={"Add email"} className="ml-2 leading-[18px]" secondary={"true"} size={"medium"}/>
+                  <Button outline={"true"} name={"Add email"} color={"grey"} secondary={"true"} size={"medium"} className="ml-2 leading-[18px]" />
                 </p>
               </div>
               <div className="flex w-full flex-wrap sm:flex-nowrap">
@@ -341,14 +326,14 @@ const orders = () => {
                       +91 80735 89105
                     </Link>
                   </p>
-                  <Button secondary={"true"} size={"medium"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]"  />
+                  <Button secondary={"true"} size={"medium"} color={"grey"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]" />
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   );
 };
 

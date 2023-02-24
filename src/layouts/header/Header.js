@@ -1,16 +1,30 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "react-bootstrap";
-import Squre from "../../assets/images/icon/squre.svg";
-import Roundbox from "../../assets/images/icon/round.svg";
-import Searchicon from "../../assets/images/icon/searchico.svg";
-import Themechange from "../../assets/images/icon/Sun.svg";
-import Menuicon from "../../assets/images/icon/menuicon.svg";
-import Dotsmenu from "../../assets/images/icon/threedots.svg";
-import Squreflip from "../../assets/images/icon/squreflip.svg";
+import Squre from "@/assets/images/icon/squre.svg";
+import Searchicon from "@/assets/images/icon/searchico.svg";
+import Themechange from "@/assets/images/icon/Sun.svg";
+import Menuicon from "@/assets/images/icon/menuicon.svg";
+import Dotsmenu from "@/assets/images/icon/threedots.svg";
+import Squreflip from "@/assets/images/icon/squreflip.svg";
+import dashboard from "@/assets/images/icon/dashboard.svg";
+import orders from "@/assets/images/icon/orders.svg";
+import products from "@/assets/images/icon/products.svg";
+import offers from "@/assets/images/icon/offers.svg";
+import customers from "@/assets/images/icon/customers.svg";
+import StoreDetails from "@/assets/images/icon/store-details.svg";
+import Permissions from "@/assets/images/icon/permissions.svg";
+import Checkout from "@/assets/images/icon/checkout.svg";
+import rupee from "@/assets/images/icon/rupee.svg";
+import shipping from "@/assets/images/icon/shipping.svg";
+import Percentage from "@/assets/images/icon/percentage.svg";
+import Brandassets from "@/assets/images/icon/brand-assets.svg";
+import Email from "@/assets/images/icon/Email.svg";
+import SEO from "@/assets/images/icon/SEO.svg";
+import Policies from "@/assets/images/icon/Policies.svg";
+import Bechopro from "@/assets/images/icon/Bechopro.svg";
 
 const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
   const { systemTheme, theme, setTheme } = useTheme();
@@ -19,6 +33,89 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const navigation = [
+    {
+      title: "Dashboard",
+      href: "/",
+      icon: dashboard,
+    },
+    {
+      title: "Orders",
+      href: "/orders",
+      icon: orders,
+    },
+    {
+      title: "Products",
+      href: "/products",
+      icon: products,
+    },
+    {
+      title: "Offers",
+      href: "/offers",
+      icon: offers,
+    },
+    {
+      title: "Customers",
+      href: "/customers",
+      icon: customers,
+    },
+    {
+      title: "Store Details",
+      href: "/store-settings/store-details",
+      icon: StoreDetails,
+    },
+    {
+      title: "Permissions",
+      href: "/store-settings/permissions",
+      icon: Permissions,
+    },
+    {
+      title: "Checkout",
+      href: "/store-settings/checkout",
+      icon: Checkout,
+    },
+    {
+      title: "Payment Gateways",
+      href: "/store-settings/payment-gatewaysrs",
+      icon: rupee,
+    },
+    {
+      title: "Shipping & Delivery",
+      href: "/store-settings/shipping-delivery",
+      icon: shipping,
+    },
+    {
+      title: "Taxes",
+      href: "/store-settings/taxes",
+      icon: Percentage,
+    },
+    {
+      title: "Brand Assets",
+      href: "/store-settings/brand-assets",
+      icon: Brandassets,
+    },
+    {
+      title: "Email Settings",
+      href: "/store-settings/email-settings",
+      icon: Email,
+    },
+    {
+      title: "SEO Settings",
+      href: "/store-settings/seo-settings",
+      icon: SEO,
+    },
+    {
+      title: "Policies",
+      href: "/store-settings/policies",
+      icon: Policies,
+    },
+    {
+      title: "Bechopro",
+      href: "/becho-pro",
+      icon: Bechopro,
+    },
+  ];
 
   const renderThemeChanger = () => {
     if (!mounted) return null;
@@ -45,31 +142,67 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
     setIsOpen(!isOpen);
   };
 
+  let curl = useRouter();
+  const location = curl.pathname;
   return (
     <>
       <div className="border-b border-black/10 dark:border-white/10 relative z-10">
         <div className="flex items-center justify-between md:px-7 px-4 md:py-6 py-4 md:gap-2 gap-7 header-top">
-          <Button color="primary" className="md:hidden block" onClick={showMobmenu}>
+          <button
+            color="primary"
+            className="md:hidden block"
+            onClick={showMobmenu}
+          >
             <Image src={Menuicon} alt="" className="w-7 dark:invert" />
-          </Button>
-          <div isOpen={isOpen} className={`dashbord-img ${isOpen ? "md:block" : "md:block hidden"}`}>
-            <div className="flex md:static absolute md:shadow-none shadow-layer-shadow dark:shadow-md bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
-              <Button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
+          </button>
+          <div
+            isOpen={isOpen}
+            className={`dashbord-img ${
+              isOpen ? "md:block" : "md:block hidden"
+            }`}
+          >
+            <div className="flex md:static absolute md:shadow-none  bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
+              <button
+                color="primary"
+                className="lgm:hidden md:block hidden"
+                onClick={showMobmenu}
+              >
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
-              </Button>
-              <Button color="primary" className="lgm:block hidden" onClick={showMobmenu}>
+              </button>
+              <button
+                color="primary"
+                className="lgm:block hidden"
+                onClick={showMobmenu}
+              >
                 <Image src={Squre} alt="" className="dark:invert" />
-              </Button>
-              <Image src={Roundbox} alt="" className="dark:invert" />
-              <div className="text-black/40 dark:text-white/40">
-                <Link href="#0" className="text-sm">
-                  Becho.io Panel
-                </Link>
-                <span className="px-2">/</span>
-                <Link href="#0" className="text-sm text-blacklight dark:text-white">
-                  Dashboard
-                </Link>
-              </div>
+              </button>
+              {navigation.map((navi, index) => (
+                <div
+                  className={`flex items-center ${
+                    location === navi.href ? "" : "hidden"
+                  }`}
+                >
+                  <Image src={navi.icon} alt="" className="dark:invert mr-5" />
+                  <div className="text-black/40 dark:text-white/40">
+                    <Link href="#0" className="text-sm">
+                      Becho.io Panel
+                    </Link>
+                    <span className="px-2">/</span>
+                    <Link
+                      href="#0"
+                      className="text-sm text-blacklight dark:text-white"
+                    >
+                      <span
+                        className={`${location === navi.href ? " " : "hidden"}`}
+                      >
+                        <span className="ml-1 d-inline-block font-normal">
+                          {navi.title}
+                        </span>
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className="flex sm:w-1/2 w-full xl:gap-8 sm:gap-4 gap-3 items-center justify-end">
@@ -78,15 +211,23 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
                 placeholder="Search"
                 className="rounded-lg max-w-[261px] w-full lg:w-[261px] pl-[26px] placeholder:text-sm text-xs bg-black/5 dark:bg-white/5 p-[6px] pr-3 focus-visible:outline-none"
               />
-              <Image src={Searchicon} alt="" className="absolute top-[7px] left-[7px] dark:invert" />
+              <Image
+                src={Searchicon}
+                alt=""
+                className="absolute top-[7px] left-[7px] dark:invert"
+              />
             </div>
             <Link href="#0">{renderThemeChanger()}</Link>
-            <Button color="primary" onClick={showsidebar}>
+            <button color="primary" onClick={showsidebar}>
               <Image src={Squreflip} alt="" className="dark:invert" />
-            </Button>
-            <Button color="primary" className="md:hidden block" onClick={Handletoggle}>
+            </button>
+            <button
+              color="primary"
+              className="md:hidden block"
+              onClick={Handletoggle}
+            >
               <Image src={Dotsmenu} alt="" className="w-5 dark:invert" />
-            </Button>
+            </button>
           </div>
         </div>
       </div>

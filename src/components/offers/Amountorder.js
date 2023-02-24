@@ -1,15 +1,8 @@
 import Image from "next/image";
-import Calender from "../../assets/images/icon/CalendarBlank.svg";
-import User from "../../assets/images/icon/userimg.svg";
-import User1 from "../../assets/images/icon/user1.svg";
-import User2 from "../../assets/images/icon/user2.svg";
-import User3 from "../../assets/images/icon/user3.svg";
-import User4 from "../../assets/images/icon/user4.svg";
-import Dots from "../../assets/images/icon/Union.svg";
-import Subtract from "../../assets/images/icon/Subtract.svg"; 
-import CheckBox from "../ui/CheckBox";
-import Dropdown from "../ui/Dropdown";
-const TableData = [
+import Dots from "@/assets/images/icon/Union.svg";
+import CheckBox from "@/components/ui/CheckBox";
+import Dropdown from "@/components/ui/Dropdown";
+const TableRow = [
   {
     id: 1,
     product: "EKHKSS3S266H",
@@ -34,39 +27,39 @@ const TableData = [
 const Amountorder = ({}) => {
   return (
     <>
-      {TableData.map((navi, index) => (
+      {TableRow.map((offerRowData, index) => (
         <tr
-          className={`border-b border-black/5 dark:border-white/5 dark:hover:bg-white/5  hover:bg-primary-light hover:border-primary-light  group transition-all duration-300 cursor-pointer text-xs ${navi.tablesec}`}
+          className={`border-b border-black/5 dark:border-white/5 dark:hover:bg-white/5  hover:bg-primary-light hover:border-primary-light  group transition-all duration-300 cursor-pointer text-xs ${offerRowData.tablesec}`}
           key={index}         
         >
           <td className="pl-[5px] py-2">
           <div className="">
-            <CheckBox name={navi.name}/>
+            <CheckBox name={offerRowData.name}/>
            </div>
           </td>
           <td className="px-3 py-2">
-            {navi.product}
+            {offerRowData.product}
           </td>
           <td className="px-3 pr-0 py-2">
             <h3 className={`relative pl-[11px] ${
-                navi.status == 'Active' ? 'text-primary-green' : "" || 
-                navi.status == 'Draft' ? 'text-black/40 dark:text-white/40' : ""
+                offerRowData.status == 'Active' ? 'text-primary-green' : "" || 
+                offerRowData.status == 'Draft' ? 'text-black/40 dark:text-white/40' : ""
               } `}>
               <span className={`absolute left-0 top-[50%] -translate-y-[50%] rounded-xl w-[6px] h-[6px] ${
-                navi.status == 'Active' ? 'bg-secondary-greenb' : "" || 
-                navi.status == 'Draft' ? 'bg-black/40 dark:bg-white/40' : ""
+                offerRowData.status == 'Active' ? 'bg-secondary-greenb' : "" || 
+                offerRowData.status == 'Draft' ? 'bg-black/40 dark:bg-white/40' : ""
               } `}
               ></span>
-              {navi.status}
+              {offerRowData.status}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2">{navi.type}</td>
+          <td className="px-3 pr-[10px] py-2">{offerRowData.type}</td>
           <td className="px-4 py-2">
-            <h3 className={`${ navi.lowstock == "lowstock" ? "text-secondary-red" : ""} `}>
-              {navi.inventory}
+            <h3 className={`${ offerRowData.lowstock == "lowstock" ? "text-secondary-red" : ""} `}>
+              {offerRowData.inventory}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2">{navi.vendor}</td>
+          <td className="px-3 pr-[10px] py-2">{offerRowData.vendor}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
