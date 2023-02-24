@@ -30,8 +30,8 @@ const PaymentGatewaysrs = () => {
                 </p>
               </div>
             </div>
-            <div className="flex justify-between border-b border-b-black/10 px-4 pt-4">
-              <div className="flex pb-4 ">
+            <div className="flex justify-between border-b border-b-black/10 px-4 py-4">
+              <div className="flex ">
                 <Image src={google} className="mr-4" />
                 <div>
                   <p className="font-semibold text-sm	text-blacklight dark:text-white">Google Pay</p>
@@ -40,8 +40,8 @@ const PaymentGatewaysrs = () => {
               </div>
               <Toggle turnOff turnOn className={"dark:!bg-secondary-purpleb"} />
             </div>
-            <div className="flex justify-between border-b border-b-black/10 px-4 pt-4">
-              <div className="flex pb-4 ">
+            <div className="flex justify-between border-b border-b-black/10 px-4 py-4">
+              <div className="flex">
                 <Image src={github} className="mr-4" />
                 <div>
                   <p className="font-semibold text-sm	text-blacklight dark:text-white">PayTM</p>

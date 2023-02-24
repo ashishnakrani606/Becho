@@ -4,7 +4,6 @@ import clock from "@/assets/images/icon/clock.svg";
 import shield from "@/assets/images/icon/shield-check.svg";
 import google from "@/assets/images/icon/google.svg";
 import github from "@/assets/images/icon/github.svg";
-import Toggle from "@/components/ui/Toggle.js";
 import slack from "@/assets/images/icon/slack.svg";
 import Button from "@/components/ui/Button";
 import Image from "next/image";

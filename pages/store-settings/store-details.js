@@ -20,7 +20,7 @@ import Badges from "@/components/ui/Badges";
 import Alert from "@/components/ui/Alert";
 import SetupUpdate from "@/components/ui/SetupUpdate";
 import UnsavedChanges from "@/components/ui/UnsavedChanges";
-import Add from "@/assets/images/icon/Addb.svg";
+import Add from "@/assets/images/icon/addb.svg";
 import Threedot from "@/assets/images/icon/threedot.svg";
 import Layout from "@/layouts/layout";
 
