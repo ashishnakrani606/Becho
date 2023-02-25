@@ -6,7 +6,7 @@ import Image from "next/image";
 import Squre from "@/assets/images/icon/squre.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import Themechange from "@/assets/images/icon/Sun.svg";
-import Menuicon from "@/assets/images/icon/Menuicon.svg";
+import Menuicon from "@/assets/images/icon/menuicon.svg";
 import Dotsmenu from "@/assets/images/icon/FunnelSimple-d.svg";
 import Squreflip from "@/assets/images/icon/squreflip.svg";
 import dashboard from "@/assets/images/icon/dashboard.svg";
