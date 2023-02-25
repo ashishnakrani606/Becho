@@ -11,10 +11,10 @@ import VarientDropdown from "@/components/ui/SelectOption";
 import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
 import Layout from "@/layouts/layout";
 
-const customers = () => {
+const Customers = () => {
   const [radiioBtn, setRadiioBtn] = useState(false);
 
-  const productTypeHandler = () => {
+  const ProductTypeHandler = () => {
     setRadiioBtn(!radiioBtn);
   };
 
@@ -85,7 +85,7 @@ const customers = () => {
               value=""
               name="product-type"
               className="h-0 w-0"
-              onClick={productTypeHandler}
+              onClick={ProductTypeHandler}
             />
             <input
               id="product-type-2"
@@ -93,7 +93,7 @@ const customers = () => {
               value=""
               name="product-type"
               className="h-0 w-0"
-              onClick={productTypeHandler}
+              onClick={ProductTypeHandler}
             />
             <div className="grid sm:grid-cols-2 sm:gap-6">
               <label
@@ -343,4 +343,4 @@ const customers = () => {
   );
 };
 
-export default customers;
+export default Customers;

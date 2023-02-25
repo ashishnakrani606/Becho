@@ -6,8 +6,8 @@ import Image from "next/image";
 import Squre from "@/assets/images/icon/squre.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import Themechange from "@/assets/images/icon/Sun.svg";
-import Menuicon from "@/assets/images/icon/menuicon.svg";
-import Dotsmenu from "@/assets/images/icon/threedots.svg";
+import Menuicon from "@/assets/images/icon/Menuicon.svg";
+import Dotsmenu from "@/assets/images/icon/FunnelSimple-d.svg";
 import Squreflip from "@/assets/images/icon/squreflip.svg";
 import dashboard from "@/assets/images/icon/dashboard.svg";
 import orders from "@/assets/images/icon/orders.svg";
@@ -147,13 +147,13 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
   return (
     <>
       <div className="border-b border-black/10 dark:border-white/10 relative z-10">
-        <div className="flex items-center justify-between md:px-7 px-4 md:py-6 py-4 md:gap-2 gap-7 header-top">
+        <div className="flex items-center justify-between md:px-7 px-4 md:py-6 py-4 md:gap-2 gap-4 header-top">
           <button
             color="primary"
-            className="md:hidden block"
+            className="md:hidden block w-7 min-w-[28px]"
             onClick={showMobmenu}
           >
-            <Image src={Menuicon} alt="" className="w-7 dark:invert" />
+            <Image src={Menuicon} alt="" className="dark:invert" />
           </button>
           <div
             isOpen={isOpen}

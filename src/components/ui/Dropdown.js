@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import React , { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import Image from "next/image";
 
@@ -6,7 +6,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SidebarDropdown (props,opentableHandler) {
+export default function SidebarDropdown (props) {
   return (
     <>
       <Menu as="div" className="relative inline-block">

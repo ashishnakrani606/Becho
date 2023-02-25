@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Button from "@/components/ui/Button";
 import PageHeader from "@/components/ui/PageHeader";
 import Alert from "@/components/ui/Alert";
@@ -113,14 +113,20 @@ const offers = () => {
                 ]}
               />
             </InputContent>
-            <InputContent title={"Start date"}>
+            <InputContent title={"Start date"} titlestyle={"mb-1"}>
               <DAtePicker placeholder={"Pick a date"}></DAtePicker>
             </InputContent>
-            <InputContent title={"End date (optional)"}>
+            <InputContent title={"End date (optional)"} titlestyle={"!mb-1"}>
               <DAtePicker placeholder={"Pick a date"}></DAtePicker>
             </InputContent>
             <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
-              <Button color="lightgrey" size="large" name={"Discard"} secondary={"true"} className={"text-sm px-4"}></Button>
+              <Button
+                color="lightgrey"
+                size="large"
+                name={"Discard"}
+                secondary={"true"}
+                className={"text-sm px-4"}
+              ></Button>
               <Button
                 color="blacklight"
                 size="large"

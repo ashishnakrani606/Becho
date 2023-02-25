@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TabList from "@/components/store-settings/tab-list";
 import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import Button from "@/components/ui/Button";
@@ -266,17 +266,15 @@ const EmailSettings = () => {
     <Layout container>
       <TabList />
       {/* /********** Email Settings start************/}
-      <div className="mx-[5px]">
-        <UnsavedChanges className={"!pr-[18px]"}>
-          <Button
-            color={"white"}
-            name={"Discard"}
-            outline={"true"}
-            className={"mr-5 dark:border-blacklight dark:text-blacklight"}
-          />
-          <Button color={"primarygreen"} name={"Save"} />
-        </UnsavedChanges>
-      </div>
+      <UnsavedChanges className={"!pr-[18px] mx-[5px]"}>
+        <Button
+          color={"white"}
+          name={"Discard"}
+          outline={"true"}
+          className={"mr-5 dark:border-blacklight dark:text-blacklight"}
+        />
+        <Button color={"primarygreen"} name={"Save"} />
+      </UnsavedChanges>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">
           Orders

@@ -1,129 +1,26 @@
 import React from "react";
 import Image from "next/image";
 import Dots from "@/assets/images/icon/Union.svg";
-import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png"; 
 import CheckBox from "@/components/ui/CheckBox";
 import Dropdown from "@/components/ui/Dropdown";
-const TableRow = [
-  {
-    id: 1, 
-    productImg: brownThrowPillows,
-    product: "Brown Throw Pillows",
-    status: "Active",
-    type: "Indoor ", 
-    inventory: "26 in stock",
-    vendor: "Rustic LTD",
-    name:"brown"
-  },
-  {
-    id: 2, 
-    productImg: brownThrowPillows,
-    product: "Antique Drawers",
-    status: "Active",
-    type: "Outdoor ",
-    lowstock: "lowstock",
-    inventory: "7 in stock",
-    vendor: "Company LTD",
-    name:"antique"
-  },
-  {
-    id: 3, 
-    productImg: brownThrowPillows,
-    product: "Biodegradable cardboard pots",
-    status: "Draft",
-    type: "Outdoor ", 
-    inventory: "Inventory not tracked",
-    vendor: "Company LTD",
-    name:"biodegradable"
-  },
-  {
-    id: 4, 
-    productImg: brownThrowPillows,
-    product: "Brown Throw Pillows",
-    status: "Active",
-    type: "Indoor ", 
-    inventory: "26 in stock",
-    vendor: "Rustic LTD",
-    name:"brownthrow"
-  },
-  {
-    id: 5, 
-    productImg: brownThrowPillows,
-    product: "Antique Drawers",
-    status: "Active",
-    type: "Outdoor ",
-    lowstock: "lowstock",
-    inventory: "7 in stock",
-    vendor: "Company LTD",
-    name:"antiquedrawers"
-  },
-  {
-    id: 6, 
-    productImg: brownThrowPillows,
-    product: "Biodegradable cardboard pots",
-    status: "Draft",
-    type: "Outdoor ", 
-    inventory: "Inventory not tracked",
-    vendor: "Company LTD",
-    name:"cardboard"
-  },
-  {
-    id: 7, 
-    productImg: brownThrowPillows,
-    product: "Gardening hand trowel",
-    status: "Draft",
-    type: "Outdoor ", 
-    inventory: "Inventory not tracked",
-    vendor: "Company LTD",
-    name:"gardening"
-  }, 
-  {
-    id: 8, 
-    productImg: brownThrowPillows,
-    product: "Antique Drawers",
-    status: "Active",
-    type: "Outdoor ",
-    lowstock: "lowstock",
-    inventory: "7 in stock",
-    vendor: "Company LTD",
-    Selected: 'true',
-    name:"companybrownthrow"
-  },
-  {
-    id: 9, 
-    productImg: brownThrowPillows,
-    product: "Biodegradable cardboard pots",
-    status: "Draft",
-    type: "Outdoor ", 
-    inventory: "Inventory not tracked",
-    vendor: "Company LTD",
-    name:"companycardboard"
-  },
-  {
-    id: 10, 
-    productImg: brownThrowPillows,
-    product: "Gardening hand trowel",
-    status: "Draft",
-    type: "Outdoor ", 
-    inventory: "Inventory not tracked",
-    vendor: "Company LTD",
-    name:"handtrowel"
-  }, 
-   
-];
 
-const ProductSelectTable = ({ opentableHandler }) => { 
+const ProductSelectTable = ({ TableRow, handleChange, selected }) => {  
   return (
     <>
       {TableRow.map((productRowData, index) => (
         <tr
-          className={`border-b border-black/5 dark:border-white/5 hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${productRowData.tablesec}`}
+          className={`${selected.includes(index)  ? "dark:bg-white/5 bg-primary-light" : ""} border-b border-black/5 dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${productRowData.tablesec}`}
           key={index}
           >
-          <td className="pl-[5px] py-2">
-           <div className="">
-            <CheckBox name={productRowData.name} />
-           </div>
+          <td>
+            <div className='pl-[5px] py-2 flex items-center'>
+              <CheckBox 
+                value={index} 
+                name={productRowData.name}
+                onChange={handleChange}
+                checked={selected.includes(index)} />
+              {productRowData.orderId}
+            </div>
           </td>
           <td className="px-3 py-2">
             <Image

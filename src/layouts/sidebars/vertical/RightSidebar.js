@@ -68,13 +68,13 @@ const RightSidebar = ({ showMobilesidebar }) => {
                 <div>
                   <span className="font-normal text-sm text-blacklight dark:text-white">{navi.title}</span>
                   <p className="text-xs text-black/40 dark:text-white/40">{navi.time}</p>
-                </div>
+                </div>  
               </Link>
             </div>
-          ))}       
-          <Button color="lightgrey" name="Load More" secondary={"true"} className="mt-7"/>          
+          ))}         
+          <Button color="lightgrey" size={'small'} name="Load More" secondary={"true"} className="mt-7"/>
         </div>
-      </div>
+      </div>                                     
     </div>
   );
 };

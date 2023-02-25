@@ -1,8 +1,8 @@
+import React , { useState } from "react";
 import Head from "next/head";
 import DashboardContent from "@/components/dashboard/DashboardContent";
 import SetupGuide from "@/components/dashboard/SetupGuide";
 import SellerCommunity from "@/components/dashboard/SellerCommunity"; 
-import { useState } from "react";
 import PopupStyle from "@/components/ui/PopupStyle";
 import Star from "@/assets/images/icon/Star.svg";
 import Layout from "@/layouts/layout";

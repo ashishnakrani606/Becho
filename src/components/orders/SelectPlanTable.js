@@ -1,23 +1,19 @@
-import { useEffect } from "react";
 import Image from "next/image";
-import User1 from "@/assets/images/icon/user1.svg";
-import User2 from "@/assets/images/icon/user2.svg";
-import User3 from "@/assets/images/icon/user3.svg";
-import User4 from "@/assets/images/icon/user4.svg";
 import Dots from "@/assets/images/icon/Union.svg";
-import Subtract from "@/assets/images/icon/Subtract.svg";
 import Dropdown from "@/components/ui/Dropdown";
 import CheckBox from "@/components/ui/CheckBox";
+
 
 const SelectPlanTable = ({ tableData, handleChange, selected }) => { 
   return (
     <>
       {tableData.map((orderRowData, index) => (
         <tr        
-          className={`border-b border-black/5 dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${orderRowData.tablesec}`}
-          key={index}>
+          className={`${selected.includes(index) ? "bg-primary-light dark:bg-white/5 " : ""} border-b border-black/5  dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${orderRowData.tablesec}`}
+          key={index}  onChange={handleChange}
+          checked={selected.includes(index)}>
           <td className="pl-0 py-2 flex items-center"> 
-          <div className="pl-[5px]">
+          <div className="pl-[5px] flex items-center">
             <CheckBox 
               value={index} 
               name={orderRowData.name}

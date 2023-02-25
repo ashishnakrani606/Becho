@@ -49,6 +49,19 @@ const orders = () => {
       totlePrice: "₹99.95",
     },
   ];
+   
+  const customer = [
+    {
+      id: 1,  
+      name: 'Baalkrishan Lal Sani',
+      phone: "",
+      email: "",
+      address: "Baalkrishan Lal Sani Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India",
+      mobile: "+91 80735 89105",
+    },
+  ];
+
+  const [customerData , setCustomerData] = useState(true);
 
   return (
     <Layout container>
@@ -97,9 +110,9 @@ const orders = () => {
           outline={"true"}
           size={"small"}
           name={"Discard"}
-          className={"mr-5 dark:!border-blacklight dark:!text-blacklight"}
+          className={"mr-5 dark:!border-blacklight dark:!text-blacklight !py-1"}
         />
-        <Button color={"primarygreen"} name={"Save Changes"} />
+        <Button color={"primarygreen"} name={"Save Changes"} className={"!py-[5px]"}/>
       </UnsavedChanges>
       <div className="my-7">
         <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."} />
@@ -195,7 +208,7 @@ const orders = () => {
                 <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
                   <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">No payment due date</td>
                   <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
-                    <Link className="flex justify-end text-[#27AE60]" href={"/"}>
+                    <Link className="flex justify-end text-primary-greenb" href={"/"}>
                       Add due date
                       <Image src={Due} className="ml-[5px]" />
                     </Link>
@@ -207,21 +220,15 @@ const orders = () => {
                 </tr>
               </tbody>
             </table>
-            <div className="py-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 px-2 sm:flex-nowrap flex-wrap">
-              <Button outline={"true"}  secondary={'true'} color={"grey"} name={"Send invoice"} className="text-sm leading-[18px]" size={"medium"}/>
+            <div className="py-4 px-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 sm:flex-nowrap flex-wrap">
+              <Button outline={"true"}  secondary={'true'} color={"grey"} name={"Send invoice"} className="text-lg leading-[18px]" size={"medium"}/>
               <Dropdown
                 className="right-0 left-[unset]"
                 button={
-                  <div className="flex gap-2 items-center px-2 justify-end py-2 lg:pl-4 lg:pr-5 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-[#27AE60]">
+                  <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
                     Collect payment
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M0.646447 0.659675C0.841709 0.446775 1.15829 0.446775 1.35355 0.659675L4.64645 4.25C4.84171 4.4629 5.15829 4.4629 5.35355 4.25L8.64645 0.659676C8.84171 0.446776 9.15829 0.446776 9.35355 0.659676C9.54882 0.872575 9.54882 1.21775 9.35355 1.43065L6.06066 5.02098C5.47487 5.65967 4.52513 5.65968 3.93934 5.02098L0.646447 1.43065C0.451184 1.21775 0.451184 0.872574 0.646447 0.659675Z"
-                        fill="black"
-                        class="fill-white"
-                      ></path>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z" fill="white"/>
                     </svg>
                   </div>
                 }
@@ -279,57 +286,111 @@ const orders = () => {
           <div>
             <div className="flex justify-between my-[15px] items-center gap-2">
               <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
-              <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] leading-[18px]" />
+              {customerData ? 
+                <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] leading-[18px]" onClick={() => setCustomerData(false)} />
+                :
+                <Button color={"blacklight"} name={"Add Customer"} className="!py-2 px-[12px] leading-[18px]" />
+              }
+
             </div>
-            <div>
-              <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
-                <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
-                  Name
-                </p>
-                <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal">
-                  Baalkrishan Lal Sani
-                </p>
-              </div>
-              <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                  Phone
-                </p>
-                <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
-                  No phone provided{""}                 
-                  <Button                
-                    secondary={'true'}              
-                    name={"Add phone"}
-                    outline={"true"}
-                    color={"grey"}
-                    className="text-sm leading-[18px]" size={"medium"}
-                  />
-                </p>    
-              </div>
-              <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                  Email
-                </p>
-                <p className="text-blacklight dark:text-white text-xs leading-[18px] font-normal ">
-                  No email provided{" "}
-                  <Button outline={"true"} name={"Add email"} color={"grey"} secondary={"true"} size={"medium"} className="ml-2 leading-[18px]" />
-                </p>
-              </div>
-              <div className="flex w-full flex-wrap sm:flex-nowrap">
-                <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                  Address
-                </p>
-                <div className="text-blacklight dark:text-white text-xs leading-[18px] font-normal lg:max-w-[45%] w-full flex items-center ">
-                  <p>
-                    Baalkrishan Lal Sani<br></br>
-                    Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India
-                    <Link className="block" href="tel:123-456-7890">
-                      +91 80735 89105
-                    </Link>
-                  </p>
-                  <Button secondary={"true"} size={"medium"} color={"grey"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]" />
-                </div>
-              </div>
-            </div>
+            {customerData ? 
+            <>
+              {customer.map((item) => (
+                <>
+                    <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
+                        Name
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal">
+                      {item.name ?
+                          item.name
+                        : 
+                        <>
+                          No name provided
+                          <Button                
+                            secondary={'true'}              
+                            name={"Add Name"}
+                            outline={"true"}
+                            color={"grey"}
+                            className="text-sm leading-[18px] ml-2" size={"medium"}
+                          />
+                        </>
+                      }
+                      </p>
+                    </div>
+                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                        Phone
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
+                        {item.phone ?
+                            item.phone
+                          : 
+                          <>
+                            No phone provided
+                            <Button                
+                              secondary={'true'}              
+                              name={"Add Phone"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2" size={"medium"}
+                            />
+                          </>
+                        }
+                      </p>    
+                    </div>  
+                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                        Email
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
+                        {item.email ?
+                            item.email
+                          : 
+                          <>
+                            No email provided
+                            <Button                
+                              secondary={'true'}              
+                              name={"Add email"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2" size={"medium"}
+                            />
+                          </>
+                        }
+                      </p>
+                    </div>
+                    <div className="flex w-full flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                        Address
+                      </p>
+                      {item.address ?
+                      <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
+                          <p>
+                            {item.address}
+                            <Link className="block" href={'#0'}>
+                              {item.mobile}
+                            </Link>
+                          </p>
+                          <Button secondary={"true"} size={"medium"} color={"grey"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]" />
+                        </div>
+                          : 
+                          <>
+                            No address provided
+                          <Button                
+                            secondary={'true'}              
+                            name={"Add address"}
+                            outline={"true"}
+                            color={"grey"}
+                            className="text-sm leading-[18px] ml-2" size={"medium"}
+                          />
+                        </>
+                        } 
+                    </div>
+                </>
+              ))}
+            </>
+            : "" }
           </div>
         </div>
       </div>

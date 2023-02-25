@@ -1,44 +1,23 @@
 import Image from "next/image";
 import Dots from "@/assets/images/icon/Union.svg";
-import customer1 from "@/assets/images/users/customersimg-1.png";
-import customer2 from "@/assets/images/users/customersimg-2.png";
 import CheckBox from "@/components/ui/CheckBox";
 import Dropdown from "@/components/ui/Dropdown";
-const TableRow = [
-  {
-    id: 1,
-    customersImg: customer1,
-    customerName: "Baalkrishan Lal Sani",
-    subscription: "Subscribed",
-    orders: "0 orders ",
-    location: "Pilani RJ, India",
-    amount: "₹ 0.00",
-    name:"pilani"
-  },
-  {
-    id: 2,
-    customersImg: customer2,
-    customerName: "Sahil Kohli",
-    subscription: "Not subscribed",
-    orders: "1 order",
-    location: "Chandigarh CH, India",
-    amount: "₹ 2000.00",
-    name:"chandigarh"
-  },
 
-];
-
-const ArchiveSelectTable = ({}) => {
+const ArchiveSelectTable = ({TableRow, handleChange, selected}) => {
   return (
     <>
       {TableRow.map((customerRowData, index) => (
         <tr
-          className={`border-b border-black/5 dark:border-white/5 hover:bg-[#F7F9FB] hover:border-[#F7F9FB] dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${customerRowData.tablesec}`}
+          className={`${selected.includes(index)  ? "dark:bg-white/5 bg-primary-light" : ""} border-b border-black/5 dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${customerRowData.tablesec}`}
           key={index}
-        >
-          <td className="pl-[5px] py-2">
-            <div className="">
-              <CheckBox name={customerRowData.name} />
+        >           
+          <td> 
+            <div className='pl-[5px] py-2 flex items-center'>             
+              <CheckBox 
+              value={index} 
+              name={customerRowData.name}
+              onChange={handleChange}
+              checked={selected.includes(index)} />
             </div>
           </td>
           <td className="px-3 py-2">

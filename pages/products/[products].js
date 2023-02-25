@@ -15,16 +15,6 @@ import Toggle from "@/components/ui/Toggle";
 import Layout from "@/layouts/layout";
 
 const products = () => {
-  const [selectProductOpen, setSelectProductOpen] = useState(false);
-  const SelectProductHandler = () => {
-    setSelectProductOpen(true);
-  };
-
-  const [opentablepage, setopentablepage] = useState(true);
-  const opentableHandler = () => {
-    setopentablepage(true);
-  };
-
   const [radiioBtn, setRadiioBtn] = useState(false);
 
   const productTypeHandler = () => {
@@ -36,12 +26,12 @@ const products = () => {
       <UnsavedChanges>
         <Button
           color={"white"}
-          name={"Discard"} 
-          size={"small"}         
+          name={"Discard"}
+          size={"small"}
           outline={"true"}
           className={"!text-xs mr-5 dark:!border-blacklight dark:!text-blacklight"}
         />
-        <Button color={"primarygreen"} name={"Save"} className={"!text-xs"}/>
+        <Button color={"primarygreen"} name={"Save"} className={"!text-xs"} />
       </UnsavedChanges>
       <PageHeader
         arrow={true}
@@ -71,24 +61,20 @@ const products = () => {
           Copy Link
         </Link>
       </PageHeader>
-      <Alert
-        color={"red"}
-        title={"There is 1 error with this product:"}
-        description={"Option name can’t be blank"}
-      />
+      <Alert color={"red"} title={"There is 1 error with this product:"} description={"Option name can’t be blank"} />
       <div className="my-5">
-      <Alert
-        color={"green"}
-        title={"Copy of Antique Drawers was created successfully. What’s next?"}
-        description={"Edit other product details."}
+        <Alert
+          color={"green"}
+          title={"Copy of Antique Drawers was created successfully. What’s next?"}
+          description={"Edit other product details."}
         />
-        </div>
+      </div>
       <div className="flex flex-wrap justify-between gap-y-5 mb-4">
         <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:px-6 p-5 sm:px-5 px-3">
-          <InputContent title={"title"}>
+          <InputContent title={"title"} titlestyle={"!mb-1"}>
             <input type="text" name="" value="Antique Drawers" className="bg-transparent" />
           </InputContent>
-          <InputContent title={"Description"}>
+          <InputContent title={"Description"} titlestyle={"!mb-1"}>
             <textarea
               rows="5"
               className="w-full dark:bg-transparent resize-none"
@@ -96,10 +82,10 @@ const products = () => {
             ></textarea>
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Price"}>
+            <InputContent title={"Price"} titlestyle={"!mb-1"}>
               <input type="text" name="" value="₹ 250.00" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Strikethrough Price (optional)"}>
+            <InputContent title={"Strikethrough Price (optional)"} titlestyle={"!mb-1"}>
               <input type="text" name="" value="₹ 300.00" className="w-full bg-transparent" />
             </InputContent>
           </div>
@@ -107,15 +93,15 @@ const products = () => {
             <Toggle turnOff={"Off"} turnOn={"On"} />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"SKU"}>
+            <InputContent title={"SKU"} titlestyle={"!mb-1"}>
               <input type="text" name="" value="UGG-BB-PUR-06" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Barcode (ISBN, UPC, GTIN)"}>
+            <InputContent title={"Barcode (ISBN, UPC, GTIN)"} titlestyle={"!mb-1"}>
               <input type="number" name="" value="00123456789012" className="w-full bg-transparent" />
             </InputContent>
           </div>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Quantity (numbers only)"}>
+            <InputContent title={"Quantity (numbers only)"} titlestyle={"!mb-1"}>
               <input type="number" name="" value="44" className="w-full bg-transparent" />
             </InputContent>
             <InputContent title={"Track quantity"} className="text-black/40 dark:text-white/40">
@@ -237,11 +223,11 @@ const products = () => {
             </div>
           </div>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Shipping weight"}>
+            <InputContent title={"Shipping weight"} titlestyle={"mb-1"}>
               <input type="number" name="" value="4.30" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Type"}>
-              <VarientDropdown
+            <InputContent title={"Type"} titlestyle={"mb-1"}>
+            <VarientDropdown className={"!text-black/20"}
                 selectitem={[
                   { id: 1, name: "Select" },
                   { id: 2, name: "Select2" },
@@ -275,8 +261,21 @@ const products = () => {
             </Link>
             <div className="flex justify-between items-center sm:py-9 py-5 pt-7 flex-wrap gap-4 ">
               <div>
-                <Button name={"Archive product"}  className="mr-3 mt-2 leading-[18px]" size={"medium"} outline={"true"} secondary={"true"} color={"grey"} />
-                <Button name={"Delete product"}  className="mt-2 leading-[18px]" size={"medium"}  outline={"true"} color={"red"} />
+                <Button
+                  name={"Archive product"}
+                  className="mr-3 mt-2 leading-[18px]"
+                  size={"medium"}
+                  outline={"true"}
+                  secondary={"true"}
+                  color={"grey"}
+                />
+                <Button
+                  name={"Delete product"}
+                  className="mt-2 leading-[18px]"
+                  size={"medium"}
+                  outline={"true"}
+                  color={"red"}
+                />
               </div>
               <Button name={"Save"} className="font-normal text-sm !px-4" color={"green"} size="large" />
             </div>

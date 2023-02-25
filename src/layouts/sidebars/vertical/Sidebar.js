@@ -104,7 +104,7 @@ const StoreSettings = [
   },
 ];
 
-const Sidebar = ({ showMobilemenu }) => {
+const Sidebar = ({ Mobilemenu,showMobilemenu }) => {
   let curl = useRouter();
   const location = curl.pathname;
 
@@ -176,13 +176,13 @@ const Sidebar = ({ showMobilemenu }) => {
           </div>
           <div className="mt-7">
             <div className="list-none flex-col flex">
-              <Link href={'/becho-pro'}>
+              <Link href={"/becho-pro"}>
                 <span
-                className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
-                  location === '/becho-pro'
-                    ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
-                    : ""
-                }`}
+                  className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
+                    location === "/becho-pro"
+                      ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
+                      : ""
+                  }`}
                 >
                   <Image src={Bechopro} alt="" className="dark:invert" />
                   <span className="ml-1 d-inline-block font-normal">Becho(Pro)</span>

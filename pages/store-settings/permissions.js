@@ -77,7 +77,7 @@ const permissions = () => {
                 Customize what your staff members can edit and access.
               </p>
             </div>
-            <Button name={"Add staff"} color="yellow" className="font-normal text-xs !text-black/80 px-[14px]" />
+            <Button name={"Add staff"} color="yellow" size={"small"} className="font-normal text-xs !text-black/80 px-[14px]"/>
           </div>
         </div>
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4">

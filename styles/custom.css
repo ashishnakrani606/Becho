@@ -308,3 +308,24 @@ h4:empty , a:empty  {
   font-size: 0;
   padding: 0;
 }
+
+/* btn effect */
+@keyframes push {
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.btn:hover {
+  animation-name: push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+.datepicker-data input{
+  max-width: 532px;
+  width: 100%;
+  cursor: pointer;
+}

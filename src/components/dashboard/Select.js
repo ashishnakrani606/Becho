@@ -43,7 +43,7 @@ export default function Dashboard(props) {
                         active
                           ? "text-black dark:text-white hover:text-white dark:hover:bg-white hover:dark:text-black hover:bg-black cursor-pointer"
                           : "",
-                        "relative select-none py-2 pl-3 pr-9 hover:bg-black-1"
+                        "relative select-none py-2 px-3 hover:bg-black-1"
                       )
                     }
                     value={item}

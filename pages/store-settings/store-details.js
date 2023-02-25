@@ -8,20 +8,9 @@ import EnvelopeSimple from "@/assets/images/icon/envelopeSimple.svg";
 import Phone from "@/assets/images/icon/phone.svg";
 import Bechopro from "@/assets/images/icon/Bechogreen.svg";
 import Info from "@/assets/images/icon/info.svg";
-import Button from "@/components/ui/Button";
 import Link from "next/link";
-import clock from "@/assets/images/icon/clock.svg";
-import shield from "@/assets/images/icon/shield-check.svg";
-import google from "@/assets/images/icon/google.svg";
-import github from "@/assets/images/icon/github.svg";
-import Toggle from "@/components/ui/Toggle.js";
-import slack from "@/assets/images/icon/slack.svg";
 import Badges from "@/components/ui/Badges";
 import Alert from "@/components/ui/Alert";
-import SetupUpdate from "@/components/ui/SetupUpdate";
-import UnsavedChanges from "@/components/ui/UnsavedChanges";
-import Add from "@/assets/images/icon/addb.svg";
-import Threedot from "@/assets/images/icon/threedot.svg";
 import Layout from "@/layouts/layout";
 
 const StoreDetaildata = [

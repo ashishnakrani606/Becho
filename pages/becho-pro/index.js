@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Bechologo from "@/assets/images/icon/becho-black-logo.svg";
 import WarningCircle from "@/assets/images/icon/warning-circle.svg";
-import Bechopro from "@/assets/images/icon/becho-pro.svg";
+import Bechoproimg from "@/assets/images/icon/becho-pro.svg";
 import CheckBox from "@/components/ui/CheckBox";
 import Upi from "@/assets/images/icon/upi-icon.svg";
 import Button from "@/components/ui/Button";
@@ -95,16 +95,16 @@ const Information = [
   },
 ];
 
-const bechopro = () => {
+const Bechopro = () => {
   const [learnMore, setLearnMore] = useState(false);
   const text =
-    "For extra security, this requires you to confirm your email and phone number confirm your email.";
+    "For extra security, this requires you to confirm your email and phone number confirm your email. ";
 
   return (
     <Layout container>
       <div className="flex justify-center items-center mt-[6px] mb-11">
         <Image src={Bechologo} alt="" className="mr-4 dark:invert" />
-        <Image src={Bechopro} alt="" className="" />
+        <Image src={Bechoproimg} alt="" className="" />
       </div>
       <div>
         <Tabs>
@@ -348,12 +348,12 @@ const bechopro = () => {
                       You Are Deactivating Your Account
                     </h4>
                     <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
-                      {learnMore ? text : `${text.substring(0, 75)}`}
+                      {learnMore ? text : ` ${text.substring(0, 77)}`}
                       <button
                         className="btn text-secondary-purplea"
                         onClick={() => setLearnMore(!learnMore)}
                       >
-                        {learnMore ? "Learn less " : "Learn more"}
+                        {learnMore ? "Learn less " : " Learn more"}
                       </button>
                     </p>
                   </div>
@@ -482,4 +482,4 @@ const bechopro = () => {
   );
 };
 
-export default bechopro;
+export default Bechopro;

@@ -8,7 +8,7 @@ const ProductData = [
     count: "3,781",
     growth: "+5.27%",
     img: Arrow,
-    bgcolor: "bg-sky-100",
+    bgColor: "bg-sky-100",
   },
   {
     title: "Orders",
@@ -21,7 +21,7 @@ const ProductData = [
     count: "₹6,10,895",
     growth: "-0.56%",
     img: Arrowdown,
-    bgcolor: "thirdbox",
+    bgColor: "thirdbox",
     counttext: "md:!text-lg",
     boxcontain: "2xl:!gap-2 gap-[1px]",
   },
@@ -30,7 +30,7 @@ const ProductData = [
     count: "6,766",
     growth: "-0.56%",
     img: Arrow,
-    bgcolor: "bg-blue-50",
+    bgColor: "bg-blue-50",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function Dashboardbox() {
           {ProductData.map((dashboardData, index) => (
             <div
               key={index}
-              className={`xl:p-6 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgcolor}`}
+              className={`xl:p-6 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgColor}`}
             >
               <h3 className="md:text-sm text-xs font-semibold">{dashboardData.title}</h3>
               <div

@@ -16,27 +16,27 @@ const DAtePicker = () => {
 
   return (
     <>
-      <div className="flex items-center">
-        <Image
-          src={Dateicon}
-          alt=""
-          className={`mr-1 dark:invert opacity-20 ${icon ? "opacity-20 inline-block" : " opacity-20 dark:invert inline-block"}`}
+      <div className="relative datepicker-data">
+        {!icon ? (
+          <span className="absolute left-0 top-[50%] text-black/20 -translate-y-[50%] pointer-events-none dark:text-white/20">
+            <Image
+              src={Dateicon}
+              alt=""
+              className={`mr-1 dark:invert opacity-20 ${
+                icon ? "opacity-20 inline-block" : " opacity-20 dark:invert inline-block"
+              }`}
+            />
+            Pick a date
+          </span>
+        ) : (
+          ""
+        )}
+        <DatePicker
+          selected={startDate}
+          onChange={ChangeHandler}
+          className={`bg-transparent ${icon ? "opacity-100" : " opacity-0"}`}
         />
-        <div className="relative">
-          {!icon ? (
-            <span className="absolute left-0 top-[50%] text-black/20 -translate-y-[50%] pointer-events-none dark:text-white/20">
-              Pick a date
-            </span>
-          ) : (
-            ""
-          )}
-          <DatePicker
-            selected={startDate}
-            onChange={ChangeHandler}
-            className={`bg-transparent ${icon ? "opacity-100" : " opacity-0"}`}
-          />
-          {/* <Image src={Selecticon} className="dark:invert absolute top-0 right-0"/> */}
-        </div>
+        <Image src={Selecticon} className="dark:invert absolute right-0 top-0 mr-2" />
       </div>
     </>
   );

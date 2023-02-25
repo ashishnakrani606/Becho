@@ -4,7 +4,7 @@ function Button(props) {
   return (
     <>
       <button
-        className={`transition-all duration-500 text-xs px-2 py-[6px] rounded-lg leading-[18px]  
+        className={`btn transition-all duration-500 text-xs px-2 py-[6px] rounded-lg leading-[18px]  
           ${props.secondary == "true" ? "text-blacklight dark:text-white" : "text-white"}
           ${props.color == "yellow"
             ? "bg-secondary-yellow !text-blacklight"
@@ -31,7 +31,7 @@ function Button(props) {
             : "" || props.color == "blacklight"
             ? "text-white bg-blacklight dark:bg-secondary-purpleb dark:text-blacklight"
             : "" || props.color == "purple"
-            ? "bg-[#95A4FC] text-white dark:!text-blacklight"
+            ? "bg-secondary-purplea text-white dark:!text-blacklight"
             : ""} 
           ${props.outline == "true" ? `border !bg-transparent` : ""}
           ${props.outline == "true" && props.color == "red"
@@ -41,7 +41,7 @@ function Button(props) {
               : "" || (props.outline == "true" && props.color == "blacklight")
               ? "border-black/20 text-blacklight dark:!border-white/20 dark:!text-white"
               : ""}
-          ${props.size == "large" ? "px-3 !py-2" : "" || 
+          ${props.size == "large" ? "px-3 !py-2 leading-[20px]" : "" || 
             props.size == "medium" ? "px-2 !py-1 text-sm" : "" || 
             props.size == "small" ? "px-2 !py-[5px]" : ""} 
           ${props.className}       
