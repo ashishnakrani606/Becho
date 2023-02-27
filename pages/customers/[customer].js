@@ -28,7 +28,7 @@ const Customers = () => {
           outline={"true"}
           className={"!text-xs mr-5 dark:border-blacklight dark:text-black"}
         />
-        <Button color={"green"} name={"Save"} className={"!text-xs"}/>
+        <Button color={"green"} name={"Save"} className={"!text-xs"} />
       </UnsavedChanges>
       <PageHeader
         className={"mb-5 sm:flex-nowrap flex-wrap gap-5"}
@@ -300,23 +300,29 @@ const Customers = () => {
                 <input className="font-semibold " type="file" />
               </label>
             </div>
-              <div className="relative group max-w-[120px] w-full">
-                <Image src={CustomerPhoto} alt="" className="rounded-lg cursor-pointer" />
-                <Image
-                  src={Camera}
-                  alt=""
-                  className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] opacity-0 group-hover:opacity-100 transition-all duration-300"
-                />
-              </div>
-              <p className="my-[10px] text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg.</p>
+            <div className="relative group max-w-[120px] w-full">
+              <Image src={CustomerPhoto} alt="" className="rounded-lg cursor-pointer" />
+              <Image
+                src={Camera}
+                alt=""
+                className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] opacity-0 group-hover:opacity-100 transition-all duration-300"
+              />
             </div>
+            <p className="my-[10px] text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg.</p>
+          </div>
           <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 mb-8 dark:bg-white/5">
             <h3 className="text-lg font-semibold">Last placed orders</h3>
             <p className="text-lg font-semibold text-black/40 py-[13px] dark:text-white/40">
               This customer hasn’t placed any orders.
             </p>
             <div>
-              <Button name={"Create order"} color={"purple"}  secondary={"true"} className="font-normal text-sm " size="large" />
+              <Button
+                name={"Create order"}
+                color={"purple"}
+                secondary={"true"}
+                className="font-normal text-sm "
+                size="large"
+              />
             </div>
           </div>
           <div className="bg-primary-light rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-8 sm:p-5 py-5 px-3 dark:bg-white/5">

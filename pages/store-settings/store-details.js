@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TabList from '@/components/store-settings/tab-list'
+import TabList from "@/components/store-settings/tab-list";
 import CheckBox from "@/components/ui/CheckBox";
 import Image from "next/image";
 import InputContent from "@/components/ui/InputContent";
@@ -15,56 +15,55 @@ import Layout from "@/layouts/layout";
 
 const StoreDetaildata = [
   {
-    id: 1,    
+    id: 1,
     title: "Legal business name",
-    data: "Becho Ecommerce Pvt Ltd"
+    data: "Becho Ecommerce Pvt Ltd",
   },
   {
     id: 2,
     title: "Contact Phone",
-    icon:Info,
-    verified:"Verified",
+    icon: Info,
+    verified: "Verified",
     data: "+91 8276 454 935",
   },
   {
-    id: 3,    
+    id: 3,
     title: "Address",
-    data: "Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani"
+    data: "Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani",
   },
   {
-    id: 4,    
+    id: 4,
     title: "Country",
-    data: "India"
+    data: "India",
   },
   {
-    id: 5,    
+    id: 5,
     title: "City, State",
-    data: "Pilani, Rajasthan"
+    data: "Pilani, Rajasthan",
   },
   {
-    id: 6,    
+    id: 6,
     title: "PIN code",
-    data: "133496"
+    data: "133496",
   },
   {
-    id: 7,    
+    id: 7,
     title: "Store contact email",
-    data: "hello@mystore.com"
+    data: "hello@mystore.com",
   },
   {
-    id: 8,    
+    id: 8,
     title: "Sender email",
-    data: "contact@mystore.com"
-  },  
+    data: "contact@mystore.com",
+  },
 ];
-
 
 const StoreDetails = () => {
   return (
-    <Layout container>    
-      <TabList/>
-     {/************* store details start *************/}
-     <div className={"mt-5"}>
+    <Layout container>
+      <TabList />
+      {/************* store details start *************/}
+      <div className={"mt-5"}>
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4">
           <div className="mb-1 flex items-center justify-between">
             <h4 className="text-lg font-semibold">Becho Store</h4>
@@ -100,9 +99,7 @@ const StoreDetails = () => {
             <div className="flex flex-col pt-5 sm:pt-0 sm:pr-7 sm:border-r border-black/10 dark:border-white/10 lg:flex-grow-0 flex-grow md:flex-grow">
               <p className="text-sm text-blacklight dark:text-white ">Profile Compleation</p>
               <div className="w-[168px] bg-black/5 h-7 relative rounded-lg mt-1 dark:bg-white/20">
-                <span className="absolute top-[18%] left-1/2 -translate-x-1/2 font-semibold text-blacklight ">
-                  51%
-                </span>
+                <span className="absolute top-[18%] left-1/2 -translate-x-1/2 font-semibold text-blacklight ">51%</span>
                 <div className="w-[51%] bg-secondary-purpleb h-7 rounded-l-lg"></div>
               </div>
             </div>
@@ -133,11 +130,11 @@ const StoreDetails = () => {
                 <div className="flex pb-[18px] flex-wrap sm:flex-nowrap">
                   <p className="sm:min-w-[225px] text-black/40 dark:text-white/40 text-xs pb-[6px] sm:pb-0 flex items-center sm:w-auto w-full flex-grow sm:flex-grow-0">
                     {" "}
-                    {item.title} 
-                    <Image src={item.icon} className="ml-1 opacity-20 dark:invert"/>
+                    {item.title}
+                    <Image src={item.icon} className="ml-1 opacity-20 dark:invert" />
                   </p>
                   <p className="text-blacklight dark:text-white text-sm">
-                    {item.data} 
+                    {item.data}
                     <Badges color={"green"} name={item.verified} className={"ml-2"} />
                   </p>
                 </div>
@@ -145,7 +142,7 @@ const StoreDetails = () => {
             ))}
           </>
           <Alert
-            color={"reddark"}              
+            color={"reddark"}
             title={"We need your attention!"}
             description={"Confirm that you have access to contact@mystore.com in"}
             deatil={"sender email settings."}

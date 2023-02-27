@@ -1,14 +1,13 @@
-import React , { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import DashboardContent from "@/components/dashboard/DashboardContent";
 import SetupGuide from "@/components/dashboard/SetupGuide";
-import SellerCommunity from "@/components/dashboard/SellerCommunity"; 
+import SellerCommunity from "@/components/dashboard/SellerCommunity";
 import PopupStyle from "@/components/ui/PopupStyle";
 import Star from "@/assets/images/icon/Star.svg";
 import Layout from "@/layouts/layout";
 
 export default function Dashboard() {
-
   const [openDashboard, setOpenDashboard] = useState(false);
   return (
     <>
@@ -17,7 +16,7 @@ export default function Dashboard() {
         <meta name="description" content="Becho dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       {/* <PopupStyle 
         icon={Star} 
         color={'green'}
@@ -26,8 +25,8 @@ export default function Dashboard() {
       /> */}
 
       <Layout container>
-        {openDashboard ? <DashboardContent/> : <SetupGuide setOpenDashboard={setOpenDashboard}/>}
-        <SellerCommunity/>  
+        {openDashboard ? <DashboardContent /> : <SetupGuide setOpenDashboard={setOpenDashboard} />}
+        <SellerCommunity />
       </Layout>
     </>
   );

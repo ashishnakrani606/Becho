@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Card = ({className, children, cardImage, title, discription }) => {
+const Card = ({ className, children, cardImage, title, discription }) => {
   return (
     <>
       <div className={`${className} md:px-3 w-full max-w-[456px] mx-auto md:mt-16 mt-5`}>

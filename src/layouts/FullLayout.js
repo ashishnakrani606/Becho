@@ -27,30 +27,23 @@ const FullLayout = ({ children }) => {
         </div>
 
         {/********Content Area**********/}
-        <div
-          className={`${!open ? "lgm:w-[calc(100vw-212px)]" : "w-full"} flex`}
-        >
+        <div className={`${!open ? "lgm:w-[calc(100vw-212px)]" : "w-full"} flex`}>
           <div className="content-wrapper bg-white dark:bg-blacklight w-full">
             {/********header**********/}
-            <Header
-              showMobmenu={() => showMobilemenu()}
-              showsidebar={() => showMobilesidebar()}
-            />
+            <Header showMobmenu={() => showMobilemenu()} showsidebar={() => showMobilesidebar()} />
 
             {/********Middle Content**********/}
-            <div className="overflow-y-auto h-[calc(100vh-152px)] custom-scrollbar">
-              <div className="pt-7">{children}</div>
+            <div className="overflow-y-auto h-[calc(100vh-78px)] custom-scrollbar">
+              <div className="pt-7 min-h-[calc(100vh-150px)]">{children}</div>
+            {/********Footer**********/}
+              <Footer />
             </div>
 
-            {/********Footer**********/}
-            <Footer />
           </div>
           {/********Right Sidebar**********/}
           <div
             className={`lgm:relative fixed right-0 md:w-[280px] w-[212px] lg:h-screen h-full overflow-auto z-10 border-l border-l-black/10 dark:border-l-white/10 custom-scrollbar bg-white dark:bg-blacklight duration-300 transition-all' ${
-              opensidebar
-                ? "lgm:-mr-[280px]"
-                : "lgm:mr-0 md:-mr-[280px] -mr-[212px] showrightSidebar"
+              opensidebar ? "lgm:-mr-[280px]" : "lgm:mr-0 md:-mr-[280px] -mr-[212px] showrightSidebar"
             }`}
           >
             <RightSidebar showMobilesidebar={() => showMobilesidebar()} />

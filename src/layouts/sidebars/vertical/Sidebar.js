@@ -104,7 +104,7 @@ const StoreSettings = [
   },
 ];
 
-const Sidebar = ({ Mobilemenu,showMobilemenu }) => {
+const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
   let curl = useRouter();
   const location = curl.pathname;
 

@@ -12,12 +12,12 @@ import pillows from "@/assets/images/users/brown-throw-pillows.png";
 import infoicon from "@/assets/images/icon/info-icon.svg";
 import Due from "@/assets/images/icon/Add-payment-due.svg";
 import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
-import Layout from "@/layouts/layout"; 
+import Layout from "@/layouts/layout";
 
-const orders = () => {  
+const orders = () => {
   const Fulfilled = [
     {
-      id: 1,  
+      id: 1,
       productImg: pillows,
       product: "Brown Throw Pillows",
       productItem: "5",
@@ -49,19 +49,20 @@ const orders = () => {
       totlePrice: "₹99.95",
     },
   ];
-   
+
   const customer = [
     {
-      id: 1,  
-      name: 'Baalkrishan Lal Sani',
+      id: 1,
+      name: "Baalkrishan Lal Sani",
       phone: "",
       email: "",
-      address: "Baalkrishan Lal Sani Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India",
+      address:
+        "Baalkrishan Lal Sani Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India",
       mobile: "+91 80735 89105",
     },
   ];
 
-  const [customerData , setCustomerData] = useState(true);
+  const [customerData, setCustomerData] = useState(true);
 
   return (
     <Layout container>
@@ -112,7 +113,7 @@ const orders = () => {
           name={"Discard"}
           className={"mr-5 dark:!border-blacklight dark:!text-blacklight !py-1"}
         />
-        <Button color={"primarygreen"} name={"Save Changes"} className={"!py-[5px]"}/>
+        <Button color={"primarygreen"} name={"Save Changes"} className={"!py-[5px]"} />
       </UnsavedChanges>
       <div className="my-7">
         <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."} />
@@ -151,14 +152,20 @@ const orders = () => {
               </table>
             </div>
             <div className="flex items-center justify-end gap-4 w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
-              <Button                
-                secondary={'true'}              
+              <Button
+                secondary={"true"}
                 name={"Hold fulfillment"}
                 outline={"true"}
                 color={"grey"}
-                className="text-sm leading-[18px]" size={"medium"}
+                className="text-sm leading-[18px]"
+                size={"medium"}
               />
-              <Button color={"primarygreen"} name={"Fulfill items"} className="text-sm whitespace-nowrap leading-5"  size={"medium"}/>
+              <Button
+                color={"primarygreen"}
+                name={"Fulfill items"}
+                className="text-sm whitespace-nowrap leading-5"
+                size={"medium"}
+              />
             </div>
           </div>
           <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
@@ -221,14 +228,26 @@ const orders = () => {
               </tbody>
             </table>
             <div className="py-4 px-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 sm:flex-nowrap flex-wrap">
-              <Button outline={"true"}  secondary={'true'} color={"grey"} name={"Send invoice"} className="text-lg leading-[18px]" size={"medium"}/>
+              <Button
+                outline={"true"}
+                secondary={"true"}
+                color={"grey"}
+                name={"Send invoice"}
+                className="text-lg leading-[18px]"
+                size={"medium"}
+              />
               <Dropdown
                 className="right-0 left-[unset]"
                 button={
                   <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
                     Collect payment
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z" fill="white"/>
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z"
+                        fill="white"
+                      />
                     </svg>
                   </div>
                 }
@@ -286,36 +305,41 @@ const orders = () => {
           <div>
             <div className="flex justify-between my-[15px] items-center gap-2">
               <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
-              {customerData ? 
-                <Button color={"blacklight"} name={"Remove Customer"} className="!py-2 px-[12px] leading-[18px]" onClick={() => setCustomerData(false)} />
-                :
+              {customerData ? (
+                <Button
+                  color={"blacklight"}
+                  name={"Remove Customer"}
+                  className="!py-2 px-[12px] leading-[18px]"
+                  onClick={() => setCustomerData(false)}
+                />
+              ) : (
                 <Button color={"blacklight"} name={"Add Customer"} className="!py-2 px-[12px] leading-[18px]" />
-              }
-
+              )}
             </div>
-            {customerData ? 
-            <>
-              {customer.map((item) => (
-                <>
+            {customerData ? (
+              <>
+                {customer.map((item) => (
+                  <>
                     <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
                       <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
                         Name
                       </p>
                       <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal">
-                      {item.name ?
+                        {item.name ? (
                           item.name
-                        : 
-                        <>
-                          No name provided
-                          <Button                
-                            secondary={'true'}              
-                            name={"Add Name"}
-                            outline={"true"}
-                            color={"grey"}
-                            className="text-sm leading-[18px] ml-2" size={"medium"}
-                          />
-                        </>
-                      }
+                        ) : (
+                          <>
+                            No name provided
+                            <Button
+                              secondary={"true"}
+                              name={"Add Name"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
+                            />
+                          </>
+                        )}
                       </p>
                     </div>
                     <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
@@ -323,74 +347,86 @@ const orders = () => {
                         Phone
                       </p>
                       <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                        {item.phone ?
-                            item.phone
-                          : 
+                        {item.phone ? (
+                          item.phone
+                        ) : (
                           <>
                             No phone provided
-                            <Button                
-                              secondary={'true'}              
+                            <Button
+                              secondary={"true"}
                               name={"Add Phone"}
                               outline={"true"}
                               color={"grey"}
-                              className="text-sm leading-[18px] ml-2" size={"medium"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
                             />
                           </>
-                        }
-                      </p>    
-                    </div>  
+                        )}
+                      </p>
+                    </div>
                     <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
                       <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
                         Email
                       </p>
                       <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                        {item.email ?
-                            item.email
-                          : 
+                        {item.email ? (
+                          item.email
+                        ) : (
                           <>
                             No email provided
-                            <Button                
-                              secondary={'true'}              
+                            <Button
+                              secondary={"true"}
                               name={"Add email"}
                               outline={"true"}
                               color={"grey"}
-                              className="text-sm leading-[18px] ml-2" size={"medium"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
                             />
                           </>
-                        }
+                        )}
                       </p>
                     </div>
                     <div className="flex w-full flex-wrap sm:flex-nowrap">
                       <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
                         Address
                       </p>
-                      {item.address ?
-                      <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
+                      {item.address ? (
+                        <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
                           <p>
                             {item.address}
-                            <Link className="block" href={'#0'}>
+                            <Link className="block" href={"#0"}>
                               {item.mobile}
                             </Link>
                           </p>
-                          <Button secondary={"true"} size={"medium"} color={"grey"} outline={"true"} name={"Edit"} className="md:ml-2 leading-[18px]" />
+                          <Button
+                            secondary={"true"}
+                            size={"medium"}
+                            color={"grey"}
+                            outline={"true"}
+                            name={"Edit"}
+                            className="md:ml-2 leading-[18px]"
+                          />
                         </div>
-                          : 
-                          <>
-                            No address provided
-                          <Button                
-                            secondary={'true'}              
+                      ) : (
+                        <>
+                          No address provided
+                          <Button
+                            secondary={"true"}
                             name={"Add address"}
                             outline={"true"}
                             color={"grey"}
-                            className="text-sm leading-[18px] ml-2" size={"medium"}
+                            className="text-sm leading-[18px] ml-2"
+                            size={"medium"}
                           />
                         </>
-                        } 
+                      )}
                     </div>
-                </>
-              ))}
-            </>
-            : "" }
+                  </>
+                ))}
+              </>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>

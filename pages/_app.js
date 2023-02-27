@@ -15,7 +15,7 @@ function App({ Component }) {
       </Head>
       <ThemeProvider enableSystem={true} attribute="class">
         <FullLayout>
-          <Component/>
+          <Component />
         </FullLayout>
       </ThemeProvider>
     </>

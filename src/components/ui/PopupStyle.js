@@ -10,10 +10,15 @@ const PopupStyle = ({ className, icon, title, description, color }) => {
       <div
         className={`pt-[19px] pb-3 pl-[25px] pr-7 w-full max-w-[408px] rounded-2xl border border-[#0000001a] ${className}`}
         style={
-          color == "green" ? {background : "linear-gradient(180deg, #BAEDBD 0%, #6FCF97 100%)"} : "" ||
-          color == "blue" ? {background : "linear-gradient(180deg, #B1E3FF 0%, #56CCF2 100%)"} : ""  ||
-          color == "yellow" ? {background : "linear-gradient(180deg, #FFE999 0%, #F2C94C 100%)"} : ""  ||
-          color == "purple" ? {background : "linear-gradient(180deg, #C6C7F8 0%, #BB6BD9 100%)"} : "" 
+          color == "green"
+            ? { background: "linear-gradient(180deg, #BAEDBD 0%, #6FCF97 100%)" }
+            : "" || color == "blue"
+            ? { background: "linear-gradient(180deg, #B1E3FF 0%, #56CCF2 100%)" }
+            : "" || color == "yellow"
+            ? { background: "linear-gradient(180deg, #FFE999 0%, #F2C94C 100%)" }
+            : "" || color == "purple"
+            ? { background: "linear-gradient(180deg, #C6C7F8 0%, #BB6BD9 100%)" }
+            : ""
         }
       >
         <div className="flex justify-between items-center mb-4">

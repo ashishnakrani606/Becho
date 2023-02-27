@@ -75,7 +75,7 @@ const PaymentGatewaysrs = () => {
               Displays to customers after they place an order with this payment method.
             </p>
           </div>
-          <Button name={"Activate Cash on Delivery (COD)"} color="primarygreen" className="text-xs !py-[5px]" />
+          <Button name={"Activate Cash on Delivery (COD)"} color="primarygreen" size={"small"} />
         </div>
       </>
       {/* /********** payment-gateway end ************/}

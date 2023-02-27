@@ -61,44 +61,38 @@ const Information = [
     id: 2,
     name: "full name2",
     title: "Paid orders",
-    discription:
-      "Receive a notification each time you collect a fee from sales.",
+    discription: "Receive a notification each time you collect a fee from sales.",
   },
   {
     id: 3,
     name: "full name3",
     title: "Unpaid orders",
-    discription:
-      "Receive a notification if a payment is disputed by a customer and for dispute purposes.",
+    discription: "Receive a notification if a payment is disputed by a customer and for dispute purposes.",
   },
   {
     id: 4,
     name: "full name4",
     title: "Refund requests",
-    discription:
-      "Receive a notification if a payment is stated as risk by the Finance Department.",
+    discription: "Receive a notification if a payment is stated as risk by the Finance Department.",
   },
   {
     id: 5,
     name: "full name5",
     title: "Invoice Payments",
-    discription:
-      "Receive a notification if a customer sends an incorrect amount to pay their invoice.",
+    discription: "Receive a notification if a customer sends an incorrect amount to pay their invoice.",
   },
   {
     id: 6,
     name: "full name6",
     title: "Order delivery status",
-    discription:
-      "Receive notifications for consistently failing webhook API endpoints.",
+    discription: "Receive notifications for consistently failing webhook API endpoints.",
     border: "border-none",
   },
 ];
 
 const Bechopro = () => {
   const [learnMore, setLearnMore] = useState(false);
-  const text =
-    "For extra security, this requires you to confirm your email and phone number confirm your email. ";
+  const text = "For extra security, this requires you to confirm your email and phone number confirm your email. ";
 
   return (
     <Layout container>
@@ -117,17 +111,11 @@ const Bechopro = () => {
           <TabPanel>
             <div className="">
               <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl mb-6 md:p-6 p-4">
-                <h4 className="text-lg font-semibold mb-6">
-                  Your plan details
-                </h4>
+                <h4 className="text-lg font-semibold mb-6">Your plan details</h4>
                 <div className="flex items-center gap-4 justify-between border-b pb-4 border-b-black/10 flex-wrap sm:flex-nowrap dark:border-b-white/10">
                   <div>
-                    <h4 className="font-semibold text-2xl	text-blacklight dark:text-white">
-                      Essential (Monthly)
-                    </h4>
-                    <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">
-                      Base plan with 20 products
-                    </p>
+                    <h4 className="font-semibold text-2xl	text-blacklight dark:text-white">Essential (Monthly)</h4>
+                    <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">Base plan with 20 products</p>
                   </div>
                   <Link
                     href={"#0"}
@@ -153,9 +141,7 @@ const Bechopro = () => {
                 </div>
                 <div className="flex items-center gap-4 justify-between border-b py-4 border-b-black/10 flex-wrap sm:flex-nowrap dark:border-b-white/10">
                   <div>
-                    <h5 className="font-semibold text-sm	text-blacklight dark:text-white">
-                      ₹101 per month
-                    </h5>
+                    <h5 className="font-semibold text-sm	text-blacklight dark:text-white">₹101 per month</h5>
                     <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">
                       Next billing date: 03/03/2023
                     </p>
@@ -171,9 +157,7 @@ const Bechopro = () => {
                 </div>
                 <div className="flex justify-between items-center pt-4 flex-wrap gap-4 sm:flex-nowrap dark:border-b-white/10">
                   <div>
-                    <h5 className="font-semibold text-sm	text-blacklight dark:text-white">
-                      Payment method
-                    </h5>
+                    <h5 className="font-semibold text-sm	text-blacklight dark:text-white">Payment method</h5>
                     <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40 flex items-center">
                       <Image src={Upi} alt="" className="mr-[2px]" />
                       heena7786@oksbi
@@ -193,22 +177,13 @@ const Bechopro = () => {
                 <div className="flex justify-between mb-[15px] flex-wrap">
                   <h4 className="text-sm font-semibold">Billing History</h4>
                   <div>
-                    <Link
-                      href={"#0"}
-                      className="text-xs text-blacklight dark:text-white py-1 px-2 font-semibold"
-                    >
+                    <Link href={"#0"} className="text-xs text-blacklight dark:text-white py-1 px-2 font-semibold">
                       Month
                     </Link>
-                    <Link
-                      href={"#0"}
-                      className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2"
-                    >
+                    <Link href={"#0"} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
                       Year
                     </Link>
-                    <Link
-                      href={"#0"}
-                      className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2"
-                    >
+                    <Link href={"#0"} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
                       All Time
                     </Link>
                   </div>
@@ -254,9 +229,7 @@ const Bechopro = () => {
                 <h4 className="text-sm font-semibold mb-4">Billing Address</h4>
                 <div className="bg-primary-purple/50 dark:bg-black/40 rounded-2xl p-4">
                   <div className="flex justify-between items-center">
-                    <h4 className="dark:text-white text-blacklight font-semibold">
-                      Heena Vinayak’s Address
-                    </h4>
+                    <h4 className="dark:text-white text-blacklight font-semibold">Heena Vinayak’s Address</h4>
                     <Button
                       color="lightgrey"
                       name={"Edit"}
@@ -265,8 +238,7 @@ const Bechopro = () => {
                     ></Button>
                   </div>
                   <p className="w-full max-w-[236px] text-black/40 dark:text-white/40">
-                    Exploit Cross-Platform Mindshare 52, Ekbal Society,
-                    ShwetaPur Pilani 459501 Pilani Rajasthan India{" "}
+                    Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India{" "}
                   </p>
                 </div>
                 <div className="bg-primary-purple/50 dark:bg-black/40 rounded-2xl p-4 mt-4">
@@ -282,19 +254,14 @@ const Bechopro = () => {
                     ></Button>
                   </div>
                   <p className="w-full max-w-[236px] text-black/40 dark:text-white/40">
-                    Exploit Cross-Platform Mindshare 52, Ekbal Society,
-                    ShwetaPur Pilani 459501 Pilani Rajasthan India{" "}
+                    Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani 459501 Pilani Rajasthan India{" "}
                   </p>
                 </div>
-                <p className="w-full text-black/40 dark:text-white/40 mt-4">
-                  Tax Location : India - 18% GST
-                </p>
+                <p className="w-full text-black/40 dark:text-white/40 mt-4">Tax Location : India - 18% GST</p>
               </div>
               <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 md:pb-2 p-4 mb-6">
                 <div className="flex justify-between items-center flex-wrap gap-5">
-                  <h2 className="font-semibold text-sm leading-5">
-                    Email Preferences
-                  </h2>
+                  <h2 className="font-semibold text-sm leading-5">Email Preferences</h2>
                   <div className="flex justify-end items-center gap-2">
                     <Button
                       color="lightgrey"
@@ -303,12 +270,7 @@ const Bechopro = () => {
                       secondary={"true"}
                       className={"leading-[18px]"}
                     ></Button>
-                    <Button
-                      color="blacklight"
-                      size="small"
-                      className={"leading-[18px]"}
-                      name={"Save Changes"}
-                    ></Button>
+                    <Button color="blacklight" size="small" className={"leading-[18px]"} name={"Save Changes"}></Button>
                   </div>
                 </div>
                 <>
@@ -319,9 +281,7 @@ const Bechopro = () => {
                       <CheckBox name={item.name}></CheckBox>
                       <div>
                         <p className="text-sm font-semibold">{item.title}</p>
-                        <span className="text-xs text-black/40 dark:text-white/40 ">
-                          {item.discription}
-                        </span>
+                        <span className="text-xs text-black/40 dark:text-white/40 ">{item.discription}</span>
                       </div>
                     </div>
                   ))}
@@ -329,30 +289,18 @@ const Bechopro = () => {
               </div>
               <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 md:pb-[30px] p-4 mb-6">
                 <div className="flex justify-between items-center flex-wrap gap-5 mb-4">
-                  <h2 className="font-semibold text-sm leading-5">
-                    Deactivate Account & Store
-                  </h2>
+                  <h2 className="font-semibold text-sm leading-5">Deactivate Account & Store</h2>
                   <div className="flex justify-end items-center gap-2">
-                    <Button
-                      color="secondary-red"
-                      size="small"
-                      name={"Deactivate store"}
-                      className={""}
-                    ></Button>
+                    <Button color="secondary-red" size="small" name={"Deactivate store"} className={""}></Button>
                   </div>
                 </div>
                 <div className="bg-primary-purple/50 flex items-start py-4 px-4 rounded-lg	dark:bg-white/5">
                   <Image src={WarningCircle} className="mr-1 dark:invert" />
                   <div>
-                    <h4 className="text-xs leading-[18px]">
-                      You Are Deactivating Your Account
-                    </h4>
+                    <h4 className="text-xs leading-[18px]">You Are Deactivating Your Account</h4>
                     <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
                       {learnMore ? text : ` ${text.substring(0, 77)}`}
-                      <button
-                        className="btn text-secondary-purplea"
-                        onClick={() => setLearnMore(!learnMore)}
-                      >
+                      <button className="btn text-secondary-purplea" onClick={() => setLearnMore(!learnMore)}>
                         {learnMore ? "Learn less " : " Learn more"}
                       </button>
                     </p>
@@ -370,11 +318,9 @@ const Bechopro = () => {
             <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl mb-7 md:p-6 p-4">
               <div className="flex items-center gap-4 justify-between border-b pb-4 border-b-black/10 flex-wrap sm:flex-nowrap dark:border-b-white/10">
                 <div>
-                  <div className="flex items-center gap-2"> 
-                  <h4 className="font-semibold text-2xl	text-blacklight dark:text-white">                    
-                    Custom Domain
-                  </h4>
-                  <Badges color={"green"} name={"Activated"}/>
+                  <div className="flex items-center gap-2">
+                    <h4 className="font-semibold text-2xl	text-blacklight dark:text-white">Custom Domain</h4>
+                    <Badges color={"green"} name={"Activated"} />
                   </div>
                   <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">
                     https://thehustlecompany.com/
@@ -404,12 +350,8 @@ const Bechopro = () => {
               </div>
               <div className="flex items-center gap-4 justify-between border-b py-4 border-b-black/10 flex-wrap sm:flex-nowrap dark:border-b-white/10">
                 <div>
-                  <h5 className="font-semibold text-sm	text-blacklight dark:text-white">
-                    Becho.io domain
-                  </h5>
-                  <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">
-                    hustle.becho.io
-                  </p>
+                  <h5 className="font-semibold text-sm	text-blacklight dark:text-white">Becho.io domain</h5>
+                  <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">hustle.becho.io</p>
                 </div>
                 <Button
                   name={"Edit"}
@@ -422,12 +364,9 @@ const Bechopro = () => {
               </div>
               <div className="flex justify-between items-center pt-4 flex-wrap gap-4 sm:flex-nowrap dark:border-b-white/10">
                 <div>
-                  <h5 className="font-semibold text-sm	text-blacklight dark:text-white">
-                    Docs/help
-                  </h5>
+                  <h5 className="font-semibold text-sm	text-blacklight dark:text-white">Docs/help</h5>
                   <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40 flex items-center">
-                    Read our docs on how to use a custom domain name with
-                    becho.io.
+                    Read our docs on how to use a custom domain name with becho.io.
                   </p>
                 </div>
                 <Button
@@ -442,36 +381,26 @@ const Bechopro = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <div
-              className={
-                "grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[10px]"
-              }
-            >
+            <div className={"grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[10px]"}>
               <ThemesCard
                 badgesName={"All store types"}
                 badgeColor={"bg-secondary-greenb"}
                 title={"Bharat (Default)"}
-                description={
-                  "Start with our default theme, fit for all types of ecommerce stores."
-                }
+                description={"Start with our default theme, fit for all types of ecommerce stores."}
                 activated
               />
               <ThemesCard
                 badgesName={"Clothing"}
                 badgeColor={"bg-secondary-blueb"}
                 title={"Bharat 2"}
-                description={
-                  "Start with our default theme, fit for all types of ecommerce stores."
-                }
+                description={"Start with our default theme, fit for all types of ecommerce stores."}
                 activate
               />
               <ThemesCard
                 badgesName={"Food/Beverages"}
                 badgeColor={"bg-secondary-greena"}
                 title={"Bharat 3"}
-                description={
-                  "Start with our default theme, fit for all types of ecommerce stores."
-                }
+                description={"Start with our default theme, fit for all types of ecommerce stores."}
                 activate
               />
             </div>

@@ -64,17 +64,17 @@ const RightSidebar = ({ showMobilesidebar }) => {
           {navigation.map((navi, index) => (
             <div key={index} className="sidenav-bg pt-5">
               <Link href="#0" className="flex gap-2 items-start pl-1">
-                <Image src={navi.icon} alt=""/>
+                <Image src={navi.icon} alt="" />
                 <div>
                   <span className="font-normal text-sm text-blacklight dark:text-white">{navi.title}</span>
                   <p className="text-xs text-black/40 dark:text-white/40">{navi.time}</p>
-                </div>  
+                </div>
               </Link>
             </div>
-          ))}         
-          <Button color="lightgrey" size={'small'} name="Load More" secondary={"true"} className="mt-7"/>
+          ))}
+          <Button color="lightgrey" size={"small"} name="Load More" secondary={"true"} className="mt-7" />
         </div>
-      </div>                                     
+      </div>
     </div>
   );
 };

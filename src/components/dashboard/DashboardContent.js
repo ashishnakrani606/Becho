@@ -41,7 +41,7 @@ const DashboardContent = () => {
                       secondary={"true"}
                       size={"small"}
                       name="Start now"
-                      className="!text-xs sm:mt-7 mt-5 text-blacklight"
+                      className="!text-xs !leading-[18px] sm:mt-7 mt-5 text-blacklight !py-1"
                     />
                   </div>
                 </div>

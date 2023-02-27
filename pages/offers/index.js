@@ -9,15 +9,8 @@ import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
-import PageHeader from "@/components/ui/PageHeader";
-import Amountorder from "@/components/offers/Amountoffer";
-import Alert from "@/components/ui/Alert";
 import Link from "next/link";
-import InputContent from "@/components/ui/InputContent";
-import VarientDropdown from "@/components/ui/SelectOption";
 import CheckBox from "@/components/ui/CheckBox";
-import UnsavedChanges from "@/components/ui/UnsavedChanges";
-import DAtePicker from "@/components/ui/DatePicker";
 import Layout from "@/layouts/layout";
 import AmountOffer from "@/components/offers/Amountoffer";
 

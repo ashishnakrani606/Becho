@@ -3,31 +3,33 @@ import Dots from "@/assets/images/icon/Union.svg";
 import Dropdown from "@/components/ui/Dropdown";
 import CheckBox from "@/components/ui/CheckBox";
 
-
-const SelectPlanTable = ({ tableData, handleChange, selected }) => { 
+const SelectPlanTable = ({ tableData, handleChange, selected }) => {
   return (
     <>
       {tableData.map((orderRowData, index) => (
-        <tr        
-          className={`${selected.includes(index) ? "bg-primary-light dark:bg-white/5 " : ""} border-b border-black/5  dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${orderRowData.tablesec}`}
-          key={index}  onChange={handleChange}
-          checked={selected.includes(index)}>
-          <td className="pl-0 py-2 flex items-center"> 
-          <div className="pl-[5px] flex items-center">
-            <CheckBox 
-              value={index} 
-              name={orderRowData.name}
-              onChange={handleChange}
-              checked={selected.includes(index)} />
-           </div>
+        <tr
+          className={`${
+            selected.includes(index) ? "bg-primary-light dark:bg-white/5 " : ""
+          } border-b border-black/5  dark:border-white/5 hover:bg-primary-light hover:border-primary-light dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${
+            orderRowData.tablesec
+          }`}
+          key={index}
+          onChange={handleChange}
+          checked={selected.includes(index)}
+        >
+          <td className="pl-0 py-2 flex items-center">
+            <div className="pl-[5px] flex items-center">
+              <CheckBox
+                value={index}
+                name={orderRowData.name}
+                onChange={handleChange}
+                checked={selected.includes(index)}
+              />
+            </div>
             {orderRowData.orderId}
-            </td>
+          </td>
           <td className="px-3 py-2 whitespace-nowrap">
-            <Image
-              src={orderRowData.icon}
-              alt=""
-              className="dark:invert inline-block mr-[6px]"
-            />
+            <Image src={orderRowData.icon} alt="" className="dark:invert inline-block mr-[6px]" />
             {orderRowData.date}
           </td>
           <td className="px-3 py-2 gap-2 whitespace-nowrap">{orderRowData.userName}</td>
@@ -55,9 +57,7 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[
-                { title: "View details", link:"/orders/details"}
-              ]}
+              dropdownitem={[{ title: "View details", link: "/orders/details" }]}
             />
           </td>
         </tr>

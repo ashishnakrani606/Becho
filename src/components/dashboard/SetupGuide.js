@@ -58,8 +58,8 @@ const SetupGuide = ({ setOpenDashboard }) => {
                 <Button
                   color="yellow"
                   name={"Add brand assets"}
-                  size={"small"}
-                  className="!text-xs font-semibold text-blacklight"
+                  // size={"small"}
+                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px]"
                   onClick={brandassetsHandler}
                 />
               </div>
@@ -85,7 +85,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
                   color="yellow"
                   name={"Add product"}
                   size={"small"}
-                  className="!text-xs font-semibold "
+                  className="!text-xs font-semibold !leading-[18px] !py-1"
                   onClick={firstProductHandler}
                 />
                 <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5" />
@@ -113,7 +113,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
                   name={"Add domain"}
                   size={"small"}
                   secondary={"true"}
-                  className="!text-xs font-semibold text-blacklight"
+                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px]"
                   onClick={AddDomainHandler}
                 />
               </div>

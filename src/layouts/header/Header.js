@@ -6,7 +6,7 @@ import Image from "next/image";
 import Squre from "@/assets/images/icon/squre.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import Themechange from "@/assets/images/icon/Sun.svg";
-import Menuicon from "@/assets/images/icon/menuicon.svg";
+import Menuicon from "@/assets/images/icon/Menuicon.svg";
 import Dotsmenu from "@/assets/images/icon/FunnelSimple-d.svg";
 import Squreflip from "@/assets/images/icon/squreflip.svg";
 import dashboard from "@/assets/images/icon/dashboard.svg";
@@ -148,56 +148,28 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
     <>
       <div className="border-b border-black/10 dark:border-white/10 relative z-10">
         <div className="flex items-center justify-between md:px-7 px-4 md:py-6 py-4 md:gap-2 gap-4 header-top">
-          <button
-            color="primary"
-            className="md:hidden block w-7 min-w-[28px]"
-            onClick={showMobmenu}
-          >
+          <button color="primary" className="md:hidden block w-7 min-w-[28px]" onClick={showMobmenu}>
             <Image src={Menuicon} alt="" className="dark:invert" />
           </button>
-          <div
-            isOpen={isOpen}
-            className={`dashbord-img ${
-              isOpen ? "md:block" : "md:block hidden"
-            }`}
-          >
+          <div isOpen={isOpen} className={`dashbord-img ${isOpen ? "md:block" : "md:block hidden"}`}>
             <div className="flex md:static absolute md:shadow-none  bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
-              <button
-                color="primary"
-                className="lgm:hidden md:block hidden"
-                onClick={showMobmenu}
-              >
+              <button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
               </button>
-              <button
-                color="primary"
-                className="lgm:block hidden"
-                onClick={showMobmenu}
-              >
+              <button color="primary" className="lgm:block hidden" onClick={showMobmenu}>
                 <Image src={Squre} alt="" className="dark:invert" />
               </button>
               {navigation.map((navi, index) => (
-                <div
-                  className={`flex items-center ${
-                    location === navi.href ? "" : "hidden"
-                  }`}
-                >
+                <div className={`flex items-center ${location === navi.href ? "" : "hidden"}`}>
                   <Image src={navi.icon} alt="" className="dark:invert mr-5" />
                   <div className="text-black/40 dark:text-white/40">
                     <Link href="#0" className="text-sm">
                       Becho.io Panel
                     </Link>
                     <span className="px-2">/</span>
-                    <Link
-                      href="#0"
-                      className="text-sm text-blacklight dark:text-white"
-                    >
-                      <span
-                        className={`${location === navi.href ? " " : "hidden"}`}
-                      >
-                        <span className="ml-1 d-inline-block font-normal">
-                          {navi.title}
-                        </span>
+                    <Link href="#0" className="text-sm text-blacklight dark:text-white">
+                      <span className={`${location === navi.href ? " " : "hidden"}`}>
+                        <span className="ml-1 d-inline-block font-normal">{navi.title}</span>
                       </span>
                     </Link>
                   </div>
@@ -211,21 +183,13 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
                 placeholder="Search"
                 className="rounded-lg max-w-[261px] w-full lg:w-[261px] pl-[26px] placeholder:text-sm text-xs bg-black/5 dark:bg-white/5 p-[6px] pr-3 focus-visible:outline-none"
               />
-              <Image
-                src={Searchicon}
-                alt=""
-                className="absolute top-[7px] left-[7px] dark:invert"
-              />
+              <Image src={Searchicon} alt="" className="absolute top-[7px] left-[7px] dark:invert" />
             </div>
             <Link href="#0">{renderThemeChanger()}</Link>
             <button color="primary" onClick={showsidebar}>
               <Image src={Squreflip} alt="" className="dark:invert" />
             </button>
-            <button
-              color="primary"
-              className="md:hidden block"
-              onClick={Handletoggle}
-            >
+            <button color="primary" className="md:hidden block" onClick={Handletoggle}>
               <Image src={Dotsmenu} alt="" className="w-5 dark:invert" />
             </button>
           </div>

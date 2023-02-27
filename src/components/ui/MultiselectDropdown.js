@@ -11,7 +11,7 @@ const MultiselectDropdown = ({ options, title, selectedValues, image }) => {
         <Multiselect
           customCloseIcon={
             <>
-              <Image src={CloseIcon} alt="" className=""/>
+              <Image src={CloseIcon} alt="" className="" />
             </>
           }
           title={title}

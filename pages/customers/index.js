@@ -10,15 +10,7 @@ import FunnelSimple from "@/assets/images/icon/FunnelSimple.svg";
 import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
-import RadioCircle from "@/assets/images/icon/radio-circle.svg";
-import CustomerPhoto from "@/assets/images/users/customer-photo.png";
-import Camera from "@/assets/images/icon/camera.svg";
-import PageHeader from "@/components/ui/PageHeader";
-import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import Dots from "@/assets/images/icon/Union.svg";
-import InputContent from "@/components/ui/InputContent";
-import VarientDropdown from "@/components/ui/SelectOption";
-import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import customer1 from "@/assets/images/users/customersimg-1.png";
@@ -275,7 +267,7 @@ const customers = () => {
           )}
         </>
       ) : (
-       ""
+       " "
       )}
     </Layout>
   );

@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import Layout from '@/layouts/layout';
+import Layout from "@/layouts/layout";
 
 const StoreSettings = [
   {
@@ -35,7 +35,7 @@ const StoreSettings = [
   {
     title: "Email Settings",
     href: "/store-settings/email-settings",
-  }, 
+  },
 ];
 
 const TabList = () => {
@@ -44,27 +44,27 @@ const TabList = () => {
 
   return (
     <>
-      <div className={' overflow-x-auto '}>
-        <div className='flex mb-5 xxl:w-auto w-[870px]'>
-        {StoreSettings.map((navi, index) => (
-          <div key={index}>
-            <Link href={navi.href}>
-              <span
-                className={`tabs-main ${
-                  location === navi.href
-                    ? "selected  relative"
-                    : ""
-                }`}
-              >
-                <span className={`${location === navi.href ? "font-semibold text-blacklight dark:text-secondary-purpleb" : ""}`}>{navi.title}</span>
-              </span>
-            </Link>
-          </div>
-        ))}
+      <div className={" overflow-x-auto "}>
+        <div className="flex mb-5 xxl:w-auto w-[870px]">
+          {StoreSettings.map((navi, index) => (
+            <div key={index}>
+              <Link href={navi.href}>
+                <span className={`tabs-main ${location === navi.href ? "selected  relative" : ""}`}>
+                  <span
+                    className={`${
+                      location === navi.href ? "font-semibold text-blacklight dark:text-secondary-purpleb" : ""
+                    }`}
+                  >
+                    {navi.title}
+                  </span>
+                </span>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default TabList 
+export default TabList;

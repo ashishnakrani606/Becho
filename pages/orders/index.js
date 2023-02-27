@@ -12,16 +12,9 @@ import Pagetitle from "@/components/ui/Pagetitle";
 import SelectPlanTable from "@/components/orders/SelectPlanTable";
 import Dots from "@/assets/images/icon/Union.svg";
 import Image from "next/image";
-import Dropdown from "@/components/ui/Dropdown";
 import Link from "next/link";
-import Alert from "@/components/ui/Alert";
 import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import pillows from "@/assets/images/users/brown-throw-pillows.png";
-import Infoico from "@/assets/images/icon/info-icon.svg";
-import Due from "@/assets/images/icon/Add-payment-due.svg";
-import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
-import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
-import InputContent from "@/components/ui/InputContent";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import User from "@/assets/images/icon/userimg.svg";
@@ -286,7 +279,7 @@ const orders = () => {
                   color={"lightgreen"}
                   name={"Select plan"}
                   size={"small"}
-                  className="font-semibold !text-xs"
+                  className="font-semibold !text-xs !py-1 !leading-[18px]"
                   onClick={SelectPlanHandler}
                 />
               </Card>

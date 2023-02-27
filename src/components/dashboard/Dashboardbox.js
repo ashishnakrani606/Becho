@@ -48,7 +48,9 @@ export default function Dashboardbox() {
               <div
                 className={`flex pt-3 items-center 2xl:gap-[26px] xl:gap-2 sm:gap-3 gap-1 justify-between lg:justify-start ${dashboardData.boxcontain}`}
               >
-                <span className={`md:text-2xl sm:text-lg text-sm ${dashboardData.counttext}`}>{dashboardData.count}</span>
+                <span className={`md:text-2xl sm:text-lg text-sm ${dashboardData.counttext}`}>
+                  {dashboardData.count}
+                </span>
                 <div className="flex gap-[6px]">
                   <p className="sm:text-xs text-[10px] font-normal">{dashboardData.growth}</p>
                   <Image src={dashboardData.img} alt="" />

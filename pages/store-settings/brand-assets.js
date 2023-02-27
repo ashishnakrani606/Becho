@@ -6,38 +6,39 @@ import CoverImage from "@/assets/images/img/cover-image.png";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Layout from "@/layouts/layout";
+
 const Social = [
   {
-    socialName: "Facebook",
-    socialText: "pilani",
+    name: "Facebook",
+    text: "pilani",
   },
   {
-    socialName: "Twitter",
-    socialText: "Text",
+    name: "Twitter",
+    text: "Text",
   },
   {
-    socialName: "Instagram",
-    socialText: "pilani",
+    name: "Instagram",
+    text: "pilani",
   },
   {
-    socialName: "Youtube",
-    socialText: "pilani",
+    name: "Youtube",
+    text: "pilani",
   },
   {
-    socialName: "TikTok",
-    socialText: "pilani",
+    name: "TikTok",
+    text: "pilani",
   },
   {
-    socialName: "Snapchat",
-    socialText: "pilani",
+    name: "Snapchat",
+    text: "pilani",
   },
   {
-    socialName: "Koo",
-    socialText: "pilani",
+    name: "Koo",
+    text: "pilani",
   },
   {
-    socialName: "Pinterest",
-    socialText: "pilani",
+    name: "Pinterest",
+    text: "pilani",
   },
 ];
 
@@ -47,16 +48,13 @@ const BrandAssets = () => {
       <TabList />
       <div>
         <div className="pb-2.5 border-b border-black/20 dark:border-white/20 max-w-[571px]">
-          <h3 className="text-blacklight dark:text-white text-lg font-semibold">
-            Logos & cover image
-          </h3>
+          <h3 className="text-blacklight dark:text-white text-lg font-semibold">Logos & cover image</h3>
           <div>
             <Image src={Fulllogo} className="pt-2.5 pb-[11px] dark:invert" />
             <p className="text-black/80 dark:text-white/80 text-xs leading-[18px]">
               Full Logo:
               <span className="text-black/40 dark:text-white/40">
-                Allowed file types: png, jpg, jpeg. Recommended width: 512
-                pixels minimum
+                Allowed file types: png, jpg, jpeg. Recommended width: 512 pixels minimum
               </span>
             </p>
           </div>
@@ -65,8 +63,7 @@ const BrandAssets = () => {
             <p className="text-black/80 dark:text-white/80 text-xs	leading-[18px] pl-2">
               Square Logo:
               <span className="text-black/40 dark:text-white/40">
-                Allowed file types: png, jpg, jpeg. Recommended: 512x512 pixels
-                minimum
+                Allowed file types: png, jpg, jpeg. Recommended: 512x512 pixels minimum
               </span>
             </p>
           </div>
@@ -74,9 +71,7 @@ const BrandAssets = () => {
             <Image src={CoverImage} className="pt-2.5 p-0.5	" />
             <p className="text-black/80 dark:text-white/80 text-xs	leading-[18px]">
               Cover Image:
-              <span className="text-black/40 dark:text-white/40">
-                Allowed file types: png, jpg, jpeg. Ratio: 16:9
-              </span>
+              <span className="text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg. Ratio: 16:9</span>
             </p>
           </div>
         </div>
@@ -92,45 +87,29 @@ const BrandAssets = () => {
         <div className="pt-2.5 pb-8">
           <h3 className="text-lg font-semibold mb-2.5">Other details</h3>
           <div className="p-3 sm:py-4  sm:px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">
-              Slogan
-            </p>
+            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Slogan</p>
             <p className="text-blacklight dark:text-white text-sm	">
               Brand statement or tagline often used along with your logo
             </p>
           </div>
           <div className="py-4 px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">
-              Short description
-            </p>
+            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</p>
             <p className="text-blacklight dark:text-white text-sm	">
-              Organize your thoughts with an outline. Here’s the outlining
-              strategy I use. I promise it works like a charm. Not only will it
-              make writing your blog post easier, it’ll help you make your
-              message.
+              Organize your thoughts with an outline. Here’s the outlining strategy I use. I promise it works like a
+              charm. Not only will it make writing your blog post easier, it’ll help you make your message.
             </p>
           </div>
           <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-[15px] gap-y-2.5 ">
             {Social.map((items) => (
               <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4">
-                <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">
-                  {items.socialName}
-                </p>
-                <p className="text-blacklight text-sm dark:text-white">
-                  {items.socialText}
-                </p>
+                <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">{items.name}</p>
+                <p className="text-blacklight text-sm dark:text-white">{items.text}</p>
               </div>
             ))}
           </div>
         </div>
         <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
-          <Button
-            color="lightgrey"
-            size="large"
-            secondary="true"
-            name={"Discard"}
-            className={"text-sm !px-4"}
-          ></Button>
+          <Button color="lightgrey" size="large" secondary="true" name={"Discard"} className={"text-sm !px-4"}></Button>
           <Button
             color="blacklight"
             size="large"
