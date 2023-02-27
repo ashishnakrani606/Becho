@@ -64,7 +64,7 @@ const AmountOffer = ({ TableRow, handleChange, selected }) => {
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{ title: "View details", link: "./offers/detail" }]}
+              dropdownitem={[{id:1, title: "View details", link: "./offers/detail" }]}
             />
           </td>
         </tr>

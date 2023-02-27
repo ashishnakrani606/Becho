@@ -302,6 +302,7 @@ input[type="file"] {
   background-color: #E5ECF6!important;
   color: #1c1c1c!important;
 }
+
 /********** multiselect end ************/ 
 h4:empty , a:empty  {
   margin: 0;
@@ -318,14 +319,24 @@ h4:empty , a:empty  {
     transform: scale(1);
   }
 }
+.btn {
+  animation-name: push;
+  animation-duration: 0.3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
 .btn:hover {
   animation-name: push;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
-.datepicker-data input{
+.datepicker-data input {
   max-width: 532px;
   width: 100%;
   cursor: pointer;
+}
+ 
+.active-effect:active {
+  transform: scale(0.8);
 }

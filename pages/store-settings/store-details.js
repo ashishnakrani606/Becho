@@ -13,7 +13,7 @@ import Badges from "@/components/ui/Badges";
 import Alert from "@/components/ui/Alert";
 import Layout from "@/layouts/layout";
 
-const StoreDetaildata = [
+const StoreDetaildData = [
   {
     id: 1,
     title: "Legal business name",
@@ -125,7 +125,7 @@ const StoreDetails = () => {
             </Link>
           </div>
           <>
-            {StoreDetaildata.map((item) => (
+            {StoreDetaildData.map((item) => (
               <div className="flex flex-col">
                 <div className="flex pb-[18px] flex-wrap sm:flex-nowrap">
                   <p className="sm:min-w-[225px] text-black/40 dark:text-white/40 text-xs pb-[6px] sm:pb-0 flex items-center sm:w-auto w-full flex-grow sm:flex-grow-0">
@@ -146,7 +146,7 @@ const StoreDetails = () => {
             title={"We need your attention!"}
             description={"Confirm that you have access to contact@mystore.com in"}
             deatil={"sender email settings."}
-            className={"font-normal text-sm mt-1"}
+            // className={"font-normal text-sm mt-1"}
           />
         </div>
       </div>

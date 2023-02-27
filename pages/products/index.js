@@ -12,12 +12,7 @@ import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
-import RadioCircle from "@/assets/images/icon/radio-circle.svg";
-import MediaWall from "@/assets/images/img/media-wall.png";
-import Camera from "@/assets/images/icon/camera.svg";
-import UnsavedChanges from "@/components/ui/UnsavedChanges";
 import Link from "next/link";
-import PageHeader from "@/components/ui/PageHeader";
 import Alert from "@/components/ui/Alert";
 import InputContent from "@/components/ui/InputContent";
 import OptionValue from "@/components/products/OptionValue";
@@ -137,8 +132,10 @@ const products = () => {
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState([]);
   const [selectAll, setSelectAll] = useState([]);
+  const [activeBtn , setActiveBtn] = useState(false)
   const SelectProductHandler = () => {
     setSelectProductOpen(true);
+    setActiveBtn(true);
   };
   const [opentablepage, setopentablepage] = useState(false);
   const opentableHandler = () => {
@@ -193,7 +190,7 @@ const products = () => {
           </div>
           {!selectProductOpen ? (
             <Card
-              className={"md:mt-16 mt-5"}
+              className={"md:mt-16 mt-5 "}
               cardImage={ProductCard}
               title={"Add your first product"}
               discription={
@@ -205,15 +202,16 @@ const products = () => {
                 secondary={"true"}
                 size={"small"}
                 name={"Add product"}
-                className="font-semibold mr-5 !text-xs"
                 onClick={SelectProductHandler}
+                className={`font-semibold mr-5 !text-xs active-effect`}
               />
               <Button
+             
                 color={"grey"}
                 secondary={"true"}
                 size={"small"}
                 name={"Import"}
-                className="font-semibold !text-xs"
+                className={`font-semibold !text-xs active-effect`}
               />
             </Card>
           ) : (

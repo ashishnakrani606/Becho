@@ -39,9 +39,8 @@ const DashboardContent = () => {
                     <Button
                       color="yellow"
                       secondary={"true"}
-                      size={"small"}
                       name="Start now"
-                      className="!text-xs !leading-[18px] sm:mt-7 mt-5 text-blacklight !py-1"
+                      className="!text-xs !leading-[18px] sm:mt-7 mt-5 text-blacklight !py-1 active-effect"
                     />
                   </div>
                 </div>
@@ -56,7 +55,8 @@ const DashboardContent = () => {
       {/**********Orders Table sec Start************/}
       <Layout>
         <div className="md:pl-3 md:pr-1">
-          <div className="mt-14 text-blacklight dark:text-white">
+          <div className="mt-[66px] text-blacklight dark:text-white max-h-[276px]">
+{/* max-height add */}
             <h2 className="text-sm font-semibold">Recent Orders</h2>
             <div className="text-end pr-2 pb-1">
               <Link href="#0" className="text-xs text-black/40 dark:text-white/40">

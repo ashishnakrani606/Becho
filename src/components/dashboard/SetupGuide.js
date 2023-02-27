@@ -58,8 +58,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
                 <Button
                   color="yellow"
                   name={"Add brand assets"}
-                  // size={"small"}
-                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px]"
+                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px] active-effect"
                   onClick={brandassetsHandler}
                 />
               </div>
@@ -84,11 +83,10 @@ const SetupGuide = ({ setOpenDashboard }) => {
                 <Button
                   color="yellow"
                   name={"Add product"}
-                  size={"small"}
-                  className="!text-xs font-semibold !leading-[18px] !py-1"
+                  className="!text-xs font-semibold !leading-[18px] !py-1 active-effect"
                   onClick={firstProductHandler}
                 />
-                <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5" />
+                <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5 active-effect" />
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-10 `} src={Subtract} alt="" />
             </div>
@@ -111,9 +109,8 @@ const SetupGuide = ({ setOpenDashboard }) => {
                 <Button
                   color="yellow"
                   name={"Add domain"}
-                  size={"small"}
                   secondary={"true"}
-                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px]"
+                  className="!text-xs font-semibold text-blacklight !py-1 !leading-[18px] active-effect"
                   onClick={AddDomainHandler}
                 />
               </div>

@@ -13,8 +13,7 @@ const ShippingDelivery = () => {
   return (
     <Layout container>
       <TabList />
-      {/*********  Shipping & Delivery start***********/}
-      <div>
+      {/*********  Shipping & Delivery start***********/}     
         <div className="flex justify-between flex-wrap gap-y-5">
           <div className="w-full md:max-w-[49%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl p-6">
             <h2 className="font-semibold text-sm leading-5 md:pb-[34px] pb-5">General shipping rates</h2>
@@ -26,7 +25,8 @@ const ShippingDelivery = () => {
               <Button
                 color="teal"
                 name={"Manage"}
-                className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
+                size={"small"}
+                className={" !text-blacklight"}
               ></Button>
             </div>
           </div>
@@ -39,8 +39,9 @@ const ShippingDelivery = () => {
               <span className="text-xs text-black/40 dark:text-white/40">Jun 10, 2022</span>
               <Button
                 color="teal"
+                size={"small"}
                 name={"Manage"}
-                className={"!px-2 !py-[5px] leading-[18px] !text-blacklight"}
+                className={"!text-blacklight"}
               ></Button>
             </div>
           </div>
@@ -59,8 +60,7 @@ const ShippingDelivery = () => {
               {learnMore ? " Learn less " : " Learn more "}
             </button>
           </p>
-        </div>
-      </div>
+        </div>      
       {/*********  Shipping & Delivery end ***********/}
     </Layout>
   );

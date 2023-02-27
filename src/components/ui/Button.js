@@ -8,7 +8,7 @@ function Button(props) {
           ${props.secondary == "true" ? "text-blacklight dark:text-white" : "text-white"}
           ${
             props.color == "yellow"
-              ? "bg-secondary-yellow !text-blacklight"
+              ? "bg-secondary-yellow !text-blacklight hover:!bg-[#e4ce5399]"
               : "" || props.color == "grey"
               ? "bg-primary-purple !text-blacklight"
               : "" || props.color == "blue"
@@ -22,7 +22,7 @@ function Button(props) {
               : "" || props.color == "lightgrey"
               ? "bg-black/5 dark:bg-white/5 text-blacklight dark:text-white"
               : "" || props.color == "lightgreen"
-              ? "text-black bg-secondary-greenb"
+              ? "text-black bg-secondary-greenb hover:bg-[#9ce7ac]"
               : "" || props.color == "primarygreen"
               ? "bg-primary-greenb"
               : "" || props.color == "green"

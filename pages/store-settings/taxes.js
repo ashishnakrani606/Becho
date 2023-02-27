@@ -5,7 +5,7 @@ import Badges from "@/components/ui/Badges";
 import CheckBox from "@/components/ui/CheckBox";
 import Layout from "@/layouts/layout";
 
-const Taxesdata = [
+const TaxesData = [
   {
     id: 1,
     name: "include tax",
@@ -61,7 +61,7 @@ const Taxes = () => {
           </div>
           <div>
             <>
-              {Taxesdata.map((item) => (
+              {TaxesData.map((item) => (
                 <div
                   className={`flex items-start md:items-center gap-3 sm:px-5 py-4 border-b border-black/10 dark:border-white/10 ${item.border}`}
                 >

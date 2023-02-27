@@ -25,10 +25,13 @@ import Email from "@/assets/images/icon/Email.svg";
 import SEO from "@/assets/images/icon/SEO.svg";
 import Policies from "@/assets/images/icon/Policies.svg";
 import Bechopro from "@/assets/images/icon/Bechopro.svg";
+import BreadCrumb from "@/components/ui/BreadCrumb";
 
-const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
+const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
+  let currentLink = '';
 
   useEffect(() => {
     setMounted(true);
@@ -46,8 +49,18 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
       icon: orders,
     },
     {
+      title: "Orders Details",
+      href: "/orders/[order]",
+      icon: orders,
+    },
+    {
       title: "Products",
       href: "/products",
+      icon: products,
+    },
+    {
+      title: "Products / Detail",
+      href: "/products/[product]",
       icon: products,
     },
     {
@@ -56,8 +69,18 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
       icon: offers,
     },
     {
+      title: "Offers / Detail",
+      href: "/offers/[offer]",
+      icon: offers,
+    },
+    {
       title: "Customers",
       href: "/customers",
+      icon: customers,
+    },
+    {
+      title: "Customers Detail",
+      href: "/customers/[customer]",
       icon: customers,
     },
     {
@@ -136,11 +159,11 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
       );
     }
   };
-
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isopen, setisopen] = React.useState(false);  
+ 
   const Handletoggle = () => {
-    setIsOpen(!isOpen);
-  };
+    setisopen(!isopen);     
+  };  
 
   let curl = useRouter();
   const location = curl.pathname;
@@ -151,7 +174,7 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
           <button color="primary" className="md:hidden block w-7 min-w-[28px]" onClick={showMobmenu}>
             <Image src={Menuicon} alt="" className="dark:invert" />
           </button>
-          <div isOpen={isOpen} className={`dashbord-img ${isOpen ? "md:block" : "md:block hidden"}`}>
+          <div isopen={"false"} className={`dashbord-img ${isopen ? "md:block" : "md:block hidden"}`}>
             <div className="flex md:static absolute md:shadow-none  bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
               <button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
@@ -159,22 +182,31 @@ const Header = ({ showMobmenu, showsidebar, showheadermenu }) => {
               <button color="primary" className="lgm:block hidden" onClick={showMobmenu}>
                 <Image src={Squre} alt="" className="dark:invert" />
               </button>
-              {navigation.map((navi, index) => (
-                <div className={`flex items-center ${location === navi.href ? "" : "hidden"}`}>
-                  <Image src={navi.icon} alt="" className="dark:invert mr-5" />
+                <div className={`flex items-center`} >                  
+              {navigation.map((navi, index) => {
+                    console.log(location, navi.href );
+                    if ( location === navi.href) {
+                      return (
+                        <Image src={navi.icon} alt="" className={`dark:invert mr-5`} />
+                      )
+                    }
+                  }
+              )}
+
                   <div className="text-black/40 dark:text-white/40">
-                    <Link href="#0" className="text-sm">
+                    <Link href="/" className="text-sm">
                       Becho.io Panel
                     </Link>
-                    <span className="px-2">/</span>
+                    <BreadCrumb />
+
+                    {/* <span className="px-2">/</span>
                     <Link href="#0" className="text-sm text-blacklight dark:text-white">
                       <span className={`${location === navi.href ? " " : "hidden"}`}>
                         <span className="ml-1 d-inline-block font-normal">{navi.title}</span>
                       </span>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
-              ))}
             </div>
           </div>
           <div className="flex sm:w-1/2 w-full xl:gap-8 sm:gap-4 gap-3 items-center justify-end">

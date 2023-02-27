@@ -104,7 +104,7 @@ const StoreSettings = [
   },
 ];
 
-const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
+const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
   let curl = useRouter();
   const location = curl.pathname;
 
@@ -121,10 +121,9 @@ const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
                 </div>
               }
               dropdownitem={[
-                { title: "Heena Vinayak", link: "/", icon: Avatar },
-                { title: "Heena Vinayak", link: "/", icon: Avatar },
-              ]}
-            />
+                { id:1, title: "Heena Vinayak", link: "/", icon: Avatar },
+                { id:2, title: "Heena Vinayak", link: "/", icon: Avatar },
+              ]} />
             <span className="ml-3 lgm:hidden block">
               <button onClick={showMobilemenu} className="flex">
                 <Image src={Closebtn} alt="" className="w-6 dark:invert" />
@@ -136,10 +135,10 @@ const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
               <div className="list-none flex-col flex">
                 {navigation.map((navi, index) => (
                   <div key={index}>
-                    <Link href={navi.href}>
+                    <Link href={navi.href} onClick={showMobile}>
                       <span
                         className={`nav-link flex items-center hover:opacity-70 w-full font-semibold text-sm py-[6px] pl-7 rounded-lg relative ${
-                          location === navi.href
+                          (location === navi.href || curl.query[navi.href.replace("/", "")])
                             ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
                         }`}
@@ -157,7 +156,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
               <div className="list-none flex-col flex">
                 {StoreSettings.map((navi, index) => (
                   <div key={index}>
-                    <Link href={navi.href}>
+                    <Link href={navi.href} onClick={showMobile}>
                       <span
                         className={`nav-link flex gap-1 hover:opacity-70 items-center w-full font-semibold text-sm py-[6px] pl-6 rounded-lg relative ${
                           location === navi.href
@@ -176,7 +175,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu }) => {
           </div>
           <div className="mt-7">
             <div className="list-none flex-col flex">
-              <Link href={"/becho-pro"}>
+              <Link href={"/becho-pro"} onClick={showMobile}>
                 <span
                   className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
                     location === "/becho-pro"

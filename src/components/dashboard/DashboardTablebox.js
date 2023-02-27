@@ -95,28 +95,28 @@ export default function DashboardTablebox() {
           className={`border-b border-black/5  hover:bg-primary-light hover:border-primary-light dark:border-white/5 dark:hover:bg-white/5 group transition-all duration-300 cursor-pointer text-xs ${dashboardRowData.tableSec}`}
           key={index}
         >
-          <td className="pl-0 py-2 pr-[10px]">{dashboardRowData.orderId}</td>
-          <td className="px-3 py-2 whitespace-nowrap">
+          <td className="pl-0 py-2.5 pr-[10px]">{dashboardRowData.orderId}</td>
+          <td className="px-3 py-2.5 whitespace-nowrap">
             <Image src={dashboardRowData.icon} alt="" className="dark:invert inline-block mr-[6px]" />
             {dashboardRowData.date}
           </td>
-          <td className="px-3 py-2 gap-2 whitespace-nowrap">{dashboardRowData.userName}</td>
-          <td className="px-3 pr-0 py-2 whitespace-nowrap">
+          <td className="px-3 py-2.5 gap-2 whitespace-nowrap">{dashboardRowData.userName}</td>
+          <td className="px-3 pr-0 py-2.5 whitespace-nowrap">
             <h3
               className={`rounded-2xl leading-normal relative text-black/80 dark:text-white/80 inline-block px-[6px] ${dashboardRowData.dot} ${dashboardRowData.paymentData}`}
             >
               {dashboardRowData.payment}
             </h3>
           </td>
-          <td className="px-4 py-2">
+          <td className="px-4 py-2.5">
             <h3
               className={`text-black-80 relative inline-block text-black/80 dark:white/80 dark:text-white ${dashboardRowData.dots} ${dashboardRowData.orderStatusData}`}
             >
               {dashboardRowData.orderStatus}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2 whitespace-nowrap">{dashboardRowData.items}</td>
-          <td className="px-3 py-2 max-w-[210px] whitespace-nowrap">{dashboardRowData.deliveryMethod}</td>
+          <td className="px-3 pr-[10px] py-2.5 whitespace-nowrap">{dashboardRowData.items}</td>
+          <td className="px-3 py-2.5 max-w-[210px] whitespace-nowrap">{dashboardRowData.deliveryMethod}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
@@ -126,8 +126,8 @@ export default function DashboardTablebox() {
                 </div>
               }
               dropdownitem={[
-                { title: "Download", link: "/" },
-                { title: "Download", link: "/" },
+                {id:1, title: "Download", link: "/" },
+                {id:2, title: "Download", link: "/" },
               ]}
             />
           </td>

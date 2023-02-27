@@ -5,17 +5,17 @@ import Image from "next/image";
 import AttentionRed from "@/assets/images/icon/attentionred.svg";
 import ShieldCheck from "@/assets/images/icon/ShieldCheck.svg";
 
-const Alert = ({ title, description, color, className, deatil }) => {
+const Alert = ({ title, description, color, className, deatil ,alertStyle }) => {
   return (
     <>
       <div
-        className={`rounded-2xl border bg-primary-light dark:bg-white/5 py-4 px-3 flex items-start ${className} ${
+        className={`rounded-2xl border bg-primary-light dark:bg-white/5 py-4 px-3 flex items-start ${className} ${alertStyle} ${
           color == "red"
             ? "border-secondary-red"
             : "" || color == "reddark"
             ? "border-secondary-red"
             : "" || color == "green"
-            ? "border-[#27AE60]"
+            ? "border-primary-greenb"
             : ""
         }`}
       >

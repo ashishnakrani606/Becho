@@ -14,10 +14,10 @@ const PageHeader = ({ children, orderid, className, Badgesdata, arrow, orderidco
           </Link>
           <h3 className="px-2 py-1 mr-[6px] font-semibold">{orderid}</h3>
           {/* <h3 className="px-2 py-1 mr-[6px] font-semibold">{orderidcopy}</h3> */}
-          {Badgesdata.map((item) => (
-            <>
+          {Badgesdata.map((item,index) => (
+            <div key={index} >
               <Badges color={item.color} name={item.name} className={"mr-2"} />
-            </>
+            </div>
           ))}
         </div>
         <div className="flex items-center sm:gap-1 gap-2">

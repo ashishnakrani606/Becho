@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Header from "./header/Header";
 import Footer from "./footer/footer";
 import RightSidebar from "./sidebars/vertical/RightSidebar";
@@ -6,13 +6,28 @@ import Sidebar from "./sidebars/vertical/Sidebar";
 
 const FullLayout = ({ children }) => {
   const [open, setOpen] = React.useState(false);
+  const [windowSize, setWindowSize] = React.useState(0);
+
   const showMobilemenu = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    setWindowSize(window.innerWidth);
+  }, []);
+
   const [opensidebar, setOpensidebar] = React.useState(false);
   const showMobilesidebar = () => {
     setOpensidebar(!opensidebar);
   };
+
+  function showMobile() { 
+    if (windowSize < 768) {
+      setOpen(!open);      
+    } else {
+      setOpen(open);
+    } 
+  }
 
   return (
     <main>
@@ -20,10 +35,10 @@ const FullLayout = ({ children }) => {
         {/******** Sidebar **********/}
         <div
           className={`lgm:relative fixed lgm:w-[212px] bg-white dark:bg-blacklight border-r border-black/10 dark:border-white/10 lgm:h-screen h-full overflow-auto z-50 custom-scrollbar duration-300 transition-all ${
-            open ? "lgm:-ml-[212px]" : "lgm:ml-0 -ml-[212px] showSidebar"
+            open ? "lgm:ml-[-212px]" : "lgm:ml-0 -ml-[212px] showSidebar"
           }`}
         >
-          <Sidebar showMobilemenu={() => showMobilemenu()} />
+          <Sidebar showMobilemenu={() => showMobilemenu()} showMobile={() => showMobile()} />
         </div>
 
         {/********Content Area**********/}
@@ -35,10 +50,9 @@ const FullLayout = ({ children }) => {
             {/********Middle Content**********/}
             <div className="overflow-y-auto h-[calc(100vh-78px)] custom-scrollbar">
               <div className="pt-7 min-h-[calc(100vh-150px)]">{children}</div>
-            {/********Footer**********/}
+              {/********Footer**********/}
               <Footer />
             </div>
-
           </div>
           {/********Right Sidebar**********/}
           <div

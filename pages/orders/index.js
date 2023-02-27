@@ -196,8 +196,10 @@ const orders = () => {
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState([]);
   const [selectAll, setSelectAll] = useState([]);
+  const [activeBtn , setActiveBtn] = useState(false)
   const SelectPlanHandler = () => {
-    setSelectPlanOpen(true);
+    setSelectPlanOpen(true);  
+    setActiveBtn(true);
   };
   const [opentablepage, setopentablepage] = useState(false);
   const opentableHandler = () => {
@@ -225,41 +227,6 @@ const orders = () => {
     setSelected(tempSelectAll);
   };
 
-  const Fulfilled = [
-    {
-      id: 1,
-      productimg: pillows,
-      product: "Brown Throw Pillows",
-      productitem: "5",
-      price: "₹19.99 × 5",
-      totleprice: "₹99.95",
-    },
-    {
-      id: 2,
-      productimg: pillows,
-      product: "Brown Throw Pillows",
-      productitem: "5",
-      price: "₹19.99 × 5",
-      totleprice: "₹99.95",
-    },
-    {
-      id: 3,
-      productimg: pillows,
-      product: "Brown Throw Pillows",
-      productitem: "5",
-      price: "₹19.99 × 5",
-      totleprice: "₹99.95",
-    },
-    {
-      id: 4,
-      productimg: pillows,
-      product: "Brown Throw Pillows",
-      productitem: "5",
-      price: "₹19.99 × 5",
-      totleprice: "₹99.95",
-    },
-  ];
-
   return (
     <Layout>
       {!opentablepage ? (
@@ -278,8 +245,7 @@ const orders = () => {
                 <Button
                   color={"lightgreen"}
                   name={"Select plan"}
-                  size={"small"}
-                  className="font-semibold !text-xs !py-1 !leading-[18px]"
+                  className={"font-semibold !text-xs !py-1 !leading-[18px] active-effect"}
                   onClick={SelectPlanHandler}
                 />
               </Card>
@@ -312,7 +278,7 @@ const orders = () => {
                     <div className="flex items-center">
                       <span className="bg-black/20 w-[1px] h-5 mr-4 dark:bg-white/20"></span>
                       <span className="mr-4 text-xs">{selected.length} Selected</span>
-                      <Button color={"lightgrey"} secondary={"true"} name={"Delete"} className={"text-sm"} />
+                      <Button color={"lightgrey"} secondary={"true"} name={"Delete"} className={"text-sm leading-5 !py-1"} />
                     </div>
                   </div>
                   <div className="relative">
@@ -333,7 +299,7 @@ const orders = () => {
                       <tr class="text-black/40 dark:text-white/40 border-b text-xs">
                         <th class="whitespace-nowrap font-normal pl-[5px] px-3 py-[11px] pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border flex">
                           <CheckBox name={"select all"} onChange={selectAllCheckboxes} />
-                          <p>Order ID</p>
+                        <p>Order ID</p>
                         </th>
                         <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Date

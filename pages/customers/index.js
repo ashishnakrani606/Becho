@@ -40,10 +40,11 @@ const TableRow = [
 ];
 const customers = () => {
   const [selectCustomersOpen, setSelectCustomersOpen] = useState(false);
+  const [activeBtn , setActiveBtn] = useState(false)
   const SelectCustomersHandler = () => {
     setSelectCustomersOpen(true);
-  };
-
+    setActiveBtn(true);
+  }
   const [opentablepage, setopentablepage] = useState(false);
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState([]);
@@ -110,7 +111,8 @@ const customers = () => {
                 size={"small"}
                 name={"Add customer"}
                 secondary={"true"}
-                className="!text-xs font-semibold dark:!text-blacklight mr-5"
+                className={`!text-xs font-semibold dark:!text-blacklight mr-5 active-effect
+                ` }
                 onClick={SelectCustomersHandler}
               />
               <Button
@@ -118,7 +120,7 @@ const customers = () => {
                 secondary={"true"}
                 size={"small"}
                 name={"Import"}
-                className="font-semibold dark:!text-blacklight text-xs"
+                className="font-semibold dark:!text-blacklight text-xs active-effect"
               />
             </Card>
           ) : (

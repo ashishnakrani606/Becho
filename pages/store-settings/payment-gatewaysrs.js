@@ -48,7 +48,7 @@ const PaymentGatewaysrs = () => {
                 <p className="text-xs	leading-[18px] text-primary-greenb dark:text-white/40">Activated successfully.</p>
               </div>
             </div>
-            <Toggle></Toggle>
+            <Toggle/>
           </div>
           <div className="flex justify-between px-4 py-4">
             <div className="flex">
@@ -58,7 +58,7 @@ const PaymentGatewaysrs = () => {
                 <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">Switch on to start setup.</p>
               </div>
             </div>
-            <Toggle></Toggle>
+            <Toggle/>
           </div>
         </div>
         <div className="w-full bg-primary-light rounded-2xl mt-[18px] md:p-6 p-4 max-w-[568px] dark:bg-white/5">

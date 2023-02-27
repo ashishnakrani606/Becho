@@ -68,7 +68,7 @@ const ProductSelectTable = ({ TableRow, handleChange, selected }) => {
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{ title: "View details", link: "products/name" }]}
+              dropdownitem={[{id:1, title: "View details", link: "products/detail" }]}
             />
           </td>
         </tr>

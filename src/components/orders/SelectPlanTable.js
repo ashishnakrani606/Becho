@@ -17,7 +17,7 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
           onChange={handleChange}
           checked={selected.includes(index)}
         >
-          <td className="pl-0 py-2 flex items-center">
+          <td className="pl-0 py-[11px] flex items-center">
             <div className="pl-[5px] flex items-center">
               <CheckBox
                 value={index}
@@ -28,11 +28,11 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
             </div>
             {orderRowData.orderId}
           </td>
-          <td className="px-3 py-2 whitespace-nowrap">
+          <td className="px-3 py-[11px] whitespace-nowrap">
             <Image src={orderRowData.icon} alt="" className="dark:invert inline-block mr-[6px]" />
             {orderRowData.date}
           </td>
-          <td className="px-3 py-2 gap-2 whitespace-nowrap">{orderRowData.userName}</td>
+          <td className="px-3 py-[11px] gap-2 whitespace-nowrap">{orderRowData.userName}</td>
           <td className="px-3 pr-0 py-2 whitespace-nowrap">
             <h3
               className={`rounded-2xl leading-normal relative text-black/80 dark:text-white/80 inline-block px-[6px] ${orderRowData.dot} ${orderRowData.paymentdata}`}
@@ -40,15 +40,15 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
               {orderRowData.payment}
             </h3>
           </td>
-          <td className="px-4 py-2 whitespace-nowrap">
+          <td className="px-4 py-[11px] whitespace-nowrap">
             <h3
               className={`text-black-80 relative inline-block text-black/80 dark:white/80 dark:text-white ${orderRowData.dots} ${orderRowData.orderStatusData}`}
             >
               {orderRowData.orderStatus}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2 whitespace-nowrap">{orderRowData.items}</td>
-          <td className="px-3 py-2 max-w-[210px] whitespace-nowrap">{orderRowData.deliveryMethod}</td>
+          <td className="px-3 pr-[10px] py-[11px] whitespace-nowrap">{orderRowData.items}</td>
+          <td className="px-3 py-[11px] max-w-[210px] whitespace-nowrap">{orderRowData.deliveryMethod}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
@@ -57,7 +57,7 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{ title: "View details", link: "/orders/details" }]}
+              dropdownitem={[{id:1, title: "View details", link: "/orders/details" }]}
             />
           </td>
         </tr>

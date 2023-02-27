@@ -41,7 +41,7 @@ const SellerCommunity = () => {
               <p className="font-normal pt-3">A new, faster way to create and sell products</p>
               <span className="text-xs text-black/40 dark:text-white/40">18 Jan 2023</span>
             </div>
-            <div className="pt-4">
+            <div className="pt-[17px]">
               <Link href="#0" className="text-black/40 dark:text-white/40">
                 View more features
               </Link>

@@ -90,7 +90,7 @@ const Offers = () => {
                   color={"yellow"}
                   name={"Create discount"}
                   size={"small"}
-                  className="!text-xs font-semibold dark:text-blacklight !text-blacklight"
+                  className="!text-xs font-semibold dark:text-blacklight !text-blacklight active-effect"
                   onClick={SelectPlanHandler}
                 />
               </Card>

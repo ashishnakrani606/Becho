@@ -100,8 +100,8 @@ const orders = () => {
             </div>
           }
           dropdownitem={[
-            { title: "Download", link: "/" },
-            { title: "Download", link: "/" },
+            {id:1, title: "Download", link: "/" },
+            {id:2, title: "Download", link: "/" },
           ]}
         />
       </PageHeader>
@@ -116,9 +116,10 @@ const orders = () => {
         <Button color={"primarygreen"} name={"Save Changes"} className={"!py-[5px]"} />
       </UnsavedChanges>
       <div className="my-7">
-        <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."} />
+      <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."}   alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"} />
+      <div className="mt-7">
+      <Alert color={"green"} title={"Payment collected."} description={"Successfully marked payment as received."} alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"} />
       </div>
-      <Alert color={"green"} title={"Payment collected."} description={"Successfully marked payment as received."} />
       <div className="flex justify-between md:flex-row flex-col items-start xl:mt-9 mt-6 gap-y-8">
         <div className="bg-primary-light dark:bg-white/5 md:px-6 md:py-4 p-3 rounded-2xl w-full md:max-w-[52%]">
           <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pb-4"> Unfulfilled(4)</h2>
@@ -131,19 +132,19 @@ const orders = () => {
                       className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5"
                       key={index}
                     >
-                      <td className="py-[11px] pl-4 pr-2 max-w-[4%] w-full">
-                        <Image src={item.productImg} className="w-full min-w-[24px]" />
+                      <td className="py-2 pl-4 pr-2 max-w-[4%] w-full">
+                        <Image src={item.productImg} className="w-full min-w-[24px] " />
                       </td>
-                      <td className="py-[11px] max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
+                      <td className="py-2 max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                         {item.product}
                       </td>
-                      <td className="py-[11px] px-4 max-w-[9%] w-full text-xs leading-[18px] font-normal">
+                      <td className="py-2 px-4 max-w-[9%] w-full text-xs leading-[18px] font-normal">
                         {item.productItem}
                       </td>
-                      <td className="py-[11px] pr-4 max-w-[13%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
+                      <td className="py-2 pr-4 max-w-[13%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                         {item.price}
                       </td>
-                      <td className="py-[11px] px-4 max-w-[7%] w-full text-xs leading-[18px] font-normal">
+                      <td className="py-2 px-4 max-w-[7%] w-full text-xs leading-[18px] font-normal">
                         {item.totlePrice}
                       </td>
                     </tr>
@@ -252,8 +253,8 @@ const orders = () => {
                   </div>
                 }
                 dropdownitem={[
-                  { title: "Download", link: "/" },
-                  { title: "Download", link: "/" },
+                  {id:1, title: "Download", link: "/" },
+                  {id:2, title: "Download", link: "/" },
                 ]}
               />
             </div>
@@ -429,6 +430,7 @@ const orders = () => {
             )}
           </div>
         </div>
+      </div>
       </div>
     </Layout>
   );

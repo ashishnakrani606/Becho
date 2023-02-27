@@ -72,7 +72,7 @@ const offers = () => {
               </div>
             </InputContent>
             <InputContent title={"Discount Code"}>
-              <input type="text" name="" value="EKHKSS3S266H" className="bg-transparent" />
+              <input type="text" name="" defaultValue="EKHKSS3S266H" className="bg-transparent" />
             </InputContent>
             <InputContent title={"Value Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
@@ -81,7 +81,7 @@ const offers = () => {
               </div>
             </InputContent>
             <InputContent title={"Percentage %"}>
-              <input type="text" name="" value="40" className="bg-transparent" />
+              <input type="number" name="" defaultValue="40" className="bg-transparent" />
             </InputContent>
             <InputContent>
               <VarientDropdown

@@ -24,7 +24,7 @@ const PopupStyle = ({ className, icon, title, description, color }) => {
         <div className="flex justify-between items-center mb-4">
           <Image src={icon} alt="" className="" />
           <span>
-            <Button name={"Start now"} color={"gray-1"} />
+            <Button name={"Start now"} color={"gray-1"}/>
           </span>
         </div>
         <h3 className="text-2xl">{title}</h3>
