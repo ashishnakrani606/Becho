@@ -1,20 +1,20 @@
 /******Font Family*****/
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap");
 /******** Global css Start**********/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-} 
+}
 
-.container{
+.container {
   max-width: 1708px;
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
 }
-@media only screen and (min-width: 1200px){
-  .container{
+@media only screen and (min-width: 1200px) {
+  .container {
     padding: 0 28px;
   }
 }
@@ -22,27 +22,38 @@ body {
   margin: 0;
   font-weight: 400;
   color: #1c1c1c;
-  font-size: 14px; 
+  font-size: 14px;
   line-height: 1.4;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 
-.dark body{
+.dark body {
   color: #ffffff;
 }
 
-h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 400;
   line-height: 1.2;
 }
- 
+
 p {
   margin-top: 0;
   margin-bottom: 0;
-} 
+}
 
 ol,
 ul {
@@ -54,18 +65,19 @@ ul,
 dl {
   margin-top: 0;
   margin-bottom: 0;
-} 
- 
-a {
-  color: var(--blcklight);
-  transition: 0.3s; 
 }
 
-a:not([href]):not([class]), a:not([href]):not([class]):hover {
+a {
+  color: var(--blcklight);
+  transition: 0.3s;
+}
+
+a:not([href]):not([class]),
+a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
 }
- 
+
 label {
   display: inline-block;
 }
@@ -74,10 +86,10 @@ button {
   border-radius: 0;
 }
 
-button:focus:not(:focus-visible) {
+button:focus,
+button:focus-visible {
   outline: 0;
 }
-
 textarea:focus-visible,
 input:focus-visible {
   outline: none;
@@ -107,7 +119,7 @@ input:focus-visible {
 /*****Scrollbar css End*****/
 
 /********** Global css End************/
- 
+
 /********** checkbox css start ************/
 .styled-checkbox {
   position: absolute;
@@ -132,11 +144,11 @@ input:focus-visible {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-.dark .styled-checkbox + label:before {  
-  border: 1px solid rgb(255 255 255 / 0.2);  
+.dark .styled-checkbox + label:before {
+  border: 1px solid rgb(255 255 255 / 0.2);
 }
 .dark .styled-checkbox:checked + label:before {
-  background: #C6C7F8;
+  background: #c6c7f8;
 }
 .styled-checkbox:checked + label:before {
   background: #000;
@@ -149,24 +161,21 @@ input:focus-visible {
   background: white;
   width: 2px;
   height: 2px;
-  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white,
-  4px -6px 0 white, 4px -8px 0 white;
-  transform: translateY(-50%) rotate(45deg); 
+  box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+  transform: translateY(-50%) rotate(45deg);
 }
 .dark .styled-checkbox:checked + label:after {
-  background: black; 
-  box-shadow: 2px 0 0 black, 4px 0 0 black, 4px -2px 0 black, 4px -4px 0 black,
-  4px -6px 0 black, 4px -8px 0 black;
+  background: black;
+  box-shadow: 2px 0 0 black, 4px 0 0 black, 4px -2px 0 black, 4px -4px 0 black, 4px -6px 0 black, 4px -8px 0 black;
 }
 
 /********** checkbox css end ************/
-
 
 /********** Tabs css start ************/
 .react-tabs__tab-list {
   margin: 0 0 24px;
   padding: 0;
-} 
+}
 .tabs-main {
   display: inline-block;
   padding: 4px 8px;
@@ -178,13 +187,13 @@ input:focus-visible {
 .tabs-main.selected {
   font-weight: 600;
   position: relative;
-  color: #1C1C1C;
+  color: #1c1c1c;
 }
 .dark .tabs-main.selected {
   color: #fff;
 }
 .dark .tabs-main.selected::after {
-  background-color:#C6C7F8;
+  background-color: #c6c7f8;
 }
 .dark .tabs-main {
   color: rgba(255, 255, 255, 0.4);
@@ -196,27 +205,27 @@ input:focus-visible {
   left: 8px;
   width: calc(100% - 16px);
   height: 2px;
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   border-radius: 10px;
   opacity: 0;
   transition: 0.3s;
 }
 .tabs-main.selected::after {
   opacity: 1;
-} 
+}
 .tabs-main:focus {
   outline: none;
-}  
+}
 /* react-tabs */
 .react-tabs__tab-list {
   margin: 0 0 24px;
   padding: 0;
 }
-.dark .react-tabs__tab--selected::after {  
-  background-color: #C6C7F8;  
+.dark .react-tabs__tab--selected::after {
+  background-color: #c6c7f8;
 }
-.dark .react-tabs__tab.react-tabs__tab--selected{
-  color: #C6C7F8;
+.dark .react-tabs__tab.react-tabs__tab--selected {
+  color: #c6c7f8;
 }
 .dark .react-tabs__tab {
   color: rgba(255, 255, 255, 0.4);
@@ -232,7 +241,7 @@ input:focus-visible {
 .react-tabs__tab--selected {
   font-weight: 600;
   position: relative;
-  color: #1C1C1C;
+  color: #1c1c1c;
 }
 .react-tabs__tab--selected::after {
   content: "";
@@ -241,17 +250,17 @@ input:focus-visible {
   left: 8px;
   width: calc(100% - 16px);
   height: 2px;
-  background-color: #1C1C1C;
+  background-color: #1c1c1c;
   border-radius: 10px;
   opacity: 0;
   transition: 0.3s;
 }
 .react-tabs__tab--selected::after {
   opacity: 1;
-} 
+}
 .react-tabs__tab:focus {
   outline: none;
-} 
+}
 .react-tabs__tab-panel {
   display: none;
 }
@@ -266,48 +275,52 @@ input[type="file"] {
 }
 /********** input end ************/
 
-
-/********** multiselect start ************/ 
+/********** multiselect start ************/
 .multiselectitem .chip {
-  background-color: #E5ECF6!important;
-  color: #1c1c1c!important;
-  gap: .25rem;
-  border-radius: 4px!important;
-  font-size: 14px!important;
+  background-color: #e5ecf6 !important;
+  color: #1c1c1c !important;
+  gap: 0.25rem;
+  border-radius: 4px !important;
+  font-size: 14px !important;
   margin-bottom: 0 !important;
   margin-right: 8px !important;
   line-height: 20px;
   padding: 0 6px 0 4px;
 }
-.optionListContainer{
-  top: 40px!important;
+.optionListContainer {
+  top: 40px !important;
 }
-.dark .optionListContainer{
-  background-color: #000000; 
+.dark .optionListContainer {
+  background-color: #000000;
 }
 .multiselectitem .search-wrapper {
-  border: none!important;
+  border: none !important;
   padding: 0 !important;
   text-transform: capitalize;
 }
-.multiselectitem .highlightOption{
+.multiselectitem .highlightOption {
   background-color: var(--primary-purple) !important;
-  color: #1c1c1c!important;  
+  color: #1c1c1c !important;
 }
-.dark .multiselectitem .highlightOption{
+.dark .multiselectitem .highlightOption {
   background-color: var(--primary-purple) !important;
-  color: white!important;  
+  color: white !important;
 }
-.multiselectitem .multiSelectContainer li:hover{
-  background-color: #E5ECF6!important;
-  color: #1c1c1c!important;
+.multiselectitem .multiSelectContainer li:hover {
+  background-color: #e5ecf6 !important;
+  color: #1c1c1c !important;
 }
 
-/********** multiselect end ************/ 
-h4:empty , a:empty  {
+/********** multiselect end ************/
+h4:empty,
+a:empty {
   margin: 0;
   font-size: 0;
   padding: 0;
+}
+/* popup */
+.popup-staylemain {
+  transform: translate(-50%, -50%);
 }
 
 /* btn effect */
@@ -336,7 +349,16 @@ h4:empty , a:empty  {
   width: 100%;
   cursor: pointer;
 }
- 
+
 .active-effect:active {
   transform: scale(0.8);
 }
+
+/* input type number css start */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  @apply appearance-none;
+}
+
+/* input type number css end */

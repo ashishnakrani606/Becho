@@ -120,14 +120,20 @@ export default function DashboardTablebox() {
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
+              itemsclass="w-[240px] p-2 divide-y-0"
               button={
                 <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
               dropdownitem={[
-                {id:1, title: "Download", link: "/" },
-                {id:2, title: "Download", link: "/" },
+                {id:1, title: "Print packing slip", link: "/" },
+                {id:2, title: "Archive order", link: "/" },
+                {id:3, title: "Put on Hold (or Unhold order)", link: "/" },
+                {id:4, title: "Mark as paid (or Mark as Unpaid if already paid)", link: "/" },
+                {id:5, title: "Fulfil order (or Mark as Unfulfilled)", link: "/" },
+                {id:6, title: "View details", link: "/" },
+
               ]}
             />
           </td>

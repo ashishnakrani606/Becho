@@ -88,10 +88,14 @@ const products = () => {
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
             <InputContent title={"Price"} titlestyle={"!mb-1"}>
-              <input type="text" name="" defaultValue="₹ 250.00" className="w-full bg-transparent" />
+              <span className="flex items-center">₹ 
+                <input type="number" name="" defaultValue="250.00" className="w-full bg-transparent ml-1" />
+              </span>
             </InputContent>
             <InputContent title={"Strikethrough Price (optional)"} titlestyle={"!mb-1"}>
-              <input type="text" name="" defaultValue="₹ 300.00" className="w-full bg-transparent" />
+              <span className="flex items-center">₹ 
+                <input type="number" name="" defaultValue="300.00" className="w-full bg-transparent ml-1" />
+              </span>
             </InputContent>
           </div>
           <InputContent title={"Charge tax on this product"} className="text-black/40 dark:text-white/40">
@@ -226,7 +230,7 @@ const products = () => {
 
           <div className="grid sm:grid-cols-2 sm:gap-6">
             <InputContent title={"Shipping weight"} titlestyle={"mb-1"}>
-              <input type="number" name="" value="4.30" className="w-full bg-transparent" />
+              <input type="number" name="" defaultValue="4.30" className="w-full bg-transparent" />
             </InputContent>
             <InputContent title={"Type"} titlestyle={"mb-1"}>
               <VarientDropdown

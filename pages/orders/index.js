@@ -23,7 +23,7 @@ import User1 from "@/assets/images/icon/user1.svg";
 import User2 from "@/assets/images/icon/user2.svg";
 import User3 from "@/assets/images/icon/user3.svg";
 import User4 from "@/assets/images/icon/user4.svg";
-
+import Dropdown from "@/components/ui/Dropdown";
 const tableData = [
   {
     id: 1,
@@ -191,6 +191,7 @@ const tableData = [
   },
 ];
 
+
 const orders = () => {
   const [selectPlanOpen, setSelectPlanOpen] = useState(false);
   const [active, setActive] = useState(false);
@@ -223,10 +224,8 @@ const orders = () => {
         tempSelectAll.push(index);
       });
     }
-
     setSelected(tempSelectAll);
   };
-
   return (
     <Layout>
       {!opentablepage ? (
@@ -259,22 +258,57 @@ const orders = () => {
                         alt=""
                         className="dark:invert mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-1"
                       />
-                      <Image
-                        src={FunnelSimple}
-                        alt=""
-                        className="dark:invert mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-1"
-                      />
-                      <Image
-                        src={ArrowsDownUp}
-                        alt=""
-                        className="dark:invert mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-1"
-                      />
-                      <Image
-                        src={Dots}
-                        alt=""
-                        className="dark:invert cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300 w-7 h-7 p-2"
-                      />
-                    </div>
+                      <Dropdown
+                          className="left-0"
+                          itemsclass="w-[240px] left-0 p-2 !divide-y-0"
+                          button={
+                            <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-black/5 cursor-pointer rounded-lg">
+                              <Image src={FunnelSimple} alt="" className="dark:invert" />
+                            </div>
+                          }
+                          dropdownitem={[
+                            {id:1, title: "Date", link: "/" },
+                            {id:2, title: "Order number", link: "/" },
+                            {id:3, title: "Payment status", link: "/" },
+                            {id:4, title: "Mark as paid (or Mark as Unpaid if already paid)", link: "/" },
+                            {id:5, title: "Fulfilment status", link: "/" },
+                            {id:6, title: "Amount", link: "/" },
+
+                          ]}
+                        />
+                      <Dropdown
+                          className="left-0"
+                          itemsclass="left-0 p-2 !divide-y-0 whitespace-nowrap"
+                          button={
+                            <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 cursor-pointer rounded-lg">
+                              <Image src={ArrowsDownUp} alt="" className="dark:invert" />
+                            </div>
+                          }
+                          dropdownitem={[
+                            {id:1, title: "Lowest to highest", link: "/" },
+                            {id:2, title: "Highest to lowest", link: "/" },
+                          ]}
+                        />
+                       <Dropdown
+                          className="left-0"
+                          itemsclass="w-[240px] -left-[72px] sm:left-0 p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 [&>a:nth-child(6)]:!border-t [&>a:nth-child(7)]:!border-0"
+                          button={
+                            <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 cursor-pointer rounded-lg">
+                              <Image src={Dots} alt="" className="dark:invert" />
+                            </div>
+                          }
+                          dropdownitem={[
+                            {id:1, title: "Print packing slips", link: "/" },
+                            {id:2, title: "Archive orders", link: "/" },
+                            {id:3, title: "Put on Hold (or Unhold orders)", link: "/" },
+                            {id:4, title: "Mark as paid (or Mark as Unpaid if already paid)", link: "/" },
+                            {id:5, title: "Fulfil orders (or Mark as Unfulfilled)", link: "/" },
+                            {id:6, title: "Add tags", link: "/" },
+                            {id:7, title: "Remove tags", link: "/" },
+
+                          ]}
+                        />
+                    </div> 
                     <div className="flex items-center">
                       <span className="bg-black/20 w-[1px] h-5 mr-4 dark:bg-white/20"></span>
                       <span className="mr-4 text-xs">{selected.length} Selected</span>

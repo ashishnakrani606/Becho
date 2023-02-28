@@ -21,7 +21,8 @@ import Toggle from "@/components/ui/Toggle";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png";
-
+import Dropdown from "@/components/ui/Dropdown";
+import Dots from "@/assets/images/icon/Union.svg";
 const TableRow = [
   {
     id: 1,
@@ -219,20 +220,56 @@ const products = () => {
               <div className="bg-primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5 mt-5">
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
-                    <Image
-                      src={FunnelSimple}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                  
+                    <Dropdown
+                      className="right-0 left-[unset]"
+                      itemsclass="w-[240px] left-0 p-2 !divide-y-0"
+                      button={
+                        <div className="flex gap-2 hover:bg-black/5  p-1 w-7 h-7 mr-2  rounded-lg  hover:dark:bg-white/5  items-center  justify-center">
+                          <Image src={FunnelSimple} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        {id:1, title: "Product title", link: "" },
+                        {id:2, title: "Created", link: "" },
+                        {id:3, title: "Updated", link: "" },
+                        {id:4, title: "Inventory", link: "" },
+                        {id:5, title: "Type", link: "" },
+                        {id:6, title: "Category", link: "" },
+                      ]}
                     />
-                    <Image
-                      src={ArrowsDownUp}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    <Dropdown
+                      className="left-0"
+                      itemsclass="left-0 p-2 !divide-y-0 whitespace-nowrap"
+                      button={
+                        <div className="flex  items-center w-7 h-7 p-1 mr-2 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg">
+                          <Image src={ArrowsDownUp} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        {id:1, title: "A-Z", link: "/" },
+                        {id:2, title: "Z-A", link: "/" },
+                      ]}
                     />
-                    <Image
-                      src={Threedots}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    <Dropdown
+                      className="left-0"
+                      itemsclass="sm:w-[240px] w-[190px] left-0 p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-1 [&>a:nth-child(6)]:!border-0 [&>a:nth-child(7)]:!border-t [&>a:nth-child(8)]:!border-0"
+                      button={
+                        <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg transition-all duration-300">
+                          <Image src={Threedots} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        {id:1, title: "Set as active", link: "/" },
+                        {id:2, title: "Set as draft", link: "/" },
+                        {id:3, title: "Archive products", link: "/" },
+                        {id:4, title: "Delete products", link: "/" },
+                        {id:5, title: "Add tags", link: "/" },
+                        {id:6, title: "Remove tags", link: "/" },
+                        {id:7, title: "Add to category", link: "/" },
+                        {id:8, title: "Remove from category", link: "/" },
+
+                      ]}
                     />
                   </div>
                   <div className="flex items-center">
@@ -256,7 +293,7 @@ const products = () => {
                   </button>
                 </div>
               </div>
-              <div className="overflow-auto min-h-[493px]">
+              <div className="overflow-x-auto overflow-y-visible min-h-[462px] h-full max-h-[440px]">
                 <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table">
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">

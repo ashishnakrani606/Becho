@@ -8,7 +8,7 @@ const PageHeader = ({ children, orderid, className, Badgesdata, arrow, orderidco
   return (
     <>
       <div className={`flex items-center justify-between flex-wrap ${className}`}>
-        <div className="flex items-center flex-wrap gap-3">
+        <div className="flex items-center flex-wrap">
           <Link href={"#0"}>
             <Image src={ArrowLeft} alt="" className="dark:invert" />
           </Link>

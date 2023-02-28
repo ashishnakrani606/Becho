@@ -3,6 +3,7 @@ import Header from "./header/Header";
 import Footer from "./footer/footer";
 import RightSidebar from "./sidebars/vertical/RightSidebar";
 import Sidebar from "./sidebars/vertical/Sidebar";
+import PopupStyle from "@/components/ui/PopupStyle";
 
 const FullLayout = ({ children }) => {
   const [open, setOpen] = React.useState(false);
@@ -48,7 +49,7 @@ const FullLayout = ({ children }) => {
             <Header showMobmenu={() => showMobilemenu()} showsidebar={() => showMobilesidebar()} />
 
             {/********Middle Content**********/}
-            <div className="overflow-y-auto h-[calc(100vh-78px)] custom-scrollbar">
+            <div className="overflow-y-auto h-[calc(100vh-78px)] custom-scrollbar relative">
               <div className="pt-7 min-h-[calc(100vh-150px)]">{children}</div>
               {/********Footer**********/}
               <Footer />
@@ -62,7 +63,7 @@ const FullLayout = ({ children }) => {
           >
             <RightSidebar showMobilesidebar={() => showMobilesidebar()} />
           </div>
-        </div>
+        </div>        
       </div>
     </main>
   );

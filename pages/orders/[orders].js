@@ -13,6 +13,7 @@ import infoicon from "@/assets/images/icon/info-icon.svg";
 import Due from "@/assets/images/icon/Add-payment-due.svg";
 import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
 import Layout from "@/layouts/layout";
+import Modal from "@/components/ui/Modal";
 
 const orders = () => {
   const Fulfilled = [
@@ -61,8 +62,10 @@ const orders = () => {
       mobile: "+91 80735 89105",
     },
   ];
-
   const [customerData, setCustomerData] = useState(true);
+
+  const [open, setOpen] = useState(false)
+   
 
   return (
     <Layout container>
@@ -100,8 +103,8 @@ const orders = () => {
             </div>
           }
           dropdownitem={[
-            {id:1, title: "Download", link: "/" },
-            {id:2, title: "Download", link: "/" },
+            { id: 1, title: "Download", link: "/" },
+            { id: 2, title: "Download", link: "/" },
           ]}
         />
       </PageHeader>
@@ -116,322 +119,369 @@ const orders = () => {
         <Button color={"primarygreen"} name={"Save Changes"} className={"!py-[5px]"} />
       </UnsavedChanges>
       <div className="my-7">
-      <Alert color={"green"} title={"Items fulfilled."} description={"20 items have been fulfilled."}   alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"} />
-      <div className="mt-7">
-      <Alert color={"green"} title={"Payment collected."} description={"Successfully marked payment as received."} alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"} />
-      </div>
-      <div className="flex justify-between md:flex-row flex-col items-start xl:mt-9 mt-6 gap-y-8">
-        <div className="bg-primary-light dark:bg-white/5 md:px-6 md:py-4 p-3 rounded-2xl w-full md:max-w-[52%]">
-          <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pb-4"> Unfulfilled(4)</h2>
-          <div className="bg-white dark:bg-black/40">
-            <div className="overflow-x-auto">
-              <table className="w-[640px] sm:w-full">
-                <tbody>
-                  {Fulfilled.map((item, index) => (
-                    <tr
-                      className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5"
-                      key={index}
-                    >
-                      <td className="py-2 pl-4 pr-2 max-w-[4%] w-full">
-                        <Image src={item.productImg} className="w-full min-w-[24px] " />
+        <Alert
+          color={"green"}
+          title={"Items fulfilled."}
+          description={"20 items have been fulfilled."}
+          alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"}
+        />
+        <div className="mt-7">
+          <Alert
+            color={"green"}
+            title={"Payment collected."}
+            description={"Successfully marked payment as received."}
+            alertStyle={"pb-3.5 outline-primary-greenb outline outline-1 border-0"}
+          />
+        </div>
+        <div className="flex justify-between md:flex-row flex-col items-start xl:mt-9 mt-6 gap-y-8">
+          <div className="bg-primary-light dark:bg-white/5 md:px-6 md:py-4 p-3 rounded-2xl w-full md:max-w-[52%]">
+            <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pb-4"> Unfulfilled(4)</h2>
+            <div className="bg-white dark:bg-black/40">
+              <div className="overflow-x-auto">
+                <table className="w-[640px] sm:w-full">
+                  <tbody>
+                    {Fulfilled.map((item, index) => (
+                      <tr
+                        className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5"
+                        key={index}
+                      >
+                        <td className="py-2 pl-4 pr-2 max-w-[4%] w-full">
+                          <Image src={item.productImg} className="w-full min-w-[24px] " />
+                        </td>
+                        <td className="py-2 max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
+                          {item.product}
+                        </td>
+                        <td className="py-2 px-4 max-w-[9%] w-full text-xs leading-[18px] font-normal">
+                          {item.productItem}
+                        </td>
+                        <td className="py-2 pr-4 max-w-[13%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
+                          {item.price}
+                        </td>
+                        <td className="py-2 px-4 max-w-[7%] w-full text-xs leading-[18px] font-normal">
+                          {item.totlePrice}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <div className="flex items-center justify-end gap-4 w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
+                <Button
+                  secondary={"true"}
+                  name={"Hold fulfillment"}
+                  outline={"true"}
+                  color={"grey"}
+                  className="text-sm leading-[18px]"
+                  size={"medium"}
+                />
+                <Button
+                  color={"primarygreen"}
+                  name={"Fulfill items"}
+                  className="text-sm whitespace-nowrap leading-5"
+                  size={"medium"}
+                />
+              </div>
+            </div>
+            <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
+            <div className="bg-white dark:bg-black/40">
+              <div className="overflow-x-auto">
+                <table className="w-[640px] sm:w-full mb-3.5">
+                  <tbody className="w-full">
+                    <tr className="text-blacklight border-b dark:text-white border-black/5 dark:border-white/5 w-full">
+                      <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">
+                        Subtotal
                       </td>
-                      <td className="py-2 max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
-                        {item.product}
+                      <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] px-4">
+                        20 items
                       </td>
-                      <td className="py-2 px-4 max-w-[9%] w-full text-xs leading-[18px] font-normal">
-                        {item.productItem}
-                      </td>
-                      <td className="py-2 pr-4 max-w-[13%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
-                        {item.price}
-                      </td>
-                      <td className="py-2 px-4 max-w-[7%] w-full text-xs leading-[18px] font-normal">
-                        {item.totlePrice}
+                      <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
+                        ₹1,019.91
                       </td>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                    <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
+                      <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">Tax</td>
+                      <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
+                        <Link className="flex whitespace-nowrap" href={"/"}>
+                          Show tax details
+                          <Image src={infoicon} className="ml-[5px]" />
+                        </Link>
+                      </td>
+                      <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
+                        ₹183.58
+                      </td>
+                    </tr>
+                    <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
+                      <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5 pl-4">Total</td>
+                      <td className="max-w-[33.33%] w-full py-2.5	px-4"></td>
+                      <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5	pr-4 text-right">₹1,203.49</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-            <div className="flex items-center justify-end gap-4 w-full py-4 pr-7 border-b border-black/10 dark:border-white/10">
-              <Button
-                secondary={"true"}
-                name={"Hold fulfillment"}
-                outline={"true"}
-                color={"grey"}
-                className="text-sm leading-[18px]"
-                size={"medium"}
-              />
-              <Button
-                color={"primarygreen"}
-                name={"Fulfill items"}
-                className="text-sm whitespace-nowrap leading-5"
-                size={"medium"}
-              />
-            </div>
-          </div>
-          <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
-          <div className="bg-white dark:bg-black/40">
-            <div className="overflow-x-auto">
-              <table className="w-[640px] sm:w-full mb-3.5">
+            <div className="bg-white dark:bg-black/40">
+              <table className="w-full">
                 <tbody className="w-full">
-                  <tr className="text-blacklight border-b dark:text-white border-black/5 dark:border-white/5 w-full">
-                    <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">
-                      Subtotal
-                    </td>
-                    <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] px-4">
-                      20 items
-                    </td>
-                    <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
-                      ₹1,019.91
-                    </td>
+                  <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
+                    <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">Paid by customer</td>
+                    <td className="w-full max-w-[50%] pr-4 py-[11px] text-xs leading-[18px] text-right">₹0.00</td>
                   </tr>
                   <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                    <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">Tax</td>
-                    <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
-                      <Link className="flex whitespace-nowrap" href={"/"}>
-                        Show tax details
-                        <Image src={infoicon} className="ml-[5px]" />
+                    <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">No payment due date</td>
+                    <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
+                      <Link className="flex justify-end text-primary-greenb" href={"/"}>
+                        Add due date
+                        <Image src={Due} className="ml-[5px]" />
                       </Link>
                     </td>
-                    <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
-                      ₹183.58
-                    </td>
                   </tr>
                   <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                    <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5 pl-4">Total</td>
-                    <td className="max-w-[33.33%] w-full py-2.5	px-4"></td>
-                    <td className="font-semibold text-sm max-w-[33.33%] w-full py-2.5	pr-4 text-right">₹1,203.49</td>
+                    <td className="w-full max-w-[50%] pl-4 py-2.5 text-sm font-semibold">Balance (owed by customer)</td>
+                    <td className="w-full max-w-[50%] pr-4 py-2.5 text-sm font-semibold text-right">₹1,203.49</td>
                   </tr>
                 </tbody>
               </table>
+              <div className="py-4 px-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 sm:flex-nowrap flex-wrap">
+                <Button
+                  outline={"true"}
+                  secondary={"true"}
+                  color={"grey"}
+                  name={"Send invoice"}
+                  className="text-lg leading-[18px]"
+                  size={"medium"}
+                />
+                <Dropdown
+                  className="right-0 left-[unset]"
+                  button={
+                    <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
+                      Collect payment
+                      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z"
+                          fill="white"
+                        />
+                      </svg>
+                    </div>
+                  }
+                  dropdownitem={[
+                    { id: 1, title: "Download", link: "/" },
+                    { id: 2, title: "Download", link: "/" },
+                  ]}
+                />
+              </div>
             </div>
-          </div>
-          <div className="bg-white dark:bg-black/40">
-            <table className="w-full">
-              <tbody className="w-full">
-                <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                  <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">Paid by customer</td>
-                  <td className="w-full max-w-[50%] pr-4 py-[11px] text-xs leading-[18px] text-right">₹0.00</td>
-                </tr>
-                <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                  <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">No payment due date</td>
-                  <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
-                    <Link className="flex justify-end text-primary-greenb" href={"/"}>
-                      Add due date
-                      <Image src={Due} className="ml-[5px]" />
-                    </Link>
-                  </td>
-                </tr>
-                <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
-                  <td className="w-full max-w-[50%] pl-4 py-2.5 text-sm font-semibold">Balance (owed by customer)</td>
-                  <td className="w-full max-w-[50%] pr-4 py-2.5 text-sm font-semibold text-right">₹1,203.49</td>
-                </tr>
-              </tbody>
-            </table>
-            <div className="py-4 px-4 flex gap-4 justify-end border-b items-center border-black/10 dark:border-white/10 sm:flex-nowrap flex-wrap">
-              <Button
-                outline={"true"}
-                secondary={"true"}
-                color={"grey"}
-                name={"Send invoice"}
-                className="text-lg leading-[18px]"
-                size={"medium"}
-              />
-              <Dropdown
-                className="right-0 left-[unset]"
-                button={
-                  <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
-                    Collect payment
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z"
-                        fill="white"
-                      />
-                    </svg>
-                  </div>
-                }
-                dropdownitem={[
-                  {id:1, title: "Download", link: "/" },
-                  {id:2, title: "Download", link: "/" },
+            <InputContent title={"Add tags"} className={"mt-4 w-full max-w-[400px] cursor-pointer"}>
+              <MultiselectDropdown
+                options={[
+                  {
+                    cat: "tag 1",
+                    key: "tag 1",
+                  },
+                  {
+                    cat: "tag 2",
+                    key: "tag 2",
+                  },
+                  {
+                    cat: "tag 3",
+                    key: "tag 3",
+                  },
+                  {
+                    cat: "tag 4",
+                    key: "tag 4",
+                  },
+                ]}
+                selectedValues={[
+                  {
+                    cat: "tag",
+                    key: "tag",
+                  },
+                  {
+                    cat: "tag",
+                    key: "tag",
+                  },
                 ]}
               />
-            </div>
+            </InputContent>
+            <div className="max-w-[400px] w-full mt-4"></div>
           </div>
-          <InputContent title={"Add tags"} className={"mt-4 w-full max-w-[400px] cursor-pointer"}>
-            <MultiselectDropdown
-              options={[
-                {
-                  cat: "tag 1",
-                  key: "tag 1",
-                },
-                {
-                  cat: "tag 2",
-                  key: "tag 2",
-                },
-                {
-                  cat: "tag 3",
-                  key: "tag 3",
-                },
-                {
-                  cat: "tag 4",
-                  key: "tag 4",
-                },
-              ]}
-              selectedValues={[
-                {
-                  cat: "tag",
-                  key: "tag",
-                },
-                {
-                  cat: "tag",
-                  key: "tag",
-                },
-              ]}
-            />
-          </InputContent>
-          <div className="max-w-[400px] w-full mt-4"></div>
-        </div>
-        <div className="bg-primary-light dark:bg-white/5 py-5 px-4 rounded-2xl w-full md:max-w-[46%]">
-          <div className="bg-primary-purple/50 dark:bg-black/40 flex items-start p-4 rounded-lg">
-            <Image src={NoteCustomer} className="mr-1 font-normal text-sm dark:invert" />
+          <div className="bg-primary-light dark:bg-white/5 py-5 px-4 rounded-2xl w-full md:max-w-[46%]">
+            <div className="bg-primary-purple/50 dark:bg-black/40 flex items-start p-4 rounded-lg">
+              <Image src={NoteCustomer} className="mr-1 font-normal text-sm dark:invert" />
+              <div>
+                <h4 className="flex">Note from customer</h4>
+                <p className="text-sm leading-[18px] text-black/40 dark:text-white/40">
+                  Sample note from customer during checkout.
+                </p>
+              </div>
+            </div>
             <div>
-              <h4 className="flex">Note from customer</h4>
-              <p className="text-sm leading-[18px] text-black/40 dark:text-white/40">
-                Sample note from customer during checkout.
-              </p>
-            </div>
-          </div>
-          <div>
-            <div className="flex justify-between my-[15px] items-center gap-2">
-              <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
+              <div className="flex justify-between my-[15px] items-center gap-2">
+                <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
+                {customerData ? (
+                  <Button
+                    color={"blacklight"}
+                    name={"Remove Customer"}
+                    className="!py-2 px-[12px] leading-[18px]"
+                    onClick={() => setCustomerData(false)}
+                  />
+                ) : (
+                  <>
+                    <Button 
+                      color={"blacklight"} 
+                      name={"Add Customer"} 
+                      className="!py-2 px-[12px] leading-[18px]" 
+                      onClick={() => setOpen(true)} 
+                    />
+                  </>
+                )}
+              </div>
               {customerData ? (
-                <Button
-                  color={"blacklight"}
-                  name={"Remove Customer"}
-                  className="!py-2 px-[12px] leading-[18px]"
-                  onClick={() => setCustomerData(false)}
-                />
+                <>
+                  {customer.map((item) => (
+                    <>
+                      <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
+                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
+                          Name
+                        </p>
+                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal">
+                          {item.name ? (
+                            item.name
+                          ) : (
+                            <>
+                              No name provided
+                              <Button
+                                secondary={"true"}
+                                name={"Add Name"}
+                                outline={"true"}
+                                color={"grey"}
+                                className="text-sm leading-[18px] ml-2"
+                                size={"medium"}
+                              />
+                            </>
+                          )}
+                        </p>
+                      </div>
+                      <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
+                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                          Phone
+                        </p>
+                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
+                          {item.phone ? (
+                            item.phone
+                          ) : (
+                            <>
+                              No phone provided
+                              <Button
+                                secondary={"true"}
+                                name={"Add Phone"}
+                                outline={"true"}
+                                color={"grey"}
+                                className="text-sm leading-[18px] ml-2"
+                                size={"medium"}
+                              />
+                            </>
+                          )}
+                        </p>
+                      </div>
+                      <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
+                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                          Email
+                        </p>
+                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
+                          {item.email ? (
+                            item.email
+                          ) : (
+                            <>
+                              No email provided
+                              <Button
+                                secondary={"true"}
+                                name={"Add email"}
+                                outline={"true"}
+                                color={"grey"}
+                                className="text-sm leading-[18px] ml-2"
+                                size={"medium"}
+                              />
+                            </>
+                          )}
+                        </p>
+                      </div>
+                      <div className="flex w-full flex-wrap sm:flex-nowrap">
+                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                          Address
+                        </p>
+                        {item.address ? (
+                          <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
+                            <p>
+                              {item.address}
+                              <Link className="block" href={"#0"}>
+                                {item.mobile}
+                              </Link>
+                            </p>
+                            <Button
+                              secondary={"true"}
+                              size={"medium"}
+                              color={"grey"}
+                              outline={"true"}
+                              name={"Edit"}
+                              className="md:ml-2 leading-[18px]"
+                            />
+                          </div>
+                        ) : (
+                          <>
+                            No address provided
+                            <Button
+                              secondary={"true"}
+                              name={"Add address"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
+                            />
+                          </>
+                        )}
+                      </div>
+                    </>
+                  ))}
+                </>
               ) : (
-                <Button color={"blacklight"} name={"Add Customer"} className="!py-2 px-[12px] leading-[18px]" />
+                ""
               )}
             </div>
-            {customerData ? (
-              <>
-                {customer.map((item) => (
-                  <>
-                    <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
-                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
-                        Name
-                      </p>
-                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal">
-                        {item.name ? (
-                          item.name
-                        ) : (
-                          <>
-                            No name provided
-                            <Button
-                              secondary={"true"}
-                              name={"Add Name"}
-                              outline={"true"}
-                              color={"grey"}
-                              className="text-sm leading-[18px] ml-2"
-                              size={"medium"}
-                            />
-                          </>
-                        )}
-                      </p>
-                    </div>
-                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                        Phone
-                      </p>
-                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                        {item.phone ? (
-                          item.phone
-                        ) : (
-                          <>
-                            No phone provided
-                            <Button
-                              secondary={"true"}
-                              name={"Add Phone"}
-                              outline={"true"}
-                              color={"grey"}
-                              className="text-sm leading-[18px] ml-2"
-                              size={"medium"}
-                            />
-                          </>
-                        )}
-                      </p>
-                    </div>
-                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                        Email
-                      </p>
-                      <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                        {item.email ? (
-                          item.email
-                        ) : (
-                          <>
-                            No email provided
-                            <Button
-                              secondary={"true"}
-                              name={"Add email"}
-                              outline={"true"}
-                              color={"grey"}
-                              className="text-sm leading-[18px] ml-2"
-                              size={"medium"}
-                            />
-                          </>
-                        )}
-                      </p>
-                    </div>
-                    <div className="flex w-full flex-wrap sm:flex-nowrap">
-                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                        Address
-                      </p>
-                      {item.address ? (
-                        <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
-                          <p>
-                            {item.address}
-                            <Link className="block" href={"#0"}>
-                              {item.mobile}
-                            </Link>
-                          </p>
-                          <Button
-                            secondary={"true"}
-                            size={"medium"}
-                            color={"grey"}
-                            outline={"true"}
-                            name={"Edit"}
-                            className="md:ml-2 leading-[18px]"
-                          />
-                        </div>
-                      ) : (
-                        <>
-                          No address provided
-                          <Button
-                            secondary={"true"}
-                            name={"Add address"}
-                            outline={"true"}
-                            color={"grey"}
-                            className="text-sm leading-[18px] ml-2"
-                            size={"medium"}
-                          />
-                        </>
-                      )}
-                    </div>
-                  </>
-                ))}
-              </>
-            ) : (
-              ""
-            )}
           </div>
         </div>
       </div>
-      </div>
+ 
+        <Modal title={'Add Customer'} open={open} setOpen={setOpen}>
+          <div className="mt-4">
+            <InputContent title={"Name"} className={"!px-4 py-3 cursor-pointer"}>
+              <input type="text" name="" placeholder="Name" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40" />
+            </InputContent>
+            <InputContent title={"Phone"} className={"!px-4 py-3 cursor-pointer"}>
+              <input type="number" name="" placeholder="Phone" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"/>
+            </InputContent>
+            <InputContent title={"Email"} className={"!px-4 py-3 cursor-pointer"}>
+              <input type="email" name="" placeholder="Email" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"/>
+            </InputContent>
+            <InputContent title={"Address"} className={"!px-4 py-3 cursor-pointer"}>
+            <textarea
+              rows="5"
+              className="w-full dark:bg-transparent resize-none placeholder:text-black/40 placeholder:dark:text-white/40"
+              placeholder="Address"
+            ></textarea>
+            </InputContent>
+          </div>
+          <div className="py-3 flex justify-end items-center">
+            <Button color="lightgrey" onClick={() => setOpen(false)} size="large" secondary="true" name={"Cancel"} className={"text-sm !px-4"}></Button>
+            <Button
+              color="blacklight"
+              size="large"
+              className={"ml-4 !px-4 text-sm font-semibold"}
+              name={"Save"}
+            ></Button>
+          </div>
+        </Modal> 
     </Layout>
   );
 };

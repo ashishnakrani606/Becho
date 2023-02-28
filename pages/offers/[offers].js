@@ -67,8 +67,28 @@ const offers = () => {
           <div>
             <InputContent title={"Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
-                <CheckBox name={"discount"}>Discount code</CheckBox>
-                <CheckBox name={"automatic"}>Automatic discount</CheckBox>
+                <div className={`checkbox-icon inline-block relative `}>
+                  <input
+                    className="styled-checkbox"
+                    id='discount'
+                    type="radio"
+                    name="discount"
+                  />
+                  <label for='discount' className="relative cursor-pointer text-sm flex sm:items-center">
+                    Discount code
+                  </label>
+                </div>
+                <div className={`checkbox-icon inline-block relative `}>
+                  <input
+                    className="styled-checkbox"
+                    id='automatic'
+                    type="radio"
+                    name="discount"
+                  />
+                  <label for='automatic' className="relative cursor-pointer text-sm flex sm:items-center">
+                    Automatic discount
+                  </label>
+                </div>
               </div>
             </InputContent>
             <InputContent title={"Discount Code"}>
@@ -76,8 +96,28 @@ const offers = () => {
             </InputContent>
             <InputContent title={"Value Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
-                <CheckBox name={"percentage"}>Percentage</CheckBox>
-                <CheckBox name={"fixed"}>Fixed amount</CheckBox>
+                <div class={`checkbox-icon inline-block relative `}>
+                  <input
+                    className="styled-checkbox"
+                    id='percentage'
+                    type="radio"
+                    name="percentage"
+                  />
+                  <label for='percentage' className="relative cursor-pointer text-sm flex sm:items-center">
+                  Percentage
+                  </label>
+                </div>
+                <div class={`checkbox-icon inline-block relative `}>
+                  <input
+                    className="styled-checkbox"
+                    id='amount'
+                    type="radio"
+                    name="percentage"
+                  />
+                  <label for='amount' className="relative cursor-pointer text-sm flex sm:items-center">
+                    Fixed amount
+                  </label>
+                </div>
               </div>
             </InputContent>
             <InputContent title={"Percentage %"}>

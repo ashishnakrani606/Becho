@@ -13,7 +13,7 @@ import Link from "next/link";
 import CheckBox from "@/components/ui/CheckBox";
 import Layout from "@/layouts/layout";
 import AmountOffer from "@/components/offers/Amountoffer";
-
+import Dropdown from "@/components/ui/Dropdown";
 const TableRow = [
   {
     id: 1,
@@ -100,20 +100,52 @@ const Offers = () => {
               <div className="bg-primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5">
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
-                    <Image
-                      src={FunnelSimple}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    
+                    <Dropdown
+                      className="left-0"
+                      itemsclass="w-[240px] left-0 p-2 !divide-y-0"
+                      button={
+                        <div className="flex  items-center mr-2 w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg transition-all duration-300">
+                          <Image src={FunnelSimple} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        {id:1, title: "Created date", link: "/" },
+                        {id:2, title: "Start date", link: "/" },
+                        {id:3, title: "End date", link: "/" },
+                        {id:4, title: "Title", link: "/" },
+                        {id:5, title: "Updated date", link: "/" },
+                        {id:6, title: "Used", link: "/" },
+
+                      ]}
                     />
-                    <Image
-                      src={ArrowsDownUp}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
-                    />
-                    <Image
-                      src={Threedots}
-                      alt=""
-                      className="dark:invert p-1 w-7 h-7 mr-2 cursor-pointer rounded-lg hover:bg-black/5 transition-all duration-300"
+                    <Dropdown
+                        className="left-0"
+                        itemsclass="left-0 p-2 !divide-y-0 whitespace-nowrap"
+                        button={
+                          <div className="flex  items-center w-7 h-7 p-1 mr-2 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg">
+                            <Image src={ArrowsDownUp} alt="" className="dark:invert" />
+                          </div>
+                        }
+                        dropdownitem={[
+                          {id:1, title: "Earliest", link: "/" },
+                          {id:2, title: "Latest", link: "/" },
+                        ]}
+                      />
+                    <Dropdown
+                      className="left-0"
+                      itemsclass="w-[240px] left-0 p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t"
+                      button={
+                        <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg transition-all duration-300">
+                          <Image src={Threedots} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        {id:1, title: "Activate offers", link: "/" },
+                        {id:2, title: "Deactivate offers", link: "/" },
+                        {id:3, title: "Delete offers", link: "/" },
+
+                      ]}
                     />
                   </div>
                   <div className="flex items-center">
@@ -137,10 +169,10 @@ const Offers = () => {
                   <button type="button">View Archived</button>
                 </div>
               </div>
-              <div className="min-h-[440px] overflow-x-auto">
-                <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table">
+              <div className="overflow-x-auto min-h-[470px]">
+                <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
                   <thead>
-                    <tr className="text-black/40 dark:text-white/40 border-b text-xs">
+                    <tr className="text-black/40 dark:text-white/40 border-b text-xs ">
                       <th className="font-normal pl-0 py-3 before:top-0 before:right-0 w-10 before:h-full before:absolute relative h-full text-start heading-border ">
                         <CheckBox name={"select all"} onChange={selectAllCheckboxes} className={"pl-[5px]"} />
                       </th>

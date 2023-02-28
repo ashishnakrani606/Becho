@@ -8,7 +8,7 @@ const Policies = () => {
   return (
     <Layout container>
       <div className="bg-primary-light dark:bg-white/5 rounded-2xl p-4 md:p-6">
-        <h3 className="text-blacklight dark:text-white text-sm font-semibold mb-4"> policies</h3>
+        <h3 className="text-blacklight dark:text-white text-sm font-semibold mb-4"> Policies</h3>
         <InputContent title={"Refund policy"} titlestyle={"mb-0"}>
           <textarea
             rows="5"

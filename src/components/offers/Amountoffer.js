@@ -59,12 +59,16 @@ const AmountOffer = ({ TableRow, handleChange, selected }) => {
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
+              itemsclass="w-[240px] right-0 p-2 [&>a:nth-child(2)]:!border-t [&>a:nth-child(3)]:!border-0"
               button={
                 <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{id:1, title: "View details", link: "./offers/detail" }]}
+              dropdownitem={[
+                {id:1, title: "Activate offer (or Deactivate offer)", link: "" },
+                {id:2, title: "View details", link: "./offers/detail" },
+              ]}
             />
           </td>
         </tr>

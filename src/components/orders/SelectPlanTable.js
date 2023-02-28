@@ -51,13 +51,21 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
           <td className="px-3 py-[11px] max-w-[210px] whitespace-nowrap">{orderRowData.deliveryMethod}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
-              className="right-0 left-[unset]"
+              className=""
+              itemsclass="w-[240px] right-0 p-2 [&>a:nth-child(2)]:!border-t [&>a:nth-child(3)]:!border-0 [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 [&>a:nth-child(6)]:!border-t [&>a:nth-child(7)]:!border-0"
               button={
                 <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{id:1, title: "View details", link: "/orders/details" }]}
+              dropdownitem={[
+                {id:1, title: "Print packing slip", link: "" },
+                {id:1, title: "Archive order", link: "" },
+                {id:1, title: "Put on Hold (or Unhold order)", link: "" },
+                {id:1, title: "Mark as paid (or Mark as Unpaid if already paid)", link: "" },
+                {id:1, title: "Fulfil order (or Mark as Unfulfilled)", link: "" },
+                {id:1, title: "View details", link: "/orders/details" },
+              ]}
             />
           </td>
         </tr>

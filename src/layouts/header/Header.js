@@ -50,7 +50,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Orders Details",
-      href: "/orders/[order]",
+      href: "/orders/[orders]",
       icon: orders,
     },
     {
@@ -60,7 +60,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Products / Detail",
-      href: "/products/[product]",
+      href: "/products/[products]",
       icon: products,
     },
     {
@@ -70,7 +70,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Offers / Detail",
-      href: "/offers/[offer]",
+      href: "/offers/[offers]",
       icon: offers,
     },
     {
@@ -80,7 +80,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Customers Detail",
-      href: "/customers/[customer]",
+      href: "/customers/[customers]",
       icon: customers,
     },
     {
@@ -182,19 +182,20 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
               <button color="primary" className="lgm:block hidden" onClick={showMobmenu}>
                 <Image src={Squre} alt="" className="dark:invert" />
               </button>
-                <div className={`flex items-center`} >                  
+                <div className={`flex items-center`} >
               {navigation.map((navi, index) => {
-                    console.log(location, navi.href );
-                    if ( location === navi.href) {
-                      return (
+                    console.log(location === navi.href ? navi.icon : '');
+                    
+                    location === navi.href ? (
+                      <>
+                        <span>ksjdfklsdjf</span>
                         <Image src={navi.icon} alt="" className={`dark:invert mr-5`} />
-                      )
-                    }
-                  }
+                    </>
+                  ) : ''}
               )}
 
                   <div className="text-black/40 dark:text-white/40">
-                    <Link href="/" className="text-sm">
+                    <Link href="#0" className="text-sm">
                       Becho.io Panel
                     </Link>
                     <BreadCrumb />

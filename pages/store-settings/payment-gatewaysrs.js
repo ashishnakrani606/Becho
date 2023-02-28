@@ -8,6 +8,7 @@ import slack from "@/assets/images/icon/slack.svg";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Layout from "@/layouts/layout";
+import InputContent from "@/components/ui/InputContent";
 
 const PaymentGatewaysrs = () => {
   const [learnMore, setLearnMore] = useState(false);
@@ -63,18 +64,22 @@ const PaymentGatewaysrs = () => {
         </div>
         <div className="w-full bg-primary-light rounded-2xl mt-[18px] md:p-6 p-4 max-w-[568px] dark:bg-white/5">
           <h4 className="text-sm font-semibold mb-4">Set up Cash on Delivery (COD)</h4>
-          <div className="sm:py-4 sm:px-5 p-4 bg-white border border-black/10 dark:border-white/10 rounded-lg mb-4 dark:bg-white/5">
-            <p className="text-xs leading-[18px] text-black/40 mb-1 dark:text-white/40">Additional notes</p>
-            <p className="text-sm text-black/40 dark:text-white/40">
-              Displays to customers when they’re choosing a payment method.
-            </p>
-          </div>
-          <div className="sm:py-4 sm:px-5 p-4 bg-white border border-black/10 dark:border-white/10 rounded-lg mb-4 dark:bg-white/5">
-            <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">Payment instructions</p>
-            <p className="text-sm	text-black/40 dark:text-white/40">
-              Displays to customers after they place an order with this payment method.
-            </p>
-          </div>
+          <InputContent title={"Additional notes"} titlestyle={"!mb-1"}>
+            <textarea
+              rows="5"
+              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 h-10"
+              readOnly
+              defaultValue="Displays to customers after they place an order with this payment method."
+            ></textarea>
+          </InputContent>
+          <InputContent title={"Payment instructions"} titlestyle={"!mb-1"}>
+            <textarea
+              rows="5"
+              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 h-10"
+              readOnly
+              defaultValue="Displays to customers after they place an order with this payment method."
+            ></textarea>
+          </InputContent>          
           <Button name={"Activate Cash on Delivery (COD)"} color="primarygreen" size={"small"} />
         </div>
       </>

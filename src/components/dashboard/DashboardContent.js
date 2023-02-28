@@ -19,9 +19,9 @@ const DashboardContent = () => {
             <Select
               options={[
                 { id: 1, name: "30 Days" },
-                { id: 2, name: "60 Days" },
-                { id: 3, name: "20 Days" },
-                { id: 4, name: "10 Days" },
+                { id: 2, name: "24 hours" },
+                { id: 3, name: "7 days" },
+                { id: 4, name: "90 days" },
               ]}
             />
           </div>
@@ -56,7 +56,7 @@ const DashboardContent = () => {
       <Layout>
         <div className="md:pl-3 md:pr-1">
           <div className="mt-[66px] text-blacklight dark:text-white max-h-[276px]">
-{/* max-height add */}
+        {/* max-height add */}
             <h2 className="text-sm font-semibold">Recent Orders</h2>
             <div className="text-end pr-2 pb-1">
               <Link href="#0" className="text-xs text-black/40 dark:text-white/40">

@@ -84,10 +84,10 @@ const permissions = () => {
             <h4 className="text-lg font-semibold">Login Sessions</h4>
             <Select
               options={[
-                { id: 1, name: "1 Hours" },
-                { id: 2, name: "2 Hours" },
-                { id: 3, name: "3 Hours" },
-                { id: 4, name: "4 Hours" },
+                { id: 1, name: "7 days" },
+                { id: 2, name: "24 hours" },
+                { id: 3, name: "30 days" },
+                { id: 4, name: "60 days" },
               ]}
             />
           </div>

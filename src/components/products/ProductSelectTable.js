@@ -63,12 +63,18 @@ const ProductSelectTable = ({ TableRow, handleChange, selected }) => {
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
+              itemsclass="w-[240px] right-0 p-2 [&>a:nth-child(2)]:!border-t [&>a:nth-child(3)]:!border-0 [&>a:nth-child(4)]:!border-t "
               button={
                 <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{id:1, title: "View details", link: "products/detail" }]}
+              dropdownitem={[
+                {id:1, title: "Set as active (or Set as draft)", link: "" },
+                {id:2, title: "Add to category", link: "" },
+                {id:3, title: "Remove from category", link: "" },
+                {id:4, title: "View details", link: "products/detail" },
+              ]}
             />
           </td>
         </tr>

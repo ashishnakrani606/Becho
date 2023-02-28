@@ -86,7 +86,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
                   className="!text-xs font-semibold !leading-[18px] !py-1 active-effect"
                   onClick={firstProductHandler}
                 />
-                <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5 active-effect" />
+                <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5 active-effect hover:bg-[#dbe6f5]" />
               </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-10 `} src={Subtract} alt="" />
             </div>
