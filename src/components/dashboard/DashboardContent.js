@@ -25,9 +25,9 @@ const DashboardContent = () => {
               ]}
             />
           </div>
-          <div class="lg:grid grid-rows-2 grid-cols-4 grid-flow-col lg:gap-x-7 gap-x-3 gap-y-8 mt-5">
+          <div className="lg:grid grid-rows-2 grid-cols-4 grid-flow-col lg:gap-x-7 gap-x-3 gap-y-8 mt-5">
             <Dashboardbox />
-            <div class="row-span-2 col-span-2 lg:mt-0 mt-7 max-w-[432px] mx-auto">
+            <div className="row-span-2 col-span-2 lg:mt-0 mt-7 max-w-[432px] mx-auto">
               <div className="lg:p-7 lg:pl-6 lg:pr-4 p-4 bg-primary-light dark:bg-white font-semibold rounded-2xl lg:h-full lg:flex">
                 <div className="flex pt-3 gap-8 sm:flex-nowrap flex-wrap">
                   <Image src={Brand} alt="" className="sm:w-auto mx-auto" />
@@ -59,12 +59,12 @@ const DashboardContent = () => {
         {/* max-height add */}
             <h2 className="text-sm font-semibold">Recent Orders</h2>
             <div className="text-end pr-2 pb-1">
-              <Link href="#0" className="text-xs text-black/40 dark:text-white/40">
+              <Link href="" className="text-xs text-black/40 dark:text-white/40">
                 View all orders
               </Link>
             </div>
             <div className="xl:overflow-x-visible overflow-x-auto min-h-[306px]">
-              <table class="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
+              <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
                 <thead>
                   <tr className="text-black/40 dark:text-white/40 border-b text-xs">
                     <th className="font-normal pl-0 p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border">

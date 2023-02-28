@@ -70,10 +70,10 @@ const ProductSelectTable = ({ TableRow, handleChange, selected }) => {
                 </div>
               }
               dropdownitem={[
-                {id:1, title: "Set as active (or Set as draft)", link: "" },
-                {id:2, title: "Add to category", link: "" },
-                {id:3, title: "Remove from category", link: "" },
-                {id:4, title: "View details", link: "products/detail" },
+                { id: 1, title: "Set as active (or Set as draft)", link: "" },
+                { id: 2, title: "Add to category", link: "" },
+                { id: 3, title: "Remove from category", link: "" },
+                { id: 4, title: "View details", link: "products/detail" },
               ]}
             />
           </td>

@@ -32,7 +32,7 @@ const offers = () => {
         Badgesdata={[{ color: "green", name: "Active" }]}
       >
         <Link
-          href={"#0"}
+          href={""}
           className={
             "hover:bg-black/20 hover:dark:bg-white/20 text-black/40 dark:text-white/40 text-xs rounded-lg sm:px-2 py-[5px] hover:text-black/80"
           }
@@ -40,12 +40,12 @@ const offers = () => {
           Duplicate
         </Link>
         <Link
-          href={"#0"}
+          href={""}
           className="hover:bg-black/20 hover:dark:bg-white/20 text-black/40 dark:text-white/40 text-xs rounded-lg sm:px-2 py-[5px] hover:text-black/80"
         >
           Deactivate
         </Link>
-        <Link href={"#0"} className="py-[5px] sm:px-2 sm:mr-2 whitespace-nowrap text-xs text-secondary-red">
+        <Link href={""} className="py-[5px] sm:px-2 sm:mr-2 whitespace-nowrap text-xs text-secondary-red">
           Delete Discount
         </Link>
       </PageHeader>
@@ -68,24 +68,14 @@ const offers = () => {
             <InputContent title={"Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
                 <div className={`checkbox-icon inline-block relative `}>
-                  <input
-                    className="styled-checkbox"
-                    id='discount'
-                    type="radio"
-                    name="discount"
-                  />
-                  <label for='discount' className="relative cursor-pointer text-sm flex sm:items-center">
+                  <input className="styled-checkbox" id="discount" type="radio" name="discount" />
+                  <label htmlFor="discount" className="relative cursor-pointer text-sm flex sm:items-center">
                     Discount code
                   </label>
                 </div>
                 <div className={`checkbox-icon inline-block relative `}>
-                  <input
-                    className="styled-checkbox"
-                    id='automatic'
-                    type="radio"
-                    name="discount"
-                  />
-                  <label for='automatic' className="relative cursor-pointer text-sm flex sm:items-center">
+                  <input className="styled-checkbox" id="automatic" type="radio" name="discount" />
+                  <label htmlFor="automatic" className="relative cursor-pointer text-sm flex sm:items-center">
                     Automatic discount
                   </label>
                 </div>
@@ -96,25 +86,15 @@ const offers = () => {
             </InputContent>
             <InputContent title={"Value Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
-                <div class={`checkbox-icon inline-block relative `}>
-                  <input
-                    className="styled-checkbox"
-                    id='percentage'
-                    type="radio"
-                    name="percentage"
-                  />
-                  <label for='percentage' className="relative cursor-pointer text-sm flex sm:items-center">
-                  Percentage
+                <div className={`checkbox-icon inline-block relative `}>
+                  <input className="styled-checkbox" id="percentage" type="radio" name="percentage" />
+                  <label htmlFor="percentage" className="relative cursor-pointer text-sm flex sm:items-center">
+                    Percentage
                   </label>
                 </div>
-                <div class={`checkbox-icon inline-block relative `}>
-                  <input
-                    className="styled-checkbox"
-                    id='amount'
-                    type="radio"
-                    name="percentage"
-                  />
-                  <label for='amount' className="relative cursor-pointer text-sm flex sm:items-center">
+                <div className={`checkbox-icon inline-block relative `}>
+                  <input className="styled-checkbox" id="amount" type="radio" name="percentage" />
+                  <label htmlFor="amount" className="relative cursor-pointer text-sm flex sm:items-center">
                     Fixed amount
                   </label>
                 </div>
@@ -125,7 +105,7 @@ const offers = () => {
             </InputContent>
             <InputContent>
               <VarientDropdown
-                className={"py-2.5 text-black/20"}
+                className={"py-2.5 "}
                 selectitem={[
                   { id: 1, name: "Minimum purchase requirement" },
                   { id: 2, name: "Minimum purchase requirement 2" },

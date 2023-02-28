@@ -64,8 +64,7 @@ const orders = () => {
   ];
   const [customerData, setCustomerData] = useState(true);
 
-  const [open, setOpen] = useState(false)
-   
+  const [open, setOpen] = useState(false);
 
   return (
     <Layout container>
@@ -93,8 +92,8 @@ const orders = () => {
               More actions
               <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M0.646447 0.659675C0.841709 0.446775 1.15829 0.446775 1.35355 0.659675L4.64645 4.25C4.84171 4.4629 5.15829 4.4629 5.35355 4.25L8.64645 0.659676C8.84171 0.446776 9.15829 0.446776 9.35355 0.659676C9.54882 0.872575 9.54882 1.21775 9.35355 1.43065L6.06066 5.02098C5.47487 5.65967 4.52513 5.65968 3.93934 5.02098L0.646447 1.43065C0.451184 1.21775 0.451184 0.872574 0.646447 0.659675Z"
                   fill="black"
                   class="fill-black dark:fill-white"
@@ -257,8 +256,8 @@ const orders = () => {
                       Collect payment
                       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M4.55806 7.07459C4.80214 6.80847 5.19786 6.80847 5.44194 7.07459L9.55806 11.5625C9.80214 11.8286 10.1979 11.8286 10.4419 11.5625L14.5581 7.07459C14.8021 6.80847 15.1979 6.80847 15.4419 7.07459C15.686 7.34072 15.686 7.77219 15.4419 8.03832L11.3258 12.5262C10.5936 13.3246 9.40641 13.3246 8.67418 12.5262L4.55806 8.03831C4.31398 7.77219 4.31398 7.34072 4.55806 7.07459Z"
                           fill="white"
                         />
@@ -328,11 +327,11 @@ const orders = () => {
                   />
                 ) : (
                   <>
-                    <Button 
-                      color={"blacklight"} 
-                      name={"Add Customer"} 
-                      className="!py-2 px-[12px] leading-[18px]" 
-                      onClick={() => setOpen(true)} 
+                    <Button
+                      color={"blacklight"}
+                      name={"Add Customer"}
+                      className="!py-2 px-[12px] leading-[18px]"
+                      onClick={() => setOpen(true)}
                     />
                   </>
                 )}
@@ -452,36 +451,52 @@ const orders = () => {
           </div>
         </div>
       </div>
- 
-        <Modal title={'Add Customer'} open={open} setOpen={setOpen}>
-          <div className="mt-4">
-            <InputContent title={"Name"} className={"!px-4 py-3 cursor-pointer"}>
-              <input type="text" name="" placeholder="Name" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40" />
-            </InputContent>
-            <InputContent title={"Phone"} className={"!px-4 py-3 cursor-pointer"}>
-              <input type="number" name="" placeholder="Phone" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"/>
-            </InputContent>
-            <InputContent title={"Email"} className={"!px-4 py-3 cursor-pointer"}>
-              <input type="email" name="" placeholder="Email" className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"/>
-            </InputContent>
-            <InputContent title={"Address"} className={"!px-4 py-3 cursor-pointer"}>
+      <Modal title={"Add Customer"} open={open} setOpen={setOpen}>
+        <div className="mt-4">
+          <InputContent title={"Name"} className={"!px-4 py-3 cursor-pointer"}>
+            <input
+              type="text"
+              name=""
+              placeholder="Name"
+              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
+            />
+          </InputContent>
+          <InputContent title={"Phone"} className={"!px-4 py-3 cursor-pointer"}>
+            <input
+              type="number"
+              name=""
+              placeholder="Phone"
+              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
+            />
+          </InputContent>
+          <InputContent title={"Email"} className={"!px-4 py-3 cursor-pointer"}>
+            <input
+              type="email"
+              name=""
+              placeholder="Email"
+              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
+            />
+          </InputContent>
+          <InputContent title={"Address"} className={"!px-4 py-3 cursor-pointer"}>
             <textarea
               rows="5"
               className="w-full dark:bg-transparent resize-none placeholder:text-black/40 placeholder:dark:text-white/40"
               placeholder="Address"
             ></textarea>
-            </InputContent>
-          </div>
-          <div className="py-3 flex justify-end items-center">
-            <Button color="lightgrey" onClick={() => setOpen(false)} size="large" secondary="true" name={"Cancel"} className={"text-sm !px-4"}></Button>
-            <Button
-              color="blacklight"
-              size="large"
-              className={"ml-4 !px-4 text-sm font-semibold"}
-              name={"Save"}
-            ></Button>
-          </div>
-        </Modal> 
+          </InputContent>
+        </div>
+        <div className="py-3 flex justify-end items-center">
+          <Button
+            color="lightgrey"
+            onClick={() => setOpen(false)}
+            size="large"
+            secondary="true"
+            name={"Cancel"}
+            className={"text-sm !px-4"}
+          ></Button>
+          <Button color="blacklight" size="large" className={"ml-4 !px-4 text-sm font-semibold"} name={"Save"}></Button>
+        </div>
+      </Modal>
     </Layout>
   );
 };

@@ -6,35 +6,35 @@ import Layout from "@/layouts/layout";
 const StoreSettings = [
   {
     title: "Store Details",
-    href: "/store-settings/store-details",
+    href: "/store-details",
   },
   {
     title: "Permissions",
-    href: "/store-settings/permissions",
+    href: "/permissions",
   },
   {
     title: "Checkout",
-    href: "/store-settings/checkout",
+    href: "/checkout",
   },
   {
     title: "Payment Gateways",
-    href: "/store-settings/payment-gatewaysrs",
+    href: "/payment-gatewaysrs",
   },
   {
     title: "Shipping & Delivery",
-    href: "/store-settings/shipping-delivery",
+    href: "/shipping-delivery",
   },
   {
     title: "Taxes",
-    href: "/store-settings/taxes",
+    href: "/taxes",
   },
   {
     title: "Brand Assets",
-    href: "/store-settings/brand-assets",
+    href: "/brand-assets",
   },
   {
     title: "Email Settings",
-    href: "/store-settings/email-settings",
+    href: "/email-settings",
   },
 ];
 

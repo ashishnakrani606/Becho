@@ -8,20 +8,23 @@ const BreadCrumb= () => {
   let currentLink = '';
   console.log(curl)
 
-const crumbs = curl.asPath.split('/')
+const crumbs = curl.pathname.split('/')
 .filter(crumb => crumb !== '')
-.map(crumb => {
+.map((crumb, index) => {
+  crumb = curl.asPath.split('/').filter(crumb => crumb !== '')[index]
   currentLink += `/${crumb}`;
-console.log(currentLink)
+  let urlLength = curl.pathname.split('/')
+  .filter(crumb => crumb !== '').length
+  let isNext = false;
 
-var newcrumb = crumb.replace(/-/, ' ')
-  return (
-    
-  <Link href="#0" className="text-sm text-blacklight dark:text-white" key={crumb}>
-  {/* <span className={`${location === navi.href ? " " : "hidden"}`}> */}
-    <span className="ml-1 d-inline-block font-normal capitalize">/ {newcrumb}</span>
-  {/* </span> */}
-</Link>
+  if (index + 1 < urlLength) {
+    isNext = true;
+  }
+  var newcrumb = crumb.replace(/-/, ' ')
+  return (    
+    <Link href={currentLink} className={`text-sm text-blacklight dark:text-white hover:text-black/80 dark:hover:text-white/80 ${isNext ? 'text-black/40 dark:text-white/40' : ''}`} key={crumb}>
+      <span className="ml-1 d-inline-block font-normal capitalize">/ {newcrumb}</span>
+    </Link>
   )
 })
 

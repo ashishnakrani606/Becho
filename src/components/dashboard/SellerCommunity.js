@@ -9,8 +9,8 @@ const SellerCommunity = () => {
     <>
       {/**********Seller Community sec Start************/}
       <Layout container>
-        <div class="flex md:flex-row md:items-center flex-col mt-8 sm:mt-[42px] gap-5 md:mb-16 mb-10 ">
-          <div class="max-w-[612px] w-full">
+        <div className="flex md:flex-row md:items-center flex-col mt-8 sm:mt-[42px] gap-5 md:mb-16 mb-10 ">
+          <div className="max-w-[612px] w-full">
             <div className="relative">
               <Image src={Block} alt="" className="sm:min-h-[250px] rounded-2xl w-full object-cover" />
               <div className=" absolute sm:top-7 sm:left-8 top-[10px] left-5">
@@ -22,7 +22,7 @@ const SellerCommunity = () => {
                 </h2>
                 <div className="sm:mt-5 mt-2">
                   <Link
-                    href="#0"
+                    href=""
                     className="sm:text-sm text-xs  font-normal text-[#fff] py-[5px] sm:py-[6px] px-2 rounded-lg bg-[#f0f8ff50]"
                   >
                     Start the journey
@@ -31,7 +31,7 @@ const SellerCommunity = () => {
               </div>
             </div>
           </div>
-          <div class="text-sm max-w-[232px] w-full">
+          <div className="text-sm max-w-[232px] w-full">
             <h2 className="font-semibold">What’s New</h2>
             <div className="pt-5">
               <p className="font-normal">New theme “Bharat” now available</p>
@@ -42,7 +42,7 @@ const SellerCommunity = () => {
               <span className="text-xs text-black/40 dark:text-white/40">18 Jan 2023</span>
             </div>
             <div className="pt-[17px]">
-              <Link href="#0" className="text-black/40 dark:text-white/40">
+              <Link href="" className="text-black/40 dark:text-white/40">
                 View more features
               </Link>
             </div>

@@ -22,7 +22,7 @@ const TableRow = [
     orderStatus: "Unfulfilled",
     orderStatusData: "status",
     union: Dots,
-    dot: "dot-active pl-3 before:dark:bg-white",
+    dot: "dot-active pl-4 before:dark:bg-white",
     orderStatusData: "bg-secondary-red/70 ml-0 rounded-[18px] px-[6px] leading-normal !text-white",
   },
   {
@@ -37,8 +37,8 @@ const TableRow = [
     icon: Calender,
     union: Dots,
     orderStatus: "Fulfilled",
-    dot: "dot-active pl-3 before:dark:bg-white",
-    dots: "dot-active pl-3 before:dark:bg-white",
+    dot: "dot-active pl-4 before:dark:bg-white",
+    dots: "dot-active pl-4 before:dark:bg-white",
   },
   {
     id: 3,
@@ -83,8 +83,8 @@ const TableRow = [
     icon: Calender,
     orderStatus: "Fulfilled",
     union: Dots,
-    dot: "dot-active pl-3 before:dark:bg-white",
-    dots: "dot-active pl-3 before:dark:bg-white",
+    dot: "dot-active pl-4 before:dark:bg-white",
+    dots: "dot-active pl-4 before:dark:bg-white",
   },
 ];
 export default function DashboardTablebox() {

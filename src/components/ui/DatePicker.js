@@ -16,16 +16,16 @@ const DAtePicker = () => {
 
   return (
     <>
-      <div className="relative datepicker-data">
+      <div className="relative datepicker-data flex">
+        <Image
+          src={Dateicon}
+          alt=""
+          className={`mr-1 dark:invert opacity-20 ${
+            icon ? "opacity-60 inline-block " : " opacity-20 dark:invert inline-block"
+          }`}
+        />
         {!icon ? (
-          <span className="absolute left-0 top-[50%] text-black/20 -translate-y-[50%] pointer-events-none dark:text-white/20">
-            <Image
-              src={Dateicon}
-              alt=""
-              className={`mr-1 dark:invert opacity-20 ${
-                icon ? "opacity-20 inline-block" : " opacity-20 dark:invert inline-block"
-              }`}
-            />
+          <span className="absolute left-[28px] top-[50%] text-black/20 -translate-y-[50%] pointer-events-none dark:text-white/20">
             Pick a date
           </span>
         ) : (

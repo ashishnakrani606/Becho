@@ -218,9 +218,8 @@ const products = () => {
           ) : (
             <>
               <div className="bg-primary-light dark:bg-white/5 rounded-lg p-2 mb-2 flex items-center justify-between flex-wrap gap-5 mt-5">
-                <div className="flex items-center">
-                  <div className="flex items-center mr-4">
-                  
+                <div className="flex items-center flex-wrap sm:flex-nowrap">
+                  <div className="flex items-center mr-4 ">
                     <Dropdown
                       className="right-0 left-[unset]"
                       itemsclass="w-[240px] left-0 p-2 !divide-y-0"
@@ -278,7 +277,7 @@ const products = () => {
                     <Button color={"lightgrey"} secondary={"true"} name={"Archive Selected"} className={"text-sm"} />
                   </div>
                 </div>
-                <div className="relative">
+                <div className="relative flex justify-between flex-grow sm:flex-grow-0">
                   <input
                     placeholder="Search"
                     className="rounded-lg max-w-[160px] w-full pl-[26px] placeholder:text-black/20 dark:placeholder:text-white/20 text-sm border border-black/10 dark:border-white/10 bg-white/80 dark:bg-black/5 p-[3px] pr-3 focus-visible:outline-none"
@@ -288,12 +287,12 @@ const products = () => {
                     alt=""
                     className="absolute top-1/2 -translate-y-[50%] left-[7px] dark:invert"
                   />
-                  <button type="button" className="ml-8 text-xs">
+                  <button type="button" className="sm:ml-8 text-xs">
                     View Archived
                   </button>
                 </div>
               </div>
-              <div className="overflow-x-auto overflow-y-visible min-h-[462px] h-full max-h-[440px]">
+              <div className="xl:overflow-x-visible overflow-x-auto min-h-[462px]">
                 <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px] archive-select-table">
                   <thead>
                     <tr className="text-black/40 dark:text-white/40 border-b text-xs">

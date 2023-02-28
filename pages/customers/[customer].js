@@ -286,7 +286,7 @@ const Customers = () => {
                   { name: "Zambia (+260)" },
                   { name: "Zimbabwe (+263)" },
                 ]}
-                className="dark:text-white/40"
+                className="dark:!text-white/80 !text-black/80"
               />
             </InputContent>
             <InputContent title={"Phone number"} className="dark:bg-black/40">
@@ -295,9 +295,9 @@ const Customers = () => {
           </div>
           {/* radio button start */}
           <div className="product-type-radio grid">
-            <div class="grid justify-center product-type-radio">
+            <div className="grid justify-center product-type-radio">
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <div class="mb-[0.125rem] inline-block min-h-[1.5rem]">
+                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
                   <div
                     onClick={() => radiioBtnHendler()}
                     className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
@@ -320,8 +320,8 @@ const Customers = () => {
                           fillOpacity="0.8"
                         />
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M13 0C13 0 15.6442 0 18.0605 1.02201C18.0605 1.02201 20.3936 2.00884 22.1924 3.80761C22.1924 3.80761 23.9912 5.60638 24.978 7.93951C24.978 7.93951 26 10.3558 26 13C26 13 26 15.6442 24.978 18.0605C24.978 18.0605 23.9912 20.3936 22.1924 22.1924C22.1924 22.1924 20.3936 23.9912 18.0605 24.978C18.0605 24.978 15.6442 26 13 26C13 26 10.3558 26 7.93951 24.978C7.93951 24.978 5.60638 23.9912 3.80761 22.1924C3.80761 22.1924 2.00884 20.3936 1.02202 18.0605C1.02202 18.0605 0 15.6442 0 13C0 13 0 10.3558 1.02202 7.93951C1.02202 7.93951 2.00885 5.60638 3.80761 3.80761C3.80761 3.80761 5.60638 2.00884 7.93951 1.02201C7.93951 1.02201 10.3558 0 13 0ZM13 2C13 2 10.7614 2 8.71861 2.86402C8.71861 2.86402 6.74476 3.69889 5.22183 5.22182C5.22183 5.22182 3.6989 6.74476 2.86402 8.71861C2.86402 8.71861 2 10.7614 2 13C2 13 2 15.2386 2.86402 17.2814C2.86402 17.2814 3.69889 19.2552 5.22183 20.7782C5.22183 20.7782 6.74476 22.3011 8.71861 23.136C8.71861 23.136 10.7614 24 13 24C13 24 15.2386 24 17.2814 23.136C17.2814 23.136 19.2552 22.3011 20.7782 20.7782C20.7782 20.7782 22.3011 19.2552 23.136 17.2814C23.136 17.2814 24 15.2386 24 13C24 13 24 10.7614 23.136 8.71861C23.136 8.71861 22.3011 6.74476 20.7782 5.22183C20.7782 5.22183 19.2552 3.69889 17.2814 2.86402C17.2814 2.86402 15.2386 2 13 2Z"
                           fill="black"
                           className="dark:fill-secondary-purpleb"
@@ -347,7 +347,7 @@ const Customers = () => {
                     </p>
                   </div>
                 </div>
-                <div class="mb-[0.125rem] inline-block min-h-[1.5rem]">
+                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
                   <div
                     onClick={() => radiioBtnTwoHendler()}
                     className={`cursor-pointer bg-white dark:bg-black/40  border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
@@ -370,8 +370,8 @@ const Customers = () => {
                           fill-opacity="0.8"
                         />
                         <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
+                          fillRule="evenodd"
+                          clipRule="evenodd"
                           d="M13 0C13 0 15.6442 0 18.0605 1.02201C18.0605 1.02201 20.3936 2.00884 22.1924 3.80761C22.1924 3.80761 23.9912 5.60638 24.978 7.93951C24.978 7.93951 26 10.3558 26 13C26 13 26 15.6442 24.978 18.0605C24.978 18.0605 23.9912 20.3936 22.1924 22.1924C22.1924 22.1924 20.3936 23.9912 18.0605 24.978C18.0605 24.978 15.6442 26 13 26C13 26 10.3558 26 7.93951 24.978C7.93951 24.978 5.60638 23.9912 3.80761 22.1924C3.80761 22.1924 2.00884 20.3936 1.02202 18.0605C1.02202 18.0605 0 15.6442 0 13C0 13 0 10.3558 1.02202 7.93951C1.02202 7.93951 2.00885 5.60638 3.80761 3.80761C3.80761 3.80761 5.60638 2.00884 7.93951 1.02201C7.93951 1.02201 10.3558 0 13 0ZM13 2C13 2 10.7614 2 8.71861 2.86402C8.71861 2.86402 6.74476 3.69889 5.22183 5.22182C5.22183 5.22182 3.6989 6.74476 2.86402 8.71861C2.86402 8.71861 2 10.7614 2 13C2 13 2 15.2386 2.86402 17.2814C2.86402 17.2814 3.69889 19.2552 5.22183 20.7782C5.22183 20.7782 6.74476 22.3011 8.71861 23.136C8.71861 23.136 10.7614 24 13 24C13 24 15.2386 24 17.2814 23.136C17.2814 23.136 19.2552 22.3011 20.7782 20.7782C20.7782 20.7782 22.3011 19.2552 23.136 17.2814C23.136 17.2814 24 15.2386 24 13C24 13 24 10.7614 23.136 8.71861C23.136 8.71861 22.3011 6.74476 20.7782 5.22183C20.7782 5.22183 19.2552 3.69889 17.2814 2.86402C17.2814 2.86402 15.2386 2 13 2Z"
                           fill="black"
                           className="dark:fill-secondary-purpleb"
@@ -435,7 +435,7 @@ const Customers = () => {
               <input type="text" name="" defaultValue="Pilani" className="w-full dark:bg-transparent" />
             </InputContent>
             <InputContent title={"State"} className="dark:bg-black/40 dark:text-white/40">
-              <VarientDropdown
+              <VarientDropdown 
                 selectitem={[
                   { name: "Rajasthan" },
                   { name: "Andhra Pradesh" },
@@ -475,6 +475,7 @@ const Customers = () => {
                   { name: "Uttarakhand" },
                   { name: "West Bengal" },
                 ]}
+                className={"!text-black/80 dark:!text-white/80"}
               />
             </InputContent>
           </div>
@@ -696,6 +697,7 @@ const Customers = () => {
                   { name: "Zambia (+260)" },
                   { name: "Zimbabwe (+263)" },
                 ]}
+                className="dark:!text-white/80 !text-black/80"
               />
             </InputContent>
             <InputContent title={"Phone number"} className="dark:bg-black/40">

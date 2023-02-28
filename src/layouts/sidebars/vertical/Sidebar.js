@@ -54,52 +54,52 @@ const navigation = [
 const StoreSettings = [
   {
     title: "Store Details",
-    href: "/store-settings/store-details",
+    href: "/store-details",
     icon: StoreDetails,
   },
   {
     title: "Permissions",
-    href: "/store-settings/permissions",
+    href: "/permissions",
     icon: Permissions,
   },
   {
     title: "Checkout",
-    href: "/store-settings/checkout",
+    href: "/checkout",
     icon: Checkout,
   },
   {
     title: "Payment Gateways",
-    href: "/store-settings/payment-gatewaysrs",
+    href: "/payment-gatewaysrs",
     icon: rupee,
   },
   {
     title: "Shipping & Delivery",
-    href: "/store-settings/shipping-delivery",
+    href: "/shipping-delivery",
     icon: shipping,
   },
   {
     title: "Taxes",
-    href: "/store-settings/taxes",
+    href: "/taxes",
     icon: Percentage,
   },
   {
     title: "Brand Assets",
-    href: "/store-settings/brand-assets",
+    href: "/brand-assets",
     icon: Brandassets,
   },
   {
     title: "Email Settings",
-    href: "/store-settings/email-settings",
+    href: "/email-settings",
     icon: Email,
   },
   {
     title: "SEO Settings",
-    href: "/store-settings/seo-settings",
+    href: "/seo-settings",
     icon: SEO,
   },
   {
     title: "Policies",
-    href: "/store-settings/policies",
+    href: "/policies",
     icon: Policies,
   },
 ];

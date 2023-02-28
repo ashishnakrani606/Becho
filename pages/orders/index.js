@@ -327,30 +327,30 @@ const orders = () => {
                     />
                   </div>
                 </div>
-                <div className="overflow-x-auto min-h-[470px]">
-                  <table class="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
+                <div className="xl:overflow-x-visible overflow-x-auto min-h-[470px]">
+                  <table className="xl:w-full lgm:w-[900px] lg:w-full w-[1020px]">
                     <thead>
-                      <tr class="text-black/40 dark:text-white/40 border-b text-xs">
-                        <th class="whitespace-nowrap font-normal pl-[5px] px-3 py-[11px] pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border flex">
+                      <tr className="text-black/40 dark:text-white/40 border-b text-xs">
+                        <th className="whitespace-nowrap font-normal pl-[5px] px-3 py-[11px] pr-[10px] before:top-0 before:right-0 before:h-full before:absolute relative h-full text-start heading-border flex">
                           <CheckBox name={"select all"} onChange={selectAllCheckboxes} />
                         <p>Order ID</p>
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Date
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Customer
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border whitespace-nowrap">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border whitespace-nowrap">
                           Payment status
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border whitespace-nowrap">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border whitespace-nowrap">
                           Fulfillment status
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                           Items
                         </th>
-                        <th class="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start whitespace-nowrap">
+                        <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start whitespace-nowrap">
                           Delivery method
                         </th>
                       </tr>

@@ -62,7 +62,7 @@ const RightSidebar = ({ showMobilesidebar }) => {
       <div vertical={`true`} className="sidebarNav">
         {navigation.map((navi, index) => (
           <div key={index} className="sidenav-bg pt-5">
-            <Link href="#0" className="flex gap-2 items-start pl-1">
+            <Link href="" className="flex gap-2 items-start pl-1">
               <Image src={navi.icon} alt="" />
               <div>
                 <span className="font-normal text-sm text-blacklight dark:text-white">{navi.title}</span>

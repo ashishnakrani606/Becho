@@ -10,7 +10,7 @@ function Badges(props) {
             : "" || props.color == "red"
             ? "text-white bg-secondary-red/70"
             : "" || props.color == "dot"
-            ? "dot-active pl-[10px]"
+            ? "dot-active pl-4"
             : "" || props.color == "purple"
             ? "bg-secondary-purpleb/20 text-secondary-purplea"
             : "" || props.color == "grey"

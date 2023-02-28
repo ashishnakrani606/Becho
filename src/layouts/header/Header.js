@@ -85,52 +85,52 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Store Details",
-      href: "/store-settings/store-details",
+      href: "/store-details",
       icon: StoreDetails,
     },
     {
       title: "Permissions",
-      href: "/store-settings/permissions",
+      href: "/permissions",
       icon: Permissions,
     },
     {
       title: "Checkout",
-      href: "/store-settings/checkout",
+      href: "/checkout",
       icon: Checkout,
     },
     {
       title: "Payment Gateways",
-      href: "/store-settings/payment-gatewaysrs",
+      href: "/payment-gatewaysrs",
       icon: rupee,
     },
     {
       title: "Shipping & Delivery",
-      href: "/store-settings/shipping-delivery",
+      href: "/shipping-delivery",
       icon: shipping,
     },
     {
       title: "Taxes",
-      href: "/store-settings/taxes",
+      href: "/taxes",
       icon: Percentage,
     },
     {
       title: "Brand Assets",
-      href: "/store-settings/brand-assets",
+      href: "/brand-assets",
       icon: Brandassets,
     },
     {
       title: "Email Settings",
-      href: "/store-settings/email-settings",
+      href: "/email-settings",
       icon: Email,
     },
     {
       title: "SEO Settings",
-      href: "/store-settings/seo-settings",
+      href: "/seo-settings",
       icon: SEO,
     },
     {
       title: "Policies",
-      href: "/store-settings/policies",
+      href: "/policies",
       icon: Policies,
     },
     {
@@ -183,25 +183,25 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
                 <Image src={Squre} alt="" className="dark:invert" />
               </button>
                 <div className={`flex items-center`} >
-              {navigation.map((navi, index) => {
-                    console.log(location === navi.href ? navi.icon : '');
-                    
-                    location === navi.href ? (
-                      <>
-                        <span>ksjdfklsdjf</span>
-                        <Image src={navi.icon} alt="" className={`dark:invert mr-5`} />
-                    </>
-                  ) : ''}
-              )}
-
+                  {navigation.map((navi, index) => {
+                   
+                    if (location === navi.href) {
+                      return (
+                        <div  key={index}>
+                          <span></span>
+                          <Image src={navi.icon} alt="" className={`dark:invert mr-5`} />
+                        </div>
+                      )
+                    }}
+                  )}
                   <div className="text-black/40 dark:text-white/40">
-                    <Link href="#0" className="text-sm">
+                    <Link href="/" className="text-sm hover:text-black/80 dark:hover:text-white/80">
                       Becho.io Panel
                     </Link>
                     <BreadCrumb />
 
                     {/* <span className="px-2">/</span>
-                    <Link href="#0" className="text-sm text-blacklight dark:text-white">
+                    <Link href="" className="text-sm text-blacklight dark:text-white">
                       <span className={`${location === navi.href ? " " : "hidden"}`}>
                         <span className="ml-1 d-inline-block font-normal">{navi.title}</span>
                       </span>
@@ -218,7 +218,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
               />
               <Image src={Searchicon} alt="" className="absolute top-[7px] left-[7px] dark:invert" />
             </div>
-            <Link href="#0">{renderThemeChanger()}</Link>
+            <button>{renderThemeChanger()}</button>
             <button color="primary" onClick={showsidebar}>
               <Image src={Squreflip} alt="" className="dark:invert" />
             </button>

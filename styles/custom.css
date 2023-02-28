@@ -344,7 +344,7 @@ a:empty {
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
-.datepicker-data input {
+  .datepicker-data input {
   max-width: 532px;
   width: 100%;
   cursor: pointer;

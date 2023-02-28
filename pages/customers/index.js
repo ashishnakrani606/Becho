@@ -40,11 +40,11 @@ const TableRow = [
 ];
 const customers = () => {
   const [selectCustomersOpen, setSelectCustomersOpen] = useState(false);
-  const [activeBtn , setActiveBtn] = useState(false)
+  const [activeBtn, setActiveBtn] = useState(false);
   const SelectCustomersHandler = () => {
     setSelectCustomersOpen(true);
     setActiveBtn(true);
-  }
+  };
   const [opentablepage, setopentablepage] = useState(false);
   const [active, setActive] = useState(false);
   const [selected, setSelected] = useState([]);
@@ -128,53 +128,51 @@ const customers = () => {
                 <div className="flex items-center">
                   <div className="flex items-center mr-4">
                     <Dropdown
-                          className="left-0"
-                          itemsclass="w-[240px] left-0 p-2 !divide-y-0"
-                          button={
-                            <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-black/5 cursor-pointer rounded-lg">
-                              <Image src={FunnelSimple} alt="" className="dark:invert" />
-                            </div>
-                          }
-                          dropdownitem={[
-                            {id:1, title: "Last update", link: "/" },
-                            {id:2, title: "Total orders", link: "/" },
-                            {id:3, title: "Amount spent", link: "/" },
-                            {id:4, title: "Last order date", link: "/" },
-                            {id:5, title: "First order date", link: "/" },
-                            {id:6, title: "Signup date", link: "/" },
-                            {id:6, title: "Last abandoned order date", link: "/" },
-
-                          ]}
-                        />
+                      className="left-0"
+                      itemsclass="w-[240px] left-0 p-2 !divide-y-0"
+                      button={
+                        <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-black/5 cursor-pointer rounded-lg">
+                          <Image src={FunnelSimple} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        { id: 1, title: "Last update", link: "/" },
+                        { id: 2, title: "Total orders", link: "/" },
+                        { id: 3, title: "Amount spent", link: "/" },
+                        { id: 4, title: "Last order date", link: "/" },
+                        { id: 5, title: "First order date", link: "/" },
+                        { id: 6, title: "Signup date", link: "/" },
+                        { id: 6, title: "Last abandoned order date", link: "/" },
+                      ]}
+                    />
                     <Dropdown
-                        className="left-0"
-                        itemsclass="left-0 p-2 !divide-y-0 whitespace-nowrap"
-                        button={
-                          <div className="flex  items-center w-7 h-7 p-1 mr-2 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg">
-                            <Image src={ArrowsDownUp} alt="" className="dark:invert" />
-                          </div>
-                        }
-                        dropdownitem={[
-                          {id:1, title: "Oldest to newest", link: "/" },
-                          {id:2, title: "Newest to oldest", link: "/" },
-                        ]}
-                      />
+                      className="left-0"
+                      itemsclass="left-0 p-2 !divide-y-0 whitespace-nowrap"
+                      button={
+                        <div className="flex  items-center w-7 h-7 p-1 mr-2 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg">
+                          <Image src={ArrowsDownUp} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        { id: 1, title: "Oldest to newest", link: "/" },
+                        { id: 2, title: "Newest to oldest", link: "/" },
+                      ]}
+                    />
                     <Dropdown
-                          className="left-0"
-                          itemsclass="sm:w-[240px] w-[200px] left-0 p-2 [&>a:nth-child(2)]:!border-t [&>a:nth-child(3)]:!border-0"
-                          button={
-                            <div className="flex items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-black/5 cursor-pointer rounded-lg">
-                              <Image src={Dots} alt="" className="dark:invert" />
-                            </div>
-                          }
-                          dropdownitem={[
-                            {id:1, title: "Merge customers", link: "/" },
-                            {id:2, title: "Add tags", link: "/" },
-                            {id:3, title: "Remove tags", link: "/" },
-                            {id:4, title: "Delete customers", link: "/" },
-
-                          ]}
-                        />
+                      className="left-0"
+                      itemsclass="sm:w-[240px] w-[200px] left-0 p-2 [&>a:nth-child(2)]:!border-t [&>a:nth-child(3)]:!border-0"
+                      button={
+                        <div className="flex items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-black/5 cursor-pointer rounded-lg">
+                          <Image src={Dots} alt="" className="dark:invert" />
+                        </div>
+                      }
+                      dropdownitem={[
+                        { id: 1, title: "Merge customers", link: "/" },
+                        { id: 2, title: "Add tags", link: "/" },
+                        { id: 3, title: "Remove tags", link: "/" },
+                        { id: 4, title: "Delete customers", link: "/" },
+                      ]}
+                    />
                   </div>
                   <div className="flex items-center">
                     <span className="bg-black/20 dark:bg-white/20 w-[1px] h-5 mr-4"></span>
@@ -301,7 +299,7 @@ const customers = () => {
           )}
         </>
       ) : (
-       " "
+        " "
       )}
     </Layout>
   );

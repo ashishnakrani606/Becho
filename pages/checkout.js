@@ -38,7 +38,6 @@ const checkout = () => {
     <Layout container>
       <TabList />
       {/* ********** checkout start *********** */}
-      <div>
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl lg:p-6 lg:pb-8 py-6 sm:px-5 px-3">
           <div className="flex justify-between items-center flex-wrap gap-5 pb-3">
             <h2 className="font-semibold text-sm leading-5">Checkout</h2>
@@ -105,8 +104,9 @@ const checkout = () => {
           </div>
           <div>
             <>
-              {Information.map((item) => (
+              {Information.map((item, index) => (
                 <div
+                  key={index}
                   className={`flex items-center md:items-center gap-3 sm:px-5 py-4 border-b border-black/10 dark:border-white/10 ${item.border}`}
                 >
                   <CheckBox name={item.name}></CheckBox>
@@ -118,8 +118,7 @@ const checkout = () => {
               ))}
             </>
           </div>
-        </div>
-      </div>
+        </div> 
       {/* /********** checkout end************/}
     </Layout>
   );

@@ -7,10 +7,10 @@
     background: #1c1c1c;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
+    left: 5px;
     width: 6px;
     height: 6px;
-    border-radius: 80px;   
+    border-radius: 80px;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -18,23 +18,21 @@
   }
 }
 .dark .dot-active {
-  &::before {   
-    background: #ffffff;    
+  &::before {
+    background: #ffffff;
   }
 }
 
-.heading-border{
-  &::before{ 
-  content: "";
-  width: 1px;
-  background: linear-gradient(339deg, rgb(239 239 239) 0%, rgb(237 237 237) 35%, rgb(248 248 248) 100%);
+.heading-border {
+  &::before {
+    content: "";
+    width: 1px;
+    background: linear-gradient(339deg, rgb(239 239 239) 0%, rgb(237 237 237) 35%, rgb(248 248 248) 100%);
+  }
 }
-}
-.dark .heading-border{
-  &::before{ 
-  background: rgba(0,  0, 0,0.1);
-}
+.dark .heading-border {
+  &::before {
+    background: rgba(0, 0, 0, 0.1);
+  }
 }
 //******* Dashboard css End*******/
-
-

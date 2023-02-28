@@ -12,7 +12,7 @@ const CheckBox = ({ children, name, className, onChange, value = "", checked }) 
           value={value}
           checked={checked}
         />
-        <label for={name} className="relative cursor-pointer text-sm flex sm:items-center">
+        <label htmlFor={name} className="relative cursor-pointer text-sm flex sm:items-center">
           {children}
         </label>
       </div>
