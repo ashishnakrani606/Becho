@@ -96,7 +96,7 @@ const orders = () => {
                   clipRule="evenodd"
                   d="M0.646447 0.659675C0.841709 0.446775 1.15829 0.446775 1.35355 0.659675L4.64645 4.25C4.84171 4.4629 5.15829 4.4629 5.35355 4.25L8.64645 0.659676C8.84171 0.446776 9.15829 0.446776 9.35355 0.659676C9.54882 0.872575 9.54882 1.21775 9.35355 1.43065L6.06066 5.02098C5.47487 5.65967 4.52513 5.65968 3.93934 5.02098L0.646447 1.43065C0.451184 1.21775 0.451184 0.872574 0.646447 0.659675Z"
                   fill="black"
-                  class="fill-black dark:fill-white"
+                  className="fill-black dark:fill-white"
                 ></path>
               </svg>
             </div>
@@ -145,7 +145,7 @@ const orders = () => {
                         key={index}
                       >
                         <td className="py-2 pl-4 pr-2 max-w-[4%] w-full">
-                          <Image src={item.productImg} className="w-full min-w-[24px] " />
+                          <Image src={item.productImg} alt="" className="w-full min-w-[24px] " />
                         </td>
                         <td className="py-2 max-w-[41%] w-full text-xs leading-[18px] font-normal whitespace-nowrap">
                           {item.product}
@@ -182,9 +182,9 @@ const orders = () => {
               </div>
             </div>
             <h2 className="text-blacklight dark:text-white font-semibold text-sm leading-5 pt-4 pb-3.5">Pending</h2>
-            <div className="bg-white dark:bg-black/40">
+            <div className="bg-white dark:bg-black/40 mb-3.5">
               <div className="overflow-x-auto">
-                <table className="w-[640px] sm:w-full mb-3.5">
+                <table className="w-[640px] sm:w-full">
                   <tbody className="w-full">
                     <tr className="text-blacklight border-b dark:text-white border-black/5 dark:border-white/5 w-full">
                       <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">
@@ -202,7 +202,7 @@ const orders = () => {
                       <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
                         <Link className="flex whitespace-nowrap" href={"/"}>
                           Show tax details
-                          <Image src={infoicon} className="ml-[5px]" />
+                          <Image src={infoicon} alt="" className="ml-[5px]" />
                         </Link>
                       </td>
                       <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] text-right pr-4">
@@ -230,7 +230,7 @@ const orders = () => {
                     <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
                       <Link className="flex justify-end text-primary-greenb" href={"/"}>
                         Add due date
-                        <Image src={Due} className="ml-[5px]" />
+                        <Image src={Due} alt="" className="ml-[5px]" />
                       </Link>
                     </td>
                   </tr>
@@ -307,7 +307,7 @@ const orders = () => {
           </div>
           <div className="bg-primary-light dark:bg-white/5 py-5 px-4 rounded-2xl w-full md:max-w-[46%]">
             <div className="bg-primary-purple/50 dark:bg-black/40 flex items-start p-4 rounded-lg">
-              <Image src={NoteCustomer} className="mr-1 font-normal text-sm dark:invert" />
+              <Image src={NoteCustomer} alt="" className="mr-1 font-normal text-sm dark:invert" />
               <div>
                 <h4 className="flex">Note from customer</h4>
                 <p className="text-sm leading-[18px] text-black/40 dark:text-white/40">
@@ -338,8 +338,8 @@ const orders = () => {
               </div>
               {customerData ? (
                 <>
-                  {customer.map((item) => (
-                    <>
+                  {customer.map((item,index) => (
+                    <div key={index}>
                       <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
                         <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
                           Name
@@ -441,7 +441,7 @@ const orders = () => {
                           </>
                         )}
                       </div>
-                    </>
+                    </div>
                   ))}
                 </>
               ) : (

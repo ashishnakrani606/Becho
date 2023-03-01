@@ -12,12 +12,14 @@ import Link from "next/link";
 import Badges from "@/components/ui/Badges";
 import Alert from "@/components/ui/Alert";
 import Layout from "@/layouts/layout";
+import Button from "@/components/ui/Button";
 
 const StoreDetaildData = [
   {
     id: 1,
     title: "Legal business name",
-    data: "Becho Ecommerce Pvt Ltd",
+    data: "Becho Ecommerce Pvt Ltd",    
+    color: "hidden",
   },
   {
     id: 2,
@@ -30,35 +32,44 @@ const StoreDetaildData = [
     id: 3,
     title: "Address",
     data: "Exploit Cross-Platform Mindshare 52, Ekbal Society, ShwetaPur Pilani",
+    color: "hidden",
   },
   {
     id: 4,
     title: "Country",
     data: "India",
+    color: "hidden",
   },
   {
     id: 5,
     title: "City, State",
     data: "Pilani, Rajasthan",
+    color: "hidden",
   },
   {
     id: 6,
     title: "PIN code",
     data: "133496",
+    color: "hidden",
   },
   {
     id: 7,
     title: "Store contact email",
     data: "hello@mystore.com",
+    color: "hidden",
   },
   {
     id: 8,
     title: "Sender email",
     data: "contact@mystore.com",
+    color: "hidden",
   },
 ];
 
 const StoreDetails = () => {
+  const [openinput, setOpeninput] = useState(false);
+
+ 
   return (
     <Layout container>
       <TabList />
@@ -67,12 +78,12 @@ const StoreDetails = () => {
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl md:p-6 p-4">
           <div className="mb-1 flex items-center justify-between">
             <h4 className="text-lg font-semibold">Becho Store</h4>
-            <Image src={Bechopro} />
+            <Image src={Bechopro} alt="" />
           </div>
           <div className="flex items-center gap-x-4 mb-4 sm:flex-nowrap flex-wrap ">
             <div className="sm:pt-0 pt-3">
-              <Link href={"#0"} className="ml-1 flex items-center gap-1 text-black/40 text-xs dark:text-white/40">
-                <Image src={LinkIcon} className={"dark:invert"} />
+              <Link href={"#"} className="ml-1 flex items-center gap-1 text-black/40 text-xs dark:text-white/40">
+                <Image src={LinkIcon} alt="" className={"dark:invert"} />
                 mystore.becho.io
               </Link>
             </div>
@@ -81,7 +92,7 @@ const StoreDetails = () => {
                 href="tel:to+91 8276 454 935"
                 className="ml-1 flex items-center gap-1 text-black/40 text-xs dark:text-white/40"
               >
-                <Image src={Phone} className={"dark:invert"} />
+                <Image src={Phone} alt="" className={"dark:invert"} />
                 +91 8276 454 935
               </Link>
             </div>
@@ -90,7 +101,7 @@ const StoreDetails = () => {
                 href="mailto:hello@mystore.com"
                 className="ml-1 flex items-center gap-1  text-black/40 text-xs dark:text-white/40"
               >
-                <Image src={EnvelopeSimple} className={"dark:invert"} />
+                <Image src={EnvelopeSimple} alt="" className={"dark:invert"} />
                 hello@mystore.com
               </Link>
             </div>
@@ -120,23 +131,33 @@ const StoreDetails = () => {
         <div className="bg-primary-light dark:bg-white/5 w-full rounded-2xl md:p-6 p-4 mt-7">
           <div className="flex items-center justify-between mb-4">
             <h4 className="text-sm font-semibold text-blacklight dark:text-white">Store Details</h4>
-            <Link href={"#0"} className="text-black/40 dark:text-white/40">
-              Edit Profile
-            </Link>
+            {!openinput ? (
+              <Link href={""} className="text-black/40 dark:text-white/40" onClick={() => setOpeninput(true)}>
+                Edit Profile
+              </Link>
+            ) : (
+              <Button name={"save"} color={"green"} size={"medium"} onClick={() => setOpeninput(false)} />
+            )}
           </div>
           <>
-            {StoreDetaildData.map((item) => (
-              <div className="flex flex-col">
+            {StoreDetaildData.map((item, index) => (
+              <div className="flex flex-col" key={index}>
                 <div className="flex pb-[18px] flex-wrap sm:flex-nowrap">
                   <p className="sm:min-w-[225px] text-black/40 dark:text-white/40 text-xs pb-[6px] sm:pb-0 flex items-center sm:w-auto w-full flex-grow sm:flex-grow-0">
-                    {" "}
                     {item.title}
-                    <Image src={item.icon} className="ml-1 opacity-20 dark:invert" />
+                    <Image src={item.icon} className={`ml-1 opacity-20 dark:invert ${item.color}`} alt="" />
                   </p>
-                  <p className="text-blacklight dark:text-white text-sm">
-                    {item.data}
-                    <Badges color={"green"} name={item.verified} className={"ml-2"} />
-                  </p>
+                  <div className="max-w-full w-full flex items-center"> 
+                    <input
+                      type="text"
+                      readOnly={!openinput}
+                      Value={item.data}                      
+                      className={`${openinput ? "px-3 py-2 rounded-lg border-black/10 border dark:border-white/10" : "bg-transparent" } w-full`}
+                    />
+                    {
+                      !openinput ? ( <Badges color={"green"} name={item.verified} className={"ml-2"} />) : ""
+                    }                   
+                  </div>
                 </div>
               </div>
             ))}
@@ -146,7 +167,6 @@ const StoreDetails = () => {
             title={"We need your attention!"}
             description={"Confirm that you have access to contact@mystore.com in"}
             deatil={"sender email settings."}
-            // className={"font-normal text-sm mt-1"}
           />
         </div>
       </div>

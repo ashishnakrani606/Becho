@@ -14,7 +14,7 @@ const OptionValue = ({ title }) => {
           <div className="max-w-[252px] w-full px-5 py-4 border border-black/80 rounded-lg">
             <h3 className="text-sm text-black/80 dark:text-white/80 leading-tight">{title}</h3>
           </div>
-          <Image src={Delete} onClick={DeleteMenu} />
+          <Image src={Delete} onClick={DeleteMenu} alt=""/>
         </div>
       </div>
     </>

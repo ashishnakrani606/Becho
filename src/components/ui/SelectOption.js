@@ -17,11 +17,11 @@ export default function VarientDropdown(props) {
           <div>
             <div className="relative">
               <Listbox.Button className="relative w-full cursor-pointer bg-white dark:bg-transparent text-left focus:border-0 focus:outline-none focus:ring-0 sm:text-sm">
-             <span className={`truncate dark:!text-white/20 text-black/20 ${props.className}`}>
+             <span className={`truncate dark:!text-white/80 text-black/80 ${props.className}`}>
                 {selected.name}
              </span>
              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
-                  <Image src={Selecticon} className="dark:invert"/>
+                  <Image src={Selecticon} alt="" className="dark:invert"/>
              </span>
               </Listbox.Button>
               <Transition

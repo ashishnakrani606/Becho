@@ -17,7 +17,7 @@ const ThemesCard = ({ children, badgeColor, badgesName, title, description, acti
       <p className="text-black/40 dark:text-white/40 text-xs">{description}</p>
       <div className="flex items-center mt-2 justify-between">
         <Link className="flex items-center text-black/40 dark:text-white/40 text-xs" href={"/"}>
-          <Image src={Eye} className="mr-1 dark:invert" />
+          <Image src={Eye} className="mr-1 dark:invert" alt=""/>
           Preview
         </Link>
         {children}
@@ -27,7 +27,7 @@ const ThemesCard = ({ children, badgeColor, badgesName, title, description, acti
             className="leading-5 flex items-center px-2 py-[2px] bg-primary-greenb text-white rounded-lg"
           >
             Activated
-            <Image src={Check} className="ml-1" />
+            <Image src={Check} className="ml-1" alt="" />
           </Link>
         ) : (
           ""
@@ -35,7 +35,7 @@ const ThemesCard = ({ children, badgeColor, badgesName, title, description, acti
         {activate ? (
           <Link href={"#0"} className="leading-5 flex items-center px-2 py-[2px] bg-blacklight text-white rounded-lg">
             Activate
-            <Image src={ArrowLineRight} className="ml-1" />
+            <Image src={ArrowLineRight} className="ml-1" alt=""/>
           </Link>
         ) : (
           ""

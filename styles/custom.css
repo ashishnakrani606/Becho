@@ -318,12 +318,12 @@ a:empty {
   font-size: 0;
   padding: 0;
 }
-/* popup */
+/******* popup *******/
 .popup-staylemain {
   transform: translate(-50%, -50%);
 }
 
-/* btn effect */
+/******* btn effect *******/
 @keyframes push {
   50% {
     transform: scale(0.95);
@@ -338,13 +338,15 @@ a:empty {
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
+
 .btn:hover {
   animation-name: push;
   animation-duration: 0.3s;
   animation-timing-function: linear;
   animation-iteration-count: 1;
 }
-  .datepicker-data input {
+
+.datepicker-data input {
   max-width: 532px;
   width: 100%;
   cursor: pointer;
@@ -354,11 +356,9 @@ a:empty {
   transform: scale(0.8);
 }
 
-/* input type number css start */
-
+/******* input type number css start *******/
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   @apply appearance-none;
 }
-
-/* input type number css end */
+/******* input type number css end *******/

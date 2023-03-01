@@ -62,7 +62,7 @@ const permissions = () => {
                 Last login was Monday, January 30, 2023 9:52 AM GMT+5:30
               </p>
             </div>
-            <Button name={"Transfer ownership"} color="redlight" className="font-normal text-xs px-3" size="small" />
+            <Button name={"Transfer ownership"} color="redlight" className="font-normal text-xs px-3 hover:bg-secondary-red-light-hover" size="small" />
           </div>
           <div className="flex justify-between items-center border-b-black/10 flex-wrap gap-4 sm:flex-nowrap dark:border-b-white/10">
             <div>
@@ -109,8 +109,8 @@ const permissions = () => {
                       Time
                     </th>
                   </tr>
-                  {Sessions.map((item) => (
-                    <tr>
+                  {Sessions.map((item , index) => (
+                    <tr key={index}>
                       <td className="text-xs leading-[18px] text-blacklight text-left py-[11px] pr-4 dark:text-white">
                         {item.location}
                       </td>
@@ -121,7 +121,7 @@ const permissions = () => {
                         {item.IP}
                       </td>
                       <td className="text-xs leading-[18px] text-blacklight text-left flex py-[11px] pr-4 dark:text-white">
-                        <Image src={clock} className="mr-1 dark:invert" />
+                        <Image src={clock} alt="" className="mr-1 dark:invert" />
                         <p>{item.time}</p>
                       </td>
                     </tr>

@@ -27,7 +27,7 @@ const MultiselectDropdown = ({ options, title, selectedValues, image }) => {
           placeholder={""}
         />
         <Image
-          src={selecticonarrow}
+          src={selecticonarrow} alt=""
           className="absolute right-0 top-[50%] -translate-y-[50%] pointer-events-none dark:invert"
         />
       </div>

@@ -119,7 +119,7 @@ const Bechopro = () => {
                   </div>
                   <Link
                     href={"#0"}
-                    className="font-semibold text-lg flex items-center px-[21px] py-2 bg-primary-greenb text-white rounded-md"
+                    className="font-semibold text-lg flex items-center px-[21px] py-2 bg-primary-greenb text-white rounded-md hover:bg-primary-greenb-hover"
                   >
                     Update plan
                     <svg
@@ -146,9 +146,9 @@ const Bechopro = () => {
                       Next billing date: 03/03/2023
                     </p>
                   </div>
-                  <Button
+                  <Button 
                     name={"Change billing cycle"}
-                    className="leading-[18px] !px-[13px] !py-1"
+                    className="leading-[18px] !px-[13px] !py-1 hover:!bg-primary-light-hover"
                     size={"smaill"}
                     outline={"true"}
                     secondary={"true"}
@@ -165,7 +165,7 @@ const Bechopro = () => {
                   </div>
                   <Button
                     name={"Change payment method"}
-                    className="leading-[18px] px-[10px] !py-1"
+                    className="leading-[18px] px-[10px] !py-1 hover:!bg-primary-light-hover"
                     size={"smaill"}
                     outline={"true"}
                     secondary={"true"}
@@ -234,7 +234,7 @@ const Bechopro = () => {
                       color="lightgrey"
                       name={"Edit"}
                       secondary={"true"}
-                      className={"leading-[18px] px-2 !py-[5px]"}
+                      className={"leading-[18px] px-2 !py-[5px] hover:bg-lightgrey-hover"}
                     ></Button>
                   </div>
                   <p className="w-full max-w-[236px] text-black/40 dark:text-white/40">
@@ -250,7 +250,7 @@ const Bechopro = () => {
                       color="lightgrey"
                       name={"Edit"}
                       secondary={"true"}
-                      className={"leading-[18px] px-2 !py-[5px]"}
+                      className={"leading-[18px] px-2 !py-[5px] hover:bg-lightgrey-hover"}
                     ></Button>
                   </div>
                   <p className="w-full max-w-[236px] text-black/40 dark:text-white/40">
@@ -268,7 +268,7 @@ const Bechopro = () => {
                       size="small"
                       name={"Discard"}
                       secondary={"true"}
-                      className={"leading-[18px]"}
+                      className={"leading-[18px] hover:bg-gray-hover"}
                     ></Button>
                     <Button color="blacklight" size="small" className={"leading-[18px]"} name={"Save Changes"}></Button>
                   </div>
@@ -291,11 +291,11 @@ const Bechopro = () => {
                 <div className="flex justify-between items-center flex-wrap gap-5 mb-4">
                   <h2 className="font-semibold text-sm leading-5">Deactivate Account & Store</h2>
                   <div className="flex justify-end items-center gap-2">
-                    <Button color="secondary-red" size="small" name={"Deactivate store"} className={""}></Button>
+                    <Button color="secondary-red" size="small" name={"Deactivate store"} className={"hover:bg-secondary-red-hover"}></Button>
                   </div>
                 </div>
                 <div className="bg-primary-purple/50 flex items-start py-4 px-4 rounded-lg	dark:bg-white/5">
-                  <Image src={WarningCircle} className="mr-1 dark:invert" />
+                  <Image src={WarningCircle} className="mr-1 dark:invert" alt=""/>
                   <div>
                     <h4 className="text-xs leading-[18px]">You Are Deactivating Your Account</h4>
                     <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
@@ -328,7 +328,7 @@ const Bechopro = () => {
                 </div>
                 <Link
                   href={"#0"}
-                  className="text-xs flex items-center px-2 py-[5px] bg-primary-greenb text-white rounded-lg"
+                  className="text-xs flex items-center px-2 py-[5px] bg-primary-greenb text-white rounded-lg hover:bg-primary-greenb-hover"
                 >
                   Edit domain
                   <svg
@@ -355,7 +355,7 @@ const Bechopro = () => {
                 </div>
                 <Button
                   name={"Edit"}
-                  className="leading-[18px] !px-[11px] !py-1"
+                  className="leading-[18px] !px-[11px] !py-1 hover:!bg-primary-light-hover"
                   size={"smaill"}
                   outline={"true"}
                   secondary={"true"}
@@ -371,7 +371,7 @@ const Bechopro = () => {
                 </div>
                 <Button
                   name={"Read docs"}
-                  className="leading-[18px] px-[11px] !py-1"
+                  className="leading-[18px] px-[11px] !py-1 hover:!bg-primary-light-hover"
                   size={"smaill"}
                   outline={"true"}
                   secondary={"true"}

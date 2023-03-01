@@ -243,84 +243,84 @@ const EmailSettings = () => {
       </UnsavedChanges>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Orders</h3>
-        {Emailorder.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Emailorder.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon}  alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Shipping</h3>
-        {Emailshipping.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Emailshipping.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Local delivery</h3>
-        {Localdelivery.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Localdelivery.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Local pickup</h3>
-        {Localpickup.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Localpickup.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10 " key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
-        {Emailcustomer.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Emailcustomer.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Email marketing</h3>
-        {Emailmarketing.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Emailmarketing.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>
       <div className="w-full max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl md:px-4 pt-6 pb-5 mb-4 px-3 lg:px-5 xl:px-6">
         <h3 className="text-lg font-semibold text-blacklight dark:text-white">Returns</h3>
-        {Emailreturns.map((item) => (
-          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10">
+        {Emailreturns.map((item , index) => (
+          <div className="border-b pb-4 py-4 border-black/10 flex justify-between last:mb-0 dark:border-white/10" key={index}>
             <div>
               <h5 className="font-semibold text-sm color-blacklight">{item.title}</h5>
               <p className="text-black/40 text-xs	leading-[18px] dark:text-white/40">{item.discription}</p>
             </div>
-            <Image src={item.icon} className="md:mr-[18px] dark:invert" />
+            <Image src={item.icon} alt="" className="md:mr-[18px] dark:invert" />
           </div>
         ))}
       </div>

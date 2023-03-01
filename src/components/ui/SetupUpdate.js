@@ -22,7 +22,7 @@ const Alert = ({ title, description, color, className, children }) => {
             <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">{description}</p>
           </div>
         </div>
-        <div>{children}</div>        
+        <div>{children}</div>
       </div>
     </>
   );

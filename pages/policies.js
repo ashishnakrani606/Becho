@@ -13,35 +13,35 @@ const Policies = () => {
           <textarea
             rows="5"
             className="w-full dark:bg-transparent text-sm	mt-1"
-            value={"Here we need to have text editor."}
+            defaultValue={"Here we need to have text editor."}
           ></textarea>
         </InputContent>
         <InputContent title={"Privacy policy"} titlestyle={"mb-0"}>
           <textarea
             rows="5"
             className="w-full dark:bg-transparent mt-1"
-            value={"Here we need to have text editor."}
+            defaultValue={"Here we need to have text editor."}
           ></textarea>
         </InputContent>
         <InputContent title={"Terms of service"} titlestyle={"mb-0"}>
           <textarea
             rows="5"
             className="w-full dark:bg-transparent mt-1"
-            value={"Here we need to have text editor."}
+            defaultValue={"Here we need to have text editor."}
           ></textarea>
         </InputContent>
         <InputContent title={"Shipping policy"} titlestyle={"mb-0"}>
           <textarea
             rows="5"
             className="w-full dark:bg-transparent mt-1"
-            value={"Here we need to have text editor."}
+            defaultValue={"Here we need to have text editor."}
           ></textarea>
         </InputContent>
         <InputContent title={"Contact information"} titlestyle={"mb-0"}>
           <textarea
             rows="5"
             className="w-full dark:bg-transparent mt-1"
-            value={"Here we need to have text editor."}
+            defaultValue={"Here we need to have text editor."}
           ></textarea>
         </InputContent>
         <SetupUpdate
@@ -50,7 +50,7 @@ const Policies = () => {
           title={"Get help writing your policies."}
           description={"Read our detailed piece on how to write your store’s policies."}
         >
-          <Button color={"lightgrey"} name={"Details"} className={"whitespace-nowrap"} secondary={"true"} />
+          <Button color={"lightgrey"} name={"Details"} className={"whitespace-nowrap hover:bg-lightgrey-hover"} secondary={"true"} />
         </SetupUpdate>
       </div>
     </Layout>

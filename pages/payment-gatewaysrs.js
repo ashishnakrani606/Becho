@@ -21,7 +21,7 @@ const PaymentGatewaysrs = () => {
         <div className="w-full bg-primary-light rounded-2xl md:p-6 md:pb-2 p-4 dark:bg-white/5">
           <h4 className="text-sm font-semibold mb-4">Supported payment methods</h4>
           <div className="bg-[#E5ECF6]/50 flex items-start pt-4 px-4 pb-[34px] rounded-lg	dark:bg-white/5">
-            <Image src={shield} className="mr-1 dark:invert" />
+            <Image src={shield} alt="" className="mr-1 dark:invert" />
             <div>
               <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
                 {learnMore ? text : `${text.substring(0, 250)}`}
@@ -33,7 +33,7 @@ const PaymentGatewaysrs = () => {
           </div>
           <div className="flex justify-between border-b border-b-black/10 dark:border-white/10 px-4 py-4">
             <div className="flex ">
-              <Image src={google} className="mr-4" />
+              <Image src={google} alt="" className="mr-4" />
               <div>
                 <p className="font-semibold text-sm	text-blacklight dark:text-white">Google Pay</p>
                 <p className="text-xs	leading-[18px] text-secondary-red dark:text-white/40">Click here to setup.</p>
@@ -43,7 +43,7 @@ const PaymentGatewaysrs = () => {
           </div>
           <div className="flex justify-between border-b border-b-black/10 dark:border-white/10 px-4 py-4">
             <div className="flex">
-              <Image src={github} className="mr-4" />
+              <Image src={github} alt="" className="mr-4" />
               <div>
                 <p className="font-semibold text-sm	text-blacklight dark:text-white">PayTM</p>
                 <p className="text-xs	leading-[18px] text-primary-greenb dark:text-white/40">Activated successfully.</p>
@@ -53,7 +53,7 @@ const PaymentGatewaysrs = () => {
           </div>
           <div className="flex justify-between px-4 py-4">
             <div className="flex">
-              <Image src={slack} className="mr-4" />
+              <Image src={slack} alt="" className="mr-4" />
               <div>
                 <p className="font-semibold text-sm	text-blacklight dark:text-white">PayU Money</p>
                 <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">Switch on to start setup.</p>
@@ -67,7 +67,7 @@ const PaymentGatewaysrs = () => {
           <InputContent title={"Additional notes"} titlestyle={"!mb-1"}>
             <textarea
               rows="5"
-              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 h-10"
+              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 sm:h-10 h-12"
               readOnly
               defaultValue="Displays to customers after they place an order with this payment method."
             ></textarea>
@@ -75,12 +75,12 @@ const PaymentGatewaysrs = () => {
           <InputContent title={"Payment instructions"} titlestyle={"!mb-1"}>
             <textarea
               rows="5"
-              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 h-10"
+              className="w-full dark:bg-transparent resize-none text-black/40 dark:text-white/40 sm:h-10 h-12"
               readOnly
               defaultValue="Displays to customers after they place an order with this payment method."
             ></textarea>
           </InputContent>          
-          <Button name={"Activate Cash on Delivery (COD)"} color="primarygreen" size={"small"} />
+          <Button name={"Activate Cash on Delivery (COD)"} color="primarygreen" size={"small"} className={"hover:bg-primary-greenb-hover"} />
         </div>
       </>
       {/* /********** payment-gateway end ************/}

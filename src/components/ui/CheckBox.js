@@ -3,7 +3,7 @@ import React from "react";
 const CheckBox = ({ children, name, className, onChange, value = "", checked }) => {
   return (
     <>
-      <div class={`checkbox-icon inline-block relative ${className}`}>
+      <div className={`checkbox-icon inline-block relative ${className}`}>
         <input
           className="styled-checkbox"
           id={name}

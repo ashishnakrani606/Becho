@@ -36,7 +36,7 @@ const DAtePicker = () => {
           onChange={ChangeHandler}
           className={`bg-transparent ${icon ? "opacity-100" : " opacity-0"}`}
         />
-        <Image src={Selecticon} className="dark:invert absolute right-0 top-0 mr-2" />
+        <Image src={Selecticon} alt="" className="dark:invert absolute right-0 top-0 mr-2" />
       </div>
     </>
   );

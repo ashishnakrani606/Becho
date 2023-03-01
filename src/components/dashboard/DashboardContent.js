@@ -30,7 +30,7 @@ const DashboardContent = () => {
             <div className="row-span-2 col-span-2 lg:mt-0 mt-7 max-w-[432px] mx-auto">
               <div className="lg:p-7 lg:pl-6 lg:pr-4 p-4 bg-primary-light dark:bg-white font-semibold rounded-2xl lg:h-full lg:flex">
                 <div className="flex pt-3 gap-8 sm:flex-nowrap flex-wrap">
-                  <Image src={Brand} alt="" className="sm:w-auto mx-auto" />
+                  <Image src={Brand} alt="" className="sm:w-auto mx-auto lg:w-1/2" />
                   <div className="gap-[6px] xl:pt-6 pt-2 w-full">
                     <h2 className="text-sm font-semibold text-blacklight">Becho.io Learn</h2>
                     <p className="text-xs font-normal pt-1 text-blacklight">
@@ -79,7 +79,7 @@ const DashboardContent = () => {
                     <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
                       Payment status
                     </th>
-                    <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">
+                    <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border whitespace-nowrap">
                       Fulfillment status
                     </th>
                     <th className="font-normal p-3 pr-[10px] before:top-0 before:right-0 before:h-full before:absolute text-start relative h-full heading-border">

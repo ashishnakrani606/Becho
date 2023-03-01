@@ -27,7 +27,7 @@ const SeoSettings = () => {
           title={"Get help in writing the SEO title & description"}
           description={"Read our detailed piece on how to write the perfect SEO title & description for your store."}
         >
-          <Button color={"lightgrey"} name={"Details"} className={"whitespace-nowrap"} secondary={"true"} />
+          <Button color={"lightgrey"} name={"Details"} className={"whitespace-nowrap hover:bg-lightgrey-hover"} secondary={"true"} />
         </SetupUpdate>
       </div>
     </Layout>

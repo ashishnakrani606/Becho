@@ -52,7 +52,7 @@ const ShippingDelivery = () => {
               <h3 className="text-sm font-semibold">Processing time</h3>
               <Badges name="Active" color="green" />
             </div>
-            <Button color={"lightgrey"} size={"small"} name={"Manage"} secondary={"true"} />
+            <Button color={"lightgrey"} size={"small"} name={"Manage"} secondary={"true"} className={"hover:bg-gray-hover"} />
           </div>
           <p className="text-xs leading-[18px] text-black/40 dark:text-white/40 mt-5">
             {learnMore ? [para] : `${para.substring(0, 215)}`}

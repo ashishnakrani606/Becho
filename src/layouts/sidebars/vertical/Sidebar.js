@@ -183,14 +183,14 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                       : ""
                   }`}
                 >
-                  <Image src={Bechopro} alt="" className="dark:invert" />
+                  <Image src={Bechopro} alt="" className="dark:invert" onClick={showMobile} />
                   <span className="ml-1 d-inline-block font-normal">Becho(Pro)</span>
                 </span>
               </Link>
             </div>
           </div>
         </div>
-        <Link href="/" className="bottom-0 left-0 px-3 flex justify-center  w-full">
+        <Link href="/" className="bottom-0 left-0 px-3 flex justify-center w-full" onClick={showMobile}>
           <Image src={Logobecho} alt="" className="dark:invert mb-6" />
         </Link>
       </div>
