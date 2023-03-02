@@ -12,7 +12,7 @@ const PopupStyle = ({ className, icon, title, description, color }) => {
   return (
     <>
       <div
-        className={`pt-[22px] pb-3 px-7 w-full sm:max-w-[408px] rounded-2xl border border-[#0000001a] fixed sm:right-11 sm:left-auto left-[50%] bottom-14 sm:translate-x-[0] translate-x-[-50%] lgm:z-50 z-10 ${className} ${
+        className={`pt-[22px] pb-3 px-7 w-full max-w-[408px] rounded-2xl border border-[#0000001a] fixed sm:right-11 sm:left-auto left-[50%] bottom-14 sm:translate-x-[0] translate-x-[-50%] z-50 ${className} ${
           open ? "" : "hidden"
         }`}
         style={
@@ -33,8 +33,8 @@ const PopupStyle = ({ className, icon, title, description, color }) => {
             <Button name={"Start now"} color={"greydark"} />
           </span>
         </div>
-        <h3 className="text-lg sm:text-2xl text-blacklight font-semibold sm:leading-[34px]">{title}</h3>
-        <p className=" text-xs text-blacklight pt-1 mb-1.5">{description}</p>
+        <h3 className="text-2xl text-blacklight font-semibold leading-[34px]">{title}</h3>
+        <p className=" text-xs text-blacklight pt-1">{description}</p>
         <Link href="" className="mr-[10px] flex justify-end" onClick={openpopupHandler}>
           <Image src={XCircle} alt="" className="mr-1" />
           <span className="text-blacklight">Close</span>

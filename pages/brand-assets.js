@@ -109,7 +109,7 @@ const BrandAssets = () => {
           </div>
         </div>
         <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
-          <Button color="lightgrey" size="large" secondary="true" name={"Discard"} className={"text-sm !px-4 hover:bg-gray-hover"}></Button>
+          <Button color="lightgrey" size="large" secondary="true" name={"Discard"} className={"text-sm !px-4"}></Button>
           <Button
             color="blacklight"
             size="large"

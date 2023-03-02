@@ -1,66 +1,67 @@
 import React from "react";
 
-function Button(props) {
+function Button({children, color, outline, name, onClick, size, className, secondary }) {
   return (
     <>
       <button
         className={`btn transition-all duration-500 text-xs px-2 py-[6px] rounded-lg leading-[18px]  
-          ${props.secondary == "true" ? "text-blacklight dark:text-white" : "text-white"}
+          ${secondary == "true" ? "text-blacklight dark:text-white" : "text-white"}
           ${
-            props.color == "yellow"
+            color == "yellow"
               ? "bg-secondary-yellow !text-blacklight hover:bg-[#f7de87]"
-              : "" || props.color == "grey"
+              : "" || color == "grey"
               ? "bg-primary-purple !text-blacklight"
-              : "" || props.color == "greydark"
+              : "" || color == "greydark"
               ? "bg-gray-1"
-              : "" || props.color == "blue"
+              : "" || color == "blue"
               ? "text-blacklight bg-primary-blue"
-              : "" || props.color == "red"
+              : "" || color == "red"
               ? "bg-red-300"
-              : "" || props.color == "secondary-red"
+              : "" || color == "secondary-red"
               ? "bg-secondary-red"
-              : "" || props.color == "redlight"
+              : "" || color == "redlight"
               ? "bg-secondary-red/70 text-white"
-              : "" || props.color == "lightgrey"
+              : "" || color == "lightgrey"
               ? "bg-black/5 dark:bg-white/5 text-blacklight dark:text-white"
-              : "" || props.color == "lightgreen"
+              : "" || color == "lightgreen"
               ? "text-black bg-secondary-greenb hover:bg-[#a4eba9]"
-              : "" || props.color == "primarygreen"
+              : "" || color == "primarygreen"
               ? "bg-primary-greenb"
-              : "" || props.color == "green"
+              : "" || color == "green"
               ? " bg-primary-green"
-              : "" || props.color == "teal"
+              : "" || color == "teal"
               ? "text-blacklight bg-secondary-greena"
-              : "" || props.color == "blacklight"
+              : "" || color == "blacklight"
               ? "text-white bg-blacklight dark:bg-secondary-purpleb dark:text-blacklight"
-              : "" || props.color == "purple"
+              : "" || color == "purple"
               ? "bg-secondary-purplea text-white dark:!text-blacklight"
               : ""
           } 
-          ${props.outline == "true" ? `border !bg-transparent` : ""}
+          ${outline == "true" ? `border !bg-transparent` : ""}
           ${
-            props.outline == "true" && props.color == "red"
+            outline == "true" && color == "red"
               ? "border-secondary-red !text-secondary-red"
-              : "" || (props.outline == "true" && props.color == "grey")
+              : "" || (outline == "true" && color == "grey")
               ? "border-black/10 text-blacklight dark:!border-white/10 dark:!text-white"
-              : "" || (props.outline == "true" && props.color == "blacklight")
+              : "" || (outline == "true" && color == "blacklight")
               ? "border-black/20 text-blacklight dark:!border-white/20 dark:!text-white"
               : ""
           }
           ${
-            props.size == "large"
+            size == "large"
               ? "px-3 !py-2 leading-[20px]"
-              : "" || props.size == "medium"
+              : "" || size == "medium"
               ? "px-2 !py-1 text-sm"
-              : "" || props.size == "small"
+              : "" || size == "small"
               ? "px-2 !py-[5px]"
               : ""
           } 
-          ${props.className}       
+          ${className}       
         `}
-        onClick={props.onClick}
+        onClick={onClick}
       >
-        {props.name}
+        {children}
+        {name}
       </button>
     </>
   );

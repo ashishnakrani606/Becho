@@ -4,38 +4,38 @@ import { useRouter } from "next/router";
 import Layout from "@/layouts/layout";
 
 const StoreSettings = [
-  {
-    title: "Store Details",
-    href: "/store-details",
-  },
-  {
-    title: "Permissions",
-    href: "/permissions",
-  },
-  {
-    title: "Checkout",
-    href: "/checkout",
-  },
-  {
-    title: "Payment Gateways",
-    href: "/payment-gatewaysrs",
-  },
-  {
-    title: "Shipping & Delivery",
-    href: "/shipping-delivery",
-  },
-  {
-    title: "Taxes",
-    href: "/taxes",
-  },
-  {
-    title: "Brand Assets",
-    href: "/brand-assets",
-  },
-  {
-    title: "Email Settings",
-    href: "/email-settings",
-  },
+  // {
+  //   title: "Store Details",
+  //   href: "/store-details",
+  // },
+  // {
+  //   title: "Permissions",
+  //   href: "/permissions",
+  // },
+  // {
+  //   title: "Checkout",
+  //   href: "/checkout",
+  // },
+  // {
+  //   title: "Payment Gateways",
+  //   href: "/payment-gatewaysrs",
+  // },
+  // {
+  //   title: "Shipping & Delivery",
+  //   href: "/shipping-delivery",
+  // },
+  // {
+  //   title: "Taxes",
+  //   href: "/taxes",
+  // },
+  // {
+  //   title: "Brand Assets",
+  //   href: "/brand-assets",
+  // },
+  // {
+  //   title: "Email Settings",
+  //   href: "/email-settings",
+  // },
 ];
 
 const TabList = () => {

@@ -3,7 +3,7 @@ import React from 'react'
 const StoreSettings = () => {
   return (
     <div>
-      Store Settings
+    Store Settings
     </div>
   )
 }

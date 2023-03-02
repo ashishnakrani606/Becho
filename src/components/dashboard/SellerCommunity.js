@@ -1,57 +1,80 @@
-import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Block from "@/assets/images/img/Block.png";
-import Layout from "@/layouts/layout";
+import Arrow from "@/assets/images/icon/arrowblack.svg";
+import Arrowdown from "@/assets/images/icon/downblackarrow.svg";
 
-const SellerCommunity = () => {
+const ProductData = [
+  {
+    title: "Current Total Rent",
+    count: "₹16,10,895",
+    bgColor: "bg-secondary-yellow",
+  },
+  {
+    title: "Current Active Clients",
+    count: "8",
+    bgColor:"bg-secondary-greenb"
+  },
+  {
+    title: "Vacant Offices",
+    count: "₹14",
+    // img: Arrowdown,  
+    bgColor: "bg-secondary-greena",
+    // counttext: "md:!text-lg",
+    // boxcontain: "2xl:!gap-2 gap-[1px]",
+  },
+  {
+    title: "Monthly Expense",
+    count: "₹3,10,895",
+    bgColor: "bg-secondary-bluea",
+  },
+  {
+    title: "Open Leads",
+    count: "17",
+    bgColor: "bg-primary-blue",
+  },
+  {
+    title: "Unpaid Invoices",
+    count: "4",
+    bgColor: "bg-[#ffc7c7]",
+  },
+  {
+    title: "Electricity Bill this month",
+    count: "₹1,10,895",
+    bgColor: "bg-secondary-purpleb",
+  },
+  {
+    title: "Expense - Eectricity",
+    count: "₹2,00,000",
+    bgColor: "bg-primary-purple",
+  },
+];
+
+export default function Dashboardbox() {
   return (
     <>
-      {/**********Seller Community sec Start************/}
-      <Layout container>
-        <div className="flex md:flex-row md:items-center flex-col mt-8 sm:mt-[42px] gap-5 md:mb-16 mb-10 ">
-          <div className="max-w-[612px] w-full">
-            <div className="relative">
-              <Image src={Block} alt="" className="sm:min-h-[250px] rounded-2xl w-full object-cover" />
-              <div className=" absolute sm:top-7 sm:left-8 top-[10px] left-5">
-                <p className=" text-xs font-semibold text-[#fff]">BECHO.IO SELLER COMMUNITY</p>
-              </div>
-              <div className=" absolute sm:bottom-8 text-[#fff] left-5  bottom-[18px] sm:left-8">
-                <h2 className="md:text-2xl sm:text-lg text-sm sm:max-w-[450px] max-w-[250px] w-full font-semibold leading-tight">
-                  Empowering Indian Entrepreneurs: Join the Becho Community
-                </h2>
-                <div className="sm:mt-5 mt-2">
-                  <Link
-                    href=""
-                    className="sm:text-sm text-xs  font-normal text-[#fff] py-[5px] sm:py-[6px] px-2 rounded-lg bg-[#f0f8ff50]"
-                  >
-                    Start the journey
-                  </Link>
+      <div className="lg:col-span-2 lg:row-span-2">
+        <div className="grid sm:grid-cols-4 grid-cols-2 sm:gap-x-7 gap-2 md:gap-y-8 gap-y-5 h-full">
+          {ProductData.map((dashboardData, index) => (
+            <div
+              key={index}
+              className={`xl:py-6 xl:pl-6 xl:pr-2.5 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgColor}`}
+            >
+              <h3 className="md:text-sm text-xs font-semibold">{dashboardData.title}</h3>
+              <div
+                className={`flex pt-2.5 items-center 2xl:gap-[26px] xl:gap-2 sm:gap-3 gap-1 justify-between lg:justify-start ${dashboardData.boxcontain}`}
+              >
+                <span className={`md:text-2xl sm:text-lg text-sm ${dashboardData.counttext}`}>
+                  {dashboardData.count}
+                </span>
+                <div className="flex gap-[6px]">
+                  <p className="sm:text-xs text-[10px] font-normal">{dashboardData.growth}</p>
+                  <Image src={dashboardData.img} alt="" />
                 </div>
               </div>
             </div>
-          </div>
-          <div className="text-sm max-w-[232px] w-full">
-            <h2 className="font-semibold">What’s New</h2>
-            <div className="pt-5">
-              <p className="font-normal">New theme “Bharat” now available</p>
-              <span className="text-xs text-black/40 dark:text-white/40">25 Jan 2023</span>
-              <p className="font-normal pt-4">New payment gateways added</p>
-              <span className="text-xs text-black/40 dark:text-white/40">21 Jan 2023</span>
-              <p className="font-normal pt-3">A new, faster way to create and sell products</p>
-              <span className="text-xs text-black/40 dark:text-white/40">18 Jan 2023</span>
-            </div>
-            <div className="pt-[17px]">
-              <Link href="" className="text-black/40 dark:text-white/40">
-                View more features
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
-      </Layout>
-      {/**********Seller Community sec End************/}
+      </div>
     </>
   );
-};
+}
 
-export default SellerCommunity;

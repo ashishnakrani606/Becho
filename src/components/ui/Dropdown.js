@@ -23,7 +23,7 @@ export default function SidebarDropdown(props) {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items
-            className={`absolute z-[999] overflow-hidden w-[150px] right-0 mt-2 origin-top-right divide-y divide-black/5 dark:divide-white/10 rounded-md bg-white dark:bg-black shadow-lg ring-1 ring-black/5 focus:outline-none ${props.itemsclass}`}
+            className={`absolute z-[999] overflow-hidden inline-table sm:!w-auto right-0 mt-2 origin-top-right divide-y divide-black/5 dark:divide-white/10 rounded-md bg-white dark:bg-black shadow-lg ring-1 ring-black/5 focus:outline-none ${props.itemsclass}`}
           >
             {props.dropdownitem.map((item,index) => (
               <Menu.Item  key={index}>
@@ -36,7 +36,7 @@ export default function SidebarDropdown(props) {
                     )}
                     >
                     {item.icon ? <Image src={item.icon} alt="" /> : ""}
-                    <span className="text-ellipsis overflow-hidden whitespace-nowrap">
+                    <span className="sm:whitespace-nowrap">
                       {item.title}
                     </span>
                   </a> 

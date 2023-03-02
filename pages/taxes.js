@@ -50,7 +50,7 @@ const Taxes = () => {
                 color="lightgrey"
                 secondary={"true"}
                 name={"Discard"}
-                className={"leading-[18px] text-xs !px-2 !py-[5px] hover:bg-gray-hover"}
+                className={"leading-[18px] text-xs !px-2 !py-[5px]"}
               ></Button>
               <Button
                 color="blacklight"
@@ -85,7 +85,7 @@ const Taxes = () => {
                 <Badges name="Inactive" color="grey" className={"ml-1 sm:ml-2"} />
               </h3>
             </div>
-            <Button color={"lightgrey"} size={"small"} name={"Manage"} secondary={"true"} className={"hover:bg-gray-hover"} />
+            <Button color={"lightgrey"} size={"small"} name={"Manage"} secondary={"true"} />
           </div>
           <p className="text-sm leading-[18px] text-black/40 dark:text-white/40 mt-1">
             Include or exclude tax based on your customer’s country.

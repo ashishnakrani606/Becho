@@ -3,6 +3,7 @@ import Header from "./header/Header";
 import Footer from "./footer/footer";
 import RightSidebar from "./sidebars/vertical/RightSidebar";
 import Sidebar from "./sidebars/vertical/Sidebar";
+import PopupStyle from "@/components/ui/PopupStyle";
 
 const FullLayout = ({ children }) => {
   const [open, setOpen] = React.useState(false);

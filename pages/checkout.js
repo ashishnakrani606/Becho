@@ -47,7 +47,7 @@ const checkout = () => {
                 size="small"
                 name={"Discard"}
                 secondary={"true"}
-                className={"leading-[18px] text-xs !px-2 !py-[5px] hover:bg-gray-hover"}
+                className={"leading-[18px] text-xs !px-2 !py-[5px]"}
               ></Button>
               <Button
                 color="blacklight"
@@ -72,7 +72,7 @@ const checkout = () => {
             title={"Email updates"}
             description={"To send email updates, please enter details."}
           >
-            <Button color={"redlight"} name={"Setup emails"} className={"whitespace-nowrap !py-[5px] hover:bg-secondary-red-light-hover"} />
+            <Button color={"redlight"} name={"Setup emails"} className={"whitespace-nowrap !py-[5px]"} />
           </SetupUpdate>
           <SetupUpdate
             color={"red"}
@@ -80,7 +80,7 @@ const checkout = () => {
             description={"To send SMS updates, please enter details."}
             className={"!p-4"}
           >
-            <Button color={"redlight"} name={"Setup SMS"} className={"whitespace-nowrap !py-[5px] hover:bg-secondary-red-light-hover"} />
+            <Button color={"redlight"} name={"Setup SMS"} className={"whitespace-nowrap !py-[5px]"} />
           </SetupUpdate>
         </div>
         <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl lg:p-6 lg:pt-5 lg:pb-[9px] sm:px-5 py-6 px-3 mt-7">
@@ -92,7 +92,7 @@ const checkout = () => {
                 size="small"
                 name={"Discard"}
                 secondary={"true"}
-                className={"leading-[18px] text-xs !px-2 !py-[5px] hover:bg-gray-hover"}
+                className={"leading-[18px] text-xs !px-2 !py-[5px]"}
               ></Button>
               <Button
                 color="blacklight"

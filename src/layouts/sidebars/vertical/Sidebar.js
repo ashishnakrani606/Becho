@@ -10,7 +10,6 @@ import customers from "@/assets/images/icon/customers.svg";
 import StoreDetails from "@/assets/images/icon/store-details.svg";
 import Permissions from "@/assets/images/icon/permissions.svg";
 import Checkout from "@/assets/images/icon/checkout.svg";
-import rupee from "@/assets/images/icon/rupee.svg";
 import shipping from "@/assets/images/icon/shipping.svg";
 import Percentage from "@/assets/images/icon/percentage.svg";
 import Brandassets from "@/assets/images/icon/brand-assets.svg";
@@ -21,6 +20,14 @@ import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import Logobecho from "@/assets/images/icon/Logobecho.svg";
 import Closebtn from "@/assets/images/icon/closeicon.svg";
 import Dropdown from "@/components/ui/Dropdown";
+import Rupee from "@/assets/images/icon/rupee.svg";
+import Notebook from "@/assets/images/icon/notebook.svg";
+import UsersThree from "@/assets/images/icon/usersThree.svg";
+import IdentificationCard from "@/assets/images/icon/identificationCard.svg";
+import IdentificationBadge from "@/assets/images/icon/identificationBadge.svg";
+import BookOpen from "@/assets/images/icon/bookopen.svg";
+import ListBullets from "@/assets/images/icon/listbullets.svg";
+// import Percentage from "@/assets/images/icon/percentage.svg";
 import { title } from "process";
 
 const navigation = [
@@ -30,76 +37,79 @@ const navigation = [
     icon: dashboard,
   },
   {
-    title: "Orders",
-    href: "/orders",
-    icon: orders,
+    title: "Rent Calendar",
+    href: "/rent-calendar",
+    icon: Rupee,
   },
   {
-    title: "Products",
-    href: "/products",
-    icon: products,
+    title: "Invoices",
+    href: "/invoices",
+    icon: Notebook,
   },
   {
-    title: "Offers",
-    href: "/offers",
-    icon: offers,
+    title: "Clients",
+    href: "/clients",
+    icon: UsersThree,
   },
   {
-    title: "Customers",
-    href: "/customers",
-    icon: customers,
+    title: "Online Leads",
+    href: "/online-leads",
+    icon: IdentificationCard,
+  },
+  {
+    title: "Walk in Leads",
+    href: "/walk-in-leads",
+    icon: IdentificationBadge,
+  },
+
+  {
+    title: "Expenses",
+    href: "/expenses",
+    icon: BookOpen,
   },
 ];
 
 const StoreSettings = [
   {
-    title: "Store Details",
-    href: "/store-details",
+    title: "Offices",
+    href: "/offices",
     icon: StoreDetails,
   },
   {
-    title: "Permissions",
-    href: "/permissions",
-    icon: Permissions,
-  },
-  {
-    title: "Checkout",
-    href: "/checkout",
-    icon: Checkout,
+    title: "Services",
+    href: "/services",
+    icon: ListBullets,
   },
   {
     title: "Payment Gateways",
-    href: "/payment-gatewaysrs",
-    icon: rupee,
+    href: "/payment-gateways",
+    icon: Rupee,
   },
-  {
-    title: "Shipping & Delivery",
-    href: "/shipping-delivery",
-    icon: shipping,
-  },
+
   {
     title: "Taxes",
     href: "/taxes",
     icon: Percentage,
   },
-  {
-    title: "Brand Assets",
-    href: "/brand-assets",
-    icon: Brandassets,
-  },
+
+  // {
+  //   title: "Email Settings",
+  //   href: "/email-settings",
+  //   icon: Brandassets,
+  // },
   {
     title: "Email Settings",
     href: "/email-settings",
     icon: Email,
   },
   {
-    title: "SEO Settings",
-    href: "/seo-settings",
+    title: "Agreements",
+    href: "/agreements",
     icon: SEO,
   },
   {
-    title: "Policies",
-    href: "/policies",
+    title: "Building Staff",
+    href: "/building-staff",
     icon: Policies,
   },
 ];
@@ -152,7 +162,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
               </div>
             </div>
             <div className="mt-8">
-              <h4 className="text-black/40 dark:text-white/40 mb-2">Store Settings</h4>
+              <h4 className="text-black/40 dark:text-white/40 mb-2">Building Settings</h4>
               <div className="list-none flex-col flex">
                 {StoreSettings.map((navi, index) => (
                   <div key={index}>

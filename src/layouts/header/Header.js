@@ -17,7 +17,6 @@ import customers from "@/assets/images/icon/customers.svg";
 import StoreDetails from "@/assets/images/icon/store-details.svg";
 import Permissions from "@/assets/images/icon/permissions.svg";
 import Checkout from "@/assets/images/icon/checkout.svg";
-import rupee from "@/assets/images/icon/rupee.svg";
 import shipping from "@/assets/images/icon/shipping.svg";
 import Percentage from "@/assets/images/icon/percentage.svg";
 import Brandassets from "@/assets/images/icon/brand-assets.svg";
@@ -26,7 +25,12 @@ import SEO from "@/assets/images/icon/SEO.svg";
 import Policies from "@/assets/images/icon/Policies.svg";
 import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import BreadCrumb from "@/components/ui/BreadCrumb";
-
+import BookOpen from "@/assets/images/icon/bookopen.svg";
+import Rupee from "@/assets/images/icon/rupee.svg";
+import Notebook from "@/assets/images/icon/notebook.svg";
+import UsersThree from "@/assets/images/icon/usersThree.svg";
+import IdentificationCard from "@/assets/images/icon/identificationCard.svg";
+import IdentificationBadge from "@/assets/images/icon/identificationBadge.svg";
 const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -44,30 +48,79 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
       icon: dashboard,
     },
     {
+      title: "Rent Calendar",
+      href: "/rent-calendar",
+      icon: Rupee,
+    },
+    {
+      title: "rent-calendar / Detail",
+      href: "/rent-calendar/[rent-calendar]",
+      icon: Rupee,
+    },
+    {
+      title: "invoices",
+      href: "/invoices",
+      icon: Notebook,
+    },
+    {
+      title: "invoices Details",
+      href: "/invoices/[invoices]",
+      icon: Notebook,
+    },
+    {
+      title: "clients",
+      href: "/clients",
+      icon: UsersThree,
+    },
+    {
+      title: "clients Details",
+      href: "/clients/[clients]",
+      icon: UsersThree,
+    },
+    {
+      title: "Online Leads",
+      href: "/online-leads",
+      icon: IdentificationCard,
+    },
+    {
+      title: "Online Leads Details",
+      href: "/online-leads/[online-leads]",
+      icon: IdentificationCard,
+    },
+    {
+      title: "Walk in Leads",
+      href: "/walk-in-leads",
+      icon: IdentificationBadge,
+    },
+    // {
+    //   title: "Walk in Leads Details",
+    //   href: "/walk-in-leads/[walkinleads]",
+    //   icon: IdentificationBadge,
+    // },
+
+    {
+      title: "Expenses",
+      href: "/expenses",
+      icon: BookOpen,
+    },    
+    {
+      title: "Expenses Details",
+      href: "/expenses/[expenses]",
+      icon: BookOpen,
+    },
+
+    {
       title: "Orders",
-      href: "/orders",
+      href: "/orders",  
       icon: orders,
     },
-    {
-      title: "Orders Details",
-      href: "/orders/[orders]",
-      icon: orders,
-    },
-    {
-      title: "Products",
-      href: "/products",
-      icon: products,
-    },
-    {
-      title: "Products / Detail",
-      href: "/products/[products]",
-      icon: products,
-    },
-    {
-      title: "Offers",
-      href: "/offers",
-      icon: offers,
-    },
+   
+    // {
+    //   title: "product/ Detail",
+    //   href: "/product/[product]",
+    //   icon: Rupee,
+    // },
+ 
     {
       title: "Offers / Detail",
       href: "/offers/[offers]",
@@ -101,7 +154,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     {
       title: "Payment Gateways",
       href: "/payment-gatewaysrs",
-      icon: rupee,
+      // icon: ,
     },
     {
       title: "Shipping & Delivery",
@@ -175,7 +228,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
             <Image src={Menuicon} alt="" className="dark:invert" />
           </button>
           <div isopen={"false"} className={`dashbord-img ${isopen ? "md:block" : "md:block hidden"}`}>
-          <div className="flex md:static absolute md:shadow-none shadow-layer-shadow dark:shadow-black dark:shadow-sm dark:md:shadow-none bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
+            <div className="flex md:static absolute md:shadow-none  bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
               <button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
               </button>
@@ -195,7 +248,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
                   )}
                   <div className="text-black/40 dark:text-white/40">
                     <Link href="/" className="text-sm hover:text-black/80 dark:hover:text-white/80">
-                      Becho.io Panel
+                    BiggBang Panel
                     </Link>
                     <BreadCrumb />
 
