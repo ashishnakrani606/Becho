@@ -25,7 +25,7 @@ import SEO from "@/assets/images/icon/SEO.svg";
 import Policies from "@/assets/images/icon/Policies.svg";
 import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import BreadCrumb from "@/components/ui/BreadCrumb";
-import BookOpen from "@/assets/images/icon/Bookopen.svg";
+import BookOpen from "@/assets/images/icon/BookOpen.svg";
 import Rupee from "@/assets/images/icon/rupee.svg";
 import Notebook from "@/assets/images/icon/notebook.svg";
 import UsersThree from "@/assets/images/icon/usersThree.svg";

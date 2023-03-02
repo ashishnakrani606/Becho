@@ -25,7 +25,7 @@ import Notebook from "@/assets/images/icon/notebook.svg";
 import UsersThree from "@/assets/images/icon/usersThree.svg";
 import IdentificationCard from "@/assets/images/icon/IdentificationCard.svg";
 import IdentificationBadge from "@/assets/images/icon/IdentificationBadge.svg";
-import BookOpen from "@/assets/images/icon/Bookopen.svg";
+import BookOpen from "@/assets/images/icon/BookOpen.svg";
 import ListBullets from "@/assets/images/icon/ListBullets.svg";
 // import Percentage from "@/assets/images/icon/percentage.svg";
 import { title } from "process";
