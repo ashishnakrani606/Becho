@@ -1,8 +1,0 @@
-{
-  "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/payment-gateways": "pages/payment-gateways.js",
-  "/services": "pages/services.js",
-  "/expenses": "pages/expenses.js"
-}

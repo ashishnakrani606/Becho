@@ -10,6 +10,7 @@ import customers from "@/assets/images/icon/customers.svg";
 import StoreDetails from "@/assets/images/icon/store-details.svg";
 import Permissions from "@/assets/images/icon/permissions.svg";
 import Checkout from "@/assets/images/icon/checkout.svg";
+import rupee from "@/assets/images/icon/rupee.svg";
 import shipping from "@/assets/images/icon/shipping.svg";
 import Percentage from "@/assets/images/icon/percentage.svg";
 import Brandassets from "@/assets/images/icon/brand-assets.svg";
@@ -20,15 +21,14 @@ import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import Logobecho from "@/assets/images/icon/Logobecho.svg";
 import Closebtn from "@/assets/images/icon/closeicon.svg";
 import Dropdown from "@/components/ui/Dropdown";
-import Rupee from "@/assets/images/icon/rupee.svg";
-import Notebook from "@/assets/images/icon/notebook.svg";
-import UsersThree from "@/assets/images/icon/usersThree.svg";
-import IdentificationCard from "@/assets/images/icon/IdentificationCard.svg";
-import IdentificationBadge from "@/assets/images/icon/IdentificationBadge.svg";
-import BookOpen from "@/assets/images/icon/BookOpen.svg";
-import ListBullets from "@/assets/images/icon/ListBullets.svg";
-// import Percentage from "@/assets/images/icon/percentage.svg";
 import { title } from "process";
+import User from "@/assets/images/icon/user.svg";
+import LogOut from "@/assets/images/icon/logout.svg";
+import Chats from "@/assets/images/icon/chats.svg";
+import NoteBook from "@/assets/images/icon/notebook.svg";
+import Blog from "@/assets/images/icon/blog.svg";
+
+
 
 const navigation = [
   {
@@ -37,79 +37,76 @@ const navigation = [
     icon: dashboard,
   },
   {
-    title: "Rent Calendar",
-    href: "/rent-calendar",
-    icon: Rupee,
+    title: "Orders",
+    href: "/orders",
+    icon: orders,
   },
   {
-    title: "Invoices",
-    href: "/invoices",
-    icon: Notebook,
+    title: "Products",
+    href: "/products",
+    icon: products,
   },
   {
-    title: "Clients",
-    href: "/clients",
-    icon: UsersThree,
+    title: "Offers",
+    href: "/offers",
+    icon: offers,
   },
   {
-    title: "Online Leads",
-    href: "/online-leads",
-    icon: IdentificationCard,
-  },
-  {
-    title: "Walk in Leads",
-    href: "/walk-in-leads",
-    icon: IdentificationBadge,
-  },
-
-  {
-    title: "Expenses",
-    href: "/expenses",
-    icon: BookOpen,
+    title: "Customers",
+    href: "/customers",
+    icon: customers,
   },
 ];
 
 const StoreSettings = [
   {
-    title: "Offices",
-    href: "/offices",
+    title: "Store Details",
+    href: "/store-details",
     icon: StoreDetails,
   },
   {
-    title: "Services",
-    href: "/services",
-    icon: ListBullets,
+    title: "Permissions",
+    href: "/permissions",
+    icon: Permissions,
+  },
+  {
+    title: "Checkout",
+    href: "/checkout",
+    icon: Checkout,
   },
   {
     title: "Payment Gateways",
-    href: "/payment-gateways",
-    icon: Rupee,
+    href: "/payment-gatewaysrs",
+    icon: rupee,
   },
-
+  {
+    title: "Shipping & Delivery",
+    href: "/shipping-delivery",
+    icon: shipping,
+  },
   {
     title: "Taxes",
     href: "/taxes",
     icon: Percentage,
   },
-
-  // {
-  //   title: "Email Settings",
-  //   href: "/email-settings",
-  //   icon: Brandassets,
-  // },
+  {
+    title: "Brand Assets",
+    href: "/brand-assets",
+    icon: Brandassets,
+  },
   {
     title: "Email Settings",
     href: "/email-settings",
     icon: Email,
   },
   {
-    title: "Agreements",
-    href: "/agreements",
+    title: "SEO Settings",
+    href: "/seo-settings",
     icon: SEO,
   },
   {
-    title: "Building Staff",
-    href: "/building-staff",
+    title: "Policies",
+    href: "/policies",
     icon: Policies,
   },
 ];
@@ -132,7 +129,12 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
               }
               dropdownitem={[
                 { id:1, title: "Heena Vinayak", link: "/", icon: Avatar },
-                { id:2, title: "Heena Vinayak", link: "/", icon: Avatar },
+                { id:2, title: "Manage account", link: "/", icon: User },
+                { id:3, title: "Logout", link: "/", icon: LogOut },
+                { id:4, title: "Help center", link: "/", icon: Chats },
+                { id:5, title: "Changelog", link: "/", icon: NoteBook },
+                { id:6, title: "Blog", link: "/", icon: Blog },
+
               ]} />
             <span className="ml-3 lgm:hidden block">
               <button onClick={showMobilemenu} className="flex">
@@ -162,7 +164,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
               </div>
             </div>
             <div className="mt-8">
-              <h4 className="text-black/40 dark:text-white/40 mb-2">Building Settings</h4>
+              <h4 className="text-black/40 dark:text-white/40 mb-2">Store Settings</h4>
               <div className="list-none flex-col flex">
                 {StoreSettings.map((navi, index) => (
                   <div key={index}>

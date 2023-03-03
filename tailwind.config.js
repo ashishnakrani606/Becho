@@ -18,9 +18,9 @@ module.exports = {
         'black': '#000000',
         'blacklight':'#1c1c1c',       
         'gray-1':'#333333',
-        'grey-light':"#BDBDBD",
         'primary-light':'#F7F9FB',
         'primary-blue':'#E3F5FF',
+        'blue-1':'#2F80ED',
         'primary-green':'#219653',
         'primary-greena':'#4AA785',
         'primary-greenb':'#27AE60',
@@ -32,8 +32,18 @@ module.exports = {
         'secondary-greena':'#A1E3CB',
         'secondary-greenb':'#BAEDBD',
         'secondary-yellow':'#FFE999',
-        'secondary-red':'#FF4747',      
-          
+        'secondary-red':'#FF4747',
+        'secondary-redb':'#EB5757',
+        // 'secondary-red-light-hover':'#fa6b6e', 
+        // 'gray-hover':'#e3e6e8',   
+        // 'primary-greenb-hover':'#26a65b',
+        // 'primary-light-hover':'#eef2f6',
+        // 'lightgrey-hover':'#d2d8e0',
+       
+        // 'dark-black-hover':'#262626',
+        // 'primary-green-hover':'#89dcbe',
+
+
       },
       boxShadow: {
         'layer-shadow': '0px 0px 16px rgba(0, 0, 0, 0.1);',

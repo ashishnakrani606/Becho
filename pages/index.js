@@ -17,16 +17,16 @@ export default function Dashboard() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <PopupStyle
+      <PopupStyle
         icon={Star}
         color={"green"}
         title={"5 Tips to increase your orders and customers"}
         description={"Learn how to set up your business online step by step and sell effectively."}
-        // className={"max-w-full sm:max-w-[408px]"}
-      /> */}
+        className={"w-full max-w-[280px] mx-auto"}
+      />
 
       <Layout container>
-        {/* {openDashboard ? <DashboardContent /> : <SetupGuide setOpenDashboard={setOpenDashboard} />} */}
+        {openDashboard ? <DashboardContent /> : <SetupGuide setOpenDashboard={setOpenDashboard} />}
         <SellerCommunity />
       </Layout>
     </>

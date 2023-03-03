@@ -13,8 +13,6 @@ function Badges(props) {
             ? "dot-active pl-4"
             : "" || props.color == "purple"
             ? "bg-secondary-purpleb/20 text-secondary-purplea"
-            : "" || props.color == "greylight"
-            ? "bg-grey-light dark:bg-white/10 text-[#070707] dark:text-white "
             : "" || props.color == "grey"
             ? "bg-black/10 dark:bg-white/10 text-black/40 dark:text-white/40 "
             : "" || props.color == "green"

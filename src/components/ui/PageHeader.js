@@ -25,13 +25,13 @@ const PageHeader = ({ children, orderid, className, Badgesdata, arrow, orderidco
           {arrow == true ? (
             <>
               <Link
-                href={"#0"}
+                href={""}
                 className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center sm:mx-2"
               >
                 <Image src={ArrowLineLeft} alt="" className="dark:invert" />
               </Link>
               <Link
-                href={"#0"}
+                href={""}
                 className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
               >
                 <Image src={ArrowLineLeft} alt="" className="dark:invert rotate-180" />
