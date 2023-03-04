@@ -119,7 +119,7 @@ const customers = () => {
                 secondary={"true"}
                 size={"small"}
                 name={"Import"}
-                className="font-semibold dark:!text-blacklight text-xs active-effect"
+                className="font-semibold dark:!text-blacklight text-xs active-effect dark:hover:!bg-[#e5ecf6]"
               />
             </Card>
           ) : (

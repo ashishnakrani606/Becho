@@ -10,11 +10,14 @@ import MultiselectDropdown from "@/components/ui/MultiselectDropdown";
 import InputContent from "@/components/ui/InputContent";
 import pillows from "@/assets/images/users/brown-throw-pillows.png";
 import infoicon from "@/assets/images/icon/info-icon.svg";
-import Restockicon from "@/assets/images/icon/restockicon.svg"
+import Restockicon from "@/assets/images/icon/restockicon.svg";
+import userimg from "@/assets/images/users/userprofile.png";
+import closeico from "@/assets/images/icon/close-circle.svg";
 import Due from "@/assets/images/icon/Add-payment-due.svg";
 import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
 import Layout from "@/layouts/layout";
 import Modal from "@/components/ui/Modal";
+import VarientDropdown from "@/components/ui/SelectOption";
 
 const orders = () => {
   const Fulfilled = [
@@ -63,7 +66,7 @@ const orders = () => {
       mobile: "+91 80735 89105",
     },
   ];
-  const [customerData, setCustomerData] = useState(true);
+  const [customerData, setCustomerData] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [openrestock, setOpenrestock] = useState(false);
@@ -109,7 +112,9 @@ const orders = () => {
           ]}
         />
       </PageHeader>
-      <UnsavedChanges>
+      <UnsavedChanges
+      className={""}
+      >
         <Button
           color={"white"}
           outline={"true"}
@@ -253,6 +258,7 @@ const orders = () => {
                 />
                 <Dropdown
                   className="right-0 left-[unset]"
+                  itemsclass="p-2 z-[1]"
                   button={
                     <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
                       Collect payment
@@ -321,25 +327,25 @@ const orders = () => {
             <div>
               <div className="flex justify-between my-[15px] items-center gap-2">
                 <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
-                {customerData ? (
-                  <Button
-                    color={"blacklight"}
-                    name={"Remove Customer"}
-                    className="!py-2 px-[12px] leading-[18px]"
-                    onClick={() => setCustomerData(false)}
-                  />
-                ) : (
-                  <>
+               
+                  <div className="flex gap-1">
                     <Button
                       color={"blacklight"}
-                      name={"Add Customer"}
+                      name={"Remove Customer"}
                       className="!py-2 px-[12px] leading-[18px]"
-                      onClick={() => setOpen(true)}
+                      onClick={() => setCustomerData(true)}
                     />
-                  </>
-                )}
+                    <Button
+                        color={"blacklight"}
+                        name={"Add Customer"}
+                        className="!py-2 px-[12px] leading-[18px]"
+                        onClick={() => setOpen(true)}
+                      />                  
+                  </div>              
+                 
+               
               </div>
-              {customerData ? (
+            
                 <>
                   {customer.map((item,index) => (
                     <div key={index}>
@@ -447,9 +453,7 @@ const orders = () => {
                     </div>
                   ))}
                 </>
-              ) : (
-                ""
-              )}
+             
             </div>
           </div>
         </div>
@@ -458,7 +462,7 @@ const orders = () => {
         <div className="p-2">
           <Image src={Restockicon} className={"mx-auto"}/>
           <div className="text-center md:py-8 py-5 max-w-[672px] w-full">
-            <h2 className="text-black/80 font-semibold md:text-2xl text-lg">Restock items</h2>
+            <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Restock items</h2>
             <p className="text-black/40 dark:text-white/40 md:pt-8 pt-5">Restocking will update the inventory of the selected items to the specified quantity. This will allow customers to purchase the items that were previously out of stock. Are you sure you want to restock these items?</p>
           </div>
           <div className="flex justify-center gap-4">
@@ -474,50 +478,125 @@ const orders = () => {
           </div>
         </div>
       </Modal>
-      <Modal title={"Add Customer"} open={open} setOpen={setOpen}>
-        <div className="mt-4">
-          <InputContent title={"Name"} className={"!px-4 py-3 cursor-pointer"}>
-            <input
-              type="text"
-              name=""
-              placeholder="Name"
-              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
+      <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
+        <div className="px-2">
+          <div className="flex items-center justify-between md:pb-8 pb-5">
+            <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Add customer to order</h2>
+            <Image src={closeico} alt="" onClick={() => setOpen(false)} className={"cursor-pointer dark:invert"} />
+          </div>
+          <p className="text-black/80  dark:text-white/80 font-semibold">Select customer</p>
+          <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
+            <MultiselectDropdown
+              className={"itemselect"}
+              roundClose
+              options={[
+                {
+                  cat: "tag 1",
+                  key: "Kathryn Murphy",
+                },
+                {
+                  cat: "tag 2",
+                  key: "Kathryn Murphy",
+                },
+                {
+                  cat: "tag 3",
+                  key: "Kathryn Murphy",
+                },
+              ]}
+              selectedValues={[
+                {
+                  cat: "heena09887@gmail.com",
+                  key: "Kathryn Murphy",
+                },
+              ]}
             />
-          </InputContent>
-          <InputContent title={"Phone"} className={"!px-4 py-3 cursor-pointer"}>
-            <input
-              type="number"
-              name=""
-              placeholder="Phone"
-              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
-            />
-          </InputContent>
-          <InputContent title={"Email"} className={"!px-4 py-3 cursor-pointer"}>
-            <input
-              type="email"
-              name=""
-              placeholder="Email"
-              className="bg-transparent w-full placeholder:text-black/40 placeholder:dark:text-white/40"
-            />
-          </InputContent>
-          <InputContent title={"Address"} className={"!px-4 py-3 cursor-pointer"}>
-            <textarea
-              rows="5"
-              className="w-full dark:bg-transparent resize-none placeholder:text-black/40 placeholder:dark:text-white/40"
-              placeholder="Address"
-            ></textarea>
-          </InputContent>
+          </InputContent>          
+          <div className="flex justify-end items-center gap-4 md:pt-6 pt-2 mx-auto">
+            <Button
+              color="lightgrey"
+              secondary="true"
+              name={"Cancel"}
+              className={"sm:!py-[18px] !py-3 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              onClick={() => setOpen(false)}
+            ></Button>
+            <Button
+              color="bluedark"
+              secondary="true"
+              name={"Add customer"}
+              className={"sm:!py-[18px] !py-3 text-sm !px-4 w-full rounded-2xl font-semibold"}
+            ></Button>
+          </div>
         </div>
-        <div className="py-3 flex justify-end items-center">
-          <Button
-            color="lightgrey"
-            onClick={() => setOpen(false)}
-            size="large"
-            secondary="true"
-            name={"Cancel"}
-            className={"text-sm !px-4"}
-          ></Button>
-          <Button color="blacklight" size="large" className={"ml-4 !px-4 text-sm font-semibold"} name={"Save"}></Button>
+      </Modal>
+
+      <Modal open={customerData} setOpen={setCustomerData} className={"max-w-[544px] w-full mx-auto"}>
+        <div className="px-2 pb-2">
+          <div className="flex items-center justify-between md:pb-8 pb-5">
+            <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
+            Remove customer from order
+            </h2>
+            <Image
+              src={closeico}
+              alt=""
+              onClick={() => setCustomerData(false)}
+              className={"cursor-pointer dark:invert"}
+            />
+          </div>
+          <p className="text-black/40 dark:text-white/40">
+          Are you sure you want to remove this customer from the order? Removing the customer from the order will disassociate the order from the customer's account. Please confirm if you want to proceed with removing the customer from the order.
+          </p>          
+            <div className="flex items-center gap-4 py-8">
+              <Image src={userimg} alt="" />
+              <div>
+                <h3 className="font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</h3>
+                <Link href={""} className={"text-black/80 dark:text-white/80 pt-2 block break-all"}>
+                  KathrynMurphy5286@email.com
+                </Link>
+              </div>
+            
+          </div>
+          <p className="text-black/80  dark:text-white/80 font-semibold">Enter email address of new owner</p>
+          <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
+            <MultiselectDropdown
+              className={"itemselect"}
+              roundClose
+              avatar={'github'} 
+              options={[
+                {
+                  cat: "tag 1",
+                  key: "heena09887@gmail.com",
+                },
+                {
+                  cat: "tag 2",
+                  key: "heena09888@gmail.com",
+                },
+                {
+                  cat: "tag 3",
+                  key: "heena09889@gmail.com",
+                },
+              ]}
+              selectedValues={[
+                {
+                  cat: "heena09887@gmail.com",
+                  key: "heena09887@gmail.com",
+                },
+              ]}
+            />
+          </InputContent>
+          <div className="flex justify-end items-center gap-4 pt-4 mx-auto">
+            <Button
+              color="winered"
+              name={"Transfer ownership"}
+              className={"sm:!py-[18px] !py-3 text-sm sm:!px-4 w-full rounded-2xl font-semibold"}
+            ></Button>
+            <Button
+              color="lightgrey"
+              secondary="true"
+              name={"Cancel"}
+              className={"sm:!py-[18px] !py-3 text-sm sm:!px-4 w-full rounded-2xl font-semibold"}
+              onClick={() => setCustomerData(false)}
+            ></Button>
+          </div>
         </div>
       </Modal>
     </Layout>

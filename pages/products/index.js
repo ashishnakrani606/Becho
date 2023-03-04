@@ -12,6 +12,7 @@ import ArrowsDownUp from "@/assets/images/icon/ArrowsDownUp.svg";
 import Searchicon from "@/assets/images/icon/searchico.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
+import Fileico from "@/assets/images/icon/file-icon.svg";
 import closeico from "@/assets/images/icon/close-circle.svg";
 import Link from "next/link";
 import Filechoose from "@/assets/images/icon/filechoose.svg";
@@ -179,38 +180,111 @@ const products = () => {
             {selectProductOpen ? (
               <div className="text-black/40 dark:text-white/40">
                 <>
-                <button className="py-[5px] px-2 mr-2 text-xs" type="button" onClick={() => setOpenmodel(true)}>
-                  Export
-                </button>
-                <Modal  open={openmodel} setOpen={setOpenmodel}>
-                  <div className="px-2 text-center">
-                    <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Exported successfully</h2>                    
-                    <p className="text-black/40 dark:text-white/40 text-center md:pt-8 pt-5">Selected rows have been exported in the downloaded file.</p>
-                  <div className="flex justify-end items-center gap-4 pt-6">
-                    <Button
-                      color="bluedark"                      
-                      size="large"
-                      secondary="true"
-                      name={"Got it"}
-                      className={"!py-[18px] text-sm !px-4 rounded-2xl w-full"}
-                      onClick={() => setOpenmodel(false)}
-                      ></Button>
-                  </div> 
-                </div>
-                </Modal>
+                  <button className="py-[5px] px-2 mr-2 text-xs" type="button" onClick={() => setOpenmodel(true)}>
+                    Export
+                  </button>
+                  <Modal open={openmodel} setOpen={setOpenmodel}>
+                    <div className="px-2 text-center">
+                      <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
+                        Exported successfully
+                      </h2>
+                      <p className="text-black/40 dark:text-white/40 text-center md:pt-8 pt-5">
+                        Selected rows have been exported in the downloaded file.
+                      </p>
+                      <div className="flex justify-end items-center gap-4 pt-6">
+                        <Button
+                          color="bluedark"
+                          size="large"
+                          secondary="true"
+                          name={"Got it"}
+                          className={"md:!py-[18px] !py-4 text-sm md:!px-4 rounded-2xl w-full"}
+                          onClick={() => setOpenmodel(false)}
+                        ></Button>
+                      </div>
+                    </div>
+                  </Modal>
                 </>
                 <button className="py-[5px] px-2 mr-2 text-xs" type="button" onClick={() => setOpen(true)}>
                   Import
-                </button>                
-                 
-                <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
+                </button>
+
+                <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto pt-6 px-8"}>
+                  <div className="flex items-center justify-between pb-8">
+                    <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Import</h2>
+                    <Image
+                      src={closeico}
+                      alt=""
+                      onClick={() => setOpen(false)}
+                      className={"cursor-pointer dark:invert"}
+                    />
+                  </div>
+                  <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
+                    <div className="px-2 mx-auto max-w-[232px] w-full">
+                      <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer">
+                        <Image src={Filechoose} alt="" className="h-full mx-auto" />
+                      </div>
+                      <p className="text-black/40 dark:text-white/40 text-center pt-2">
+                        Drop your file here to upload or select from storage{" "}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="pt-6 mx-auto max-w-[232px] w-full pb-6">
+                    <Button
+                      color="bluedark"
+                      size="large"
+                      secondary="true"
+                      name={"Browse"}
+                      className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl"}
+                    ></Button>
+                  </div>
+                  <div className="border-t border-black/10 dark:border-white/10">
+                    <div className="border border-black/20 dark:border-white/20 rounded-xl mt-8 p-4">
+                      <div className="flex justify-between items-center">
+                        <Image src={Fileico} alt="" />
+                        <div className="w-full">
+                          <div className="flex justify-between px-2">
+                            <h3 className="pb-2">File_Name.zip</h3>
+                            <span>52%</span>
+                          </div>
+                          <div className="relative max-w-[357px] mx-auto w-full h-1 bg-black/20 dark:bg-white/20 border-transparent rounded-xl">
+                            <span className="absolute bg-blue-1 w-[52%] h-1 border-transparent rounded-xl"></span>
+                          </div>
+                        </div>
+                        <Link href={""}>
+                        <Image src={closeico} alt="" className={"cursor-pointer dark:invert"} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </Modal>
+                <Modal open={open} setOpen={setOpen}>
+                    <div className="px-2 text-center">
+                      <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
+                      Imported successfully
+                      </h2>
+                      <p className="text-black/40 dark:text-white/40 text-center md:pt-8 pt-5">
+                      23 items have been imported successfully.
+                      </p>
+                      <div className="flex justify-end items-center gap-4 pt-6">
+                        <Button
+                          color="bluedark"
+                          size="large"
+                          secondary="true"
+                          name={"Got it"}
+                          className={"md:!py-[18px] !py-4 text-sm md:!px-4 rounded-2xl w-full"}
+                          onClick={() => setOpen(false)}
+                        ></Button>
+                      </div>
+                    </div>
+                  </Modal>
+                {/* <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
                   <div className="flex items-center justify-between pb-8 px-2">
                     <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Import</h2>
                     <Image src={closeico} alt="" onClick={() => setOpen(false)} className={"cursor-pointer dark:invert"}/>
                   </div>
                   <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
                     <div className="px-2 mx-auto max-w-[232px] w-full">
-                      <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer" type="file" >
+                      <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer" >
                         <Image src={Filechoose} alt="" className="h-full mx-auto" />
                       </div>                     
                       <p className="text-black/40 dark:text-white/40 text-center pt-2">
@@ -224,10 +298,11 @@ const products = () => {
                       size="large"
                       secondary="true"
                       name={"Browse"}
-                      className={"!py-[18px] text-sm !px-4 w-full rounded-2xl"}
+                      className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl"}
                     ></Button>
                   </div>
-                </Modal>
+                </Modal> */}
+
                 <Button color={"green"} name={"Add product"} className="!py-[5px]" />
               </div>
             ) : (
@@ -256,7 +331,7 @@ const products = () => {
                 secondary={"true"}
                 size={"small"}
                 name={"Import"}
-                className={`font-semibold !text-xs active-effect hover:dark:text-black hover:dark:!bg-[#E5ECF6]`}
+                className={`font-semibold !text-xs active-effect hover:dark:text-black hover:!bg-[#c6d6eb]`}
               />
             </Card>
           ) : (

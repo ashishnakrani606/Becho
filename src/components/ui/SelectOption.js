@@ -20,7 +20,7 @@ export default function VarientDropdown(props) {
              <span className={`truncate dark:!text-white/80 text-black/80 ${props.className}`}>
                 {selected.name}
              </span>
-             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-2">
+             <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center ">
                   <Image src={Selecticon} alt="" className="dark:invert"/>
              </span>
               </Listbox.Button>

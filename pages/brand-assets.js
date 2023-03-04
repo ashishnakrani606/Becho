@@ -87,23 +87,23 @@ const BrandAssets = () => {
         <div className="pt-2.5 pb-8">
           <h3 className="text-lg font-semibold mb-2.5">Other details</h3>
           <div className="p-3 sm:py-4  sm:px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Slogan</p>
-            <p className="text-blacklight dark:text-white text-sm	">
+            <lable className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Slogan</lable>
+            <div contenteditable="true" className="text-blacklight dark:text-white text-sm outline-none">
               Brand statement or tagline often used along with your logo
-            </p>
+            </div>
           </div>
           <div className="py-4 px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <p className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</p>
-            <p className="text-blacklight dark:text-white text-sm	">
+            <label className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</label>
+            <div contentEditable="true" className="text-blacklight dark:text-white text-sm outline-none">
               Organize your thoughts with an outline. Here’s the outlining strategy I use. I promise it works like a
               charm. Not only will it make writing your blog post easier, it’ll help you make your message.
-            </p>
+            </div>
           </div>
           <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-[15px] gap-y-2.5 ">
             {Social.map((items , index) => (
               <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4" key={index}>
-                <p className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">{items.name}</p>
-                <p className="text-blacklight text-sm dark:text-white">{items.text}</p>
+                <label className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">{items.name}</label>
+                <div contenteditable="true" className="text-blacklight text-sm dark:text-white outline-none">{items.text}</div>
               </div>
             ))}
           </div>

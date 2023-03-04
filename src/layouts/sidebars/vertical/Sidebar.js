@@ -21,14 +21,11 @@ import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import Logobecho from "@/assets/images/icon/Logobecho.svg";
 import Closebtn from "@/assets/images/icon/closeicon.svg";
 import Dropdown from "@/components/ui/Dropdown";
-import { title } from "process";
 import User from "@/assets/images/icon/user.svg";
 import LogOut from "@/assets/images/icon/logout.svg";
 import Chats from "@/assets/images/icon/chats.svg";
 import NoteBook from "@/assets/images/icon/notebook.svg";
 import Blog from "@/assets/images/icon/blog.svg";
-
-
 
 const navigation = [
   {
@@ -121,19 +118,24 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
         <div className="py-5 px-4 relative z-50">
           <div className="flex items-center">
             <Dropdown
+             itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0"
               button={
+                
                 <div className="flex gap-2 pl-2 pt-1 items-center">
-                  <Image src={Avatar} alt="" />
-                  Heena Vinayak
+                  <Image src={Avatar} alt="" className="w-6 h-6 "/>
+                  <div>
+                     <p className="text-left text-sm font-semibold">Kathryn Murphy</p>
+                     <link href="" className="text-[9px] leading-[18px]">KathrynMurphy5286@email.com</link>
+                  </div>
                 </div>
+                 
               }
               dropdownitem={[
-                { id:1, title: "Heena Vinayak", link: "/", icon: Avatar },
-                { id:2, title: "Manage account", link: "/", icon: User },
-                { id:3, title: "Logout", link: "/", icon: LogOut },
-                { id:4, title: "Help center", link: "/", icon: Chats },
-                { id:5, title: "Changelog", link: "/", icon: NoteBook },
-                { id:6, title: "Blog", link: "/", icon: Blog },
+                { id:1, title: "Manage account", link: "/", icon: User },
+                { id:2, title: "Logout", link: "/", icon: LogOut },
+                { id:3, title: "Help center", link: "/", icon: Chats },
+                { id:4, title: "Changelog", link: "/", icon: NoteBook },
+                { id:5, title: "Blog", link: "/", icon: Blog },
 
               ]} />
             <span className="ml-3 lgm:hidden block">
