@@ -320,7 +320,6 @@ input:focus-visible {
   display: block;
 }
 /********** Tabs css end ************/
-
 /********** input start ************/
 input[type="file"] {
   display: none;
@@ -342,6 +341,7 @@ input[type="file"] {
     padding: 0 6px 0 4px;    
   }
 }
+
 .itemselect{
   .chip {
     background-color:#E3F5FF !important;
@@ -359,7 +359,7 @@ input[type="file"] {
   .search-wrapper {
     border: none !important;
     padding: 0 !important;
-    text-transform: capitalize;
+    text-transform: capitalize;  
     
   }
 }

@@ -267,7 +267,7 @@ const permissions = () => {
                 { id: 2, name: "Select 1" },
                 { id: 3, name: "Select 2" },
               ]}
-              className="dark:text-white/40 text-[#87898E] font-semibold"
+              className="dark:text-white/40 text-graydark font-semibold"
             />
           </InputContent>
           <div className="flex justify-end items-center gap-4 pt-6 mx-auto">

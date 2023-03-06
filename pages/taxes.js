@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import TabList from "@/components/store-settings/tab-list";
 import Button from "@/components/ui/Button";
 import Badges from "@/components/ui/Badges";
 import CheckBox from "@/components/ui/CheckBox";
+import closeico from "@/assets/images/icon/close-circle.svg";
+import Percentage from "@/assets/images/icon/percent.svg";
+import Doller from "@/assets/images/icon/doller.svg";
 import Layout from "@/layouts/layout";
+import Modal from "@/components/ui/Modal";
+import Image from "next/image";
+import VarientDropdown from "@/components/ui/SelectOption";
+import InputContent from "@/components/ui/InputContent";
 
 const TaxesData = [
   {
@@ -37,6 +44,8 @@ const TaxesData = [
 ];
 
 const Taxes = () => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Layout container>
       <TabList />
@@ -61,10 +70,11 @@ const Taxes = () => {
           </div>
           <div>
             <>
-              {TaxesData.map((item , index) => (
+              {TaxesData.map((item, index) => (
                 <div
                   className={`flex items-start md:items-center gap-3 sm:px-5 py-4 border-b border-black/10 dark:border-white/10 ${item.border}`}
-               key={index} >
+                  key={index}
+                >
                   <div className="mt-[3px]">
                     <CheckBox name={item.name}></CheckBox>
                   </div>
@@ -85,7 +95,13 @@ const Taxes = () => {
                 <Badges name="Inactive" color="grey" className={"ml-1 sm:ml-2"} />
               </h3>
             </div>
-            <Button color={"lightgrey"} size={"small"} name={"Manage"} secondary={"true"}/>
+            <Button
+              color={"lightgrey"}
+              size={"small"}
+              name={"Manage"}
+              secondary={"true"}
+              onClick={() => setOpen(true)}
+            />
           </div>
           <p className="text-sm leading-[18px] text-black/40 dark:text-white/40 mt-1">
             Include or exclude tax based on your customer’s country.
@@ -93,6 +109,59 @@ const Taxes = () => {
         </div>
       </div>
       {/* {/ /********* Taxes end************/}
+      <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
+        <div className="px-2">
+          <div className="flex items-center justify-between md:pb-8 pb-5">
+            <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Add taxable country</h2>
+            <Image src={closeico} alt="" onClick={() => setOpen(false)} className={"cursor-pointer dark:invert"} />
+          </div>
+          <p className="text-black/40 dark:text-white/40 text-sm pb-3">
+            Tax name (will be shown to customer at checkout)
+          </p>
+          <div>
+            <InputContent className={"px-4 py-[18px]"}>
+              <input type="text" name="" id="message" defaultValue="Title" className="bg-transparent w-full" />
+            </InputContent>
+            <h3 className="text-black/80 dark:text-white/80 font-semibold pb-3">Select country</h3>
+            <InputContent className={"relative"}>
+              <VarientDropdown
+                className={"py-2.5 font-semibold"}
+                selectitem={[
+                  { id: 1, name: "USA" },
+                  { id: 2, name: "canada" },
+                  { id: 3, name: "canada" },
+                ]}
+                arrowdown
+              />
+            </InputContent>
+            <InputContent className={"px-4 py-[18px] relative"}>
+              <input
+                type="number"
+                name=""
+                id="message"
+                defaultValue="18%"
+                className="bg-transparent w-full text-graydark"
+              />
+              <Image src={Percentage} alt="" className="absolute top-[50%] translate-y-[-50%] right-5" />
+            </InputContent>
+          </div>
+          <div className="flex justify-center gap-4">
+            <Button
+              color="lightgrey"
+              secondary="true"
+              name={"Cancel"}
+              className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              onClick={()=>setOpen(false)}
+            ></Button>
+            <Button
+              color="bluedark"
+              secondary="true"
+              name={"Save"}
+              className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
+            ></Button>
+          </div>
+        </div>
+      </Modal>
     </Layout>
   );
 };

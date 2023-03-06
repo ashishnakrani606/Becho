@@ -100,7 +100,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
     },
     {
       title: "Payment Gateways",
-      href: "/payment-gatewaysrs",
+      href: "/payment-gateways",
       icon: rupee,
     },
     {

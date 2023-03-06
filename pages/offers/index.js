@@ -11,9 +11,11 @@ import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Link from "next/link";
 import CheckBox from "@/components/ui/CheckBox";
+import Star from "@/assets/images/icon/Star.svg";
 import Layout from "@/layouts/layout";
 import AmountOffer from "@/components/offers/Amountoffer";
 import Dropdown from "@/components/ui/Dropdown";
+import PopupStyle from "@/components/ui/PopupStyle";
 const TableRow = [
   {
     id: 1,
@@ -271,6 +273,13 @@ const Offers = () => {
       ) : (
         ""
       )}
+      <PopupStyle
+        icon={Star}
+        color={"purple"}
+        title={"5 Tips to increase your orders and customers"}
+        description={"Learn how to set up your business online step by step and sell effectively."}
+        className={"w-full max-w-[280px] mx-auto"}
+      />
     </Layout>
   );
 };

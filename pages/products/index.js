@@ -16,13 +16,14 @@ import Fileico from "@/assets/images/icon/file-icon.svg";
 import closeico from "@/assets/images/icon/close-circle.svg";
 import Link from "next/link";
 import Filechoose from "@/assets/images/icon/filechoose.svg";
-import Toggle from "@/components/ui/Toggle";
+import Star from "@/assets/images/icon/Star.svg";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png";
 import Dropdown from "@/components/ui/Dropdown";
 import Dots from "@/assets/images/icon/Union.svg";
 import Modal from "@/components/ui/Modal";
+import PopupStyle from "@/components/ui/PopupStyle";
 const TableRow = [
   {
     id: 1,
@@ -207,7 +208,7 @@ const products = () => {
                 <button className="py-[5px] px-2 mr-2 text-xs" type="button" onClick={() => setOpen(true)}>
                   Import
                 </button>
-
+                {/* model */}
                 <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto pt-6 px-8"}>
                   <div className="flex items-center justify-between pb-8">
                     <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Import</h2>
@@ -218,16 +219,19 @@ const products = () => {
                       className={"cursor-pointer dark:invert"}
                     />
                   </div>
-                  <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
-                    <div className="px-2 mx-auto max-w-[232px] w-full">
-                      <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer">
-                        <Image src={Filechoose} alt="" className="h-full mx-auto" />
+                  <input type="file" id="filebox" className="block w-8 h-8" />
+                  <label htmlFor="filebox" className="w-full">
+                    <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
+                      <div className="px-2 mx-auto max-w-[232px] w-full">
+                        <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer">
+                          <Image src={Filechoose} alt="" className="h-full mx-auto" />
+                        </div>
+                        <p className="text-black/40 dark:text-white/40 text-center pt-2">
+                          Drop your file here to upload or select from storage{" "}
+                        </p>
                       </div>
-                      <p className="text-black/40 dark:text-white/40 text-center pt-2">
-                        Drop your file here to upload or select from storage{" "}
-                      </p>
                     </div>
-                  </div>
+                  </label>
                   <div className="pt-6 mx-auto max-w-[232px] w-full pb-6">
                     <Button
                       color="bluedark"
@@ -237,16 +241,16 @@ const products = () => {
                       className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl"}
                     ></Button>
                   </div>
-                  <div className="border-t border-black/10 dark:border-white/10">
+                  <div className="border-t border-black/5 dark:border-white/5">
                     <div className="border border-black/20 dark:border-white/20 rounded-xl mt-8 p-4">
                       <div className="flex justify-between items-center">
                         <Image src={Fileico} alt="" />
                         <div className="w-full">
                           <div className="flex justify-between px-2">
-                            <h3 className="pb-2">File_Name.zip</h3>
-                            <span>52%</span>
+                            <h3 className="pb-2 sm:text-sm text-xs">File_Name.zip</h3>
+                            <span className="pl-1 pb-2 sm:text-sm text-xs">52%</span>
                           </div>
-                          <div className="relative max-w-[357px] mx-auto w-full h-1 bg-black/20 dark:bg-white/20 border-transparent rounded-xl">
+                          <div className="relative mx-2 max-w-[357px] mx-auto w-full h-1 bg-black/20 dark:bg-white/20 border-transparent rounded-xl">
                             <span className="absolute bg-blue-1 w-[52%] h-1 border-transparent rounded-xl"></span>
                           </div>
                         </div>
@@ -256,8 +260,9 @@ const products = () => {
                       </div>
                     </div>
                   </div>
-                </Modal>
-                <Modal open={open} setOpen={setOpen}>
+                </Modal>      
+                {/* imported model */}
+                 <Modal open={open} setOpen={setOpen}>
                     <div className="px-2 text-center">
                       <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
                       Imported successfully
@@ -276,32 +281,7 @@ const products = () => {
                         ></Button>
                       </div>
                     </div>
-                  </Modal>
-                {/* <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
-                  <div className="flex items-center justify-between pb-8 px-2">
-                    <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Import</h2>
-                    <Image src={closeico} alt="" onClick={() => setOpen(false)} className={"cursor-pointer dark:invert"}/>
-                  </div>
-                  <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
-                    <div className="px-2 mx-auto max-w-[232px] w-full">
-                      <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer" >
-                        <Image src={Filechoose} alt="" className="h-full mx-auto" />
-                      </div>                     
-                      <p className="text-black/40 dark:text-white/40 text-center pt-2">
-                        Drop your file here to upload or select from storage{" "}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex justify-end items-center gap-4 pt-6 mx-auto max-w-[232px] w-full">
-                    <Button
-                      color="bluedark"                      
-                      size="large"
-                      secondary="true"
-                      name={"Browse"}
-                      className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl"}
-                    ></Button>
-                  </div>
-                </Modal> */}
+                </Modal>  
 
                 <Button color={"green"} name={"Add product"} className="!py-[5px]" />
               </div>
@@ -516,6 +496,13 @@ const products = () => {
       ) : (
         ""
       )}
+      <PopupStyle
+        icon={Star}
+        color={"yellow"}
+        title={"5 Tips to increase your orders and customers"}
+        description={"Learn how to set up your business online step by step and sell effectively."}
+        className={"w-full max-w-[280px] mx-auto"}
+      />
     </Layout>
   );
 };

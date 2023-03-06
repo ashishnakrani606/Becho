@@ -9,7 +9,7 @@ function classNames(...classes) {
 export default function SidebarDropdown(props) {
   return (
     <>
-      <Menu as="div" className="relative inline-block">
+      <Menu as="div" className="relative inline-block w-full">
         <div>
           <Menu.Button className={`${props.className}`}>{props.button}</Menu.Button>
         </div>

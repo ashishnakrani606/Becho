@@ -423,7 +423,7 @@ const orders = () => {
                           <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
                             <p>
                               {item.address}
-                              <Link className="block" href={"#0"}>
+                              <Link className="block" href={""}>
                                 {item.mobile}
                               </Link>
                             </p>
@@ -459,7 +459,7 @@ const orders = () => {
         </div>
       </div>
       <Modal open={openrestock} setOpen={setOpenrestock}>        
-        <div className="p-2">
+        <div className="sm:p-2">
           <Image src={Restockicon} className={"mx-auto"}/>
           <div className="text-center md:py-8 py-5 max-w-[672px] w-full">
             <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Restock items</h2>
@@ -468,18 +468,17 @@ const orders = () => {
           <div className="flex justify-center gap-4">
           <Button
             color="lightgrey"
-            onClick={() => setOpenrestock(false)}
-            size="large"
+            onClick={() => setOpenrestock(false)}            
             secondary="true"
             name={"Cancel"}
-            className={"text-sm !py-[18px] max-w-[232px] w-full font-semibold"}
+            className={"text-sm sm:!py-[18px] !py-3 max-w-[232px] w-full font-semibold"}
           ></Button>
-          <Button color="bluedark" size="large" className={"!py-[18px] text-sm font-semibold max-w-[232px] w-full"} name={"Restock items"}></Button>
+          <Button color="bluedark" className={"sm:!py-[18px] !py-3 text-sm font-semibold max-w-[232px] w-full"} name={"Restock items"}></Button>
           </div>
         </div>
       </Modal>
-      <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto"}>
-        <div className="px-2">
+      <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto sm:px-6 px-3"}>
+        <div className="sm:px-2">
           <div className="flex items-center justify-between md:pb-8 pb-5">
             <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Add customer to order</h2>
             <Image src={closeico} alt="" onClick={() => setOpen(false)} className={"cursor-pointer dark:invert"} />
@@ -516,21 +515,21 @@ const orders = () => {
               color="lightgrey"
               secondary="true"
               name={"Cancel"}
-              className={"sm:!py-[18px] !py-3 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              className={"sm:!py-[18px] !py-3 text-sm !px-3 w-full rounded-2xl font-semibold"}
               onClick={() => setOpen(false)}
             ></Button>
             <Button
               color="bluedark"
               secondary="true"
               name={"Add customer"}
-              className={"sm:!py-[18px] !py-3 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              className={"sm:!py-[18px] !py-3 text-sm !px-3 w-full rounded-2xl font-semibold"}
             ></Button>
           </div>
         </div>
       </Modal>
 
-      <Modal open={customerData} setOpen={setCustomerData} className={"max-w-[544px] w-full mx-auto"}>
-        <div className="px-2 pb-2">
+      <Modal open={customerData} setOpen={setCustomerData} className={"max-w-[544px] w-full mx-auto sm:px-6 px-3"}>
+        <div className="sm:px-2 pb-2">
           <div className="flex items-center justify-between md:pb-8 pb-5">
             <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
             Remove customer from order
@@ -552,38 +551,9 @@ const orders = () => {
                 <Link href={""} className={"text-black/80 dark:text-white/80 pt-2 block break-all"}>
                   KathrynMurphy5286@email.com
                 </Link>
-              </div>
-            
+              </div>            
           </div>
-          <p className="text-black/80  dark:text-white/80 font-semibold">Enter email address of new owner</p>
-          <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
-            <MultiselectDropdown
-              className={"itemselect"}
-              roundClose
-              avatar={'github'} 
-              options={[
-                {
-                  cat: "tag 1",
-                  key: "heena09887@gmail.com",
-                },
-                {
-                  cat: "tag 2",
-                  key: "heena09888@gmail.com",
-                },
-                {
-                  cat: "tag 3",
-                  key: "heena09889@gmail.com",
-                },
-              ]}
-              selectedValues={[
-                {
-                  cat: "heena09887@gmail.com",
-                  key: "heena09887@gmail.com",
-                },
-              ]}
-            />
-          </InputContent>
-          <div className="flex justify-end items-center gap-4 pt-4 mx-auto">
+          <div className="flex justify-end sm:flex-nowrap flex-wrap items-center gap-4 mx-auto">
             <Button
               color="winered"
               name={"Transfer ownership"}

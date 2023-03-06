@@ -26,6 +26,9 @@ import User3 from "@/assets/images/icon/user3.svg";
 import User4 from "@/assets/images/icon/user4.svg";
 import Dropdown from "@/components/ui/Dropdown";
 import Modal from "@/components/ui/Modal";
+import PopupStyle from "@/components/ui/PopupStyle";
+import Star from "@/assets/images/icon/Star.svg";
+
 import InputContent from "@/components/ui/InputContent";
 const tableData = [
   {
@@ -230,6 +233,7 @@ const orders = () => {
     setSelected(tempSelectAll);
   };
   return (
+    <>
     <Layout>
       {!opentablepage ? (
         <>
@@ -377,7 +381,7 @@ const orders = () => {
                   <ul className="flex">
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         <Image src={ArrowLineLeft} alt="" className="dark:invert" />
@@ -385,7 +389,7 @@ const orders = () => {
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         onClick={setActive}
                         className={`rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center ${
                           !active ? "bg-black/5 dark:bg-white/5" : ""
@@ -396,7 +400,7 @@ const orders = () => {
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         2
@@ -404,7 +408,7 @@ const orders = () => {
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         3
@@ -412,7 +416,7 @@ const orders = () => {
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         4
@@ -420,7 +424,7 @@ const orders = () => {
                     </li>
                     <li className="mr-2">
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         5
@@ -428,7 +432,7 @@ const orders = () => {
                     </li>
                     <li>
                       <Link
-                        href={"#0"}
+                        href={""}
                         className="rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all duration-300 w-7 h-7 flex items-center justify-center"
                       >
                         <Image src={ArrowLineLeft} alt="" className="dark:invert rotate-180" />
@@ -451,18 +455,16 @@ const orders = () => {
                 <p className="text-black/40 dark:text-white/40 text-center pt-2">This action can’t be undone</p>
                 <div className="flex justify-end items-center gap-4 pt-8">
                   <Button
-                    color="winered"
-                    size="large"
-                    className={"!py-[18px] text-sm font-semibold w-full"}
+                    color="winered"                   
+                    className={"sm:!py-[18px] !py-3 text-sm font-semibold w-full"}
                     name={"Delete"}
                   ></Button>
                   <Button
                     color="lightgrey"
-                    onClick={() => setOpen(false)}
-                    size="large"
+                    onClick={() => setOpen(false)}                   
                     secondary="true"
                     name={"Cancel"}
-                    className={"!py-[18px] text-sm !px-4 w-full"}
+                    className={"sm:!py-[18px] !py-3 text-sm !px-4 w-full"}
                   ></Button>
                 </div>
               </div>
@@ -473,6 +475,14 @@ const orders = () => {
         ""
       )}
     </Layout>
+     <PopupStyle
+        icon={Star}
+         color={"blue"}
+        title={"5 Tips to increase your orders and customers"}
+       description={"Learn how to set up your business online step by step and sell effectively."}
+         className={"w-full max-w-[280px] mx-auto"}/>
+    
+    </>
   );
 };
 

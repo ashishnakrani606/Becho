@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Avatar from "@/assets/images/users/avatar.png";
+import Userid from "@/assets/images/users/user.png";
 import dashboard from "@/assets/images/icon/dashboard.svg";
 import orders from "@/assets/images/icon/orders.svg";
 import products from "@/assets/images/icon/products.svg";
@@ -73,7 +73,7 @@ const StoreSettings = [
   },
   {
     title: "Payment Gateways",
-    href: "/payment-gatewaysrs",
+    href: "/payment-gateways",
     icon: rupee,
   },
   {
@@ -118,26 +118,26 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
         <div className="py-5 px-4 relative z-50">
           <div className="flex items-center">
             <Dropdown
-             itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0"
+              itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0"
               button={
-                
-                <div className="flex gap-2 pl-2 pt-1 items-center">
-                  <Image src={Avatar} alt="" className="w-6 h-6 "/>
+                <div className="flex gap-[6px] pl-2 pt-1 items-center">
+                  <Image src={Userid} alt="" />
                   <div>
-                     <p className="text-left text-sm font-semibold">Kathryn Murphy</p>
-                     <link href="" className="text-[9px] leading-[18px]">KathrynMurphy5286@email.com</link>
+                    <p className="text-left text-sm font-semibold">Kathryn Murphy</p>
+                    <Link href={"#0"} className="text-[9px] leading-[18px]">
+                      KathrynMurphy5286@email.com
+                    </Link>
                   </div>
                 </div>
-                 
               }
               dropdownitem={[
-                { id:1, title: "Manage account", link: "/", icon: User },
-                { id:2, title: "Logout", link: "/", icon: LogOut },
-                { id:3, title: "Help center", link: "/", icon: Chats },
-                { id:4, title: "Changelog", link: "/", icon: NoteBook },
-                { id:5, title: "Blog", link: "/", icon: Blog },
-
-              ]} />
+                { id: 1, title: "Manage account", link: "/", icon: User },
+                { id: 2, title: "Logout", link: "/", icon: LogOut },
+                { id: 3, title: "Help center", link: "/", icon: Chats },
+                { id: 4, title: "Changelog", link: "/", icon: NoteBook },
+                { id: 5, title: "Blog", link: "/", icon: Blog },
+              ]}
+            />
             <span className="ml-3 lgm:hidden block">
               <button onClick={showMobilemenu} className="flex">
                 <Image src={Closebtn} alt="" className="w-6 dark:invert" />
@@ -152,7 +152,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                     <Link href={navi.href} onClick={showMobile}>
                       <span
                         className={`nav-link flex items-center hover:opacity-70 w-full font-semibold text-sm py-[6px] pl-7 rounded-lg relative ${
-                          (location === navi.href || curl.query[navi.href.replace("/", "")])
+                          location === navi.href || curl.query[navi.href.replace("/", "")]
                             ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
                         }`}

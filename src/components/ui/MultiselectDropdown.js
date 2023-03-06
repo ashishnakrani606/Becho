@@ -1,6 +1,6 @@
 import React from "react";
 import Multiselect from "multiselect-react-dropdown";
-import CloseIcon from "@/assets/images/icon/Closebtn.svg";
+import CloseIcon from "@/assets/images/icon/closebtn.svg";
 import RoundClose from "@/assets/images/icon/closeround.svg";
 import Image from "next/image";
 import selecticonarrow from "@/assets/images/icon/selecticon.svg";
