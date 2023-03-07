@@ -16,6 +16,7 @@ import closeico from "@/assets/images/icon/close-circle.svg";
 import Due from "@/assets/images/icon/Add-payment-due.svg";
 import NoteCustomer from "@/assets/images/icon/warning-circle.svg";
 import Layout from "@/layouts/layout";
+import DateSelect from "@/components/ui/DateSelect";
 import Modal from "@/components/ui/Modal";
 import VarientDropdown from "@/components/ui/SelectOption";
 
@@ -84,7 +85,7 @@ const orders = () => {
           { color: "dot", name: "Fulfilled" },
         ]}
       >
-        <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button"  onClick={() => setOpenrestock(true)}>
+        <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button" onClick={() => setOpenrestock(true)}>
           Restock
         </button>
         <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button">
@@ -92,6 +93,7 @@ const orders = () => {
         </button>
         <Dropdown
           className="right-0 left-[unset] text-xs"
+          itemsclass="left-2 top-[28px]"
           button={
             <div className="flex gap-2 items-center py-3 px-2 justify-end">
               More actions
@@ -112,9 +114,7 @@ const orders = () => {
           ]}
         />
       </PageHeader>
-      <UnsavedChanges
-      className={""}
-      >
+      <UnsavedChanges className={""}>
         <Button
           color={"white"}
           outline={"true"}
@@ -207,7 +207,7 @@ const orders = () => {
                     <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
                       <td className="font-normal text-xs leading-[18px] max-w-[33.33%] w-full py-[11px] pl-4">Tax</td>
                       <td className="font-normal text-xs leading-[18px] text-green2 max-w-[33.33%] w-full py-[11px] px-4">
-                        <Link className="flex whitespace-nowrap" href={"/"}>
+                        <Link className="flex whitespace-nowrap text-primary-greenb" href={"/"}>
                           Show tax details
                           <Image src={infoicon} alt="" className="ml-[5px]" />
                         </Link>
@@ -234,11 +234,11 @@ const orders = () => {
                   </tr>
                   <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
                     <td className="w-full max-w-[50%] pl-4 py-[11px] text-xs leading-[18px]">No payment due date</td>
-                    <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2">
-                      <Link className="flex justify-end text-primary-greenb" href={"/"}>
-                        Add due date
-                        <Image src={Due} alt="" className="ml-[5px]" />
-                      </Link>
+                    <td className="w-full max-w-[50%] pr-4 py-[11px] font-normal text-xs leading-[18px] text-green2 relative">
+                      <div
+                       className="flex justify-end text-primary-greenb">
+                        <DateSelect placeholder={"Add due date"} className=""></DateSelect>
+                      </div>
                     </td>
                   </tr>
                   <tr className="text-blacklight dark:text-white border-b border-black/5 dark:border-white/5 w-full">
@@ -257,7 +257,7 @@ const orders = () => {
                   size={"medium"}
                 />
                 <Dropdown
-                  className="right-0 left-[unset]"
+                  className="right-0 left-[unset] flex justify-end"
                   itemsclass="p-2 z-[1]"
                   button={
                     <div className="flex gap-2 items-center px-4 justify-end py-2 text-sm lg:text-lg font-semibold transition-all duration-500 rounded-lg text-white bg-primary-greenb">
@@ -325,123 +325,43 @@ const orders = () => {
               </div>
             </div>
             <div>
-              <div className="flex justify-between my-[15px] items-center gap-2">
+              <div className="flex justify-between sm:flex-nowrap flex-wrap my-[15px] items-center gap-2">
                 <h3 className="text-blacklight dark:text-white font-semibold text-sm">Customer Details</h3>
-               
-                  <div className="flex gap-1">
-                    <Button
-                      color={"blacklight"}
-                      name={"Remove Customer"}
-                      className="!py-2 px-[12px] leading-[18px]"
-                      onClick={() => setCustomerData(true)}
-                    />
-                    <Button
-                        color={"blacklight"}
-                        name={"Add Customer"}
-                        className="!py-2 px-[12px] leading-[18px]"
-                        onClick={() => setOpen(true)}
-                      />                  
-                  </div>              
-                 
-               
+
+                <div className="flex gap-1">
+                  <Button
+                    color={"blacklight"}
+                    name={"Remove Customer"}
+                    className="!py-2 px-[12px] leading-[18px]"
+                    onClick={() => setCustomerData(true)}
+                  />
+                  <Button
+                    color={"blacklight"}
+                    name={"Add Customer"}
+                    className="!py-2 px-[12px] leading-[18px]"
+                    onClick={() => setOpen(true)}
+                  />
+                </div>
+
+
               </div>
-            
-                <>
-                  {customer.map((item,index) => (
-                    <div key={index}>
-                      <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
-                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
-                          Name
-                        </p>
-                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal">
-                          {item.name ? (
-                            item.name
-                          ) : (
-                            <>
-                              No name provided
-                              <Button
-                                secondary={"true"}
-                                name={"Add Name"}
-                                outline={"true"}
-                                color={"grey"}
-                                className="text-sm leading-[18px] ml-2"
-                                size={"medium"}
-                              />
-                            </>
-                          )}
-                        </p>
-                      </div>
-                      <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                          Phone
-                        </p>
-                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                          {item.phone ? (
-                            item.phone
-                          ) : (
-                            <>
-                              No phone provided
-                              <Button
-                                secondary={"true"}
-                                name={"Add Phone"}
-                                outline={"true"}
-                                color={"grey"}
-                                className="text-sm leading-[18px] ml-2"
-                                size={"medium"}
-                              />
-                            </>
-                          )}
-                        </p>
-                      </div>
-                      <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap">
-                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                          Email
-                        </p>
-                        <p className="text-blacklight dark:text-white text-sm leading-[18px] font-normal ">
-                          {item.email ? (
-                            item.email
-                          ) : (
-                            <>
-                              No email provided
-                              <Button
-                                secondary={"true"}
-                                name={"Add email"}
-                                outline={"true"}
-                                color={"grey"}
-                                className="text-sm leading-[18px] ml-2"
-                                size={"medium"}
-                              />
-                            </>
-                          )}
-                        </p>
-                      </div>
-                      <div className="flex w-full flex-wrap sm:flex-nowrap">
-                        <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
-                          Address
-                        </p>
-                        {item.address ? (
-                          <div className="text-blacklight dark:text-white text-sm leading-[18px] font-normal lg:max-w-[55%] w-full flex items-center ">
-                            <p>
-                              {item.address}
-                              <Link className="block" href={""}>
-                                {item.mobile}
-                              </Link>
-                            </p>
-                            <Button
-                              secondary={"true"}
-                              size={"medium"}
-                              color={"grey"}
-                              outline={"true"}
-                              name={"Edit"}
-                              className="md:ml-2 leading-[18px]"
-                            />
-                          </div>
+
+              <>
+                {customer.map((item, index) => (
+                  <div key={index}>
+                    <div className="flex w-full mb-4 flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal  sm:max-w-[44%] w-full">
+                        Name
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm font-normal">
+                        {item.name ? (
+                          item.name
                         ) : (
                           <>
-                            No address provided
+                            No name provided
                             <Button
                               secondary={"true"}
-                              name={"Add address"}
+                              name={"Add Name"}
                               outline={"true"}
                               color={"grey"}
                               className="text-sm leading-[18px] ml-2"
@@ -449,31 +369,111 @@ const orders = () => {
                             />
                           </>
                         )}
-                      </div>
+                      </p>
                     </div>
-                  ))}
-                </>
-             
+                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap items-center">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full ">
+                        Phone
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm font-normal ">
+                        {item.phone ? (
+                          item.phone
+                        ) : (
+                          <>
+                            No phone provided
+                            <Button
+                              secondary={"true"}
+                              name={"Add Phone"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
+                            />
+                          </>
+                        )}
+                      </p>
+                    </div>
+                    <div className="flex mb-4 w-full flex-wrap sm:flex-nowrap items-center">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                        Email
+                      </p>
+                      <p className="text-blacklight dark:text-white text-sm font-normal ">
+                        {item.email ? (
+                          item.email
+                        ) : (
+                          <>
+                            No email provided
+                            <Button
+                              secondary={"true"}
+                              name={"Add email"}
+                              outline={"true"}
+                              color={"grey"}
+                              className="text-sm leading-[18px] ml-2"
+                              size={"medium"}
+                            />
+                          </>
+                        )}
+                      </p>
+                    </div>
+                    <div className="flex w-full flex-wrap sm:flex-nowrap">
+                      <p className="text-black/40 dark:text-white/40 text-xs leading-[18px] font-normal sm:max-w-[44%] w-full">
+                        Address
+                      </p>
+                      {item.address ? (
+                        <div className="text-blacklight dark:text-white text-sm font-normal lg:max-w-[55%] w-full flex items-center ">
+                          <p>
+                            {item.address}
+                            <Link className="block" href={""}>
+                              {item.mobile}
+                            </Link>
+                          </p>
+                          <Button
+                            secondary={"true"}
+                            size={"medium"}
+                            color={"grey"}
+                            outline={"true"}
+                            name={"Edit"}
+                            className="md:ml-2 leading-[18px]"
+                          />
+                        </div>
+                      ) : (
+                        <>
+                          No address provided
+                          <Button
+                            secondary={"true"}
+                            name={"Add address"}
+                            outline={"true"}
+                            color={"grey"}
+                            className="text-sm leading-[18px] ml-2"
+                            size={"medium"}
+                          />
+                        </>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </>
+
             </div>
           </div>
         </div>
       </div>
-      <Modal open={openrestock} setOpen={setOpenrestock}>        
+      <Modal open={openrestock} setOpen={setOpenrestock}>
         <div className="sm:p-2">
-          <Image src={Restockicon} className={"mx-auto"}/>
+          <Image src={Restockicon} className={"mx-auto"} />
           <div className="text-center md:py-8 py-5 max-w-[672px] w-full">
             <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Restock items</h2>
             <p className="text-black/40 dark:text-white/40 md:pt-8 pt-5">Restocking will update the inventory of the selected items to the specified quantity. This will allow customers to purchase the items that were previously out of stock. Are you sure you want to restock these items?</p>
           </div>
           <div className="flex justify-center gap-4">
-          <Button
-            color="lightgrey"
-            onClick={() => setOpenrestock(false)}            
-            secondary="true"
-            name={"Cancel"}
-            className={"text-sm sm:!py-[18px] !py-3 max-w-[232px] w-full font-semibold"}
-          ></Button>
-          <Button color="bluedark" className={"sm:!py-[18px] !py-3 text-sm font-semibold max-w-[232px] w-full"} name={"Restock items"}></Button>
+            <Button
+              color="lightgrey"
+              onClick={() => setOpenrestock(false)}
+              secondary="true"
+              name={"Cancel"}
+              className={"text-sm sm:!py-[18px] !py-3 max-w-[232px] w-full font-semibold"}
+            ></Button>
+            <Button color="bluedark" className={"sm:!py-[18px] !py-3 text-sm font-semibold max-w-[232px] w-full"} name={"Restock items"}></Button>
           </div>
         </div>
       </Modal>
@@ -509,7 +509,7 @@ const orders = () => {
                 },
               ]}
             />
-          </InputContent>          
+          </InputContent>
           <div className="flex justify-end items-center gap-4 md:pt-6 pt-2 mx-auto">
             <Button
               color="lightgrey"
@@ -532,7 +532,7 @@ const orders = () => {
         <div className="sm:px-2 pb-2">
           <div className="flex items-center justify-between md:pb-8 pb-5">
             <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
-            Remove customer from order
+              Remove customer from order
             </h2>
             <Image
               src={closeico}
@@ -542,16 +542,16 @@ const orders = () => {
             />
           </div>
           <p className="text-black/40 dark:text-white/40">
-          Are you sure you want to remove this customer from the order? Removing the customer from the order will disassociate the order from the customer's account. Please confirm if you want to proceed with removing the customer from the order.
-          </p>          
-            <div className="flex items-center gap-4 py-8">
-              <Image src={userimg} alt="" />
-              <div>
-                <h3 className="font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</h3>
-                <Link href={""} className={"text-black/80 dark:text-white/80 pt-2 block break-all"}>
-                  KathrynMurphy5286@email.com
-                </Link>
-              </div>            
+            Are you sure you want to remove this customer from the order? Removing the customer from the order will disassociate the order from the customer's account. Please confirm if you want to proceed with removing the customer from the order.
+          </p>
+          <div className="flex items-center gap-4 py-8">
+            <Image src={userimg} alt="" />
+            <div>
+              <h3 className="font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</h3>
+              <Link href={""} className={"text-black/80 dark:text-white/80 pt-2 block break-all"}>
+                KathrynMurphy5286@email.com
+              </Link>
+            </div>
           </div>
           <div className="flex justify-end sm:flex-nowrap flex-wrap items-center gap-4 mx-auto">
             <Button

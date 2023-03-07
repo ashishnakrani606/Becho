@@ -49,7 +49,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
               <h3 className="font-semibold mb-[6px] text-black">Add brand assets</h3>
               <p className="text-xs text-black">
                 Boost your brand with a logo and other assets.
-                <Link href={"#0"} className={"text-[#2F80ED]"}>
+                <Link href={""} className={"text-[#2F80ED]"}>
                   {" "}
                   Learn more about branding.
                 </Link>

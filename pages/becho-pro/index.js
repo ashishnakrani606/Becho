@@ -109,7 +109,7 @@ const Bechopro = () => {
           </TabList>
 
           <TabPanel>
-            <div className="">
+            <>
               <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl mb-6 md:p-6 p-4">
                 <h4 className="text-lg font-semibold mb-6">Your plan details</h4>
                 <div className="flex items-center gap-4 justify-between border-b pb-4 border-b-black/10 flex-wrap sm:flex-nowrap dark:border-b-white/10">
@@ -118,7 +118,7 @@ const Bechopro = () => {
                     <p className="text-xs	leading-[18px] text-black/40 dark:text-white/40">Base plan with 20 products</p>
                   </div>
                   <Link
-                    href={"#0"}
+                    href={""}
                     className="font-semibold text-lg flex items-center px-[21px] py-2 bg-primary-greenb text-white rounded-md "
                   >
                     Update plan
@@ -132,7 +132,7 @@ const Bechopro = () => {
                     >
                       <path
                         fillRule="evenodd"
-                        clip-rule="evenodd"
+                        clipRule="evenodd"
                         d="M7.07459 15.4419C6.80847 15.1979 6.80847 14.8021 7.07459 14.5581L11.5625 10.4419C11.8286 10.1979 11.8286 9.80214 11.5625 9.55806L7.07459 5.44194C6.80847 5.19786 6.80847 4.80214 7.07459 4.55806C7.34072 4.31398 7.77219 4.31398 8.03831 4.55806L12.5262 8.67418C13.3246 9.40641 13.3246 10.5936 12.5262 11.3258L8.03831 15.4419C7.77219 15.686 7.34072 15.686 7.07459 15.4419Z"
                         fill="white"
                       />
@@ -146,7 +146,7 @@ const Bechopro = () => {
                       Next billing date: 03/03/2023
                     </p>
                   </div>
-                  <Button 
+                  <Button
                     name={"Change billing cycle"}
                     className="leading-[18px] !px-[13px] !py-1 "
                     size={"smaill"}
@@ -177,13 +177,13 @@ const Bechopro = () => {
                 <div className="flex justify-between mb-[15px] flex-wrap">
                   <h4 className="text-sm font-semibold">Billing History</h4>
                   <div>
-                    <Link href={"#0"} className="text-xs text-blacklight dark:text-white py-1 px-2 font-semibold">
+                    <Link href={""} className="text-xs text-blacklight dark:text-white py-1 px-2 font-semibold">
                       Month
                     </Link>
-                    <Link href={"#0"} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
+                    <Link href={""} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
                       Year
                     </Link>
-                    <Link href={"#0"} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
+                    <Link href={""} className="text-xs text-black/40 dark:text-white/40 ml-1 py-1 px-2">
                       All Time
                     </Link>
                   </div>
@@ -205,8 +205,8 @@ const Bechopro = () => {
                           Invoice
                         </th>
                       </tr>
-                      {BillingHistory.map((item) => (
-                        <tr>
+                      {BillingHistory.map((item,index) => (
+                        <tr key={index}>
                           <td className="text-xs leading-[18px] text-blacklight text-left py-[11px] pr-4 dark:text-white">
                             {item.date}
                           </td>
@@ -274,8 +274,8 @@ const Bechopro = () => {
                   </div>
                 </div>
                 <>
-                  {Information.map((item) => (
-                    <div
+                  {Information.map((item,index) => (
+                    <div key={index}
                       className={`flex items-center md:items-center gap-3 sm:px-5 py-4 border-b border-black/10 dark:border-white/10 ${item.border}`}
                     >
                       <CheckBox name={item.name}></CheckBox>
@@ -295,7 +295,7 @@ const Bechopro = () => {
                   </div>
                 </div>
                 <div className="bg-primary-purple/50 flex items-start py-4 px-4 rounded-lg	dark:bg-white/5">
-                  <Image src={WarningCircle} className="mr-1 dark:invert" alt=""/>
+                  <Image src={WarningCircle} className="mr-1 dark:invert" alt="" />
                   <div>
                     <h4 className="text-xs leading-[18px]">You Are Deactivating Your Account</h4>
                     <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">
@@ -312,7 +312,7 @@ const Bechopro = () => {
                   </CheckBox>
                 </div>
               </div>
-            </div>
+            </>
           </TabPanel>
           <TabPanel>
             <div className="w-full bg-primary-light dark:bg-white/5 rounded-2xl mb-7 md:p-6 p-4">
@@ -327,7 +327,7 @@ const Bechopro = () => {
                   </p>
                 </div>
                 <Link
-                  href={"#0"}
+                  href={""}
                   className="text-xs flex items-center px-2 py-[5px] bg-primary-greenb text-white rounded-lg"
                 >
                   Edit domain
@@ -341,7 +341,7 @@ const Bechopro = () => {
                   >
                     <path
                       fillRule="evenodd"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                       d="M5.65967 12.3536C5.44678 12.1583 5.44678 11.8417 5.65967 11.6464L9.25 8.35355C9.4629 8.15829 9.4629 7.84171 9.25 7.64645L5.65968 4.35355C5.44678 4.15829 5.44678 3.84171 5.65968 3.64645C5.87257 3.45118 6.21775 3.45118 6.43065 3.64645L10.021 6.93934C10.6597 7.52513 10.6597 8.47487 10.021 9.06066L6.43065 12.3536C6.21775 12.5488 5.87257 12.5488 5.65967 12.3536Z"
                       fill="white"
                     />

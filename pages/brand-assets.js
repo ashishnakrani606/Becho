@@ -6,6 +6,7 @@ import CoverImage from "@/assets/images/img/cover-image.png";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Layout from "@/layouts/layout";
+import { SketchPicker } from 'react-color'
 
 const Social = [
   {
@@ -79,6 +80,7 @@ const BrandAssets = () => {
           <h3 className="font-semibold text-lg">Colors</h3>
           <div className="max-w-[75px] w-full h-[75px] bg-[#00A82D] rounded-[10px] my-2.5 "></div>
           <p className="text-xs leading-[18px]">Primary color: #00A82D</p>
+          {/* <SketchPicker/> */}
           <div className="max-w-[75px] w-full h-[75px] bg-gray-1 rounded-[10px] my-2.5"></div>
           <p className="text-xs leading-[18px]">Contrasting color: #333333</p>
           <div className="max-w-[75px] w-full h-[75px] bg-[#FFE899] rounded-[10px] my-2.5"></div>
@@ -93,7 +95,7 @@ const BrandAssets = () => {
             </div>
           </div>
           <div className="py-4 px-5 border rounded-lg	border-black/10 dark:border-white/10 mb-2.5">
-            <label className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</label>
+            <label htmlFor={""} className="text-black/40 dark:text-white/40 text-xs pb-1	leading-[18px]">Short description</label>
             <div contentEditable="true" className="text-blacklight dark:text-white text-sm outline-none">
               Organize your thoughts with an outline. Here’s the outlining strategy I use. I promise it works like a
               charm. Not only will it make writing your blog post easier, it’ll help you make your message.
@@ -102,7 +104,7 @@ const BrandAssets = () => {
           <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-x-[15px] gap-y-2.5 ">
             {Social.map((items , index) => (
               <div className="border rounded-lg border-black/10 dark:border-white/10 px-5 py-4" key={index}>
-                <label className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">{items.name}</label>
+                <label htmlFor={""} className="text-xs	leading-[18px] pb-1 text-black/40 dark:text-white/40">{items.name}</label>
                 <div contenteditable="true" className="text-blacklight text-sm dark:text-white outline-none">{items.text}</div>
               </div>
             ))}

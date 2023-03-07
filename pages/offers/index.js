@@ -11,7 +11,7 @@ import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Link from "next/link";
 import CheckBox from "@/components/ui/CheckBox";
-import Star from "@/assets/images/icon/Star.svg";
+import Palette from "@/assets/images/icon/palette.svg";
 import Layout from "@/layouts/layout";
 import AmountOffer from "@/components/offers/Amountoffer";
 import Dropdown from "@/components/ui/Dropdown";
@@ -274,7 +274,7 @@ const Offers = () => {
         ""
       )}
       <PopupStyle
-        icon={Star}
+        icon={Palette}
         color={"purple"}
         title={"5 Tips to increase your orders and customers"}
         description={"Learn how to set up your business online step by step and sell effectively."}

@@ -198,7 +198,6 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
                       Becho.io Panel
                     </Link>
                     <BreadCrumb />
-
                     {/* <span className="px-2">/</span>
                     <Link href="" className="text-sm text-blacklight dark:text-white">
                       <span className={`${location === navi.href ? " " : "hidden"}`}>

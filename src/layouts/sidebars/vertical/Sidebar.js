@@ -26,6 +26,7 @@ import LogOut from "@/assets/images/icon/logout.svg";
 import Chats from "@/assets/images/icon/chats.svg";
 import NoteBook from "@/assets/images/icon/notebook.svg";
 import Blog from "@/assets/images/icon/blog.svg";
+import { useState } from "react";
 
 const navigation = [
   {
@@ -111,25 +112,28 @@ const StoreSettings = [
 const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
   let curl = useRouter();
   const location = curl.pathname;
-
+  // const [ dropdownOpen , ser ]
+const [dropdownOpen, setDropdownOpen] = useState(false)
   return (
     <>
       <div className="h-screen flex justify-between flex-col">
         <div className="py-5 px-4 relative z-50">
           <div className="flex items-center">
-            <Dropdown
-              itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0"
+            <Dropdown itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 !w-[200px]"
               button={
-                <div className="flex gap-[6px] pl-2 pt-1 items-center">
+                <div className={`flex gap-[6px] pl-[3px] pt-1 ${dropdownOpen ? "" : "items-center"}`}  onClick={()=> setDropdownOpen(!dropdownOpen)}>
+                  <div className="w-[30px] h-[30px]">
                   <Image src={Userid} alt="" />
-                  <div>
-                    <p className="text-left text-sm font-semibold">Kathryn Murphy</p>
-                    <Link href={"#0"} className="text-[9px] leading-[18px]">
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="text-left text-sm font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</p>
+                    <Link href={""} className={`text-[9px] text-black/80 dark:text-white/80 ${dropdownOpen ? "block" : "hidden "}`}>
                       KathrynMurphy5286@email.com
-                    </Link>
+                    </Link> 
                   </div>
                 </div>
               }
+              // opacity-100 opacity-0
               dropdownitem={[
                 { id: 1, title: "Manage account", link: "/", icon: User },
                 { id: 2, title: "Logout", link: "/", icon: LogOut },
@@ -166,7 +170,7 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
               </div>
             </div>
             <div className="mt-8">
-              <h4 className="text-black/40 dark:text-white/40 mb-2">Store Settings</h4>
+              <h4 className="text-black/40 dark:text-white/40 mb-2 pl-3">Store Settings</h4>
               <div className="list-none flex-col flex">
                 {StoreSettings.map((navi, index) => (
                   <div key={index}>

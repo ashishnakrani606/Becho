@@ -40,13 +40,21 @@ const SelectPlanTable = ({ tableData, handleChange, selected }) => {
               {orderRowData.payment}
             </h3>
           </td>
-          <td className="px-4 py-[11px] whitespace-nowrap">
+          <td className="px-3 pr-0 py-2.5 whitespace-nowrap">
+            <h3
+              className={`rounded-2xl leading-normal relative text-black/80 dark:text-white/80 inline-block px-[6px] ${orderRowData.dots} ${orderRowData.orderStatusData}`}
+            >
+             {orderRowData.orderStatus}
+            </h3>
+          </td>
+          {/* <td className="px-4 py-[11px] whitespace-nowrap">
             <h3
               className={`text-black-80 relative inline-block text-black/80 dark:white/80 dark:text-white ${orderRowData.dots} ${orderRowData.orderStatusData}`}
             >
+             
               {orderRowData.orderStatus}
             </h3>
-          </td>
+          </td> */}
           <td className="px-3 pr-[10px] py-[11px] whitespace-nowrap">{orderRowData.items}</td>
           <td className="px-3 py-[11px] max-w-[210px] whitespace-nowrap">{orderRowData.deliveryMethod}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">

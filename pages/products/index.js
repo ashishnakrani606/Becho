@@ -16,12 +16,11 @@ import Fileico from "@/assets/images/icon/file-icon.svg";
 import closeico from "@/assets/images/icon/close-circle.svg";
 import Link from "next/link";
 import Filechoose from "@/assets/images/icon/filechoose.svg";
-import Star from "@/assets/images/icon/Star.svg";
+import Sunicon from "@/assets/images/icon/Sunicon.svg";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png";
 import Dropdown from "@/components/ui/Dropdown";
-import Dots from "@/assets/images/icon/Union.svg";
 import Modal from "@/components/ui/Modal";
 import PopupStyle from "@/components/ui/PopupStyle";
 const TableRow = [
@@ -187,8 +186,8 @@ const products = () => {
                   <Modal open={openmodel} setOpen={setOpenmodel}>
                     <div className="px-2 text-center">
                       <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">
-                        Exported successfully
-                      </h2>
+                            Exported successfully
+                          </h2>
                       <p className="text-black/40 dark:text-white/40 text-center md:pt-8 pt-5">
                         Selected rows have been exported in the downloaded file.
                       </p>
@@ -497,7 +496,7 @@ const products = () => {
         ""
       )}
       <PopupStyle
-        icon={Star}
+        icon={Sunicon}
         color={"yellow"}
         title={"5 Tips to increase your orders and customers"}
         description={"Learn how to set up your business online step by step and sell effectively."}

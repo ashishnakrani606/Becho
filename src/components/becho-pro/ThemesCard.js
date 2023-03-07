@@ -23,7 +23,7 @@ const ThemesCard = ({ children, badgeColor, badgesName, title, description, acti
         {children}
         {activated ? (
           <Link
-            href={"#0"}
+            href={""}
             className="leading-5 flex items-center px-2 py-[2px] bg-primary-greenb text-white rounded-lg"
           >
             Activated
@@ -33,7 +33,7 @@ const ThemesCard = ({ children, badgeColor, badgesName, title, description, acti
           ""
         )}
         {activate ? (
-          <Link href={"#0"} className="leading-5 flex items-center px-2 py-[2px] bg-blacklight text-white rounded-lg">
+          <Link href={""} className="leading-5 flex items-center px-2 py-[2px] bg-blacklight text-white rounded-lg">
             Activate
             <Image src={ArrowLineRight} className="ml-1" alt=""/>
           </Link>
