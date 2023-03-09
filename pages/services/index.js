@@ -13,7 +13,7 @@ import Layout from "@/layouts/layout";
 import ServicesTable  from "@/components/services/servicestable";
 import Dropdown from "@/components/ui/Dropdown";
 import Client1 from "@/assets/images/img/client1.png"; 
-import Client2 from "@/assets/images/img/Client2.png"; 
+import Client2 from "@/assets/images/img/client2.png"; 
 import Client3 from "@/assets/images/img/client3.png"; 
 
 const TableRow = [

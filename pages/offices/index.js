@@ -5,7 +5,7 @@ import Searchicon from "@/assets/images/icon/searchico.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Button from "@/components/ui/Button";
 import Pagetitle from "@/components/ui/Pagetitle";
-import OfficeTabel from "@/components/offices/officetabel";
+import OfficeTabel from "@/components/Offices/officetabel";
 import Dots from "@/assets/images/icon/Union.svg";
 import Image from "next/image";
 import Link from "next/link";
