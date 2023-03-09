@@ -18,7 +18,7 @@ const StoreSettings = [
   },
   {
     title: "Payment Gateways",
-    href: "/payment-gatewaysrs",
+    href: "/payment-gateways",
   },
   {
     title: "Shipping & Delivery",

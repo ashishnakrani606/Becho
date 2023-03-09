@@ -77,7 +77,7 @@ const products = () => {
       <div className="flex flex-wrap justify-between gap-y-5 mb-4">
         <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:px-6 p-5 sm:px-5 px-3">
           <InputContent title={"title"} titlestyle={"!mb-1"}>
-            <input type="text" name="" id="message" defaultValue="Antique Drawers" className="bg-transparent" />
+            <input type="text" name="" id="message" defaultValue="Antique Drawers" className="bg-transparent w-full"/>
           </InputContent>
             <InputContent title={"Description"} titlestyle={"!mb-1"}>
               <textarea
@@ -122,11 +122,10 @@ const products = () => {
             <p className="mb-[6px] text-black/40 dark:text-white/40">Product type (for shipping)</p>
             <div className="grid justify-center product-type-radio">
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
-                  <label
-                    htmlFor="inlineRadio1"
+                <div className="mb-[0.125rem] sm:inline-block min-h-[1.5rem]">
+                  <div
                     onClick={() => radiioBtnHendler()}
-                    className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
+                    className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative  w-full ${
                       radiioBtn ? "dark:border-secondary-purpleb " : "border-black/10"
                     }`}
                   >
@@ -171,13 +170,13 @@ const products = () => {
                     >
                       Require customers to enter shipping details at checkout.
                     </p>
-                  </label>
+                  </div>
                 </div>
-                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
+                <div className="mb-[0.125rem] sm:inline-block min-h-[1.5rem]">
                   <label
                     onClick={() => radiioBtnTwoHendler()}
                     htmlFor="inlineRadioOptions"
-                    className={`cursor-pointer bg-white dark:bg-black/40  border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
+                    className={`cursor-pointer bg-white dark:bg-black/40  border border-black/10 rounded-lg py-6 px-5 mb-3 relative w-full ${
                       radiioBtnTwo ? "dark:border-secondary-purpleb" : "border-black/10 "
                     }`}
                   >

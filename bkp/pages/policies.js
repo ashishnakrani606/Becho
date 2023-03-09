@@ -50,7 +50,7 @@ const Policies = () => {
           title={"Get help writing your policies."}
           description={"Read our detailed piece on how to write your store’s policies."}
         >
-          <Button color={"lightgrey"} name={"Details"} className={"whitespace-nowrap hover:bg-lightgrey-hover"} secondary={"true"} />
+          <Button color="lightgrey" name={"Details"} className={"whitespace-nowrap hover:bg-lightgrey-hover"} secondary={"true"} />
         </SetupUpdate>
       </div>
     </Layout>

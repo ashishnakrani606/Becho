@@ -65,7 +65,7 @@ const Customers = () => {
               name=""
               defaultValue={""}
               placeholder="Email"
-              className="dark:bg-transparent dark:text-white dark:placeholder:text-white/20  placeholder:text-black/20"
+              className="dark:bg-transparent dark:text-white dark:placeholder:text-white/20 placeholder:text-black/20 w-full"
             />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">

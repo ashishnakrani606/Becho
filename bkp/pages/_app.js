@@ -2,7 +2,6 @@ import "tailwindcss/tailwind.css";
 import FullLayout from "@/layouts/FullLayout";
 import Head from "next/head";
 import "@/styles/style.scss";
-import "@/styles/custom.css";
 import { ThemeProvider } from "next-themes";
 
 function App({ Component }) {

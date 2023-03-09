@@ -120,7 +120,7 @@ export default function DashboardTablebox() {
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"
-              itemsclass="w-[240px] p-2 divide-y-0"
+              itemsclass="w-[200px] p-2 divide-y-0"
               button={
                 <div className="flex gap-2 items-center py-3 px-2 justify-end">
                   <Image src={Dots} alt="" className="dark:invert" />

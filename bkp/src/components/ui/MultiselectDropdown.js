@@ -1,19 +1,24 @@
 import React from "react";
 import Multiselect from "multiselect-react-dropdown";
 import CloseIcon from "@/assets/images/icon/closebtn.svg";
+import RoundClose from "@/assets/images/icon/closeround.svg";
 import Image from "next/image";
 import selecticonarrow from "@/assets/images/icon/selecticon.svg";
 
-const MultiselectDropdown = ({ options, title, selectedValues, image }) => {
+const MultiselectDropdown = ({ options, title, selectedValues, image, roundClose, className }) => {
   return (
     <>
-      <div className="relative multiselectitem">
+      <div className={`relative multiselectitem ${className}`}>
         <Multiselect
           customCloseIcon={
-            <>
-              <Image src={CloseIcon} alt="" className="" />
+            <>            
+              {roundClose ?
+                <Image src={RoundClose} alt="" className="" />
+                :
+                <Image src={CloseIcon} alt="" className="" />
+              }
             </>
-          }
+          }          
           title={title}
           className=""
           displayValue="key"

@@ -11,9 +11,11 @@ import Threedots from "@/assets/images/icon/Dots-three-outline.svg";
 import ArrowLineLeft from "@/assets/images/icon/ArrowLineLeft.svg";
 import Link from "next/link";
 import CheckBox from "@/components/ui/CheckBox";
+import Palette from "@/assets/images/icon/palette.svg";
 import Layout from "@/layouts/layout";
 import AmountOffer from "@/components/offers/Amountoffer";
 import Dropdown from "@/components/ui/Dropdown";
+import PopupStyle from "@/components/ui/PopupStyle";
 const TableRow = [
   {
     id: 1,
@@ -134,7 +136,7 @@ const Offers = () => {
                       />
                     <Dropdown
                       className="left-0"
-                      itemsclass="w-[240px] left-0 p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t"
+                      itemsclass="w-[200px] left-0 p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t"
                       button={
                         <div className="flex  items-center w-7 h-7 p-1 justify-center hover:bg-black/5 hover:dark:bg-white/5 cursor-pointer rounded-lg transition-all duration-300">
                           <Image src={Threedots} alt="" className="dark:invert" />
@@ -271,6 +273,13 @@ const Offers = () => {
       ) : (
         ""
       )}
+      <PopupStyle
+        icon={Palette}
+        color={"purple"}
+        title={"5 Tips to increase your orders and customers"}
+        description={"Learn how to set up your business online step by step and sell effectively."}
+        className={"w-full max-w-[280px] mx-auto"}
+      />
     </Layout>
   );
 };

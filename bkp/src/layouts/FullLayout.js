@@ -35,7 +35,7 @@ const FullLayout = ({ children }) => {
         {/******** Sidebar **********/}
         <div
           className={`lgm:relative fixed lgm:w-[212px] bg-white dark:bg-blacklight border-r border-black/10 dark:border-white/10 lgm:h-screen h-full overflow-auto z-50 custom-scrollbar duration-300 transition-all ${
-            open ? "lgm:ml-[-212px]" : "lgm:ml-0 -ml-[212px] showSidebar"
+            open ? "lgm:ml-[-212px]" : "lgm:ml-0 -ml-[253px] showSidebar"
           }`}
         >
           <Sidebar showMobilemenu={() => showMobilemenu()} showMobile={() => showMobile()} />
@@ -62,7 +62,7 @@ const FullLayout = ({ children }) => {
           >
             <RightSidebar showMobilesidebar={() => showMobilesidebar()} />
           </div>
-        </div>        
+        </div>          
       </div>
     </main>
   );

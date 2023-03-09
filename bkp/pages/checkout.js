@@ -47,7 +47,7 @@ const checkout = () => {
                 size="small"
                 name={"Discard"}
                 secondary={"true"}
-                className={"leading-[18px] text-xs !px-2 !py-[5px] hover:bg-gray-hover"}
+                className={"leading-[18px] text-xs !px-2 !py-[5px] "}
               ></Button>
               <Button
                 color="blacklight"
@@ -92,7 +92,7 @@ const checkout = () => {
                 size="small"
                 name={"Discard"}
                 secondary={"true"}
-                className={"leading-[18px] text-xs !px-2 !py-[5px] hover:bg-gray-hover"}
+                className={"leading-[18px] text-xs !px-2 !py-[5px]"}
               ></Button>
               <Button
                 color="blacklight"

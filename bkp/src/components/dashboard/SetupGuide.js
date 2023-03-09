@@ -49,7 +49,7 @@ const SetupGuide = ({ setOpenDashboard }) => {
               <h3 className="font-semibold mb-[6px] text-black">Add brand assets</h3>
               <p className="text-xs text-black">
                 Boost your brand with a logo and other assets.
-                <Link href={"#0"} className={"text-[#2F80ED]"}>
+                <Link href={""} className={"text-[#2F80ED]"}>
                   {" "}
                   Learn more about branding.
                 </Link>
@@ -86,8 +86,8 @@ const SetupGuide = ({ setOpenDashboard }) => {
                   className="!text-xs font-semibold !leading-[18px] !py-1 active-effect"
                   onClick={firstProductHandler}
                 />
-                <Button color="grey" name={"Import"} size={"small"} className="!text-xs font-semibold ml-5 px-2.5 active-effect hover:bg-[#dbe6f5]" />
-              </div>
+                <Button color="grey" name={"Import"} size={"small"} className={`!text-xs font-semibold ml-5 px-2.5 active-effect hover:dark:text-black hover:!bg-[#ccdef1]`} />     
+                </div>
               <Image className={`absolute right-4 bottom-3 opacity-10 dark:opacity-10 `} src={Subtract} alt="" />
             </div>
           </div>

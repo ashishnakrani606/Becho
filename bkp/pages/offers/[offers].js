@@ -7,7 +7,7 @@ import InputContent from "@/components/ui/InputContent";
 import VarientDropdown from "@/components/ui/SelectOption";
 import CheckBox from "@/components/ui/CheckBox";
 import UnsavedChanges from "@/components/ui/UnsavedChanges";
-import DAtePicker from "@/components/ui/DatePicker";
+import DateSelect from "@/components/ui/DateSelect";
 import Layout from "@/layouts/layout";
 
 const offers = () => {
@@ -82,7 +82,7 @@ const offers = () => {
               </div>
             </InputContent>
             <InputContent title={"Discount Code"}>
-              <input type="text" name="" defaultValue="EKHKSS3S266H" className="bg-transparent" />
+              <input type="text" name="" defaultValue="EKHKSS3S266H" className="bg-transparent w-full" />
             </InputContent>
             <InputContent title={"Value Type"}>
               <div className="flex md:items-center items-start sm:flex-nowrap flex-wrap gap-1 sm:gap-5">
@@ -101,7 +101,7 @@ const offers = () => {
               </div>
             </InputContent>
             <InputContent title={"Percentage %"}>
-              <input type="number" name="" defaultValue="40" className="bg-transparent" />
+              <input type="number" name="" defaultValue="40" className="bg-transparent w-full" />
             </InputContent>
             <InputContent>
               <VarientDropdown
@@ -134,10 +134,10 @@ const offers = () => {
               />
             </InputContent>
             <InputContent title={"Start date"} titlestyle={"mb-1"}>
-              <DAtePicker placeholder={"Pick a date"}></DAtePicker>
+              <DateSelect placeholder={"Pick a date"}></DateSelect>
             </InputContent>
             <InputContent title={"End date (optional)"} titlestyle={"!mb-1"}>
-              <DAtePicker placeholder={"Pick a date"}></DAtePicker>
+              <DateSelect placeholder={"Pick a date"}></DateSelect>
             </InputContent>
             <div className="border-y border-black/5 dark:border-white/5 py-[18px] flex justify-end items-center">
               <Button

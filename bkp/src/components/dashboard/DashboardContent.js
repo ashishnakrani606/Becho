@@ -13,7 +13,7 @@ const DashboardContent = () => {
     <>
       {/* *********Dashboard sec Start*********** */}
       <Layout container>
-        <div className="md:px-3">
+        <div className="">
           <div className="flex items-center text-blacklight dark:text-white justify-between">
             <h3 className="font-semibold">Dashboard</h3>
             <Select
@@ -25,12 +25,12 @@ const DashboardContent = () => {
               ]}
             />
           </div>
-          <div className="lg:grid grid-rows-2 grid-cols-4 grid-flow-col lg:gap-x-7 gap-x-3 gap-y-8 mt-5">
+          <div className="lg:grid grid-rows-2 grid-cols-4 grid-flow-col lg:gap-x-4 gap-x-3 gap-y-8 mt-5">
             <Dashboardbox />
-            <div className="row-span-2 col-span-2 lg:mt-0 mt-7 max-w-[432px] mx-auto">
+            <div className="row-span-2 col-span-2 lg:mt-0 mt-7 xl:max-w-[432px] max-w-[432px] mx-auto ">
               <div className="lg:p-7 lg:pl-6 lg:pr-4 p-4 bg-primary-light dark:bg-white font-semibold rounded-2xl lg:h-full lg:flex">
                 <div className="flex pt-3 gap-8 sm:flex-nowrap flex-wrap">
-                  <Image src={Brand} alt="" className="sm:w-auto mx-auto lg:w-1/2" />
+                  <Image src={Brand} alt="" className="sm:w-auto mx-auto lg:w-[42%]" />
                   <div className="gap-[6px] xl:pt-6 pt-2 w-full">
                     <h2 className="text-sm font-semibold text-blacklight">Becho.io Learn</h2>
                     <p className="text-xs font-normal pt-1 text-blacklight">

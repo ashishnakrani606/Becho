@@ -38,17 +38,17 @@ export default function Dashboardbox() {
   return (
     <>
       <div className="lg:col-span-2 lg:row-span-2">
-        <div className="grid grid-cols-2 sm:gap-x-7 gap-2 md:gap-y-8 gap-y-5 h-full">
+        <div className="grid grid-cols-2 sm:gap-x-7 gap-2 lg:!gap-2 lg:gap-y-3  md:gap-y-8 gap-y-5 h-full">
           {ProductData.map((dashboardData, index) => (
             <div
               key={index}
-              className={`xl:p-6 p-4 px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgColor}`}
+              className={`xl:p-6 p-4 lg:px-2  px-3 bg-primary-light font-semibold rounded-2xl text-blacklight xl:max-w-[202px] w-full ${dashboardData.bgColor}`}
             >
               <h3 className="md:text-sm text-xs font-semibold">{dashboardData.title}</h3>
               <div
-                className={`flex pt-3 items-center 2xl:gap-[26px] xl:gap-2 sm:gap-3 gap-1 justify-between lg:justify-start ${dashboardData.boxcontain}`}
+                className={`flex pt-3 items-center 2xl:gap-[26px] xl:gap-2 lg:gap-[6px] sm:gap-3 gap-1 justify-between lg:justify-start ${dashboardData.boxcontain}`}
               >
-                <span className={`md:text-2xl sm:text-lg text-sm ${dashboardData.counttext}`}>
+                <span className={`2xl:text-2xl md:text-xl  sm:text-lg text-sm ${dashboardData.counttext}`}>
                   {dashboardData.count}
                 </span>
                 <div className="flex gap-[6px]">
