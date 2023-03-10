@@ -11,24 +11,39 @@ import Button from "@/components/ui/Button";
 
 const navigation = [
   {
-    title: "New online lead received",
-    time: "Today, 1:23 pm",
+    title: "New order #CM9808 received",
+    time: "Today, 2:34 pm",
     icon: Orderreceive,
   },
   {
-    title: "New walk-in lead received",
+    title: "New customer, Saumil Kohli, registered",
     time: "Today, 1:23 pm",
     icon: Customerico,
   },
   {
-    title: "Invoice unpaid by client - Ripudaman - Office 12",
-    time: "Yesterday",
+    title: "Order cancelled by customer",
+    time: "Today, 10:16 am",
     icon: Cancleicon,
   },
   {
-    title: "Electricity bill to be paid today",
+    title: "Reached new milestone of 1000 orders",
     time: "Yesterday",
     icon: Milistone,
+  },
+  {
+    title: "Reached new milestone of 100 customers",
+    time: "Yesterday",
+    icon: Milistone,
+  },
+  {
+    title: "New theme update available",
+    time: "Yesterday 12:39 AM",
+    icon: Update,
+  },
+  {
+    title: "New order #CM9804 received",
+    time: "Yesterday",
+    icon: Orderreceive,
   },
 ];
 

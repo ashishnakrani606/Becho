@@ -26,6 +26,7 @@ export default function Dashboard(props) {
                 </svg>
               </span>
             </Listbox.Button>
+
             <Transition
               show={open}
               as={Fragment}
@@ -33,7 +34,7 @@ export default function Dashboard(props) {
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <Listbox.Options className="absolute z-10 mt-1 sm:w-auto w-[95px] max-h-60 right-0 rounded-md bg-white dark:bg-black py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+              <Listbox.Options className={`absolute z-10 mt-1 max-h-60 w-fit overflow-auto rounded-md bg-white dark:bg-black py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm`}>
                 {props.options.map((item) => (
                   <Listbox.Option
                     key={item.id}

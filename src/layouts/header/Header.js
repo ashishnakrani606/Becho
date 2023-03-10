@@ -17,6 +17,7 @@ import customers from "@/assets/images/icon/customers.svg";
 import StoreDetails from "@/assets/images/icon/store-details.svg";
 import Permissions from "@/assets/images/icon/permissions.svg";
 import Checkout from "@/assets/images/icon/checkout.svg";
+import rupee from "@/assets/images/icon/rupee.svg";
 import shipping from "@/assets/images/icon/shipping.svg";
 import Percentage from "@/assets/images/icon/percentage.svg";
 import Brandassets from "@/assets/images/icon/brand-assets.svg";
@@ -25,119 +26,125 @@ import SEO from "@/assets/images/icon/SEO.svg";
 import Policies from "@/assets/images/icon/Policies.svg";
 import Bechopro from "@/assets/images/icon/Bechopro.svg";
 import BreadCrumb from "@/components/ui/BreadCrumb";
-import BookOpen from "@/assets/images/icon/BookOpen.svg";
-import Rupee from "@/assets/images/icon/rupee.svg";
-import Notebook from "@/assets/images/icon/notebook.svg";
-import UsersThree from "@/assets/images/icon/usersThree.svg";
-import IdentificationCard from "@/assets/images/icon/IdentificationCard.svg";
-import IdentificationBadge from "@/assets/images/icon/IdentificationBadge.svg";
-import ListBullets from "@/assets/images/icon/ListBullets.svg";
 
 const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
-const navigation = [
-  {
-    title: "Dashboard",
-    href: "/",
-    icon: dashboard,
-  },
-  {
-    title: "Rent Calendar",
-    href: "/rent-calendar",
-    icon: Rupee,
-  },
-  {
-    title: "invoices",
-    href: "/invoices",
-    icon: Notebook,
-  },
-  {
-    title: "invoices Details",
-    href: "/invoices/[invoices]",
-    icon: Notebook,
-  },
-  {
-    title: "clients",
-    href: "/clients",
-    icon: UsersThree,
-  },
-  {
-    title: "clients Details",
-    href: "/clients/[clients]",
-    icon: UsersThree,
-  },
-  {
-    title: "Online Leads",
-    href: "/online-leads",
-    icon: IdentificationCard,
-  },
-  {
-    title: "Walk in Leads",
-    href: "/walk-in-leads",
-    icon: IdentificationBadge,
-  },
-  {
-    title: "Expenses",
-    href: "/expenses",
-    icon: BookOpen,
-  },    
-  {
-    title: "offices ",
-    href: "/offices",
-    icon: StoreDetails,
-  },
-  {
-    title: "offices",
-    href: "/offices/[offices]",
-    icon: StoreDetails,
-  },
-  {
-    title: "Services ",
-    href: "/services",
-    icon: ListBullets,
-  },
-  {
-    title: "Services",
-    href: "/services/[services]",
-    icon: ListBullets,
-  },
-  {
-    title: "Payment Gateways",
-    href: "/payment-gateways",
-    icon: Rupee,
-  }, 
-  {
-    title: "Taxes",
-    href: "/taxes",
-    icon: Percentage,
-  },
-  {
-    title: "Email Settings",
-    href: "/email-Settings",
-    icon: Email,
-  },  
-  {
-    title: "Agreements",
-    href: "/agreements",
-    icon: SEO,
-  },
-  {
-    title: "Building Staff",
-    href: "/building-staff",
-    icon: Policies,
-  },
-];
-  let curl = useRouter();
-  const location = curl.pathname;
   const { systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  const [isopen, setisopen] = React.useState(false);  
+
   let currentLink = '';
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const navigation = [
+    {
+      title: "Dashboard",
+      href: "/",
+      icon: dashboard,
+    },
+    {
+      title: "Orders",
+      href: "/orders",
+      icon: orders,
+    },
+    {
+      title: "Orders Details",
+      href: "/orders/[orders]",
+      icon: orders,
+    },
+    {
+      title: "Products",
+      href: "/products",
+      icon: products,
+    },
+    {
+      title: "Products / Detail",
+      href: "/products/[products]",
+      icon: products,
+    },
+    {
+      title: "Offers",
+      href: "/offers",
+      icon: offers,
+    },
+    {
+      title: "Offers / Detail",
+      href: "/offers/[offers]",
+      icon: offers,
+    },
+    {
+      title: "Customers",
+      href: "/customers",
+      icon: customers,
+    },
+    {
+      title: "Customers Detail",
+      href: "/customers/[customers]",
+      icon: customers,
+    },
+    {
+      title: "Store Details",
+      href: "/store-details",
+      icon: StoreDetails,
+    },
+    {
+      title: "Permissions",
+      href: "/permissions",
+      icon: Permissions,
+    },
+    {
+      title: "Checkout",
+      href: "/checkout",
+      icon: Checkout,
+    },
+    {
+      title: "Payment Gateways",
+      href: "/payment-gateways",
+      icon: rupee,
+    },
+    {
+      title: "Shipping & Delivery",
+      href: "/shipping-delivery",
+      icon: shipping,
+    },
+    {
+      title: "Taxes",
+      href: "/taxes",
+      icon: Percentage,
+    },
+    {
+      title: "Brand Assets",
+      href: "/brand-assets",
+      icon: Brandassets,
+    },
+    {
+      title: "Email Settings",
+      href: "/email-settings",
+      icon: Email,
+    },
+    {
+      title: "SEO Settings",
+      href: "/seo-settings",
+      icon: SEO,
+    },
+    {
+      title: "Policies",
+      href: "/policies",
+      icon: Policies,
+    },
+    {
+      title: "Bechopro",
+      href: "/becho-pro",
+      icon: Bechopro,
+    },
+  ];
+
   const renderThemeChanger = () => {
     if (!mounted) return null;
+
     const currentTheme = theme === "system" ? systemTheme : theme;
+
     if (currentTheme === "dark") {
       return (
         <span role="button" onClick={() => setTheme("light")}>
@@ -152,9 +159,14 @@ const navigation = [
       );
     }
   };
+  const [isopen, setisopen] = React.useState(false);  
+ 
   const Handletoggle = () => {
     setisopen(!isopen);     
-  };
+  };  
+
+  let curl = useRouter();
+  const location = curl.pathname;
   return (
     <>
       <div className="border-b border-black/10 dark:border-white/10 relative z-10">
@@ -163,7 +175,7 @@ const navigation = [
             <Image src={Menuicon} alt="" className="dark:invert" />
           </button>
           <div isopen={"false"} className={`dashbord-img ${isopen ? "md:block" : "md:block hidden"}`}>
-            <div className="flex md:static absolute md:shadow-none  bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
+          <div className="flex md:static absolute md:shadow-none shadow-layer-shadow dark:shadow-black dark:shadow-sm dark:md:shadow-none bg-white dark:bg-blacklight w-full left-0 top-[61px] items-center md:px-0 px-3 md:py-0 py-5 gap-3">
               <button color="primary" className="lgm:hidden md:block hidden" onClick={showMobmenu}>
                 <Image src={Menuicon} alt="" className="w-7 dark:invert" />
               </button>
@@ -183,9 +195,15 @@ const navigation = [
                   )}
                   <div className="text-black/40 dark:text-white/40">
                     <Link href="/" className="text-sm hover:text-black/80 dark:hover:text-white/80">
-                    BiggBang Panel
+                      Becho.io Panel
                     </Link>
                     <BreadCrumb />
+                    {/* <span className="px-2">/</span>
+                    <Link href="" className="text-sm text-blacklight dark:text-white">
+                      <span className={`${location === navi.href ? " " : "hidden"}`}>
+                        <span className="ml-1 d-inline-block font-normal">{navi.title}</span>
+                      </span>
+                    </Link> */}
                   </div>
                 </div>
             </div>

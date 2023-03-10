@@ -16,10 +16,10 @@ const Alert = ({ title, description, color, className, children }) => {
           {color == "red" ? <Image src={MailIcon} alt="" className={` mt-[5px]`}  /> : "" }
           {color == "primarypurple" ? <Image src={ShieldIcon} alt="" className={` mt-[5px] dark:invert`} /> : "" }
           <div className="ml-2">
-            <h4 className={`text-xs font-semibold leading-normal text-secondary-red pt-1 ${
+            <h4 className={`text-xs font-semibold leading-[18px] text-secondary-red pt-1 ${
               color == "primarypurple" ? "!text-blacklight dark:!text-white text-sm font-normal" : ""
             }`}>{title}</h4>
-            <p className="text-xs leading-normal text-black/40 dark:text-white/40">{description}</p>
+            <p className="text-xs leading-[18px] text-black/40 dark:text-white/40">{description}</p>
           </div>
         </div>
         <div>{children}</div>

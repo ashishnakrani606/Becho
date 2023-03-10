@@ -5,7 +5,7 @@ import Image from "next/image";
 import AttentionRed from "@/assets/images/icon/attentionred.svg";
 import ShieldCheck from "@/assets/images/icon/ShieldCheck.svg";
 
-const Alert = ({ title, description, color, className, deatil ,alertStyle ,deatilStyle }) => {
+const Alert = ({ title, description, color, className, deatil ,alertStyle }) => {
   return (
     <>
       <div
@@ -24,9 +24,9 @@ const Alert = ({ title, description, color, className, deatil ,alertStyle ,deati
         {color == "reddark" ? <Image src={AttentionRed} alt="" className="mt-[5px]" /> : ""}
         {color == "green" ? <Image src={WarningGreen} alt="" className="mt-[3px]" /> : ""}
         <div className="ml-2">
-          <h4 className={`text-xs font-semibold leading-normal ${className}`}>{title}</h4>
-          <p className="text-xs leading-normal text-black/80 dark:text-white/80">
-            {description} <span className={`text-secondary-red ${deatilStyle}`}> {deatil}</span>
+          <h4 className={`text-xs font-semibold leading-[18px] ${className}`}>{title}</h4>
+          <p className="text-xs leading-[18px] text-black/80 dark:text-white/80">
+            {description} <span className="text-secondary-red"> {deatil}</span>
           </p>
         </div>
       </div>

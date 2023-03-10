@@ -35,7 +35,7 @@ export default function SidebarDropdown(props) {
                     "group flex gap-1 items-center px-2 py-2 text-sm "
                     )}
                     >
-                    {item.icon ? <Image src={item.icon} alt="" /> : ""}
+                    {item.icon ? <Image src={item.icon} alt="" className="dark:invert" /> : ""}
                     <span className="sm:whitespace-nowrap">
                       {item.title}
                     </span>
