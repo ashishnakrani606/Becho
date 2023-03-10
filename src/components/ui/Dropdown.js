@@ -40,7 +40,7 @@ export default function SidebarDropdown(props) {
                       {item.title}
                     </span>
                   </a> 
-                )}
+                )}          
               </Menu.Item>
             ))}
           </Menu.Items>

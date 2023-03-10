@@ -4,11 +4,11 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import Closebtn from "@/assets/images/icon/close-icon.svg";
 
-const Modal = ({ children, title, open, setOpen,className }) => {
-  const cancelButtonRef = useRef(null);
+const Modal = ({ children, title, open, setOpen, className }) => {
+  const cancelButtonRef = useRef(null); 
   return (
     <Transition.Root show={open}  as={Fragment}>
-      <Dialog as="div" className="fixed z-[999]" initialFocus={cancelButtonRef} onClose={setOpen} >
+      <Dialog as="div" className="fixed z-[999]" initialFocus={cancelButtonRef} onClose={setOpen}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -35,7 +35,6 @@ const Modal = ({ children, title, open, setOpen,className }) => {
               <Dialog.Panel className={`relative transform shadow-xl transition-all bg-primary-light dark:bg-blacklight p-6 rounded-2xl ${className}`}>
                 <button
                   ref={cancelButtonRef}
-                  // onClick={() => setOpen(false)}
                   className={`absolute bg-primary-light hidden dark:bg-blacklight p-[3px] right-[-12px] top-[-12px] rounded-xl border border-black/10 dark:border-white/10`}
                 >  
                   {/* <Image src={Closebtn} alt="" className="w-6 h-6 dark:invert" /> */}

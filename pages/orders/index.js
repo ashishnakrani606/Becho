@@ -239,7 +239,7 @@ const orders = () => {
                 <div>
 
                 </div>
-              ) : (<div><Button color={"green"} name={"Create order "} className="!py-[5px]" /></div>)}
+              ) : (<div><Button color={"green"} name={"Create Order"} className="!py-[5px]" /></div>)}
             </div>
             <div className="mb-8 Fvmt-5 ">
 

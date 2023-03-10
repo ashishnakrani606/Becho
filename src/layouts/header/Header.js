@@ -79,7 +79,7 @@ const Header = ({ showMobmenu, showsidebar, showDesktop }) => {
       icon: customers,
     },
     {
-      title: "Customers Detail",
+      title: "Customers",
       href: "/customers/[customers]",
       icon: customers,
     },

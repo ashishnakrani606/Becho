@@ -24,7 +24,7 @@ const Social = [
   },
   {
     name: "Youtube",
-    text: "pilani",
+    text: "Text",
   },
   {
     name: "TikTok",
@@ -32,7 +32,7 @@ const Social = [
   },
   {
     name: "Snapchat",
-    text: "pilani",
+    text: "Text",
   },
   {
     name: "Koo",
@@ -40,7 +40,7 @@ const Social = [
   },
   {
     name: "Pinterest",
-    text: "pilani",
+    text: "Text",
   },
 ];
 

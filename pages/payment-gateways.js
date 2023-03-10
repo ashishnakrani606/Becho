@@ -80,7 +80,7 @@ const PaymentGatewaysrs = () => {
           </div>
         </div>
         <div className="w-full bg-primary-light rounded-2xl mt-[18px] md:p-6 p-4 max-w-[568px] dark:bg-white/5 ">
-          <div className="flex justify-between mb-4">
+          <div className="flex justify-between mb-4 items-center">
           <h4 className="text-sm font-semibold ">Set up Cash on Delivery (COD)</h4>
           <Button
             name={"Edit"}

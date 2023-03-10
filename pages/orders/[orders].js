@@ -70,8 +70,8 @@ const orders = () => {
   const [customerData, setCustomerData] = useState(false);
 
   const [open, setOpen] = useState(false);
-  const [openrestock, setOpenrestock] = useState(false);
-
+  
+  const [openreStock, setOpenreStock] = useState(false);
   return (
     <Layout container>
       <PageHeader
@@ -85,7 +85,7 @@ const orders = () => {
           { color: "dot", name: "Fulfilled" },
         ]}
       >
-        <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button" onClick={() => setOpenrestock(true)}>
+        <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button" onClick={() => setOpenreStock(true)}>
           Restock
         </button>
         <button className="py-[5px] sm:px-2 px-[1px] sm:mr-2 text-xs" type="button">
@@ -458,7 +458,8 @@ const orders = () => {
           </div>
         </div>
       </div>
-      <Modal open={openrestock} setOpen={setOpenrestock}>
+      
+      <Modal open={openreStock} setOpen={open}>
         <div className="sm:p-2">
           <Image src={Restockicon} className={"mx-auto"} />
           <div className="text-center md:py-8 py-5 max-w-[672px] w-full">
@@ -468,7 +469,7 @@ const orders = () => {
           <div className="flex justify-center gap-4">
             <Button
               color="lightgrey"
-              onClick={() => setOpenrestock(false)}
+              onClick={() => setOpen(false)}
               secondary="true"
               name={"Cancel"}
               className={"text-sm sm:!py-[18px] !py-3 max-w-[232px] w-full font-semibold"}
@@ -486,7 +487,7 @@ const orders = () => {
           <p className="text-black/80  dark:text-white/80 font-semibold">Select customer</p>
           <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
             <MultiselectDropdown
-              className={"itemselect"}
+              className={"itemselect select-customer"}
               roundClose
               options={[
                 {
@@ -495,11 +496,11 @@ const orders = () => {
                 },
                 {
                   cat: "tag 2",
-                  key: "Kathryn Murphy",
+                  key: "Kathryn Murphy2",
                 },
                 {
                   cat: "tag 3",
-                  key: "Kathryn Murphy",
+                  key: "Kathryn Murphy3",
                 },
               ]}
               selectedValues={[

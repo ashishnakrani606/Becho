@@ -28,7 +28,7 @@ const ShippingDelivery = () => {
 
   const [learnMore, setLearnMore] = useState(false);
   const [open, setOpen] = useState(false);
-  const [opencustom, setOpencustom] = useState(false);
+  const [openreStock, setOpenreStock] = useState(false);
   const para =
     "Inform your customers of expected delivery dates by specifying a processing time of 2 business days or less. This processing period will be added with the shipping transit time to give a complete delivery estimate. Inform your customers complete delivery estimate. ";
 
@@ -65,7 +65,7 @@ const ShippingDelivery = () => {
               size={"small"}
               name={"Manage"}
               className={"!text-blacklight"}
-              onClick={() => setOpencustom(true)}
+              onClick={() => setOpenreStock(true)}
             ></Button>
           </div>
         </div>
@@ -86,6 +86,7 @@ const ShippingDelivery = () => {
         </p>
       </div>
       {/*********  Shipping & Delivery end ***********/}
+      {open &&
       <Modal open={open} setOpen={setOpen} className={"max-w-[544px] w-full mx-auto sm:px-6 px-3"}>
         <div className="sm:px-2">
           <div className="flex items-center justify-between md:pb-8 pb-5">
@@ -185,6 +186,7 @@ const ShippingDelivery = () => {
               color="lightgrey"
               secondary="true"
               name={"Cancel"}
+              onClick={() => setOpen(false)}
               className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
             ></Button>
             <Button
@@ -195,72 +197,142 @@ const ShippingDelivery = () => {
             ></Button>
           </div>
         </div>
-      </Modal>
+      </Modal>}
 
+      
+      {openreStock &&
+      <>
       {/* modal-2 */}
-      <Modal open={opencustom} setOpen={setOpencustom} className={"max-w-[544px] w-full mx-auto sm:px-6 px-3"}>
-        <div className="sm:px-2">
-          <div className="flex items-center justify-between md:pb-8 pb-5">
-            <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Add custom rate</h2>
-            <Image
-              src={closeico}
-              alt=""
-              onClick={() => setOpencustom(false)}
-              className={"cursor-pointer dark:invert"}
-            />
-          </div>
-          <p className="text-black/40 dark:text-white/40 text-sm pb-5">
-            Rate name (will be shown to customer at checkout)
-          </p>
-          <InputContent className={"px-4 py-[18px] mb-6"}>
-            <input type="text" name="" id="message" defaultValue="Title" className="bg-transparent w-full" />
-          </InputContent>
-          <>
-            <div>
-              <fieldset className="my-6">
-                <legend className="sr-only">Notification method</legend>
-                <div className="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
-                  <div className="flex items-center gap-8">
-                    <div className="flex items-center gap-2">
-                      <input
-                        name="notification-method"
-                        type="radio"
-                        value=""
-                        defaultChecked                        
-                        className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
-                        onClick={radiioBtnHandler}
-                      />
-                      <label htmlFor={""} className="block text-sm font-medium">
-                        Item weight
-                      </label>
+        <Modal open={openreStock} setOpen={setOpenreStock} className={"max-w-[544px] w-full mx-auto sm:px-6 px-3"}>
+          <div className="sm:px-2">
+            <div className="flex items-center justify-between md:pb-8 pb-5">
+              <h2 className="text-black/80 dark:text-white/80 font-semibold md:text-2xl text-lg">Add custom rate</h2>
+              <Image
+                src={closeico}
+                alt=""
+                onClick={() => setOpenreStock(false)}
+                className={"cursor-pointer dark:invert"}
+              />
+            </div>
+            <p className="text-black/40 dark:text-white/40 text-sm pb-5">
+              Rate name (will be shown to customer at checkout)
+            </p>
+            <InputContent className={"px-4 py-[18px] mb-6"}>
+              <input type="text" name="" id="message" defaultValue="Title" className="bg-transparent w-full" />
+            </InputContent>
+            <>
+              <div>
+                <fieldset className="my-6">
+                  <legend className="sr-only">Notification method</legend>
+                  <div className="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                    <div className="flex items-center gap-8">
+                      <div className="flex items-center gap-2">
+                        <input
+                          name="notification-method"
+                          type="radio"
+                          value=""
+                          defaultChecked                        
+                          className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
+                          onClick={radiioBtnHandler}
+                        />
+                        <label htmlFor={""} className="block text-sm font-medium">
+                          Item weight
+                        </label>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <input
+                          name="notification-method"
+                          type="radio"
+                          className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
+                          onClick={radiioBtnTwoHandler}
+                        />
+                        <label htmlFor={""} className="block text-sm font-medium">
+                          Order price
+                        </label>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <input
-                        name="notification-method"
-                        type="radio"
-                        className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
-                        onClick={radiioBtnTwoHandler}
+                    
+                  </div>
+                </fieldset>
+              </div>
+            </> 
+            {radiioBtn &&
+              <div>
+                <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">Price</h2>
+                <div className="border-[2px] border-black/10 dark:border-white/10 rounded-xl mb-6">
+                  <div className="flex justify-between p-4 items-center gap-1">
+                    <div className="flex gap-2 items-center">
+                      <span className="flex items-center">₹ 
+                        <input type="number" name="" defaultValue="250.00" className="sm:min-w-[55px] w-14 bg-transparent" />
+                    </span>
+                      <Badges color={"greenlight"} name={"domentic"} className={"py-[2px] px-2 rounded-md"} />
+                    </div>
+                    <div className="flex gap-2 items-center">
+                      <Image src={Usdrupee} alt="" />
+                      <VarientDropdown
+                        className={"!text-black/80 dark:!text-white/80 sm:pr-8 pr-5"}
+                        selectitem={[
+                          { id: 1, name: "INR" },
+                          { id: 2, name: "INR" },
+                          { id: 3, name: "INR" },
+                        ]}
                       />
-                      <label htmlFor={""} className="block text-sm font-medium">
-                        Order price
-                      </label>
                     </div>
                   </div>
-                  
+                  <div className="flex justify-between p-4 items-center border-t border-black/10 dark:border-white/10">
+                    <div className="flex gap-2 items-center">
+                      <span className="flex items-center">$ 
+                        <input type="number" name="" defaultValue="7.15" className="sm:min-w-[55px] w-9 bg-transparent" />
+                      </span>
+                      <Badges color={"purplelight"} name={"international"} className={"py-[2px] px-2 rounded-md"} />
+                    </div>
+                    <div className="flex gap-2 items-center">
+                      <Image src={Doller} alt="" />
+                      <VarientDropdown
+                        className={"!text-black/80 dark:!text-white/80 sm:pr-8 pr-5"}
+                        selectitem={[
+                          { id: 1, name: "USD" },
+                          { id: 2, name: "USD" },
+                          { id: 3, name: "USD" },
+                        ]}
+                      />
+                    </div>
+                  </div>
                 </div>
-              </fieldset>
-            </div>
-          </>
-          {radiioBtn ? (
+                <div className="flex items-center gap-4">
+                  <InputContent className={"px-4 py-[18px] relative"}>
+                    <input
+                      type="number"
+                      name=""
+                      id="message"
+                      defaultValue="5.01"
+                      className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
+                    />
+                    <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">KG</span>
+                  </InputContent>
+                  <InputContent className={"px-4 py-[18px] relative"}>
+                    <input
+                      type="number"
+                      name=""
+                      id="message"
+                      defaultValue="15.10"
+                      className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
+                    />
+                    <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">KG</span>
+                  </InputContent>
+                </div>
+              </div>}
+          
+            {radiioBtnTwo &&    
             <div>
-              <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">Price</h2>
+              <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">Domestic</h2>
               <div className="border-[2px] border-black/10 dark:border-white/10 rounded-xl mb-6">
                 <div className="flex justify-between p-4 items-center gap-1">
                   <div className="flex gap-2 items-center">
-                    <span className="flex items-center">₹ 
-                       <input type="number" name="" defaultValue="250.00" className="sm:min-w-[55px] w-14 bg-transparent" />
-                   </span>
-                    <Badges color={"greenlight"} name={"domentic"} className={"py-[2px] px-2 rounded-md"} />
+                      <span className="flex items-center">₹ 
+                        <input type="number" name="" defaultValue="250.00" className="sm:min-w-[54px] w-[45px] bg-transparent" />
+                      </span>
+                    <Badges color={"blue"} name={"shipping rate"} className={"py-[2px] px-2 rounded-md"} />
                   </div>
                   <div className="flex gap-2 items-center">
                     <Image src={Usdrupee} alt="" />
@@ -274,12 +346,38 @@ const ShippingDelivery = () => {
                     />
                   </div>
                 </div>
-                <div className="flex justify-between p-4 items-center border-t border-black/10 dark:border-white/10">
+              </div>
+              <h3 className="text-black/40 dark:text-white/40 text-sm font-semibold pb-6">Domestic Price range</h3>
+              <div className="flex items-center gap-4">
+                <InputContent className={"px-4 py-[18px] mb-8 relative"}>
+                  <input
+                    type="number"
+                    name=""
+                    id="message"
+                    defaultValue="1500.00"
+                    className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
+                  />
+                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">INR</span>
+                </InputContent>
+                <InputContent className={"px-4 py-[18px] mb-8 relative"}>
+                  <input
+                    type="number"
+                    name=""
+                    id="message"
+                    defaultValue="2500.50"
+                    className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
+                  />
+                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">INR</span>
+                </InputContent>
+              </div>
+              <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">International</h2>
+              <div className="border-[2px] border-black/10 dark:border-white/10 rounded-xl mb-6">
+                <div className="flex justify-between p-4 items-center gap-1">
                   <div className="flex gap-2 items-center">
-                    <span className="flex items-center">$ 
-                       <input type="number" name="" defaultValue="7.15" className="sm:min-w-[55px] w-9 bg-transparent" />
-                    </span>
-                    <Badges color={"purplelight"} name={"international"} className={"py-[2px] px-2 rounded-md"} />
+                  <span className="flex items-center">$ 
+                        <input type="number" name="" defaultValue="5.00" className="sm:min-w-[39px] w-[39px] bg-transparent" />
+                      </span>
+                    <Badges color={"blue"} name={"shipping rate"} className={"py-[2px] px-2 rounded-md"} />
                   </div>
                   <div className="flex gap-2 items-center">
                     <Image src={Doller} alt="" />
@@ -294,145 +392,51 @@ const ShippingDelivery = () => {
                   </div>
                 </div>
               </div>
+              <h3 className="text-black/40 dark:text-white/40 text-sm font-semibold pb-6">International Price range</h3>
               <div className="flex items-center gap-4">
-                <InputContent className={"px-4 py-[18px] relative"}>
+                <InputContent className={"px-4 py-[18px] mb-8 relative"}>
                   <input
                     type="number"
                     name=""
                     id="message"
-                    defaultValue="5.01"
+                    defaultValue="150.00"
                     className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
                   />
-                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">KG</span>
+                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">USD</span>
                 </InputContent>
-                <InputContent className={"px-4 py-[18px] relative"}>
+                <InputContent className={"px-4 py-[18px] mb-8 relative"}>
                   <input
                     type="number"
                     name=""
                     id="message"
-                    defaultValue="15.10"
+                    defaultValue="250.00"
                     className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
                   />
-                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">KG</span>
+                  <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">USD</span>
                 </InputContent>
               </div>
             </div>
-          ) : (
-            ""
-          )}
-        
-          {radiioBtnTwo ?           
-          <div>
-            <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">Domestic</h2>
-            <div className="border-[2px] border-black/10 dark:border-white/10 rounded-xl mb-6">
-              <div className="flex justify-between p-4 items-center gap-1">
-                <div className="flex gap-2 items-center">
-                    <span className="flex items-center">₹ 
-                       <input type="number" name="" defaultValue="250.00" className="sm:min-w-[54px] w-[45px] bg-transparent" />
-                    </span>
-                  <Badges color={"blue"} name={"shipping rate"} className={"py-[2px] px-2 rounded-md"} />
-                </div>
-                <div className="flex gap-2 items-center">
-                  <Image src={Usdrupee} alt="" />
-                  <VarientDropdown
-                    className={"!text-black/80 dark:!text-white/80 sm:pr-8 pr-5"}
-                    selectitem={[
-                      { id: 1, name: "INR" },
-                      { id: 2, name: "INR" },
-                      { id: 3, name: "INR" },
-                    ]}
-                  />
-                </div>
-              </div>
-            </div>
-            <h3 className="text-black/40 dark:text-white/40 text-sm font-semibold pb-6">Domestic Price range</h3>
-            <div className="flex items-center gap-4">
-              <InputContent className={"px-4 py-[18px] mb-8 relative"}>
-                <input
-                  type="number"
-                  name=""
-                  id="message"
-                  defaultValue="1500.00"
-                  className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
-                />
-                <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">INR</span>
-              </InputContent>
-              <InputContent className={"px-4 py-[18px] mb-8 relative"}>
-                <input
-                  type="number"
-                  name=""
-                  id="message"
-                  defaultValue="2500.50"
-                  className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
-                />
-                <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">INR</span>
-              </InputContent>
-            </div>
-            <h2 className="text-black/80 dark:text-white/80 text-sm font-semibold pb-4">International</h2>
-            <div className="border-[2px] border-black/10 dark:border-white/10 rounded-xl mb-6">
-              <div className="flex justify-between p-4 items-center gap-1">
-                <div className="flex gap-2 items-center">
-                <span className="flex items-center">$ 
-                       <input type="number" name="" defaultValue="5.00" className="sm:min-w-[39px] w-[39px] bg-transparent" />
-                    </span>
-                  <Badges color={"blue"} name={"shipping rate"} className={"py-[2px] px-2 rounded-md"} />
-                </div>
-                <div className="flex gap-2 items-center">
-                  <Image src={Doller} alt="" />
-                  <VarientDropdown
-                    className={"!text-black/80 dark:!text-white/80 sm:pr-8 pr-5"}
-                    selectitem={[
-                      { id: 1, name: "USD" },
-                      { id: 2, name: "USD" },
-                      { id: 3, name: "USD" },
-                    ]}
-                  />
-                </div>
-              </div>
-            </div>
-            <h3 className="text-black/40 dark:text-white/40 text-sm font-semibold pb-6">International Price range</h3>
-            <div className="flex items-center gap-4">
-              <InputContent className={"px-4 py-[18px] mb-8 relative"}>
-                <input
-                  type="number"
-                  name=""
-                  id="message"
-                  defaultValue="150.00"
-                  className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
-                />
-                <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">USD</span>
-              </InputContent>
-              <InputContent className={"px-4 py-[18px] mb-8 relative"}>
-                <input
-                  type="number"
-                  name=""
-                  id="message"
-                  defaultValue="250.00"
-                  className="bg-transparent w-full text-black/80 dark:text-white/80 font-semibold"
-                />
-                <span className="absolute top-[50%] translate-y-[-50%] right-5 font-semibold">USD</span>
-              </InputContent>
+            }
+            
+            <div className="flex justify-center gap-4">
+              <Button
+                color="lightgrey"
+                secondary="true"
+                name={"Cancel"}
+                onClick={() => setOpenreStock(false)}
+                className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              ></Button>
+              <Button
+                color="bluedark"
+                secondary="true"
+                name={"Save"}
+                className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
+              ></Button>
             </div>
           </div>
-          
-          : ""}
-          
-          <div className="flex justify-center gap-4">
-            <Button
-              color="lightgrey"
-              secondary="true"
-              name={"Cancel"}
-              className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
-            ></Button>
-            <Button
-              color="bluedark"
-              secondary="true"
-              name={"Save"}
-              className={"sm:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl font-semibold"}
-            ></Button>
-          </div>
-        </div>
-      </Modal>
+        </Modal>
+      </>
+    }
     </Layout>
   );
 };

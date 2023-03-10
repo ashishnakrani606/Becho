@@ -16,7 +16,7 @@ const AmountOffer = ({ TableRow, handleChange, selected }) => {
           key={index}
         >
           <td>
-            <div className="pl-[5px] py-2 flex items-center">
+            <div className="pl-[5px] py-2.5 flex items-center">
               <CheckBox
                 value={index}
                 name={offerRowData.name}
@@ -26,8 +26,8 @@ const AmountOffer = ({ TableRow, handleChange, selected }) => {
               {offerRowData.orderId}
             </div>
           </td>
-          <td className="px-3 py-2">{offerRowData.product}</td>
-          <td className="px-3 pr-0 py-2">
+          <td className="px-3 py-[11px]">{offerRowData.product}</td>
+          <td className="px-3 pr-0 py-[11px]">
             <h3
               className={`relative pl-[11px] ${
                 offerRowData.status == "Active"
@@ -49,13 +49,13 @@ const AmountOffer = ({ TableRow, handleChange, selected }) => {
               {offerRowData.status}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2">{offerRowData.type}</td>
-          <td className="px-4 py-2">
+          <td className="px-3 pr-[10px] py-[11px]">{offerRowData.type}</td>
+          <td className="px-4 py-[11px]">
             <h3 className={`${offerRowData.lowstock == "lowstock" ? "text-secondary-red" : ""} `}>
               {offerRowData.inventory}
             </h3>
           </td>
-          <td className="px-3 pr-[10px] py-2">{offerRowData.vendor}</td>
+          <td className="px-3 pr-[10px] py-[11px]">{offerRowData.vendor}</td>
           <td className="opacity-0 group-hover:opacity-100 pr-4">
             <Dropdown
               className="right-0 left-[unset]"

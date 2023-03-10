@@ -65,7 +65,8 @@ const ArchiveSelectTable = ({ TableRow, handleChange, selected }) => {
                   <Image src={Dots} alt="" className="dark:invert" />
                 </div>
               }
-              dropdownitem={[{id:1, title: "View details", link: "customers/details" }]}
+              dropdownitem={[{id:1, title: "View details", link: "customers/new-customer" }]}
+              // dropdownitem={[{id:1, title: "View details", link: "customers/details" }]}
             />
           </td>
         </tr>

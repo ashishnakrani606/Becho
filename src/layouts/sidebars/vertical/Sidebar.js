@@ -117,21 +117,20 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
     <>
       <div className="h-screen flex justify-between flex-col">
         <div className="py-5 px-4 relative z-50">
-          <div className="flex items-center">
+          <div className="flex items-center relative">
             <Dropdown 
               className="right-0 left-[unset]"
-              itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 !w-[200px]"
+              itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 !w-full sm:!w-[180px] left-0"
               button={
-                <div className={`flex gap-[6px] pl-[3px] pt-1 ${dropdownOpen ? "" : "items-center"}`}  onClick={()=> setDropdownOpen(!dropdownOpen)}>
+                <div className={`flex gap-[6px] pl-[3px] pt-1 transition-all   duration-300 ease-in ${dropdownOpen ? "" : "items-center"}`}  onClick={()=> setDropdownOpen(!dropdownOpen)}>
                   <div className="w-[30px] h-[30px]">
                     <Image src={Userid} alt=""/>
                   </div>
                   <div className="flex flex-col">
                     <p className="text-left text-sm font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</p>
-                    {dropdownOpen &&
-                    <Link href={""} className={`text-[9px] text-black/80 dark:text-white/80 pointer-events-none`}>
+                    <Link href={""} className={`text-[9px] hover:text-white transition-all duration-300 ease-in block text-black/80 dark:text-white/80 pointer-events-none   ${dropdownOpen ? "h-auto  opacity-100" : "opacity-0 h-0"}`}> 
                       KathrynMurphy5286@email.com
-                    </Link> }
+                    </Link>
                   </div>
                 </div>
               }
@@ -143,28 +142,6 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                 { id: 5, title: "Blog", link: "/", icon: Blog },
               ]}
             />
-            {/*  <Dropdown
-          className="right-0 left-[unset] text-xs"
-          itemsclass="left-2 top-[28px]"
-          button={
-            <div className="flex gap-2 items-center py-3 px-2 justify-end">
-              More actions
-              <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0.646447 0.659675C0.841709 0.446775 1.15829 0.446775 1.35355 0.659675L4.64645 4.25C4.84171 4.4629 5.15829 4.4629 5.35355 4.25L8.64645 0.659676C8.84171 0.446776 9.15829 0.446776 9.35355 0.659676C9.54882 0.872575 9.54882 1.21775 9.35355 1.43065L6.06066 5.02098C5.47487 5.65967 4.52513 5.65968 3.93934 5.02098L0.646447 1.43065C0.451184 1.21775 0.451184 0.872574 0.646447 0.659675Z"
-                  fill="black"
-                  className="fill-black dark:fill-white"
-                ></path>
-              </svg>
-            </div>
-          }
-          dropdownitem={[
-            { id: 1, title: "Download", link: "/" },
-            { id: 2, title: "Download", link: "/" },
-          ]}
-        /> */}
             <span className="ml-3 lgm:hidden block">
               <button onClick={showMobilemenu} className="flex">
                 <Image src={Closebtn} alt="" className="w-6 dark:invert" />

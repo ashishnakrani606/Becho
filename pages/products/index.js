@@ -16,7 +16,7 @@ import Fileico from "@/assets/images/icon/file-icon.svg";
 import closeico from "@/assets/images/icon/close-circle.svg";
 import Link from "next/link";
 import Filechoose from "@/assets/images/icon/filechoose.svg";
-import Sunicon from "@/assets/images/icon/sunicon.svg";
+import Sunicon from "@/assets/images/icon/Sunicon.svg";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png";
@@ -219,10 +219,10 @@ const products = () => {
                     />
                   </div>
                   <input type="file" id="filebox" className="block w-8 h-8" />
-                  <label htmlFor="filebox" className="w-full">
-                    <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px]">
+                  <label htmlFor="filebox" className="w-full cursor-pointer">
+                    <div className="border border-dashed border-black/40 dark:border-white/40 py-6 px-2 rounded-[4px] ">
                       <div className="px-2 mx-auto max-w-[232px] w-full">
-                        <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto cursor-pointer">
+                        <div className="bg-primary-blue border-transparent rounded-full border w-[100px] h-[100px] mx-auto ">
                           <Image src={Filechoose} alt="" className="h-full mx-auto" />
                         </div>
                         <p className="text-black/40 dark:text-white/40 text-center pt-2">
@@ -230,16 +230,16 @@ const products = () => {
                         </p>
                       </div>
                     </div>
+                    <div className="pt-6 mx-auto max-w-[232px] w-full pb-6 cursor-pointer">
+                      <Button 
+                        color="bluedark"
+                        size="large"
+                        secondary="true"
+                        name={"Browse"}
+                        className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl pointer-events-none"}
+                      ></Button>
+                    </div>
                   </label>
-                  <div className="pt-6 mx-auto max-w-[232px] w-full pb-6">
-                    <Button
-                      color="bluedark"
-                      size="large"
-                      secondary="true"
-                      name={"Browse"}
-                      className={"md:!py-[18px] !py-4 text-sm !px-4 w-full rounded-2xl"}
-                    ></Button>
-                  </div>
                   <div className="border-t border-black/5 dark:border-white/5">
                     <div className="border border-black/20 dark:border-white/20 rounded-xl mt-8 p-4">
                       <div className="flex justify-between items-center">
@@ -281,7 +281,7 @@ const products = () => {
                       </div>
                     </div>
                 </Modal>
-                <Button color={"green"} name={"Add p  roduct"} className="!py-[5px]" />
+                <Button color={"green"} name={"Add product"} className="!py-[5px]" />
               </div>
             ) : (
               ""

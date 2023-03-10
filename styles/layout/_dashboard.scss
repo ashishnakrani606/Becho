@@ -345,6 +345,15 @@ input[type="file"] {
 .itemselect{
   .chip {
     background-color:#E3F5FF !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+  }
+}
+.select-customer.itemselect {
+  .chip {
+    padding-top: 2px;
+    padding-bottom: 2px;
   }
 }
 .optionListContainer {

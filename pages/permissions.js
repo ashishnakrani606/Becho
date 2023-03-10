@@ -185,7 +185,7 @@ const permissions = () => {
           <p className="text-black/80  dark:text-white/80 font-semibold">Enter email address of new owner</p>
           <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
             <MultiselectDropdown
-              className={"itemselect"}
+              className={"itemselect select-customer"}
               roundClose
               avatar={'github'} 
               options={[
@@ -236,7 +236,7 @@ const permissions = () => {
           <p className="text-black/80  dark:text-white/80 font-semibold">Enter email address of staff member</p>
           <InputContent className={"mt-4 cursor-pointer py-3 px-4"}>
             <MultiselectDropdown
-              className={"itemselect"}
+              className={"itemselect select-customer"}
               roundClose
               options={[
                 {
