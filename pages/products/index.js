@@ -16,7 +16,7 @@ import Fileico from "@/assets/images/icon/file-icon.svg";
 import closeico from "@/assets/images/icon/close-circle.svg";
 import Link from "next/link";
 import Filechoose from "@/assets/images/icon/filechoose.svg";
-import Sunicon from "@/assets/images/icon/Sunicon.svg";
+import Sunicon from "@/assets/images/icon/sunicon.svg";
 import Layout from "@/layouts/layout";
 import CheckBox from "@/components/ui/CheckBox";
 import brownThrowPillows from "@/assets/images/users/brown-throw-pillows.png";
