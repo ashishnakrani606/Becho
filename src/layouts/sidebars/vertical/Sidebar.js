@@ -116,22 +116,17 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
   return (
     <>
       <div className="h-screen flex justify-between flex-col">
-        <div className="py-5 px-4 relative z-50">
-          <div className="flex items-center relative">
-            <Dropdown 
+        <div className="py-5 relative z-50">
+          <div className="flex items-center relative px-4 ">
+            <Dropdown
               className="right-0 left-[unset]"
-              itemsclass="p-2 [&>a:nth-child(2)]:!border-0 [&>a:nth-child(3)]:!border-t [&>a:nth-child(4)]:!border-0 [&>a:nth-child(5)]:!border-0 !w-full sm:!w-[180px] left-0"
+              itemsclass="z-[999] md:!w-[240px] p-2 [&>a:nth-child(3)]:!border-0 [&>a:nth-child(4)]:!border-t [&>a:nth-child(5)]:!border-0 [&>a:nth-child(6)]:!border-0 !w-full sm:!w-[180px] left-0"
               button={
-                <div className={`flex gap-[6px] pl-[3px] pt-1 transition-all   duration-300 ease-in ${dropdownOpen ? "" : "items-center"}`}  onClick={()=> setDropdownOpen(!dropdownOpen)}>
+                <div className={`flex items-center gap-[6px] transition-all duration-300 ease-in`} onClick={() => setDropdownOpen(!dropdownOpen)}>
                   <div className="w-[30px] h-[30px]">
-                    <Image src={Userid} alt=""/>
+                    <Image src={Userid} alt="" />
                   </div>
-                  <div className="flex flex-col">
-                    <p className="text-left text-sm font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</p>
-                    <Link href={""} className={`text-[9px] hover:text-white transition-all duration-300 ease-in block text-black/80 dark:text-white/80 pointer-events-none   ${dropdownOpen ? "h-auto  opacity-100" : "opacity-0 h-0"}`}> 
-                      KathrynMurphy5286@email.com
-                    </Link>
-                  </div>
+                  <p className="text-left text-sm font-semibold text-black/80 dark:text-white/80">Kathryn Murphy</p>
                 </div>
               }
               dropdownitem={[
@@ -141,13 +136,26 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                 { id: 4, title: "Changelog", link: "/", icon: NoteBook },
                 { id: 5, title: "Blog", link: "/", icon: Blog },
               ]}
-            />
+            >
+              <div className={`w-full flex gap-[6px] pl-[3px] pb-[9px] pt-1 transition-all duration-300 ease-in items-center border-b border-black/5`}>
+                <div className="w-[30px] h-[30px]">
+                  <Image src={Userid} alt="" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-left text-sm font-semibold text-black/80 dark:text-white/80 cursor-default">Kathryn Murphy</p>
+                  <Link href={""} className={`text-[9px] hover:text-white transition-all duration-300 ease-in block text-black/80 dark:text-white/80 pointer-events-none h-auto  opacity-100`}>
+                    KathrynMurphy5286@email.com
+                  </Link>
+                </div>
+              </div>
+            </Dropdown>
             <span className="ml-3 lgm:hidden block">
               <button onClick={showMobilemenu} className="flex">
                 <Image src={Closebtn} alt="" className="w-6 dark:invert" />
               </button>
             </span>
           </div>
+        <div className="overflow-auto h-[calc(100vh-200px)] px-4 custom-scrollbar">
           <div className="sidebar-left">
             <div className="pt-5">
               <div className="list-none flex-col flex">
@@ -155,11 +163,10 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                   <div key={index}>
                     <Link href={navi.href} onClick={showMobile}>
                       <span
-                        className={`nav-link flex items-center hover:opacity-70 w-full font-semibold text-sm py-[6px] pl-7 rounded-lg relative ${
-                          location === navi.href || curl.query[navi.href.replace("/", "")]
+                        className={`nav-link flex items-center hover:opacity-70 w-full font-semibold text-sm py-[6px] pl-7 rounded-lg relative ${location === navi.href || curl.query[navi.href.replace("/", "")]
                             ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
-                        }`}
+                          }`}
                       >
                         <Image src={navi.icon} alt="" className="dark:invert" />
                         <span className="ml-1 d-inline-block font-normal">{navi.title}</span>
@@ -176,11 +183,10 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
                   <div key={index}>
                     <Link href={navi.href} onClick={showMobile}>
                       <span
-                        className={`nav-link flex gap-1 hover:opacity-70 items-center w-full font-semibold text-sm py-[6px] pl-6 rounded-lg relative ${
-                          location === navi.href
+                        className={`nav-link flex gap-1 hover:opacity-70 items-center w-full font-semibold text-sm py-[6px] pl-6 rounded-lg relative ${location === navi.href
                             ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                             : ""
-                        }`}
+                          }`}
                       >
                         <Image src={navi.icon} alt="" className="dark:invert" />
                         <span className="d-inline-block font-normal">{navi.title}</span>
@@ -195,11 +201,10 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
             <div className="list-none flex-col flex">
               <Link href={"/becho-pro"} onClick={showMobile}>
                 <span
-                  className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${
-                    location === "/becho-pro"
+                  className={`nav-link flex hover:opacity-70 transition-all duration-75 items-center w-full font-semibold text-sm py-1 pl-7 rounded-lg relative mb-1 ${location === "/becho-pro"
                       ? "bg-black/5 dark:bg-white/5 active hover:opacity-100 after:w-1 after:h-4 after:absolute after:top-[50%] after:bg-black dark:after:bg-secondary-purpleb after:rounded-[3px] after:left-0 after:translate-y-[-50%]"
                       : ""
-                  }`}
+                    }`}
                 >
                   <Image src={Bechopro} alt="" className="dark:invert" onClick={showMobile} />
                   <span className="ml-1 d-inline-block font-normal">Becho(Pro)</span>
@@ -207,7 +212,8 @@ const Sidebar = ({ Mobilemenu, showMobilemenu, showMobile }) => {
               </Link>
             </div>
           </div>
-        </div>
+      </div>
+      </div>
         <Link href="/" className="bottom-0 left-0 px-3 flex justify-center w-full" onClick={showMobile}>
           <Image src={Logobecho} alt="" className="dark:invert mb-6" />
         </Link>

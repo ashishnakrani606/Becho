@@ -6,12 +6,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function SidebarDropdown(props) {
+export default function SidebarDropdown({children, className, itemsclass, dropdownitem, button}) {
   return (
     <>
       <Menu as="div" className="relative inline-block">
         <div>
-          <Menu.Button className={`${props.className}`}>{props.button}</Menu.Button>
+          <Menu.Button className={`${className}`}>{button}</Menu.Button>
         </div>
         <Transition
           as={Fragment}
@@ -23,9 +23,10 @@ export default function SidebarDropdown(props) {
           leaveTo="transform opacity-0 scale-95"
         >
           <Menu.Items
-            className={`absolute z-[999] overflow-hidden inline-table sm:!w-auto right-0 mt-2 origin-top-right divide-y divide-black/5 dark:divide-white/10 rounded-md bg-white dark:bg-black shadow-lg ring-1 ring-black/5 focus:outline-none ${props.itemsclass}`}
+            className={`absolute z-[999] overflow-hidden inline-table sm:!w-full right-0 mt-2 origin-top-right divide-y divide-black/5 dark:divide-white/10 rounded-md bg-white dark:bg-black shadow-lg ring-1 ring-black/5 focus:outline-none ${itemsclass}`}
           >
-            {props.dropdownitem.map((item,index) => (
+            {children}
+            {dropdownitem.map((item,index) => (
               <Menu.Item  key={index}>
                 {({ active}) => (                  
                   <a                 

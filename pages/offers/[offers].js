@@ -126,6 +126,7 @@ const offers = () => {
             <InputContent>
               <VarientDropdown
                 className={"py-2.5"}
+                arrowdown
                 selectitem={[
                   { id: 1, name: "Maximum discount uses" },
                   { id: 2, name: "Maximum discount uses 2" },

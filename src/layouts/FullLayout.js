@@ -34,7 +34,7 @@ const FullLayout = ({ children }) => {
       <div className="pageWrapper lgm:flex overflow-hidden">
         {/******** Sidebar **********/}
         <div
-          className={`lgm:relative fixed lgm:w-[212px] bg-white dark:bg-blacklight border-r border-black/10 dark:border-white/10 lgm:h-screen h-full overflow-auto z-50 custom-scrollbar duration-300 transition-all ${
+          className={`lgm:relative fixed lgm:w-[212px] bg-white dark:bg-blacklight border-r border-black/10 dark:border-white/10 lgm:h-screen h-full z-50 duration-300 transition-all ${
             open ? "lgm:ml-[-212px]" : "lgm:ml-0 -ml-[253px] showSidebar"
           }`}
         >

@@ -76,10 +76,10 @@ const products = () => {
       </div>
       <div className="flex flex-wrap justify-between gap-y-5 mb-4">
         <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:px-6 p-5 sm:px-5 px-3">
-          <InputContent title={"title"} titlestyle={"!mb-1"}>
+          <InputContent title={"title"} titlestyle={"!mb-1"} className={"mb-3"}>
             <input type="text" name="" id="message" defaultValue="Antique Drawers" className="bg-transparent w-full"/>
           </InputContent>
-            <InputContent title={"Description"} titlestyle={"!mb-1"}>
+            <InputContent title={"Description"} titlestyle={"!mb-1"} className={"mb-3"}>
               <textarea
                 rows="5"
                 className="w-full dark:bg-transparent resize-none"
@@ -87,33 +87,33 @@ const products = () => {
               ></textarea>
             </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Price"} titlestyle={"!mb-1"}>
+            <InputContent title={"Price"} titlestyle={"!mb-1"} className={"mb-3"}>
               <span className="flex items-center">₹ 
                 <input type="number" name="" defaultValue="250.00" className="w-full bg-transparent ml-1" />
               </span>
             </InputContent>
-            <InputContent title={"Strikethrough Price (optional)"} titlestyle={"!mb-1"}>
+            <InputContent title={"Strikethrough Price (optional)"} titlestyle={"!mb-1"} className={"mb-3"}>
               <span className="flex items-center">₹ 
                 <input type="number" name="" defaultValue="300.00" className="w-full bg-transparent ml-1" />
               </span>
             </InputContent>
           </div>
-          <InputContent title={"Charge tax on this product"} className="text-black/40 dark:text-white/40">
+          <InputContent title={"Charge tax on this product"} className="text-black/40 dark:text-white/40 mb-3">
             <Toggle turnOff={"Off"} turnOn={"On"} />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"SKU"} titlestyle={"!mb-1"}>
+            <InputContent title={"SKU"} titlestyle={"!mb-1"} className={"mb-3"}>
               <input type="text" name="" defaultValue="UGG-BB-PUR-06" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Barcode (ISBN, UPC, GTIN)"} titlestyle={"!mb-1"}>
+            <InputContent title={"Barcode (ISBN, UPC, GTIN)"} titlestyle={"!mb-1"} className={"mb-3"}>
               <input type="number" name="" defaultValue="00123456789012" className="w-full bg-transparent" />
             </InputContent>
           </div>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Quantity (numbers only)"} titlestyle={"!mb-1"}>
+            <InputContent title={"Quantity (numbers only)"} titlestyle={"!mb-1"} className={"mb-3"}>
               <input type="number" name="" defaultValue="44" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Track quantity"} className="text-black/40 dark:text-white/40">
+            <InputContent title={"Track quantity"} className="text-black/40 dark:text-white/40 mb-3">
               <Toggle turnOff={"No"} turnOn={"Yes"} />
             </InputContent>
           </div>
@@ -122,10 +122,10 @@ const products = () => {
             <p className="mb-[6px] text-black/40 dark:text-white/40">Product type (for shipping)</p>
             <div className="grid justify-center product-type-radio">
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <div className="mb-[0.125rem] sm:inline-block min-h-[1.5rem]">
+                <div className="sm:inline-block min-h-[1.5rem]">
                   <div
                     onClick={() => radiioBtnHendler()}
-                    className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative  w-full ${
+                    className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative w-full ${
                       radiioBtn ? "dark:border-secondary-purpleb " : "border-black/10"
                     }`}
                   >
@@ -172,7 +172,7 @@ const products = () => {
                     </p>
                   </div>
                 </div>
-                <div className="mb-[0.125rem] sm:inline-block min-h-[1.5rem]">
+                <div className="sm:inline-block min-h-[1.5rem]">
                   <label
                     onClick={() => radiioBtnTwoHendler()}
                     htmlFor="inlineRadioOptions"
@@ -228,10 +228,10 @@ const products = () => {
           </div>
 
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Shipping weight"} titlestyle={"mb-1"}>
+            <InputContent title={"Shipping weight"} titlestyle={"mb-1"} className={"mb-3"}>
               <input type="number" name="" defaultValue="4.30" className="w-full bg-transparent" />
             </InputContent>
-            <InputContent title={"Type"} titlestyle={"mb-1"}>
+            <InputContent title={"Type"} titlestyle={"mb-1"} className={"mb-3"}>
               <VarientDropdown
                 className={"!text-black/20"}
                 selectitem={[
@@ -243,7 +243,7 @@ const products = () => {
           </div>
           <div className="grid">
             <p className="mb-[6px] text-black/40 dark:text-white/40">Variants</p>
-            <InputContent title={"Option name"}>
+            <InputContent title={"Option name"} className={"mb-3"}>
               <VarientDropdown
                 className={"!text-black/80 dark:!text-white/80"}
                 selectitem={[
@@ -268,11 +268,11 @@ const products = () => {
                 className="bg-transparent text-black/80 dark:text-white/80"
               />
             </InputContent>
-            <div className="flex justify-between items-center sm:py-9 py-5 pt-7 flex-wrap gap-4 ">
+            <div className="flex justify-between items-end sm:py-9 py-5 pt-7 flex-wrap gap-4 ">
               <div>
                 <Button
                   name={"Archive product"}
-                  className="mr-3 mt-2 leading-[18px]"
+                  className="mr-3 leading-[18px]"
                   size={"medium"}
                   outline={"true"}
                   secondary={"true"}
@@ -280,7 +280,7 @@ const products = () => {
                 />
                 <Button
                   name={"Delete product"}
-                  className="mt-2 leading-[18px]"
+                  className="leading-[18px]"
                   size={"medium"}
                   outline={"true"}
                   color={"red"}
@@ -345,14 +345,14 @@ const products = () => {
                   className="absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-pointer"
                 />
               </label>
-              <p className="my-[10px] text-black/40 dark:text-white/40">Allowed file types: png, jpg, jpeg.</p>
+              <p className="my-[10px] text-black/40 dark:text-white/40 pl-[7px]">Allowed file types: png, jpg, jpeg.</p>
               <div className="flex">
                 <Image src={MediaWall} alt="" className="w-full max-w-[50px] mr-1 rounded-lg" />
                 <Image src={MediaWall} alt="" className="w-full max-w-[50px] rounded-lg" />
               </div>
             </div>
           </div>
-          <div className="bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:px-6 sm:p-5 py-5 px-3">
+          <div className="bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-[38px] lg:px-6 sm:p-5 py-5 px-3">
             <div className="flex items-center justify-between mb-[10px]">
               <h3 className="text-lg font-semibold">SEO</h3>
             </div>
@@ -364,7 +364,7 @@ const products = () => {
                 <input type="text" name="" defaultValue="Antique Drawers" className="w-full bg-transparent" />
               </InputContent>
               <p className="my-[10px] text-black/40 dark:text-white/40">15 of 70 characters used</p>
-              <InputContent title={"Description"} className={"mb-0"}>
+              <InputContent title={"Description"} className={"mb-0"}> 
                 <input
                   type="text"
                   name=""

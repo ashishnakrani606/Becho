@@ -133,6 +133,7 @@ const ShippingDelivery = () => {
                     { id: 2, name: "USD" },
                     { id: 3, name: "USD" },
                   ]}
+                  arrowmodel
                 />
               </div>
             </div>
@@ -156,6 +157,7 @@ const ShippingDelivery = () => {
                       { id: 2, name: "INR" },
                       { id: 3, name: "INR" },
                     ]}
+                    arrowmodel
                   />
                 </div>
               </div>
@@ -176,6 +178,7 @@ const ShippingDelivery = () => {
                       { id: 2, name: "USD" },
                       { id: 3, name: "USD" },
                     ]}
+                    arrowmodel
                   />
                 </div>
               </div>
@@ -231,11 +234,12 @@ const ShippingDelivery = () => {
                           name="notification-method"
                           type="radio"
                           value=""
+                          id="item-weight"
                           defaultChecked                        
                           className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
                           onClick={radiioBtnHandler}
                         />
-                        <label htmlFor={""} className="block text-sm font-medium">
+                        <label htmlFor={"item-weight"} className="block text-sm font-medium cursor-pointer">
                           Item weight
                         </label>
                       </div>
@@ -243,10 +247,11 @@ const ShippingDelivery = () => {
                         <input
                           name="notification-method"
                           type="radio"
+                          id="order-price"
                           className="h-4 w-4 border-2 border-blue-1 text-indigo-600 focus:ring-blue-1 cursor-pointer"
                           onClick={radiioBtnTwoHandler}
                         />
-                        <label htmlFor={""} className="block text-sm font-medium">
+                        <label htmlFor={"order-price"} className="block text-sm font-medium cursor-pointer">
                           Order price
                         </label>
                       </div>
@@ -276,6 +281,7 @@ const ShippingDelivery = () => {
                           { id: 2, name: "INR" },
                           { id: 3, name: "INR" },
                         ]}
+                        arrowmodel
                       />
                     </div>
                   </div>
@@ -295,6 +301,7 @@ const ShippingDelivery = () => {
                           { id: 2, name: "USD" },
                           { id: 3, name: "USD" },
                         ]}
+                        arrowmodel
                       />
                     </div>
                   </div>
@@ -343,6 +350,7 @@ const ShippingDelivery = () => {
                         { id: 2, name: "INR" },
                         { id: 3, name: "INR" },
                       ]}
+                      arrowmodel
                     />
                   </div>
                 </div>
@@ -388,6 +396,7 @@ const ShippingDelivery = () => {
                         { id: 2, name: "USD" },
                         { id: 3, name: "USD" },
                       ]}
+                      arrowmodel
                     />
                   </div>
                 </div>

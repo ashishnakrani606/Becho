@@ -42,14 +42,14 @@ const Customers = () => {
       <div className="flex flex-wrap justify-between gap-y-5 mb-4">
         <div className="w-full md:max-w-[63%] max-w-[100%] bg-primary-light dark:bg-white/5 rounded-2xl lg:pt-4 lg:pb-5 lg:pl-6 lg:pr-11 p-5 sm:px-5 px-3">
           <div className="grid sm:grid-cols-2 sm:gap-6 ">
-            <InputContent ontent title={"First name"} className="dark:bg-black/40">
+            <InputContent ontent title={"First name"} className="dark:bg-black/40 mb-3">
               <input type="text" name="" defaultValue="Baalkrishan" className="w-full dark:bg-transparent" />
             </InputContent>
-            <InputContent title={"Last name"} className="dark:bg-black/40">
+            <InputContent title={"Last name"} className="dark:bg-black/40 mb-3">
               <input type="text" name="" defaultValue="Lal Sani" className="w-full dark:bg-transparent" />
             </InputContent>
           </div>
-          <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40"}>
+          <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40 mb-3"}>
             <VarientDropdown
               selectitem={[
                 { id: 1, name: "Select Language..." },
@@ -59,7 +59,7 @@ const Customers = () => {
               className="dark:text-white/40"
             />
           </InputContent>
-          <InputContent className={"!py-2.5 dark:bg-black/40"}>
+          <InputContent className={"!py-2.5 dark:bg-black/40 mb-3"}>
             <input
               type="email"
               name=""
@@ -69,7 +69,7 @@ const Customers = () => {
             />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Country code"} className={"dark:bg-black/40 dark:text-white/40"}>
+            <InputContent title={"Country code"} className={"dark:bg-black/40 dark:text-white/40 mb-3"}>
               <VarientDropdown
                 selectitem={[
                   { name: "+91" },
@@ -289,7 +289,7 @@ const Customers = () => {
                 className="dark:!text-white/80 !text-black/80"
               />
             </InputContent>
-            <InputContent title={"Phone number"} className="dark:bg-black/40">
+            <InputContent title={"Phone number"} className="dark:bg-black/40 mb-3">
               <input type="number" name="" defaultValue="8073589105" className="w-full dark:bg-transparent" />
             </InputContent>
           </div>
@@ -297,7 +297,7 @@ const Customers = () => {
           <div className="product-type-radio grid">
             <div className="grid justify-center product-type-radio">
               <div className="grid sm:grid-cols-2 sm:gap-6">
-                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
+                <div className="inline-block min-h-[1.5rem]">
                   <div
                     onClick={() => radiioBtnHendler()}
                     className={`cursor-pointer bg-white dark:bg-black/40 dark:border-white/10 border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
@@ -347,7 +347,7 @@ const Customers = () => {
                     </p>
                   </div>
                 </div>
-                <div className="mb-[0.125rem] inline-block min-h-[1.5rem]">
+                <div className="inline-block min-h-[1.5rem]">
                   <div
                     onClick={() => radiioBtnTwoHendler()}
                     className={`cursor-pointer bg-white dark:bg-black/40  border border-black/10 rounded-lg py-6 px-5 mb-3 relative ${
@@ -401,25 +401,25 @@ const Customers = () => {
             </div>
           </div>
           {/* radio button end */}
-          <h3 className="text-lg font-semibold pb-4 text-black/80 dark:text-white/80">Address</h3>
-          <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40 "}>
+          <h3 className="text-lg font-semibold pb-3 text-black/80 dark:text-white/80">Address</h3>
+          <InputContent className={"!py-[10px] dark:bg-black/40 dark:text-white/40 mb-3"}>
             <VarientDropdown
               selectitem={[{id:1, name: "Select Country..." }, { id: 2, name: "Select 1" }, { id: 3, name: "Select 2" }]}
               className="dark:text-white/40 "
             />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"First name"} className="dark:bg-black/40">
+            <InputContent title={"First name"} className="dark:bg-black/40 mb-3">
               <input type="text" name="" defaultValue="Baalkrishan" className="w-full dark:bg-transparent" />
             </InputContent>
-            <InputContent title={"Last name"} className="dark:bg-black/40">
+            <InputContent title={"Last name"} className="dark:bg-black/40 mb-3">
               <input type="text" name="" defaultValue="Lal Sani" className="w-full dark:bg-transparent" />
             </InputContent>
           </div>
-          <InputContent title={"Company"} className="dark:bg-black/40">
+          <InputContent title={"Company"} className="dark:bg-black/40 mb-3">
             <input type="text" name="" defaultValue="Company name" className="w-full dark:bg-transparent" />
           </InputContent>
-          <InputContent title={"Address"} className="dark:bg-black/40">
+          <InputContent title={"Address"} className="dark:bg-black/40 mb-3">
             <input
               type="text"
               name=""
@@ -427,14 +427,14 @@ const Customers = () => {
               className="w-full dark:bg-transparent"
             />
           </InputContent>
-          <InputContent title={"Apartment etc."} className="dark:bg-black/40">
+          <InputContent title={"Apartment etc."} className="dark:bg-black/40 mb-3">
             <input type="text" name="" defaultValue="Apartment, suite, etc" className="w-full dark:bg-transparent" />
           </InputContent>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"City"} className="dark:bg-black/40">
+            <InputContent title={"City"} className="dark:bg-black/40 mb-3">
               <input type="text" name="" defaultValue="Pilani" className="w-full dark:bg-transparent" />
             </InputContent>
-            <InputContent title={"State"} className="dark:bg-black/40 dark:text-white/40">
+            <InputContent title={"State"} className="dark:bg-black/40 dark:text-white/40 mb-3">
               <VarientDropdown 
                 selectitem={[
                   { name: "Rajasthan" },
@@ -480,7 +480,7 @@ const Customers = () => {
             </InputContent>
           </div>
           <div className="grid sm:grid-cols-2 sm:gap-6">
-            <InputContent title={"Country code"} className="dark:bg-black/40 ">
+            <InputContent title={"Country code"} className="dark:bg-black/40 mb-3">
               <VarientDropdown
                 selectitem={[
                   { name: "+91" },
@@ -700,12 +700,12 @@ const Customers = () => {
                 className="dark:!text-white/80 !text-black/80"
               />
             </InputContent>
-            <InputContent title={"Phone number"} className="dark:bg-black/40">
+            <InputContent title={"Phone number"} className="dark:bg-black/40 mb-3">
               <input type="number" name="" defaultValue="8073589105" className="w-full dark:bg-transparent" />
             </InputContent>
           </div>
 
-          <p className="mb-[6px] text-black/40 dark:text-white/40">Other options</p>
+          <p className="text-black/40 dark:text-white/40 mb-3">Other options</p>
           <InputContent title={"Notes"} className="dark:bg-black/40">
             <input type="text" name="" defaultValue="Text" className="w-full dark:bg-transparent" />
           </InputContent>

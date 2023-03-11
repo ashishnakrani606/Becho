@@ -23,13 +23,12 @@ export default function VarientDropdown(props) {
                 {selected.name}
              </span>
              <span className="pointer-events-none absolute inset-y-0 right-0 flex items-center ">
-              {props.arrowdown ? 
+              {props.arrowdown & 
                 <Image src={Arrow} alt="" className="dark:invert"/>
+                || props.arrowmodel ?
+                <Image src={ArrowModel} alt="" className="dark:invert"/>
                 :
-                <Image src={Selecticon} alt="" className="dark:invert"/>||
-                props.arrowmodel ?
-                <Image src={ArrowModel} alt="" className="dark:invert"/>:
-                ""
+                <Image src={Selecticon} alt="" className="dark:invert"/>
               }
              </span>
               </Listbox.Button>
